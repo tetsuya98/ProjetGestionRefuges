@@ -1,4 +1,4 @@
-﻿namespace Application
+﻿namespace GestionRefugies
 {
     partial class Form1
     {
