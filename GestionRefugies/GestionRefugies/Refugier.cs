@@ -16,13 +16,100 @@ namespace GestionRefugies
         private int secteur;
         private int maison;
 
-        public int Id { get => id; set => id = value; }
-        public string Nom { get => nom; set => nom = value; }
-        public string Prenom { get => prenom; set => prenom = value; }
-        public string Sexe { get => sexe; set => sexe = value; }
-        public int Age { get => age; set => age = value; }
-        public int Secteur { get => secteur; set => secteur = value; }
-        public int Maison { get => maison; set => maison = value; }
+
+
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
+            }
+        }
+
+        public string Nom
+        {
+            get
+            {
+                return nom;
+            }
+
+            set
+            {
+                nom = value;
+            }
+        }
+
+        public string Prenom
+        {
+            get
+            {
+                return prenom;
+            }
+
+            set
+            {
+                prenom = value;
+            }
+        }
+
+        public string Sexe
+        {
+            get
+            {
+                return sexe;
+            }
+
+            set
+            {
+                sexe = value;
+            }
+        }
+
+        public int Age
+        {
+            get
+            {
+                return age;
+            }
+
+            set
+            {
+                age = value;
+            }
+        }
+
+        public int Secteur
+        {
+            get
+            {
+                return secteur;
+            }
+
+            set
+            {
+                secteur = value;
+            }
+        }
+
+        public int Maison
+        {
+            get
+            {
+                return maison;
+            }
+
+            set
+            {
+                maison = value;
+            }
+        }
+
+
 
         public Refugier(int iD, string noM, string prenoM, string sexE, int agE, int secteuR, int maisoN)
         {
@@ -35,5 +122,7 @@ namespace GestionRefugies
             Maison = maisoN;
 
         }
+
+
     }
 }
