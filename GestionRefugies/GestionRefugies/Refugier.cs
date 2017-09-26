@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionRefugies
 {
-    class Refugier
+    partial class Refugier
     {
         private int id;
         private string nom;
@@ -111,7 +111,7 @@ namespace GestionRefugies
 
 
 
-        public Refugier(int iD, string noM, string prenoM, string sexE, int agE, int secteuR, int maisoN)
+        public Refugier(int iD, string noM, string prenoM, string sexE, int agE, int secteuR, int maisoN) // constructeur de base du refugier
         {
             Id = iD;
             Nom = noM;
@@ -121,6 +121,13 @@ namespace GestionRefugies
             Secteur = secteuR;
             Maison = maisoN;
 
+        }
+
+        public int Test_Name(string name) //test de la validité du nom du refugier
+        {
+
+
+            return (0);
         }
 
 
