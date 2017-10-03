@@ -6,26 +6,26 @@ using System.Threading.Tasks;
 
 namespace GestionRefugies
 {
-    class User
+    public class User
     {
         #region variables
 
         /// <summary>
         /// nom de l'utilisateur
         /// </summary>
-        string nom;
+        protected string nom;
         /// <summary>
         /// prénom de l'utilisateur
         /// </summary>
-        string prenom;
+        protected string prenom;
         /// <summary>
         /// identifiant de l'utilisateur
         /// </summary>
-        string id;
+        protected string id;
         /// <summary>
         /// mot de passe de l'utilisateur
         /// </summary>
-        string motdepasse;
+        protected string motdepasse;
         #endregion
         /// <summary>
         /// constructeur de la classe Agent d'accueil
