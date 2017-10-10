@@ -11,11 +11,22 @@ namespace GestionRefugies
     {
         static MySqlConnection bd = null;
 
-        static MySqlConnection getBD()
+        public static MySqlConnection getBD()
         {
             if (bd == null)
-                bd = new MySqlConnection("database=test; server=localhost; user id=root; pwd=");
-            return bd;
+            {
+                bd = new MySqlConnection("database=gestionrefugie; server=localhost; user id=root; pwd=");
+                try
+                {
+                    bd.Open();
+                    return bd;
+                }
+                catch (MySqlException exp)
+                {
+                    System.Diagnostics.Debug.WriteLine(exp.ToString());
+                }
+            }
+            return null;
         }
     }
 }
