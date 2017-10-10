@@ -10,6 +10,7 @@ namespace GestionRefugies
     {
         #region variables
 
+
         /// <summary>
         /// nom de l'utilisateur
         /// </summary>
@@ -101,6 +102,16 @@ namespace GestionRefugies
 
         #region méthode
 
+
+        public static string Hashage(string Password, string Salt)
+        {
+            System.Security.Cryptography.SHA512Managed HashTool = new System.Security.Cryptography.SHA512Managed();
+            Byte[] PasswordAsByte = System.Text.Encoding.UTF8.GetBytes(string.Concat(Password, Salt));
+            Byte[] EncryptedBytes = HashTool.ComputeHash(PasswordAsByte);
+            HashTool.Clear();
+            return Convert.ToBase64String(EncryptedBytes);
+
+        }
 
 
 

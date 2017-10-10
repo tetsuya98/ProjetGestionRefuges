@@ -16,7 +16,7 @@ namespace GestionRefugies
         
         #region constructeur
         
-        public AgentAcceuil(string nom,string prenom,string motdepasse,string id):base(nom,prenom,motdepasse)
+        public AgentAcceuil(string nom,string prenom,string motdepasse):base(nom,prenom,motdepasse)
         {
              
             Id = "AgA" + Nom + Prenom[0];
@@ -27,16 +27,11 @@ namespace GestionRefugies
         #region accesseurs
       
         #endregion
-
-        public
+        
 
         #region méthode
 
-
-
-
-
-
+        
 
         #endregion
     }
