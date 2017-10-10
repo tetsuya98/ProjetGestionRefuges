@@ -9,7 +9,7 @@ namespace GestionRefugies
 {
     class Database
     {
-        static MySqlConnection bd = null;
+        public static MySqlConnection bd = null;
 
         public static MySqlConnection getBD()
         {
