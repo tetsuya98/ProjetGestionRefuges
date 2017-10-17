@@ -33,7 +33,8 @@ namespace GestionRefugies
 
         public static void supprimerAgentAcceuil(string login)
         {
-
+            MySqlCommand cmd = new MySqlCommand(sqlCommand, DataBase.getBD());
+            MySqlDataReader read = cmd.Exe
         }
         
 

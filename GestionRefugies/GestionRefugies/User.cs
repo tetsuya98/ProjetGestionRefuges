@@ -39,7 +39,7 @@ namespace GestionRefugies
         {
             this.Nom = nom;
             this.Prenom = prenom;
-            this.Motdepasse = motdepasse;
+            this.Motdepasse = Hashage(motdepasse,prenom);
         }
 
         #endregion
