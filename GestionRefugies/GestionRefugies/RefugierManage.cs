@@ -9,6 +9,7 @@ namespace GestionRefugies
 {
     partial class RefugierManage
     {
+            
             public static void ajouterRefugier()
             {
                 string sqlCommand = "INSERT INTO refugies (clef, prenom, nom, nationalite, mdp, camps_id, sexe, dateNais, adresse) VALUES ('clefy', 'prenom', 'nom', 'nationalite', 'mdp', 1, 'F', 'dateNais', 'Adresse')";
