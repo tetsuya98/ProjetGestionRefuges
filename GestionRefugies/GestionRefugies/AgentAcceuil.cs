@@ -31,6 +31,10 @@ namespace GestionRefugies
 
         #region méthode
 
+        public static void supprimerAgentAcceuil(string login)
+        {
+
+        }
         
 
         #endregion
