@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
--- https://www.phpmyadmin.net/
+-- version 4.5.4.1deb2ubuntu2
+-- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Oct 17, 2017 at 05:08 AM
--- Server version: 5.7.19
--- PHP Version: 5.6.31
+-- Host: localhost
+-- Generation Time: Oct 17, 2017 at 07:36 PM
+-- Server version: 5.7.19-0ubuntu0.16.04.1
+-- PHP Version: 7.0.22-0ubuntu0.16.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -26,20 +24,17 @@ DROP DATABASE IF EXISTS gestionrefugie;
 CREATE DATABASE gestionrefugie CHARACTER SET 'utf8';
 use gestionrefugie;
 
-
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `agents`
 --
 
-DROP TABLE IF EXISTS `agents`;
-CREATE TABLE IF NOT EXISTS `agents` (
+CREATE TABLE `agents` (
   `clef` varchar(32) NOT NULL,
   `nom` varchar(255) DEFAULT NULL,
   `prenom` varchar(255) DEFAULT NULL,
-  `mdp` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`clef`)
+  `mdp` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -48,12 +43,11 @@ CREATE TABLE IF NOT EXISTS `agents` (
 -- Table structure for table `magasinier`
 --
 
-DROP TABLE IF EXISTS `magasinier`;
-CREATE TABLE IF NOT EXISTS `magasinier` (
+CREATE TABLE `magasinier` (
   `clef` varchar(32) NOT NULL,
   `nom` varchar(255) NOT NULL,
   `adresse` varchar(255) NOT NULL,
-  PRIMARY KEY (`clef`)
+  `mdp` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -62,8 +56,7 @@ CREATE TABLE IF NOT EXISTS `magasinier` (
 -- Table structure for table `refugies`
 --
 
-DROP TABLE IF EXISTS `refugies`;
-CREATE TABLE IF NOT EXISTS `refugies` (
+CREATE TABLE `refugies` (
   `clef` varchar(64) NOT NULL,
   `prenom` varchar(255) NOT NULL,
   `nom` varchar(255) NOT NULL,
@@ -71,8 +64,7 @@ CREATE TABLE IF NOT EXISTS `refugies` (
   `mdp` varchar(255) NOT NULL,
   `sexe` char(32) NOT NULL,
   `dateNais` date NOT NULL,
-  `adresse` varchar(255) NOT NULL,
-  PRIMARY KEY (`clef`)
+  `adresse` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -81,15 +73,49 @@ CREATE TABLE IF NOT EXISTS `refugies` (
 -- Table structure for table `stocks`
 --
 
-DROP TABLE IF EXISTS `stocks`;
-CREATE TABLE IF NOT EXISTS `stocks` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `stocks` (
+  `id` int(11) NOT NULL,
   `pain` int(11) DEFAULT NULL,
-  `pizza` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `pizza` varchar(45) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-COMMIT;
 
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `agents`
+--
+ALTER TABLE `agents`
+  ADD PRIMARY KEY (`clef`);
+
+--
+-- Indexes for table `magasinier`
+--
+ALTER TABLE `magasinier`
+  ADD PRIMARY KEY (`clef`);
+
+--
+-- Indexes for table `refugies`
+--
+ALTER TABLE `refugies`
+  ADD PRIMARY KEY (`clef`);
+
+--
+-- Indexes for table `stocks`
+--
+ALTER TABLE `stocks`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `stocks`
+--
+ALTER TABLE `stocks`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
