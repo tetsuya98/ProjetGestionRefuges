@@ -19,56 +19,72 @@ namespace GestionRefugies
         }
 
 ---------------------------------------------------------------Nom----------------------------------------------------------------
-public static void modifierRefugierNom(Refugier a,string Nom)
-	
-            string sqlCommand = ("update refugies set nom ="+ Nom + " where nom = " + a.nom);
-            MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
-            MySqlDataReader read = cmd.ExecuteReader();
-            read.Read();
-            read.Close();
-        }
+public static void modifierRefugierNom(string id,string Nom)
+		{
+            	string sqlCommand = ("update refugies set nom ="+ Nom + " where id = " + id);
+            	MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
+            	MySqlDataReader read = cmd.ExecuteReader();
+            	read.Read();
+            	read.Close();
+        	}
 ---------------------------------------------------------------Prenom-------------------------------------------------------------
 
-public static void modifierRefugierPrenom(Refugier a,string Prenom)
-	
-            string sqlCommand = ("update refugies set prenom ="+ Prenom + " where prenom = " + a.prenom);
-            MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
-            MySqlDataReader read = cmd.ExecuteReader();
-            read.Read();
-            read.Close();
-        }
+public static void modifierRefugierPrenom(string id,string Prenom)
+		{
+            	string sqlCommand = ("update refugies set prenom ="+ Prenom + " where id = " + id);
+            	MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
+            	MySqlDataReader read = cmd.ExecuteReader();
+            	read.Read();
+            	read.Close();
+        	}
 ---------------------------------------------------------------NATIONALITE--------------------------------------------------------
 
-public static void modifierRefugierNation(Refugier a,string Nationalite)
-	
-            string sqlCommand = ("update refugies set natinoalite ="+ Natinoalite + " where nationalite = " + a.natinoalite);
-            MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
-            MySqlDataReader read = cmd.ExecuteReader();
-            read.Read();
-            read.Close();
-        }
+public static void modifierRefugierNation(string id,string Nationalite)
+		{
+           	string sqlCommand = ("update refugies set nationalite ="+ Nationalite + " where id = " + id);
+            	MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
+            	MySqlDataReader read = cmd.ExecuteReader();
+            	read.Read();
+            	read.Close();
+        	}
 ---------------------------------------------------------------SEXE---------------------------------------------------------------
 
-public static void modifierRefugierSexe(Refugier a,string Sexe)
-	
-            string sqlCommand = ("update refugies set sexe =" + Sexe + " where sexe = " + a.sexe);
-            MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
-            MySqlDataReader read = cmd.ExecuteReader();
-            read.Read();
-            read.Close();
-        }
+public static void modifierRefugierSexe(string id,string Sexe)
+		{
+           	string sqlCommand = ("update refugies set sexe =" + Sexe + " where id = " + id);
+            	MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
+           	MySqlDataReader read = cmd.ExecuteReader();
+            	read.Read();
+            	read.Close();
+        	}
 
 
 ---------------------------------------------------------------ADRESSE------------------------------------------------------------
 
-public static void modifierRefugierAdresse(Refugier a,string Adresse)
-	
-            string sqlCommand = ("update refugies set adresse ="+ Adresse + " where adresse = " + a.adresse);
-            MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
-            MySqlDataReader read = cmd.ExecuteReader();
-            read.Read();
-            read.Close();
-        }
+public static void modifierRefugierAdresse(string id,string Adresse)
+		{	
+            	string sqlCommand = ("update refugies set adresse ="+ Adresse + " where id = " + id);
+            	MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
+           	MySqlDataReader read = cmd.ExecuteReader();
+            	read.Read();
+            	read.Close();
+        	}
+
+
+---------------------------------------------------------Refugier-Suppréssion--------------------------------------------------------
+
+
+Public static void SupprimerRefugier(string id)
+		{
+          	string sqlCommand = ("DELETE from refuiges WHERE id = " + id);
+            	MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
+            	MySqlDataReader read = cmd.ExecuteReader();
+            	read.Read();
+            	read.Close();
+		}
+
+
+
 
 
 
