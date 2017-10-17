@@ -7,9 +7,9 @@ using MySql.Data.MySqlClient;
 
 namespace GestionRefugies
 {
-    class Database
+    public class Database
     {
-        static MySqlConnection bd = null;
+        public static MySqlConnection bd = null;
 
         public static MySqlConnection getBD()
         {
