@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 10, 2017 at 08:10 AM
+-- Generation Time: Oct 17, 2017 at 05:08 AM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -25,6 +25,35 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `agents`
+--
+
+DROP TABLE IF EXISTS `agents`;
+CREATE TABLE IF NOT EXISTS `agents` (
+  `clef` varchar(32) NOT NULL,
+  `nom` varchar(255) DEFAULT NULL,
+  `prenom` varchar(255) DEFAULT NULL,
+  `mdp` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`clef`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `magasinier`
+--
+
+DROP TABLE IF EXISTS `magasinier`;
+CREATE TABLE IF NOT EXISTS `magasinier` (
+  `clef` varchar(32) NOT NULL,
+  `nom` varchar(255) NOT NULL,
+  `adresse` varchar(255) NOT NULL,
+  PRIMARY KEY (`clef`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `refugies`
 --
 
@@ -35,12 +64,24 @@ CREATE TABLE IF NOT EXISTS `refugies` (
   `nom` varchar(255) NOT NULL,
   `nationalite` varchar(255) NOT NULL,
   `mdp` varchar(255) NOT NULL,
-  `camps_id` int(11) NOT NULL,
   `sexe` char(32) NOT NULL,
   `dateNais` date NOT NULL,
   `adresse` varchar(255) NOT NULL,
-  PRIMARY KEY (`clef`),
-  KEY `fk_refugie_camps_idx` (`camps_id`)
+  PRIMARY KEY (`clef`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stocks`
+--
+
+DROP TABLE IF EXISTS `stocks`;
+CREATE TABLE IF NOT EXISTS `stocks` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pain` int(11) DEFAULT NULL,
+  `pizza` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 COMMIT;
 
