@@ -10,10 +10,11 @@ namespace GestionRefugies
     {
         public static void modifRefugier()
         {
-            /*public static void ajouterRefugier(){
+            /* 
+public static void ajouterRefugier(){
             string sqlCommand = "INSERT INTO refugies (clef, prenom, nom, nationalite, mdp, camps_id, sexe, dateNais, adresse) VALUES ('clefy', 'prenom', 'nom', 'nationalite', 'mdp', 1, 'F', 'dateNais', 'Adresse')";
             MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
-            MySqlDataReader read = cmd.ExecuteReader();
+            MySqlDataReader read = cmd.ExecuteReader(); 
             read.Read();
             read.Close();
         }
@@ -82,26 +83,14 @@ Public static void SupprimerRefugier(string id)
             	read.Read();
             	read.Close();
 		}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Public static bool(string prenom, string nom, string sexe,date dateNais)
+        {
+            
+            
+            
+        }
 Dans une class partiel de celle de roman .*/
+
         }
     }
 }
