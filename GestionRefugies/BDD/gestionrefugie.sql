@@ -22,6 +22,11 @@ SET time_zone = "+00:00";
 -- Database: `gestionrefugie`
 --
 
+DROP DATABASE IF EXISTS gestionrefugie;
+CREATE DATABASE gestionrefugie CHARACTER SET 'utf8';
+use gestionrefugie;
+
+
 -- --------------------------------------------------------
 
 --
