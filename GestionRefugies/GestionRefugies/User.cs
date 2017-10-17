@@ -28,13 +28,14 @@ namespace GestionRefugies
         /// </summary>
         protected string motdepasse;
         #endregion
+        
+        #region constructeur
         /// <summary>
         /// constructeur de la classe Agent d'accueil
         /// </summary>
         /// <param name="nom">nom de l'agent d'acceuil</param>
         /// <param name="prenom">prénom de l'agent</param>
         /// <param name="motdepasse">mot de passe de l'utilisateur</param>
-        #region constructeur
         public User(string nom, string prenom, string motdepasse)
         {
             this.Nom = nom;

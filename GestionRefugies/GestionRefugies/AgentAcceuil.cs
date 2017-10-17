@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace GestionRefugies
 {
@@ -31,13 +32,7 @@ namespace GestionRefugies
 
         #region méthode
 
-        public static void supprimerAgentAcceuil(string login)
-        {
-            MySqlCommand cmd = new MySqlCommand(sqlCommand, DataBase.getBD());
-            MySqlDataReader read = cmd.Exe
-        }
-        
-
+     
         #endregion
     }
 }
