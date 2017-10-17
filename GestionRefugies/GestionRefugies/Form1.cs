@@ -47,50 +47,39 @@ namespace GestionRefugies
             }
         }
 
-        
-        
-        private void Txt_MDP_Click_1(object sender, EventArgs e)
+        private void Txt_ID_KeyDown(object sender, KeyEventArgs e)
         {
-            if (this.Txt_MDP.Text == "Mot de Passe")
+            if (Txt_ID.Text == "Identifiant")
             {
-                this.Txt_MDP.Text = "";
+                this.Txt_ID.ForeColor = System.Drawing.Color.Black;
+                Txt_ID.Text = "";
             }
         }
 
-        private void Txt_ID_Click_1(object sender, EventArgs e)
+        private void Txt_ID_KeyUp(object sender, KeyEventArgs e)
         {
-            if (this.Txt_ID.Text == "Identifiant")
-            {
-                this.Txt_ID.Text = "";
-            }
-        }
-
-        private void Txt_MDP_TextChanged_1(object sender, EventArgs e)
-        {
-            this.Txt_MDP.ForeColor = System.Drawing.Color.Black;
-        }
-
-        private void Txt_ID_TextChanged_1(object sender, EventArgs e)
-        {
-            this.Txt_ID.ForeColor = System.Drawing.Color.Black;
-        }
-
-        private void Txt_ID_Leave(object sender, EventArgs e)
-        {
-            if (this.Txt_ID.Text == "")
+            if (Txt_ID.Text == "")
             {
                 this.Txt_ID.ForeColor = System.Drawing.SystemColors.WindowFrame;
-                this.Txt_ID.Text = "Identifiant";
+                Txt_ID.Text = "Identifiant";
             }
         }
 
-        private void Txt_MDP_Leave(object sender, EventArgs e)
+        private void Txt_MDP_KeyDown(object sender, KeyEventArgs e)
         {
-            if (this.Txt_MDP.Text == "")
+            if (Txt_MDP.Text == "Mot de Passe")
             {
+                this.Txt_MDP.ForeColor = System.Drawing.Color.Black;
+                Txt_MDP.Text = "";
+            }
+        }
 
+        private void Txt_MDP_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (Txt_MDP.Text == "")
+            {
                 this.Txt_MDP.ForeColor = System.Drawing.SystemColors.WindowFrame;
-                this.Txt_MDP.Text = "Mot de Passe";
+                Txt_MDP.Text = "Mot de Passe";
             }
         }
     }

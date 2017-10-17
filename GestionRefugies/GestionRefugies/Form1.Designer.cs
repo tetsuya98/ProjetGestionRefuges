@@ -101,9 +101,8 @@
             this.Txt_MDP.TabIndex = 9;
             this.Txt_MDP.Text = "Mot de Passe";
             this.Txt_MDP.UseSystemPasswordChar = true;
-            this.Txt_MDP.Click += new System.EventHandler(this.Txt_MDP_Click_1);
-            this.Txt_MDP.TextChanged += new System.EventHandler(this.Txt_MDP_TextChanged_1);
-            this.Txt_MDP.Leave += new System.EventHandler(this.Txt_MDP_Leave);
+            this.Txt_MDP.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_MDP_KeyDown);
+            this.Txt_MDP.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_MDP_KeyUp);
             // 
             // Txt_ID
             // 
@@ -114,9 +113,8 @@
             this.Txt_ID.TabIndex = 10;
             this.Txt_ID.Text = "Identifiant";
             this.Txt_ID.UseWaitCursor = true;
-            this.Txt_ID.Click += new System.EventHandler(this.Txt_ID_Click_1);
-            this.Txt_ID.TextChanged += new System.EventHandler(this.Txt_ID_TextChanged_1);
-            this.Txt_ID.Leave += new System.EventHandler(this.Txt_ID_Leave);
+            this.Txt_ID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_ID_KeyDown);
+            this.Txt_ID.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_ID_KeyUp);
             // 
             // Form_Connexion
             // 
