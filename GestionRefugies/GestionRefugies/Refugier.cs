@@ -10,29 +10,12 @@ namespace GestionRefugies
     {
 
         private string sexe;
-        private int age;
-        private int secteur;
+        private DateTime date_nais;
+        
         private int maison;
-
-
-
-        public string Id
-        {
-            get
-            {
-                return id;
-            }
-
-            set
-            {
-                id = value;
-            }
-        }
+        private string nationalite;
 
         
-
-        
-
         public string Sexe
         {
             get
@@ -46,31 +29,9 @@ namespace GestionRefugies
             }
         }
 
-        public int Age
-        {
-            get
-            {
-                return age;
-            }
+       
 
-            set
-            {
-                age = value;
-            }
-        }
-
-        public int Secteur
-        {
-            get
-            {
-                return secteur;
-            }
-
-            set
-            {
-                secteur = value;
-            }
-        }
+        
 
         public int Maison
         {
@@ -85,26 +46,43 @@ namespace GestionRefugies
             }
         }
 
+        public string Nationalite
+        {
+            get
+            {
+                return nationalite;
+            }
 
+            set
+            {
+                nationalite = value;
+            }
+        }
 
-        public Refugier(string nom, string prenom,string motdepasse, string sexe, int age, int secteur, int maison):base(nom, prenom, motdepasse)// constructeur de base du refugier
+        public DateTime Date_nais
+        {
+            get
+            {
+                return date_nais;
+            }
+
+            set
+            {
+                date_nais = value;
+            }
+        }
+
+        public Refugier(string nom, string prenom, string sexe,string motdepasse, DateTime date,string nationalite):base(nom, prenom, motdepasse)// constructeur de base du refugier
         {
             
-            this.Nom = nom;
-            this.Prenom = prenom;
             this.Sexe = sexe;
-            this.Age = age;
-            this.Secteur = secteur;
-            this.Maison = maison;
+            this.Date_nais = date;
+            this.Nationalite = nationalite;
+
             this.Id = "Ref" + Nom + Prenom[0];
         }
 
-        public int Test_Name(string name) //test de la validité du nom du refugier
-        {
-
-
-            return (0);
-        }
+      
 
         
 
