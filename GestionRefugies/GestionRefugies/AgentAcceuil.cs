@@ -9,7 +9,7 @@ namespace GestionRefugies
 {
 
 
-    class AgentAcceuil : User
+    class AgentAccueil : User
     {
         #region variables
         
@@ -17,7 +17,7 @@ namespace GestionRefugies
         
         #region constructeur
         
-        public AgentAcceuil(string nom,string prenom,string motdepasse):base(nom,prenom,motdepasse)
+        public AgentAccueil(string nom,string prenom,string motdepasse):base(nom,prenom,motdepasse)
         {
              
             Id = "AgA" + Nom + Prenom[0];
