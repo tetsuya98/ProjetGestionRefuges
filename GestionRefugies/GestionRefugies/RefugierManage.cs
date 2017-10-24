@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionRefugies
 {
-    class RefugierManage
+    partial class RefugierManage
     {
 
     }
