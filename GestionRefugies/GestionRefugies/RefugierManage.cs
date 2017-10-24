@@ -21,7 +21,7 @@ namespace GestionRefugies
 
 
             ///finir la requete sql
-                string sqlCommand = "INSERT INTO refugies (clef, prenom, nom, nationalite, mdp, camps_id, sexe, dateNais, adresse) VALUES ('clefy', 'prenom', 'nom', 'nationalite', 'mdp', 1, 'F', 'dateNais', 'Adresse')";
+                string sqlCommand = "INSERT INTO refugies (clef, prenom, nom, nationalite, mdp, sexe, dateNais, adresse) VALUES ("+Ref.Id+"," + Ref.Nom+ "," + Ref.Prenom + ","+Ref.Id+","+Ref.Nationalite +","+ Ref.Motdepasse + "," +Ref.Sexe+","+ Ref.Date_nais+")";
                 MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
                 MySqlDataReader read = cmd.ExecuteReader();
                 read.Read();
