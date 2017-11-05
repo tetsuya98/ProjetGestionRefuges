@@ -110,12 +110,39 @@
             // 
             // List_Nationalite
             // 
+            this.List_Nationalite.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.List_Nationalite.FormattingEnabled = true;
             this.List_Nationalite.Items.AddRange(new object[] {
-            "Français",
             "Anglais",
             "Espagnol",
-            "Marocain"});
+            "Allemand",
+            "Italien",
+            "Portugais",
+            "Belge",
+            "Suisse",
+            "Polonais",
+            "Ukrainien",
+            "Chinois",
+            "Indien",
+            "Russe",
+            "Japonais",
+            "Americain",
+            "Canadien",
+            "Mexicain",
+            "Bresilien",
+            "Colombien",
+            "Cubain",
+            "Marocain",
+            "Turc",
+            "Algerien",
+            "Tunisien",
+            "Syrien",
+            "Egyptien",
+            "Soudanais",
+            "Congolais",
+            "Senegalais",
+            "Sud-Africain",
+            "Autre"});
             this.List_Nationalite.Location = new System.Drawing.Point(349, 156);
             this.List_Nationalite.Name = "List_Nationalite";
             this.List_Nationalite.Size = new System.Drawing.Size(148, 21);
