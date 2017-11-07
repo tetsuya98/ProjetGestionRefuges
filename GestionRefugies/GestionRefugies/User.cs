@@ -103,7 +103,12 @@ namespace GestionRefugies
 
         #region méthode
 
-
+        /// <summary>
+        /// fonction de hashage
+        /// </summary>
+        /// <param name="Password">mot de passe à hasher</param>
+        /// <param name="Salt">permet de rendre les mot de passes tous différents</param>
+        /// <returns></returns>
         public static string Hashage(string Password, string Salt)
         {
             System.Security.Cryptography.SHA512Managed HashTool = new System.Security.Cryptography.SHA512Managed();
