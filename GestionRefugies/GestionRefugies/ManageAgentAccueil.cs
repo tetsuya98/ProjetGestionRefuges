@@ -50,6 +50,7 @@ namespace GestionRefugies
             }
             catch (MySqlException ex)
             {
+               
                 //traitement de l'exception...
                 return false;
             }
