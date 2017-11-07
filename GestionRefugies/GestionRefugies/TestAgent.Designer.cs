@@ -34,6 +34,8 @@
             this.Btn_Valider = new System.Windows.Forms.Button();
             this.MAP = new System.Windows.Forms.PictureBox();
             this.Txt_Adress = new System.Windows.Forms.TextBox();
+            this.creer = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MAP)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,11 +101,33 @@
             this.Txt_Adress.TabIndex = 7;
             this.Txt_Adress.Text = "Adresse du Camp";
             // 
+            // creer
+            // 
+            this.creer.Location = new System.Drawing.Point(103, 278);
+            this.creer.Name = "creer";
+            this.creer.Size = new System.Drawing.Size(75, 23);
+            this.creer.TabIndex = 8;
+            this.creer.Text = "creer";
+            this.creer.UseVisualStyleBackColor = true;
+            this.creer.Click += new System.EventHandler(this.creer_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(194, 278);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Connexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 361);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.creer);
             this.Controls.Add(this.Txt_Adress);
             this.Controls.Add(this.MAP);
             this.Controls.Add(this.Btn_Valider);
@@ -128,6 +152,8 @@
         private System.Windows.Forms.Button Btn_Valider;
         private System.Windows.Forms.PictureBox MAP;
         private System.Windows.Forms.TextBox Txt_Adress;
+        private System.Windows.Forms.Button creer;
+        private System.Windows.Forms.Button button1;
     }
 }
 

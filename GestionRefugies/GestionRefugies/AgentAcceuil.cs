@@ -9,7 +9,7 @@ namespace GestionRefugies
 {
 
 
-    class AgentAccueil : User
+    public class AgentAccueil : User
     {
         #region variables
         
