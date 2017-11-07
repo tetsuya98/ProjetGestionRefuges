@@ -16,8 +16,6 @@ namespace GestionRefugies
 
             ///fctn verfi champs
                 Refugier Ref = new Refugier(nom, prenom, sexe, mdp, date_naiss, nationalite);
-                
-
 
 
             ///finir la requete sql
