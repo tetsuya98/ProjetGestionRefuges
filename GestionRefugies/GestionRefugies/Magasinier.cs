@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 
 namespace GestionRefugies
 {
-    class Magasinier
+    public class Magasinier : User
     {
         #region champs
         //declarer les champs
 
-        private string nom;
-        private string prenom;
-        private string id;
-        private string password;
+        private string adresse;
 
         #endregion
 
@@ -22,12 +19,10 @@ namespace GestionRefugies
 
         //declarer le constructeur
 
-        public Magasinier(string nom, string prenom, string passwrod)
+        public Magasinier(string nom, string prenom, string password, string adresse) : base (nom, prenom, password)
         {
-            this.Nom = nom;
-            this.Prenom = prenom;
-            this.Id = id;
-            this.Password = password;
+            this.Id = "Mag" + nom + prenom[0];
+            this.adresse = adresse;
         } 
 
         #endregion
@@ -36,63 +31,15 @@ namespace GestionRefugies
 
         //accesseur 
 
-        public string Nom
+        public string Adresse
         {
             get
             {
-                return nom;
+                return adresse;
             }
-
             set
             {
-                try
-                {
-                    nom = value;
-                }
-                catch (Exception e)
-                {
-                    throw new Exception = A
-                }
-                
-            }
-        }
-
-        public string Prenom
-        {
-            get
-            {
-                return prenom;
-            }
-
-            set
-            {
-                prenom = value;
-            }
-        }
-
-        public string Id
-        {
-            get
-            {
-                return id;
-            }
-
-            set
-            {
-                id = value;
-            }
-        }
-
-        public string Password
-        {
-            get
-            {
-                return password;
-            }
-
-            set
-            {
-                password = value;
+                adresse = value;
             }
         }
 
@@ -100,17 +47,6 @@ namespace GestionRefugies
 
         #region methode
 
-        //declarer les methodes
-
-     /*   public void AjoutMag(string nom, string prenom, string id, string password)
-        {
-            //lié à la bdd
-        }
-
-        public void DeleteMag(string nom, string prenom, string id, string password)
-        {
-            //lié à la bdd
-        }   */
          
         #endregion
 

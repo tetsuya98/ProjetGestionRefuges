@@ -15,7 +15,7 @@ namespace GestionRefugies
         {
             if (bd == null)
             {
-                bd = new MySqlConnection("database=gestionrefugie; server=localhost; user id=root; pwd=");
+                bd = new MySqlConnection("database=gestionrefugie; server=localhost; user id=root; pwd=root");
                 try
                 {
                     bd.Open();
