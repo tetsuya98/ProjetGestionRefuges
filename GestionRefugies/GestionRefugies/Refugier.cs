@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace GestionRefugies
 {
-    partial class Refugier
+    partial class Refugier : User
     {
-        private int id;
-        private string nom;
-        private string prenom;
+
         private string sexe;
         private int age;
         private int secteur;
@@ -18,7 +16,7 @@ namespace GestionRefugies
 
 
 
-        public int Id
+        public string Id
         {
             get
             {
@@ -31,31 +29,9 @@ namespace GestionRefugies
             }
         }
 
-        public string Nom
-        {
-            get
-            {
-                return nom;
-            }
+        
 
-            set
-            {
-                nom = value;
-            }
-        }
-
-        public string Prenom
-        {
-            get
-            {
-                return prenom;
-            }
-
-            set
-            {
-                prenom = value;
-            }
-        }
+        
 
         public string Sexe
         {
@@ -111,16 +87,16 @@ namespace GestionRefugies
 
 
 
-        public Refugier(int iD, string noM, string prenoM, string sexE, int agE, int secteuR, int maisoN) // constructeur de base du refugier
+        public Refugier(string nom, string prenom,string motdepasse, string sexe, int age, int secteur, int maison):base(nom, prenom, motdepasse)// constructeur de base du refugier
         {
-            Id = iD;
-            Nom = noM;
-            Prenom = prenoM;
-            Sexe = sexE;
-            Age = agE;
-            Secteur = secteuR;
-            Maison = maisoN;
-
+            
+            this.Nom = nom;
+            this.Prenom = prenom;
+            this.Sexe = sexe;
+            this.Age = age;
+            this.Secteur = secteur;
+            this.Maison = maison;
+            this.Id = "Ref" + Nom + Prenom[0];
         }
 
         public int Test_Name(string name) //test de la validité du nom du refugier
@@ -129,6 +105,8 @@ namespace GestionRefugies
 
             return (0);
         }
+
+        
 
 
     }
