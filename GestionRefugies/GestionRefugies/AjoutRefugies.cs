@@ -124,7 +124,7 @@ namespace GestionRefugies
 
             // ce if est degueulasse ... désolé
 
-            if (Txt_Nom.Text != "Nom" && Txt_Nom.Text != "Nom Incorrect" && Txt_Prenom.Text != "Prenom" && Txt_Prenom.Text != "Prenom Incorrect" && Txt_MDP.Text != "Mot de passe" && Txt_MDP.Text != "Mot de passe Incorrect" && Txt_ID.Text != "Identifiant" && Txt_ID.Text != "Identifiant Incorrect" && List_Nationalite.Text != "")
+            if (Txt_Nom.Text != "Nom" && Txt_Nom.Text != "Nom Incorrect" && Txt_Prenom.Text != "Prenom" && Txt_Prenom.Text != "Prenom Incorrect" && Txt_MDP.Text != "Mot de passe" && Txt_MDP.Text != "Mot de passe Incorrect" && Txt_ID.Text != "Identifiant" && Txt_ID.Text != "Identifiant Incorrect" && List_Nationalite.Text != "" && (RdBtn_Femme.Checked == true || RdBtn_Homme.Checked == true))
             {
                 //appel bd
 
@@ -151,17 +151,33 @@ namespace GestionRefugies
                     this.Txt_ID.ForeColor = System.Drawing.Color.Red;
                     Txt_ID.Text = "Identifiant Incorrect";
                 }
-                //if (List_Nationalite.Text == "")
-                //{
-                //    Lbl_ErrNation.Visible = true;
-                //}
-                //else
-                //{
-                //    Lbl_ErrNation.Visible = false;
-                //}
+                if (List_Nationalite.Text == "")
+                {
+                    Lbl_ErrNation.Visible = true;
+                }
+                else
+                {
+                    Lbl_ErrNation.Visible = false;
+                }
+                if (RdBtn_Homme.Checked == false && RdBtn_Femme.Checked == false)
+                {
+                    Lbl_Sexe.Visible = true;
+                }
+                else
+                {
+                    Lbl_Sexe.Visible = false;
+                }
             }
-        } 
+        }
         #endregion
 
+        private void DatePicker_DatNaiss_ValueChanged(object sender, EventArgs e)
+        {
+            
+            if (DatePicker_DatNaiss.Value >= DateTime.Now)
+            {
+                DatePicker_DatNaiss.Value = DateTime.Now;
+            }
+        }
     }
 }

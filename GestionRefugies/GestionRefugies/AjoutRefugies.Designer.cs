@@ -43,6 +43,8 @@
             this.Txt_Nom = new System.Windows.Forms.MaskedTextBox();
             this.tabPageRechercheRef = new System.Windows.Forms.TabPage();
             this.tabPageStock = new System.Windows.Forms.TabPage();
+            this.Lbl_Sexe = new System.Windows.Forms.Label();
+            this.Lbl_ErrNation = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPageAjoutRef.SuspendLayout();
             this.SuspendLayout();
@@ -62,6 +64,8 @@
             // tabPageAjoutRef
             // 
             this.tabPageAjoutRef.BackColor = System.Drawing.Color.Transparent;
+            this.tabPageAjoutRef.Controls.Add(this.Lbl_ErrNation);
+            this.tabPageAjoutRef.Controls.Add(this.Lbl_Sexe);
             this.tabPageAjoutRef.Controls.Add(this.Btn_Ajout);
             this.tabPageAjoutRef.Controls.Add(this.Lbl_Nationalite);
             this.tabPageAjoutRef.Controls.Add(this.Lbl_DateNaiss);
@@ -154,6 +158,7 @@
             this.DatePicker_DatNaiss.Name = "DatePicker_DatNaiss";
             this.DatePicker_DatNaiss.Size = new System.Drawing.Size(200, 20);
             this.DatePicker_DatNaiss.TabIndex = 6;
+            this.DatePicker_DatNaiss.ValueChanged += new System.EventHandler(this.DatePicker_DatNaiss_ValueChanged);
             // 
             // RdBtn_Femme
             // 
@@ -241,6 +246,28 @@
             this.tabPageStock.Text = "Gestion des Stocks";
             this.tabPageStock.UseVisualStyleBackColor = true;
             // 
+            // Lbl_Sexe
+            // 
+            this.Lbl_Sexe.AutoSize = true;
+            this.Lbl_Sexe.ForeColor = System.Drawing.Color.Red;
+            this.Lbl_Sexe.Location = new System.Drawing.Point(117, 131);
+            this.Lbl_Sexe.Name = "Lbl_Sexe";
+            this.Lbl_Sexe.Size = new System.Drawing.Size(131, 13);
+            this.Lbl_Sexe.TabIndex = 12;
+            this.Lbl_Sexe.Text = "Veuillez renseigner le sexe";
+            this.Lbl_Sexe.Visible = false;
+            // 
+            // Lbl_ErrNation
+            // 
+            this.Lbl_ErrNation.AutoSize = true;
+            this.Lbl_ErrNation.ForeColor = System.Drawing.Color.Red;
+            this.Lbl_ErrNation.Location = new System.Drawing.Point(392, 182);
+            this.Lbl_ErrNation.Name = "Lbl_ErrNation";
+            this.Lbl_ErrNation.Size = new System.Drawing.Size(157, 13);
+            this.Lbl_ErrNation.TabIndex = 13;
+            this.Lbl_ErrNation.Text = "Veuillez renseigner la nationalite";
+            this.Lbl_ErrNation.Visible = false;
+            // 
             // AjoutRefugies
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -274,5 +301,7 @@
         private System.Windows.Forms.Label Lbl_DateNaiss;
         private System.Windows.Forms.Button Btn_Ajout;
         private System.Windows.Forms.Label Lbl_Nationalite;
+        private System.Windows.Forms.Label Lbl_ErrNation;
+        private System.Windows.Forms.Label Lbl_Sexe;
     }
 }
