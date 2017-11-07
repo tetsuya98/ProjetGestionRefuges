@@ -19,14 +19,14 @@ namespace GestionRefugies
                 try
                 {
                     bd.Open();
-                    return bd;
                 }
                 catch (MySqlException exp)
                 {
                     System.Diagnostics.Debug.WriteLine(exp.ToString());
+                    return null;
                 }
             }
-            return null;
+            return bd;
         }
     }
 }
