@@ -10,6 +10,7 @@ namespace GestionRefugies
     {
         #region variables
 
+
         /// <summary>
         /// nom de l'utilisateur
         /// </summary>
@@ -27,18 +28,19 @@ namespace GestionRefugies
         /// </summary>
         protected string motdepasse;
         #endregion
+        
+        #region constructeur
         /// <summary>
         /// constructeur de la classe Agent d'accueil
         /// </summary>
         /// <param name="nom">nom de l'agent d'acceuil</param>
         /// <param name="prenom">prénom de l'agent</param>
         /// <param name="motdepasse">mot de passe de l'utilisateur</param>
-        #region constructeur
         public User(string nom, string prenom, string motdepasse)
         {
             this.Nom = nom;
             this.Prenom = prenom;
-            this.Motdepasse = motdepasse;
+            this.Motdepasse = Hashage(motdepasse,prenom);
         }
 
         #endregion
@@ -101,6 +103,16 @@ namespace GestionRefugies
 
         #region méthode
 
+
+        public static string Hashage(string Password, string Salt)
+        {
+            System.Security.Cryptography.SHA512Managed HashTool = new System.Security.Cryptography.SHA512Managed();
+            Byte[] PasswordAsByte = System.Text.Encoding.UTF8.GetBytes(string.Concat(Password, Salt));
+            Byte[] EncryptedBytes = HashTool.ComputeHash(PasswordAsByte);
+            HashTool.Clear();
+            return Convert.ToBase64String(EncryptedBytes);
+
+        }
 
 
 
