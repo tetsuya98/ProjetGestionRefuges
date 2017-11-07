@@ -3,36 +3,79 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace GestionRefugies
 {
-    class MagasinierManage
+    public class MagasinierManage
     {
-        public static void ajouterMagasinier(string login, string nom, string adresse)
+        public static bool AjouterMagasinier(Magasinier maga)
         {
-            string sqlCommand = $"INSERT INTO magasinier (clef, nom, adresse) VALUES ('{login}', '{nom}', '{adresse})";
-            MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
-            MySqlDataReader read = cmd.ExecuteReader();
-            read.Read();
-            read.Close();
+
+            String sql = "INSERT INTO magasinier (clef, nom, adresse, mdp) VALUES (?,?,?,?)";
+
+            MySqlCommand cmd = new MySqlCommand(sql, Database.getBD());
+
+            cmd.CommandText = sql;
+
+            cmd.Parameters.AddWithValue("@clef", maga.Id);
+            cmd.Parameters.AddWithValue("@nom", maga.Nom);
+            cmd.Parameters.AddWithValue("@adresse", maga.Adresse);
+            cmd.Parameters.AddWithValue("@mdp", maga.Motdepasse);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                return false;
+            }
         }
 
-        public static void supprimerMagasinier(string login)
+        public static bool supprimerMagasinier(Magasinier maga)
         {
-            string sqlCommand = $"DELETE FROM magasinier WHERE clef = '{login}'";
-            MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
-            MySqlDataReader read = cmd.ExecuteReader();
-            read.Read();
-            read.Close();
+            String sql = "DELETE FROM magasinier WHERE clef = ?";
+
+            MySqlCommand cmd = new MySqlCommand(sql, Database.getBD());
+
+            cmd.CommandText = sql;
+
+            cmd.Parameters.AddWithValue("@clef", maga.Id);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                return false;
+            } 
         }
 
-        public static void updateMagasinier(string login, string nom, string adresse)
+        /*public static bool updateMagasinier(Magasinier maga)
         {
-            string sqlCommand = $"UPDATE magasinier nom = '{nom}', adresse = '{adresse}' WHERE clef = '{login}'";
-            MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
-            MySqlDataReader read = cmd.ExecuteReader();
-            read.Read();
-            read.Close();
-        }
+            String sql = "UPDATE magasinier nom = ?, adresse = ? WHERE clef = ?";
+
+            MySqlCommand cmd = new MySqlCommand(sql, Database.getBD());
+
+            cmd.CommandText = sql;
+
+            cmd.Parameters.AddWithValue("@nom", maga.Id);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                return false;
+            }
+
+            
+        }*/
     }
 }
