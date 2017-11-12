@@ -34,7 +34,7 @@ namespace GestionRefugies
             }
         }
 
-        public static bool supprimerMagasinier(Magasinier maga)
+        public static bool supprimerMagasinier(string id)
         {
             String sql = "DELETE FROM magasinier WHERE clef = ?";
 
@@ -42,7 +42,7 @@ namespace GestionRefugies
 
             cmd.CommandText = sql;
 
-            cmd.Parameters.AddWithValue("@clef", maga.Id);
+            cmd.Parameters.AddWithValue("@clef", id);
 
             try
             {
