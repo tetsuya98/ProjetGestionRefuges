@@ -13,25 +13,9 @@ namespace GestionRefugies
         private int age;
         private int secteur;
         private int maison;
+        private DateTime date_nais;
+        private string nationalite;
 
-
-
-        public string Id
-        {
-            get
-            {
-                return id;
-            }
-
-            set
-            {
-                id = value;
-            }
-        }
-
-        
-
-        
 
         public string Sexe
         {
@@ -46,19 +30,7 @@ namespace GestionRefugies
             }
         }
 
-        public int Age
-        {
-            get
-            {
-                return age;
-            }
-
-            set
-            {
-                age = value;
-            }
-        }
-
+    
         public int Secteur
         {
             get
@@ -85,16 +57,40 @@ namespace GestionRefugies
             }
         }
 
+        public DateTime Date_nais
+        {
+            get
+            {
+                return date_nais;
+            }
 
+            set
+            {
+                date_nais = value;
+            }
+        }
 
-        public Refugier(string nom, string prenom,string motdepasse, string sexe, int age, int secteur, int maison):base(nom, prenom, motdepasse)// constructeur de base du refugier
+        public string Nationalite
+        {
+            get
+            {
+                return nationalite;
+            }
+
+            set
+            {
+                nationalite = value;
+            }
+        }
+
+        public Refugier(string nom, string prenom,string motdepasse, string sexe, DateTime date_nais, string nationalite, int maison):base(nom, prenom, motdepasse)// constructeur de base du refugier
         {
             
-            this.Nom = nom;
+            this.Nom = nom; 
             this.Prenom = prenom;
             this.Sexe = sexe;
-            this.Age = age;
-            this.Secteur = secteur;
+            this.date_nais = date_nais;
+            this.nationalite = nationalite;
             this.Maison = maison;
             this.Id = "Ref" + Nom + Prenom[0];
         }

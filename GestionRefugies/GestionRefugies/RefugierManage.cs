@@ -10,12 +10,12 @@ namespace GestionRefugies
     partial class RefugierManage
     {
             
-            public static bool ajouterRefugier(string nom,string prenom,string sexe,string mdp, DateTime date_naiss, string nationalite)
+            public static bool ajouterRefugier(string nom,string prenom,string sexe,string mdp, DateTime date_naiss, string nationalite, int maison)
             {
 
 
             ///fctn verfi champs
-                Refugier Ref = new Refugier(nom, prenom, sexe, mdp, date_naiss, nationalite);
+                Refugier Ref = new Refugier(nom, prenom,  mdp, sexe, date_naiss, nationalite,maison);
                 
 
 
