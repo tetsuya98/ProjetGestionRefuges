@@ -10,8 +10,8 @@ namespace GestionRefugies
     {
 
         private string sexe;
-        private int age;
-        private int secteur;
+        private DateTime date_nais;
+        
         private int maison;
         private DateTime date_nais;
         private string nationalite;
@@ -95,8 +95,7 @@ namespace GestionRefugies
             this.Id = "Ref" + Nom + Prenom[0];
         }
 
-        public int Test_Name(string name) //test de la validité du nom du refugier
-        {
+      
 
 
             return (0);

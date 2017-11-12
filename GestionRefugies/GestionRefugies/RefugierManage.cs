@@ -28,5 +28,20 @@ namespace GestionRefugies
                 read.Close();
                 return true;
             }
+            //Envoi des paramètres
+               /* cmd.Parameters.Add(post.Name);
+                cmd.Parameters.Add(post.Content);
+                cmd.Parameters.Add(post.Author); */
+                try
+                {
+                    //Execution de la commande SQL qui peut provoquer des exceptions
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                catch (MySqlException ex)
+                {
+                    //traitement de l'exception...
+                    return false;
+                }
     }
 }
