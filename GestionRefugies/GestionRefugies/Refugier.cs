@@ -13,7 +13,7 @@ namespace GestionRefugies
         private DateTime date_nais;
         
         private int maison;
-        private DateTime date_nais;
+      
         private string nationalite;
 
 
@@ -31,18 +31,7 @@ namespace GestionRefugies
         }
 
     
-        public int Secteur
-        {
-            get
-            {
-                return secteur;
-            }
-
-            set
-            {
-                secteur = value;
-            }
-        }
+    
 
         public int Maison
         {
@@ -95,9 +84,10 @@ namespace GestionRefugies
             this.Id = "Ref" + Nom + Prenom[0];
         }
 
-      
 
 
+        public int Test_Name(string name) //test de la validité du nom du refugier 
+        { 
             return (0);
         }
 
