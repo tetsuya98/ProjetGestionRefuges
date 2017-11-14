@@ -61,23 +61,74 @@ public static void modifierRefugierAdresse(string id,string Adresse)
             	read.Read();
             	read.Close();
         	}
+//---------------------------------------------------------Refugier-Ajout--------------------------------------------------------------
+        public static bool add(Refugier refu)
+        {
+            //requete SQL
+            String sql = "INSERT INTO refugies (clef, prenom, nom, mdp) VALUES (?,?,?,?)";
 
+            MySqlCommand cmd = new MySqlCommand(sql, Database.getBD());
 
-//---------------------------------------------------------Refugier-Suppréssion--------------------------------------------------------
+            cmd.CommandText = sql;
 
+            //Envoi des paramètres
+            cmd.Parameters.AddWithValue("@Id", refu.Id);
+            cmd.Parameters.AddWithValue("@Prenom", refu.Prenom);
+            cmd.Parameters.AddWithValue("@Nom", refu.Nom);
+            cmd.Parameters.AddWithValue("@Motdepasse", refu.Motdepasse);
 
-public static void SupprimerRefugier(string id)
-		{
-          	    string sqlCommand = ("DELETE from refuiges WHERE id = " + id);
-            	MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
-            	MySqlDataReader read = cmd.ExecuteReader();
-            	read.Read();
-            	read.Close();
-		}
-//--------------------------------------------Verification que le refugier n'est pas encore---------------------------------------------
-
-//Dans une class partiel de celle de roman .
-
+            try
+            {
+                //Execution de la commande SQL qui peut provoquer des exceptions
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                //traitement de l'exception...
+                return false;
+            }
+        }
+       
     }
+    //---------------------------------------------------------Refugier-Suppréssion--------------------------------------------------------
+
+    /*
+    public static void SupprimerRefugier(string id)
+            {
+                    string sqlCommand = ("DELETE from refuiges WHERE id = " + id);
+                    MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
+                    MySqlDataReader read = cmd.ExecuteReader();
+                    read.Read();
+                    read.Close();
+            }*/
+
+    public static bool supp(string id)
+        {
+            //requete SQL
+            String sql = "DELETE FROM refugier WHERE refugies.`clef` =? ";
+
+            MySqlCommand cmd = new MySqlCommand(sql, Database.getBD());
+
+            cmd.CommandText = sql;
+
+            cmd.Parameters.AddWithValue("@Id", id);
+
+
+
+            try
+            {
+                //Execution de la commande SQL qui peut provoquer des exceptions
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                //traitement de l'exception...
+                return false;
+            }
+        }
+//--------------------------------------------Verification que le refugier n'est pas encore---------------------------------------------
+    
 }
 
