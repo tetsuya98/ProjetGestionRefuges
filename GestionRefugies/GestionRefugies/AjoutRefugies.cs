@@ -76,27 +76,6 @@ namespace GestionRefugies
         #endregion
 
 
-        #region Txt_ID
-        private void Txt_ID_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (Txt_ID.Text == "Identifiant" || Txt_ID.Text == "Identifiant Incorrect")
-            {
-                this.Txt_ID.ForeColor = System.Drawing.Color.Black;
-                Txt_ID.Text = "";
-            }
-        }
-
-        private void Txt_ID_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (Txt_ID.Text == "")
-            {
-                this.Txt_ID.ForeColor = System.Drawing.SystemColors.WindowFrame;
-                Txt_ID.Text = "Identifiant";
-            }
-        }
-        #endregion
-
-
         #region Txt_MDP
         private void Txt_MDP_KeyDown(object sender, KeyEventArgs e)
         {
@@ -124,9 +103,27 @@ namespace GestionRefugies
 
             // ce if est degueulasse ... désolé
 
-            if (Txt_Nom.Text != "Nom" && Txt_Nom.Text != "Nom Incorrect" && Txt_Prenom.Text != "Prenom" && Txt_Prenom.Text != "Prenom Incorrect" && Txt_MDP.Text != "Mot de passe" && Txt_MDP.Text != "Mot de passe Incorrect" && Txt_ID.Text != "Identifiant" && Txt_ID.Text != "Identifiant Incorrect" && List_Nationalite.Text != "" && (RdBtn_Femme.Checked == true || RdBtn_Homme.Checked == true))
+            if (Txt_Nom.Text != "Nom" && Txt_Nom.Text != "Nom Incorrect" && Txt_Prenom.Text != "Prenom" && Txt_Prenom.Text != "Prenom Incorrect" && Txt_MDP.Text != "Mot de passe" && Txt_MDP.Text != "Mot de passe Incorrect" && List_Nationalite.Text != "" && (RdBtn_Femme.Checked == true || RdBtn_Homme.Checked == true))
             {
-                //appel bd
+                String sex;
+                if (RdBtn_Femme.Checked == true)
+                {
+                    sex = "Femme";
+                }
+                else
+                {
+                    sex = "Homme";
+                }
+                Refugier refu = new Refugier(Txt_Nom.Text, Txt_Prenom.Text, Txt_MDP.Text, sex, DatePicker_DatNaiss.Value, List_Nationalite.Text, 1);
+                bool res = RefugierManage.ajouterRefugier(refu);
+                if( res)
+                {
+                    MessageBox.Show("Ajout validé et enregistré dans la BDD");
+                }
+                else
+                {
+                    MessageBox.Show("erreur creation refugier");
+                }
 
             }
             else
@@ -145,11 +142,6 @@ namespace GestionRefugies
                 {
                     this.Txt_MDP.ForeColor = System.Drawing.Color.Red;
                     Txt_MDP.Text = "Mot de Passe Incorrect";
-                }
-                if (Txt_ID.Text == "" || Txt_ID.Text == "Identifiant")
-                {
-                    this.Txt_ID.ForeColor = System.Drawing.Color.Red;
-                    Txt_ID.Text = "Identifiant Incorrect";
                 }
                 if (List_Nationalite.Text == "")
                 {
@@ -179,5 +171,7 @@ namespace GestionRefugies
                 DatePicker_DatNaiss.Value = DateTime.Now;
             }
         }
+
+       
     }
 }

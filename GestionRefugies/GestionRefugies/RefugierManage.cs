@@ -10,28 +10,32 @@ namespace GestionRefugies
     partial class RefugierManage
     {
 
-        public static bool ajouterRefugier(string nom, string prenom, string sexe, string mdp, DateTime date_naiss, string nationalite, int maison)
+        public static bool ajouterRefugier(Refugier Ref)
         {
 
 
-            ///fctn verfi champs
-            Refugier Ref = new Refugier(nom, prenom, mdp, sexe, date_naiss, nationalite, maison);
 
 
 
 
             ///finir la requete sql
-            string sqlCommand = "INSERT INTO refugies (clef, prenom, nom, nationalite, mdp, sexe, dateNais, adresse) VALUES (" + Ref.Id + "," + Ref.Prenom + "," + Ref.Nom + "," + Ref.Nationalite + "," + Ref.Motdepasse + "," + Ref.Sexe + "," + Ref.Date_nais + ")";
+            string sqlCommand = "INSERT INTO refugies (clef, prenom, nom, nationalite, mdp, sexe, dateNais, adresse) VALUES (?,?,?,?,?,?,?,?)";
             MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
-            MySqlDataReader read = cmd.ExecuteReader();
-            read.Read();
-            read.Close();
-            return true;
+           
+
+            cmd.CommandText = sqlCommand;
+
 
             //Envoi des paramètres
-            /* cmd.Parameters.Add(post.Name);
-             cmd.Parameters.Add(post.Content);
-             cmd.Parameters.Add(post.Author); */
+            cmd.Parameters.AddWithValue("@Id", Ref.Id);
+            cmd.Parameters.AddWithValue("@nom", Ref.Nom);
+            cmd.Parameters.AddWithValue("@prenom", Ref.Prenom);
+            cmd.Parameters.AddWithValue("@nationalite", Ref.Nationalite);
+            cmd.Parameters.AddWithValue("@mdp", Ref.Motdepasse);
+            cmd.Parameters.AddWithValue("@sexe", Ref.Sexe);
+            cmd.Parameters.AddWithValue("@Datenais", Ref.Date_nais);
+            cmd.Parameters.AddWithValue("@maison",Ref.Maison.ToString());
+        
             try
             {
                 //Execution de la commande SQL qui peut provoquer des exceptions
