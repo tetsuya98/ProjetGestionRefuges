@@ -30,6 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageAjoutRef = new System.Windows.Forms.TabPage();
+            this.Lbl_ErrNation = new System.Windows.Forms.Label();
+            this.Lbl_Sexe = new System.Windows.Forms.Label();
             this.Btn_Ajout = new System.Windows.Forms.Button();
             this.Lbl_Nationalite = new System.Windows.Forms.Label();
             this.Lbl_DateNaiss = new System.Windows.Forms.Label();
@@ -43,8 +45,7 @@
             this.Txt_Nom = new System.Windows.Forms.MaskedTextBox();
             this.tabPageRechercheRef = new System.Windows.Forms.TabPage();
             this.tabPageStock = new System.Windows.Forms.TabPage();
-            this.Lbl_Sexe = new System.Windows.Forms.Label();
-            this.Lbl_ErrNation = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPageAjoutRef.SuspendLayout();
             this.SuspendLayout();
@@ -64,6 +65,7 @@
             // tabPageAjoutRef
             // 
             this.tabPageAjoutRef.BackColor = System.Drawing.Color.Transparent;
+            this.tabPageAjoutRef.Controls.Add(this.button1);
             this.tabPageAjoutRef.Controls.Add(this.Lbl_ErrNation);
             this.tabPageAjoutRef.Controls.Add(this.Lbl_Sexe);
             this.tabPageAjoutRef.Controls.Add(this.Btn_Ajout);
@@ -83,6 +85,28 @@
             this.tabPageAjoutRef.Size = new System.Drawing.Size(652, 311);
             this.tabPageAjoutRef.TabIndex = 0;
             this.tabPageAjoutRef.Text = "Ajouter un Refugié";
+            // 
+            // Lbl_ErrNation
+            // 
+            this.Lbl_ErrNation.AutoSize = true;
+            this.Lbl_ErrNation.ForeColor = System.Drawing.Color.Red;
+            this.Lbl_ErrNation.Location = new System.Drawing.Point(392, 182);
+            this.Lbl_ErrNation.Name = "Lbl_ErrNation";
+            this.Lbl_ErrNation.Size = new System.Drawing.Size(157, 13);
+            this.Lbl_ErrNation.TabIndex = 13;
+            this.Lbl_ErrNation.Text = "Veuillez renseigner la nationalite";
+            this.Lbl_ErrNation.Visible = false;
+            // 
+            // Lbl_Sexe
+            // 
+            this.Lbl_Sexe.AutoSize = true;
+            this.Lbl_Sexe.ForeColor = System.Drawing.Color.Red;
+            this.Lbl_Sexe.Location = new System.Drawing.Point(117, 131);
+            this.Lbl_Sexe.Name = "Lbl_Sexe";
+            this.Lbl_Sexe.Size = new System.Drawing.Size(131, 13);
+            this.Lbl_Sexe.TabIndex = 12;
+            this.Lbl_Sexe.Text = "Veuillez renseigner le sexe";
+            this.Lbl_Sexe.Visible = false;
             // 
             // Btn_Ajout
             // 
@@ -246,27 +270,15 @@
             this.tabPageStock.Text = "Gestion des Stocks";
             this.tabPageStock.UseVisualStyleBackColor = true;
             // 
-            // Lbl_Sexe
+            // button1
             // 
-            this.Lbl_Sexe.AutoSize = true;
-            this.Lbl_Sexe.ForeColor = System.Drawing.Color.Red;
-            this.Lbl_Sexe.Location = new System.Drawing.Point(117, 131);
-            this.Lbl_Sexe.Name = "Lbl_Sexe";
-            this.Lbl_Sexe.Size = new System.Drawing.Size(131, 13);
-            this.Lbl_Sexe.TabIndex = 12;
-            this.Lbl_Sexe.Text = "Veuillez renseigner le sexe";
-            this.Lbl_Sexe.Visible = false;
-            // 
-            // Lbl_ErrNation
-            // 
-            this.Lbl_ErrNation.AutoSize = true;
-            this.Lbl_ErrNation.ForeColor = System.Drawing.Color.Red;
-            this.Lbl_ErrNation.Location = new System.Drawing.Point(392, 182);
-            this.Lbl_ErrNation.Name = "Lbl_ErrNation";
-            this.Lbl_ErrNation.Size = new System.Drawing.Size(157, 13);
-            this.Lbl_ErrNation.TabIndex = 13;
-            this.Lbl_ErrNation.Text = "Veuillez renseigner la nationalite";
-            this.Lbl_ErrNation.Visible = false;
+            this.button1.Location = new System.Drawing.Point(486, 251);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 20);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "google map";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // AjoutRefugies
             // 
@@ -303,5 +315,6 @@
         private System.Windows.Forms.Label Lbl_Nationalite;
         private System.Windows.Forms.Label Lbl_ErrNation;
         private System.Windows.Forms.Label Lbl_Sexe;
+        private System.Windows.Forms.Button button1;
     }
 }

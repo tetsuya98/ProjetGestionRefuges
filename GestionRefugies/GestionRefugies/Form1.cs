@@ -21,9 +21,14 @@ namespace GestionRefugies
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+
+
+        
+
         private void Form1_Load(object sender, EventArgs e)
         {
             this.Txt_Adress.Text = /*appel de BD*/ "Adresse du Camps";
+            
         }
         /// <summary>
         /// Btn_Valider_Click appelle la BD pour verifier les mots de passe/id
@@ -82,5 +87,9 @@ namespace GestionRefugies
                 Txt_MDP.Text = "Mot de Passe";
             }
         }
+
+       
+       
+        
     }
 }
