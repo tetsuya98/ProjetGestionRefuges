@@ -16,7 +16,7 @@ namespace GestionRefugies
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AjoutRefugies());
+            Application.Run(new Ajout());
         }
     }
 }
