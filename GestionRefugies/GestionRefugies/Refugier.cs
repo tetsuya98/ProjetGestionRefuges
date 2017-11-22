@@ -22,7 +22,7 @@ namespace GestionRefugies
         /// <summary>
         /// identifiant du refugier
         /// </summary>
-        protected string id;
+        protected int id;
 
         /// <summary>
         /// sexe du refugier
@@ -46,73 +46,68 @@ namespace GestionRefugies
         #endregion
 
         #region propriete
+        public string Nom
+        {
+            get
+            {
+                return nom;
+            }
+        }
+        public string Prenom
+        {
+            get
+            {
+                return nom;
+            }
+        }
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+        }
         public string Sexe
         {
             get
             {
                 return sexe;
             }
-
-            set
-            {
-                sexe = value;
-            }
         }
-
-    
-    
-
-        public int Maison
-        {
-            get
-            {
-                return maison;
-            }
-
-            set
-            {
-                maison = value;
-            }
-        }
-
         public DateTime Date_nais
         {
             get
             {
                 return date_nais;
             }
-
-            set
+        }
+        public int Adresse
+        {
+            get
             {
-                date_nais = value;
+                return adresse;
             }
         }
-
-        public string Nationalite
+        public string Nationnalite
         {
             get
             {
                 return nationalite;
             }
-
-            set
-            {
-                nationalite = value;
-            }
         }
         #endregion
 
         #region methode
-        public Refugier(string nom, string prenom,string motdepasse, string sexe, DateTime date_nais, string nationalite, int maison):base(nom, prenom, motdepasse)// constructeur de base du refugier
+        public Refugier(string nom, string prenom,string motdepasse, string sexe, DateTime date_nais, string nationalite, int adresse, int id = 0)
         {
             
-            this.Nom = nom; 
-            this.Prenom = prenom;
-            this.Sexe = sexe;
+            this.nom = nom; 
+            this.prenom = prenom;
+            this.sexe = sexe;
             this.date_nais = date_nais;
             this.nationalite = nationalite;
-            this.Maison = maison;
-            this.Id = "Ref" + Nom + Prenom[0];
+            this.adresse = adresse;
+            this.id = id;
         }
         #endregion
     }
