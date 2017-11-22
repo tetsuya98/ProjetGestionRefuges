@@ -6,17 +6,18 @@ using System.Threading.Tasks;
 
 namespace GestionRefugies
 {
-    partial class Refugier : User
+    partial class Refugier
     {
-
+        #region champs
         private string sexe;
         private DateTime date_nais;
         
         private int maison;
       
         private string nationalite;
+        #endregion
 
-
+        #region propriete
         public string Sexe
         {
             get
@@ -71,7 +72,9 @@ namespace GestionRefugies
                 nationalite = value;
             }
         }
+        #endregion
 
+        #region methode
         public Refugier(string nom, string prenom,string motdepasse, string sexe, DateTime date_nais, string nationalite, int maison):base(nom, prenom, motdepasse)// constructeur de base du refugier
         {
             
@@ -83,16 +86,6 @@ namespace GestionRefugies
             this.Maison = maison;
             this.Id = "Ref" + Nom + Prenom[0];
         }
-
-
-
-        public int Test_Name(string name) //test de la validité du nom du refugier 
-        { 
-            return (0);
-        }
-
-        
-
-
+        #endregion
     }
 }
