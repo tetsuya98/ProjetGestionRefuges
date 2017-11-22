@@ -100,7 +100,6 @@ namespace GestionRefugies
         }
         #endregion
 
-
         #region méthode
 
         /// <summary>

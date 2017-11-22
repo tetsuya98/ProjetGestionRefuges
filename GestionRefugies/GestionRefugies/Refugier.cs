@@ -9,11 +9,39 @@ namespace GestionRefugies
     partial class Refugier
     {
         #region champs
+        /// <summary>
+        /// nom du refugier
+        /// </summary>
+        protected string nom;
+
+        /// <summary>
+        /// prénom du refugier
+        /// </summary>
+        protected string prenom;
+
+        /// <summary>
+        /// identifiant du refugier
+        /// </summary>
+        protected string id;
+
+        /// <summary>
+        /// sexe du refugier
+        /// </summary>
         private string sexe;
+
+        /// <summary>
+        /// Date de naissance du refugier
+        /// </summary>
         private DateTime date_nais;
         
-        private int maison;
-      
+        /// <summary>
+        /// Adresse du refugier
+        /// </summary>
+        private int adresse;
+
+        /// <summary>
+        /// Nationnalité du refugier
+        /// </summary>
         private string nationalite;
         #endregion
 
