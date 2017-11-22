@@ -43,6 +43,11 @@ namespace GestionRefugies
         /// Nationnalité du refugier
         /// </summary>
         private string nationalite;
+
+        /// <summary>
+        /// Liste des roles de l'utilisateur
+        /// </summary>
+        private List<Role> roles;
         #endregion
 
         #region propriete
@@ -98,16 +103,16 @@ namespace GestionRefugies
         #endregion
 
         #region methode
-        public Refugier(string nom, string prenom,string motdepasse, string sexe, DateTime date_nais, string nationalite, int adresse, int id = 0)
+        public Refugier(string nom, string prenom,string motdepasse, string sexe, DateTime date_nais, string nationalite, int adresse, List<Role> roles, int id = 0)
         {
-            
-            this.nom = nom; 
+            this.nom = nom;
             this.prenom = prenom;
             this.sexe = sexe;
             this.date_nais = date_nais;
             this.nationalite = nationalite;
             this.adresse = adresse;
             this.id = id;
+            this.roles = roles;
         }
         #endregion
     }
