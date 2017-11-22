@@ -13,28 +13,20 @@ namespace GestionRefugies
         public static bool ajouterRefugier(Refugier Ref)
         {
 
-
-
-
-
-
             ///finir la requete sql
-            string sqlCommand = "INSERT INTO refugies (clef, prenom, nom, nationalite, mdp, sexe, dateNais, adresse) VALUES (?,?,?,?,?,?,?,?)";
+            string sqlCommand = "INSERT INTO refugies (id, prenom, nom, nationalite, sexe, dateNais, adresse) VALUES (?,?,?,?,?,?,?)";
             MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
            
-
             cmd.CommandText = sqlCommand;
-
 
             //Envoi des paramètres
             cmd.Parameters.AddWithValue("@Id", Ref.Id);
             cmd.Parameters.AddWithValue("@nom", Ref.Nom);
             cmd.Parameters.AddWithValue("@prenom", Ref.Prenom);
             cmd.Parameters.AddWithValue("@nationalite", Ref.Nationalite);
-            cmd.Parameters.AddWithValue("@mdp", Ref.Motdepasse);
             cmd.Parameters.AddWithValue("@sexe", Ref.Sexe);
             cmd.Parameters.AddWithValue("@Datenais", Ref.Date_nais);
-            cmd.Parameters.AddWithValue("@maison",Ref.Maison.ToString());
+            cmd.Parameters.AddWithValue("@maison",Ref.Adresse.ToString());
         
             try
             {

@@ -88,7 +88,7 @@ namespace GestionRefugies
                 return adresse;
             }
         }
-        public string Nationnalite
+        public string Nationalite
         {
             get
             {
