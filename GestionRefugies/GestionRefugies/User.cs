@@ -15,21 +15,30 @@ namespace GestionRefugies
         /// <summary>
         /// nom de l'utilisateur
         /// </summary>
-        protected string nom;
+        private string nom;
+
         /// <summary>
         /// prénom de l'utilisateur
         /// </summary>
-        protected string prenom;
+        private string prenom;
+
         /// <summary>
         /// identifiant de l'utilisateur
         /// </summary>
-        protected string id;
+        private string id;
+
         /// <summary>
         /// mot de passe de l'utilisateur
         /// </summary>
-        protected string motdepasse;
+        private string motdepasse;
+
+        /// <summary>
+        /// Liste des roles de l'utilisateur
+        /// </summary>
+        private Roles user_r = new Roles(false,false,false); // création de la liste
+
         #endregion
-        
+
         #region constructeur
 
         /// <summary>
@@ -38,18 +47,20 @@ namespace GestionRefugies
         /// <param name="nom">nom de l'agent d'acceuil</param>
         /// <param name="prenom">prénom de l'agent</param>
         /// <param name="motdepasse">mot de passe de l'utilisateur</param>
-        public User(string nom, string prenom, string motdepasse)
+        public User(string nom, string prenom, string motdepasse, bool admin, bool agent , bool magasinier)
         {
 
-            this.Id = nom + prenom[0];
-            this.Nom = nom;
-            this.Prenom = prenom;
-            this.Motdepasse = Hashage(motdepasse,prenom);
+            this.id = nom + prenom[0];
+            this.nom = nom;
+            this.prenom = prenom;
+            this.motdepasse = Hashage(motdepasse,prenom);
+            this.user_r = new Roles(admin, agent, magasinier);
         }
 
         #endregion
 
         #region accesseurs
+
         public string Nom
         {
             get
@@ -57,10 +68,6 @@ namespace GestionRefugies
                 return nom;
             }
 
-            set
-            {
-                nom = value;
-            }
         }
 
         public string Prenom
@@ -70,10 +77,6 @@ namespace GestionRefugies
                 return prenom;
             }
 
-            set
-            {
-                prenom = value;
-            }
         }
 
         public string Id
@@ -83,10 +86,6 @@ namespace GestionRefugies
                 return id;
             }
 
-            set
-            {
-                id = value;
-            }
         }
       
         public string Motdepasse
@@ -96,10 +95,15 @@ namespace GestionRefugies
                 return motdepasse;
             }
 
-            set
+        }
+
+        public List<string> Role
+        {
+            get
             {
-                motdepasse = value;
+                return role;
             }
+
         }
         #endregion
 
@@ -129,7 +133,7 @@ namespace GestionRefugies
         public static bool Add(User user)
         {
             //requete SQL
-            String sql = "INSERT INTO users (clef, prenom, nom, mdp) VALUES (?,?,?,?)";
+            String sql = "INSERT INTO users (clef, prenom, nom, mdp , admin, agent, magasinier) VALUES (?,?,?,?,?,?,?)";
 
             MySqlCommand cmd = new MySqlCommand(sql, Database.getBD());
 
@@ -248,7 +252,7 @@ namespace GestionRefugies
                 return false;
             }
         }
-    }
+
         #endregion
     }
 }
