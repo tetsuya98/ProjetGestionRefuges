@@ -117,13 +117,6 @@ namespace GestionRefugies
             return Convert.ToBase64String(EncryptedBytes);
 
         }
-
-
-
-
-
-
-
         #endregion
     }
 }
