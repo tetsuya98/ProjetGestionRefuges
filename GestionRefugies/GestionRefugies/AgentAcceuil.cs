@@ -19,8 +19,7 @@ namespace GestionRefugies
         
         public AgentAccueil(string nom,string prenom,string motdepasse):base(nom,prenom,motdepasse)
         {
-             
-            Id = "AgA" + Nom + Prenom[0];
+            
         }
 
         #endregion

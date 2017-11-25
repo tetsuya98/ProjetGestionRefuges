@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace GestionRefugies
 {
@@ -14,39 +15,52 @@ namespace GestionRefugies
         /// <summary>
         /// nom de l'utilisateur
         /// </summary>
-        protected string nom;
+        private string nom;
+
         /// <summary>
         /// prénom de l'utilisateur
         /// </summary>
-        protected string prenom;
+        private string prenom;
+
         /// <summary>
         /// identifiant de l'utilisateur
         /// </summary>
-        protected string id;
+        private string id;
+
         /// <summary>
         /// mot de passe de l'utilisateur
         /// </summary>
-        protected string motdepasse;
+        private string motdepasse;
+
+        /// <summary>
+        /// Liste des roles de l'utilisateur
+        /// </summary>
+        private Roles user_r = new Roles(false,false,false); // création de la liste
+
         #endregion
-        
+
         #region constructeur
+
         /// <summary>
         /// constructeur de la classe Agent d'accueil
         /// </summary>
         /// <param name="nom">nom de l'agent d'acceuil</param>
         /// <param name="prenom">prénom de l'agent</param>
         /// <param name="motdepasse">mot de passe de l'utilisateur</param>
-        public User(string nom, string prenom, string motdepasse)
+        public User(string nom, string prenom, string motdepasse, bool admin, bool agent , bool magasinier)
         {
-            this.Nom = nom;
-            this.Prenom = prenom;
-            this.Motdepasse = Hashage(motdepasse,prenom);
+
+            this.id = nom + prenom[0];
+            this.nom = nom;
+            this.prenom = prenom;
+            this.motdepasse = Hashage(motdepasse,prenom);
+            this.user_r = new Roles(admin, agent, magasinier);
         }
 
         #endregion
 
-
         #region accesseurs
+
         public string Nom
         {
             get
@@ -54,10 +68,6 @@ namespace GestionRefugies
                 return nom;
             }
 
-            set
-            {
-                nom = value;
-            }
         }
 
         public string Prenom
@@ -67,10 +77,6 @@ namespace GestionRefugies
                 return prenom;
             }
 
-            set
-            {
-                prenom = value;
-            }
         }
 
         public string Id
@@ -80,12 +86,8 @@ namespace GestionRefugies
                 return id;
             }
 
-            set
-            {
-                id = value;
-            }
         }
-
+      
         public string Motdepasse
         {
             get
@@ -93,13 +95,17 @@ namespace GestionRefugies
                 return motdepasse;
             }
 
-            set
+        }
+
+        public List<string> Role
+        {
+            get
             {
-                motdepasse = value;
+                return role;
             }
+
         }
         #endregion
-
 
         #region méthode
 
@@ -118,12 +124,134 @@ namespace GestionRefugies
             return Convert.ToBase64String(EncryptedBytes);
 
         }
+    
+        /// <summary>
+        /// fonction ajout dans BD d'un user
+        /// </summary>
+        /// <param name="user">prend un utilisateur en paramètre</param>
+        /// <returns>true si réussi sinon false</returns>
+        public static bool Add(User user)
+        {
+            //requete SQL
+            String sql = "INSERT INTO users (clef, prenom, nom, mdp , admin, agent, magasinier) VALUES (?,?,?,?,?,?,?)";
+
+            MySqlCommand cmd = new MySqlCommand(sql, Database.getBD());
+
+            cmd.CommandText = sql;
+
+            //Envoi des paramètres
+            cmd.Parameters.AddWithValue("@Id", user.Id);
+            cmd.Parameters.AddWithValue("@Prenom", user.Prenom);
+            cmd.Parameters.AddWithValue("@Nom", user.Nom);
+            cmd.Parameters.AddWithValue("@Motdepasse", user.Motdepasse);
+
+            try
+            {
+                //Execution de la commande SQL qui peut provoquer des exceptions
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+
+                //traitement de l'exception...
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// fonction supression dans BD d'un user
+        /// </summary>
+        /// <param name="user">prend un utilisateur en paramètre</param>
+        /// <returns>true si réussi sinon false</returns>
+        public static bool Delete(User user)
+        {
+            //requete SQL
+            String sql = "DELETE FROM `users` WHERE `users`.`clef` =? ";
+
+            MySqlCommand cmd = new MySqlCommand(sql, Database.getBD());
+
+            cmd.CommandText = sql;
+
+            cmd.Parameters.AddWithValue("@Id", user.id);
 
 
 
+            try
+            {
+                //Execution de la commande SQL qui peut provoquer des exceptions
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                //traitement de l'exception...
+                return false;
+            }
+        }
 
+        /// <summary>
+        /// fonction Màj dans BD d'un user
+        /// </summary>
+        /// <param name="user">prend un utilisateur en paramètre</param>
+        /// <returns>true si réussi sinon false</returns>
+        public static bool Udapte(User user)
+        {
+            //requete SQL
+            String sql = "UPDATE `users` SET `nom` = '?', `prenom` = '?', `mdp` = '?' WHERE `users`.`clef` = '?' VALUES(?,?,?,?)";
 
+            MySqlCommand cmd = new MySqlCommand(sql, Database.getBD());
 
+            cmd.CommandText = sql;
+            //Envoi des paramètres
+            cmd.Parameters.AddWithValue("@Id", user.Id);
+            cmd.Parameters.AddWithValue("@Prenom", user.Prenom);
+            cmd.Parameters.AddWithValue("@Nom", user.Nom);
+            cmd.Parameters.AddWithValue("@Motdepasse", user.Motdepasse);
+
+            try
+            {
+                //Execution de la commande SQL qui peut provoquer des exceptions
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+
+                //traitement de l'exception...
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// fonction Recherche simple dans BD d'un user
+        /// </summary>
+        /// <param name="user">prend un utilisateur en paramètre(ne regarde que l'id )</param>
+        /// <returns>true si réussi sinon false</returns>
+        public static bool Select(User user)
+        {
+            //requete SQL
+            String sql = "SELECT * FROM users WHERE 'users'.'clef'= ?";
+
+            MySqlCommand cmd = new MySqlCommand(sql, Database.getBD());
+
+            cmd.CommandText = sql;
+            //Envoi des paramètres
+            cmd.Parameters.AddWithValue("@Id", user.id);
+
+            try
+            {
+                //Execution de la commande SQL qui peut provoquer des exceptions
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+
+                //traitement de l'exception...
+                return false;
+            }
+        }
 
         #endregion
     }
