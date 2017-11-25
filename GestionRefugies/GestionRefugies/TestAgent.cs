@@ -66,13 +66,18 @@ namespace GestionRefugies
 
         private void creer_Click(object sender, EventArgs e)
         {
-
-            ManageAgentAccueil.add(new AgentAccueil ("lesagedd","corentin","mdp"));
+            if (ManageAgentAccueil.add(new AgentAccueil("lesagedd", "corentin", "mdp")))
+            {
+                MessageBox.Show("Success");
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ManageAgentAccueil.supp("AgAlesageddc");
+            if (ManageAgentAccueil.supp("AgAlesageddc"))
+            {
+                MessageBox.Show("Success");
+            }
         }
     }
 }

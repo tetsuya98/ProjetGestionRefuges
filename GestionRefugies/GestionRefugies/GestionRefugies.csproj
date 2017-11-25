@@ -52,20 +52,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AgentAcceuil.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="TestAgent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="TestAgent.Designer.cs">
+      <DependentUpon>TestAgent.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManageAgentAccueil.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Refugier.cs" />
     <Compile Include="User.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="TestAgent.resx">
+      <DependentUpon>TestAgent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
