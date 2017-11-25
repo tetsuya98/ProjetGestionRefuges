@@ -89,6 +89,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Refugier.cs" />
     <Compile Include="RefugierManage.cs" />
+    <Compile Include="role\Administrateur.cs" />
+    <Compile Include="role\Agent.cs" />
+    <Compile Include="role\Magasinier.cs" />
+    <Compile Include="role\Role.cs" />
     <Compile Include="User.cs" />
     <EmbeddedResource Include="AjoutRefugies.resx">
       <DependentUpon>AjoutRefugies.cs</DependentUpon>
