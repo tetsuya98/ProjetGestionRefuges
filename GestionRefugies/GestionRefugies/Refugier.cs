@@ -110,6 +110,7 @@ namespace GestionRefugies
             this.adresse = adresse;
             this.id = id;
         }
+
         /// <summary>
         /// Ajoute dun réfugier dans la base de donnée
         /// </summary>
@@ -147,6 +148,11 @@ namespace GestionRefugies
             #endregion
         }
 
+        /// <summary>
+        /// Modifie un réfugié dans la base de donnée
+        /// </summary>
+        /// <param name="refugier">réfugier à modifié</param>
+        /// <returns>Retourne true si la requete réussi sinon false</returns>
         public static bool update(Refugier refugier)
         {
 
@@ -165,6 +171,34 @@ namespace GestionRefugies
             cmd.Parameters.AddWithValue("@id", refugier.Id);
 
 
+
+            try
+            {
+                //Execution de la commande SQL qui peut provoquer des exceptions
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                //traitement de l'exception...
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Supprime un refugier dans la base de donnée
+        /// </summary>
+        /// <param name="refugier">Réfugier à supprimmer</param>
+        /// <returns>Retourne true si la requete réussi sinon false</returns>
+        public static bool delete(Refugier refugier)
+        {
+            string sqlCommand = "DELETE FROM refugiers WHERE id = ?";
+            MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
+
+            cmd.CommandText = sqlCommand;
+
+            //Envoi des paramètres
+            cmd.Parameters.AddWithValue("@id", refugier.Id);
 
             try
             {
