@@ -35,7 +35,7 @@ namespace GestionRefugies
         /// <summary>
         /// Liste des roles de l'utilisateur
         /// </summary>
-        private Roles user_r = new Roles(false,false,false); // création de la liste
+        private Roles user_r; // création de la liste
 
         #endregion
 
@@ -47,7 +47,7 @@ namespace GestionRefugies
         /// <param name="nom">nom de l'agent d'acceuil</param>
         /// <param name="prenom">prénom de l'agent</param>
         /// <param name="motdepasse">mot de passe de l'utilisateur</param>
-        public User(string nom, string prenom, string motdepasse, bool admin, bool agent , bool magasinier)
+        public User(string nom, string prenom, string motdepasse, Administarteur admin, Agent agent , Magasinier magasinier)
         {
 
             this.id = nom + prenom[0];
@@ -97,11 +97,11 @@ namespace GestionRefugies
 
         }
 
-        public List<string> Role
+        public Roles User_r
         {
             get
             {
-                return role;
+                return user_r;
             }
 
         }
@@ -130,7 +130,7 @@ namespace GestionRefugies
         /// </summary>
         /// <param name="user">prend un utilisateur en paramètre</param>
         /// <returns>true si réussi sinon false</returns>
-        public static bool Add(User user)
+        public static bool add(User user)
         {
             //requete SQL
             String sql = "INSERT INTO users (clef, prenom, nom, mdp , admin, agent, magasinier) VALUES (?,?,?,?,?,?,?)";
@@ -144,6 +144,34 @@ namespace GestionRefugies
             cmd.Parameters.AddWithValue("@Prenom", user.Prenom);
             cmd.Parameters.AddWithValue("@Nom", user.Nom);
             cmd.Parameters.AddWithValue("@Motdepasse", user.Motdepasse);
+
+            #region role
+            if (User_r.Adminstareur == null)
+            {
+                cmd.Parameters.AddWithValue("@Administrateur", false);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@Administrateur", true);
+            }
+            if (User_r.Agent == null)
+            {
+                cmd.Parameters.AddWithValue("@Agent", false);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@Agent", true);
+            }
+            if (User_r.Magasinier == null)
+            {
+                cmd.Parameters.AddWithValue("@Magasinier", false);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@Magasinier", true);
+            }
+
+            #endregion role
 
             try
             {
@@ -164,7 +192,7 @@ namespace GestionRefugies
         /// </summary>
         /// <param name="user">prend un utilisateur en paramètre</param>
         /// <returns>true si réussi sinon false</returns>
-        public static bool Delete(User user)
+        public static bool delete(User user)
         {
             //requete SQL
             String sql = "DELETE FROM `users` WHERE `users`.`clef` =? ";
@@ -195,10 +223,10 @@ namespace GestionRefugies
         /// </summary>
         /// <param name="user">prend un utilisateur en paramètre</param>
         /// <returns>true si réussi sinon false</returns>
-        public static bool Udapte(User user)
+        public static bool udapte(User user)
         {
             //requete SQL
-            String sql = "UPDATE `users` SET `nom` = '?', `prenom` = '?', `mdp` = '?' WHERE `users`.`clef` = '?' VALUES(?,?,?,?)";
+            String sql = "UPDATE `users` SET `nom` = '?', `prenom` = '?', `mdp` = '?' , `admin` = '?' ,`agent` = '?' ,`magasinier` = '?' WHERE `users`.`clef` = '?' VALUES(?,?,?,?,?,?,?)";
 
             MySqlCommand cmd = new MySqlCommand(sql, Database.getBD());
 
@@ -208,6 +236,33 @@ namespace GestionRefugies
             cmd.Parameters.AddWithValue("@Prenom", user.Prenom);
             cmd.Parameters.AddWithValue("@Nom", user.Nom);
             cmd.Parameters.AddWithValue("@Motdepasse", user.Motdepasse);
+            #region role
+            if (User_r.Adminstareur == null)
+            {
+                cmd.Parameters.AddWithValue("@Administrateur", false);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@Administrateur", true);
+            }
+            if (User_r.Agent == null)
+            {
+                cmd.Parameters.AddWithValue("@Agent", false);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@Agent", true);
+            }
+            if (User_r.Magasinier == null)
+            {
+                cmd.Parameters.AddWithValue("@Magasinier", false);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@Magasinier", true);
+            }
+
+            #endregion role
 
             try
             {
@@ -228,7 +283,7 @@ namespace GestionRefugies
         /// </summary>
         /// <param name="user">prend un utilisateur en paramètre(ne regarde que l'id )</param>
         /// <returns>true si réussi sinon false</returns>
-        public static bool Select(User user)
+        public static bool select(User user)
         {
             //requete SQL
             String sql = "SELECT * FROM users WHERE 'users'.'clef'= ?";
