@@ -164,7 +164,27 @@ namespace GestionRefugies
             cmd.Parameters.AddWithValue("@dateNais", refugier.DateNais.Date.ToString("yyyy-MM-dd"));
             cmd.Parameters.AddWithValue("@id", refugier.Id);
 
+            try
+            {
+                //Execution de la commande SQL qui peut provoquer des exceptions
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                //traitement de l'exception...
+                return false;
+            }
+        }
+        public static bool delete(Refugier refugier)
+        {
+            string sqlCommand = "DELETE FROM refugiers WHERE id = ?";
+            MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
 
+            cmd.CommandText = sqlCommand;
+
+            //Envoi des paramètres
+            cmd.Parameters.AddWithValue("@id", refugier.Id);
 
             try
             {
