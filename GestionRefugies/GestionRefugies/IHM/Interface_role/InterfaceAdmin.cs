@@ -23,7 +23,7 @@ namespace GestionRefugies
             
         }
 
-        #region AjoutRefugié
+        #region tabPageAjoutRefugié
 
         #region Txt_Nom
         private void Txt_Nom_KeyUp(object sender, KeyEventArgs e)
@@ -156,7 +156,7 @@ namespace GestionRefugies
         #endregion
 
 
-        #region AjoutGerant
+        #region tabPageAjoutGerant
         #region Txt_Nom
         private void Txt_NomM_KeyUp(object sender, KeyEventArgs e)
         {
@@ -333,5 +333,81 @@ namespace GestionRefugies
 
         #endregion
 
+        #region tabPageModif/Suppr_Ref
+
+        #region Txt_nom_modif_ref
+        private void Txt_Nom_Modif_ref_KeyDown(object sender, KeyEventArgs e)
+        {
+            // si on appuie sur un numero ou un caractere special => on supprime l'evenement 
+            if (e.KeyValue >= 96 && e.KeyValue <= 105 || e.KeyValue == 49 || e.KeyValue >= 51 && e.KeyValue <= 53 || e.KeyValue == 56 || e.KeyValue == 106 || e.KeyValue == 107 || e.KeyValue == 110 || e.KeyValue == 111)
+            {
+                e.SuppressKeyPress = true;
+            }
+            if (Txt_Nom_Modif_ref.Text == "Nom" || Txt_Nom_Modif_ref.Text == "Nom Incorrect")
+            {
+                this.Txt_Nom_Modif_ref.ForeColor = System.Drawing.Color.Black;
+                Txt_Nom_Modif_ref.Text = "";
+            }
+        }
+
+        private void Txt_Nom_Modif_ref_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (Txt_Nom_Modif_ref.Text == "")
+            {
+                this.Txt_Nom_Modif_ref.ForeColor = System.Drawing.SystemColors.WindowFrame;
+                Txt_Nom_Modif_ref.Text = "Nom";
+            }
+        }
+
+        #endregion
+        
+        #region Txt-premon_modif_ref
+        private void Txt_Prenom_Modif_ref_KeyDown(object sender, KeyEventArgs e)
+        {
+            // si on appuie sur un numero ou un caractere special => on supprime l'evenement 
+            if (e.KeyValue >= 96 && e.KeyValue <= 105 || e.KeyValue == 49 || e.KeyValue >= 51 && e.KeyValue <= 53 || e.KeyValue == 56 || e.KeyValue == 106 || e.KeyValue == 107 || e.KeyValue == 110 || e.KeyValue == 111)
+            {
+                e.SuppressKeyPress = true;
+            }
+            if (Txt_Prenom_Modif_ref.Text == "Prenom" || Txt_Prenom_Modif_ref.Text == "Prenom Incorrect")
+            {
+                this.Txt_Prenom_Modif_ref.ForeColor = System.Drawing.Color.Black;
+                Txt_Prenom_Modif_ref.Text = "";
+            }
+        }
+
+        private void Txt_Prenom_Modif_ref_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (Txt_Prenom_Modif_ref.Text == "")
+            {
+                this.Txt_Prenom_Modif_ref.ForeColor = System.Drawing.SystemColors.WindowFrame;
+                Txt_Prenom_Modif_ref.Text = "Prenom";
+            }
+        }
+        #endregion
+        
+        #region DatePicker_Naiss_modif_ref
+        private void DatePicker_Naiss_modif_ref_ValueChanged(object sender, EventArgs e)
+        {
+            if (DatePicker_Naiss_modif_ref.Value >= DateTime.Now)
+            {
+                DatePicker_Naiss_modif_ref.Value = DateTime.Now;
+            }
+        }
+        #endregion
+
+        #endregion
+
+        #region Boutons Modifier et Supprimer
+        private void btn_Modif_ref_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Suppr_ref_Click(object sender, EventArgs e)
+        {
+
+        } 
+        #endregion
     }
 }

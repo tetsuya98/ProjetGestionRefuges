@@ -59,17 +59,39 @@
             this.Txt_PrenomM = new System.Windows.Forms.MaskedTextBox();
             this.Txt_MDPM = new System.Windows.Forms.MaskedTextBox();
             this.Txt_NomM = new System.Windows.Forms.MaskedTextBox();
-            this.tabPageStock = new System.Windows.Forms.TabPage();
             this.tabPageModifRef = new System.Windows.Forms.TabPage();
+            this.lbl_err_nation_modif_ref = new System.Windows.Forms.Label();
+            this.lbl_err_sex_modif_ref = new System.Windows.Forms.Label();
+            this.btn_Modif_ref = new System.Windows.Forms.Button();
+            this.lbl_Nation_modif_ref = new System.Windows.Forms.Label();
+            this.lbl_dateNaiss_modif_ref = new System.Windows.Forms.Label();
+            this.list_nation_modif_ref = new System.Windows.Forms.ComboBox();
+            this.DatePicker_Naiss_modif_ref = new System.Windows.Forms.DateTimePicker();
+            this.rdn_Femme_Modif_ref = new System.Windows.Forms.RadioButton();
+            this.rdn_Homme_Modif_ref = new System.Windows.Forms.RadioButton();
+            this.Txt_Prenom_Modif_ref = new System.Windows.Forms.MaskedTextBox();
+            this.Txt_Nom_Modif_ref = new System.Windows.Forms.MaskedTextBox();
             this.tabPagemodifGerant = new System.Windows.Forms.TabPage();
+            this.tabPageStock = new System.Windows.Forms.TabPage();
+            this.DataGrid_modif_ref = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sexe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateNaiss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nationalite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_Suppr_ref = new System.Windows.Forms.Button();
+            this.tabPageAccueil = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPageAjoutRef.SuspendLayout();
             this.tabPageAjoutGérant.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabPageModifRef.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGrid_modif_ref)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
+            this.tabControl1.Controls.Add(this.tabPageAccueil);
             this.tabControl1.Controls.Add(this.tabPageAjoutRef);
             this.tabControl1.Controls.Add(this.tabPageAjoutGérant);
             this.tabControl1.Controls.Add(this.tabPageModifRef);
@@ -481,23 +503,170 @@
             this.Txt_NomM.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_NomM_KeyDown_1);
             this.Txt_NomM.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_NomM_KeyUp);
             // 
-            // tabPageStock
-            // 
-            this.tabPageStock.Location = new System.Drawing.Point(4, 22);
-            this.tabPageStock.Name = "tabPageStock";
-            this.tabPageStock.Size = new System.Drawing.Size(652, 311);
-            this.tabPageStock.TabIndex = 2;
-            this.tabPageStock.Text = "Gestion Des Stocks";
-            this.tabPageStock.UseVisualStyleBackColor = true;
-            // 
             // tabPageModifRef
             // 
+            this.tabPageModifRef.Controls.Add(this.btn_Suppr_ref);
+            this.tabPageModifRef.Controls.Add(this.DataGrid_modif_ref);
+            this.tabPageModifRef.Controls.Add(this.lbl_err_nation_modif_ref);
+            this.tabPageModifRef.Controls.Add(this.lbl_err_sex_modif_ref);
+            this.tabPageModifRef.Controls.Add(this.btn_Modif_ref);
+            this.tabPageModifRef.Controls.Add(this.lbl_Nation_modif_ref);
+            this.tabPageModifRef.Controls.Add(this.lbl_dateNaiss_modif_ref);
+            this.tabPageModifRef.Controls.Add(this.list_nation_modif_ref);
+            this.tabPageModifRef.Controls.Add(this.DatePicker_Naiss_modif_ref);
+            this.tabPageModifRef.Controls.Add(this.rdn_Femme_Modif_ref);
+            this.tabPageModifRef.Controls.Add(this.rdn_Homme_Modif_ref);
+            this.tabPageModifRef.Controls.Add(this.Txt_Prenom_Modif_ref);
+            this.tabPageModifRef.Controls.Add(this.Txt_Nom_Modif_ref);
             this.tabPageModifRef.Location = new System.Drawing.Point(4, 22);
             this.tabPageModifRef.Name = "tabPageModifRef";
             this.tabPageModifRef.Size = new System.Drawing.Size(652, 311);
             this.tabPageModifRef.TabIndex = 3;
             this.tabPageModifRef.Text = "Modifier/Supprimer Refugié";
             this.tabPageModifRef.UseVisualStyleBackColor = true;
+            // 
+            // lbl_err_nation_modif_ref
+            // 
+            this.lbl_err_nation_modif_ref.AutoSize = true;
+            this.lbl_err_nation_modif_ref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_nation_modif_ref.Location = new System.Drawing.Point(85, 253);
+            this.lbl_err_nation_modif_ref.Name = "lbl_err_nation_modif_ref";
+            this.lbl_err_nation_modif_ref.Size = new System.Drawing.Size(157, 13);
+            this.lbl_err_nation_modif_ref.TabIndex = 24;
+            this.lbl_err_nation_modif_ref.Text = "Veuillez renseigner la nationalite";
+            this.lbl_err_nation_modif_ref.Visible = false;
+            // 
+            // lbl_err_sex_modif_ref
+            // 
+            this.lbl_err_sex_modif_ref.AutoSize = true;
+            this.lbl_err_sex_modif_ref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_sex_modif_ref.Location = new System.Drawing.Point(85, 117);
+            this.lbl_err_sex_modif_ref.Name = "lbl_err_sex_modif_ref";
+            this.lbl_err_sex_modif_ref.Size = new System.Drawing.Size(131, 13);
+            this.lbl_err_sex_modif_ref.TabIndex = 23;
+            this.lbl_err_sex_modif_ref.Text = "Veuillez renseigner le sexe";
+            this.lbl_err_sex_modif_ref.Visible = false;
+            // 
+            // btn_Modif_ref
+            // 
+            this.btn_Modif_ref.Location = new System.Drawing.Point(381, 283);
+            this.btn_Modif_ref.Name = "btn_Modif_ref";
+            this.btn_Modif_ref.Size = new System.Drawing.Size(108, 23);
+            this.btn_Modif_ref.TabIndex = 22;
+            this.btn_Modif_ref.Text = "Modifier";
+            this.btn_Modif_ref.UseVisualStyleBackColor = true;
+            this.btn_Modif_ref.Click += new System.EventHandler(this.btn_Modif_ref_Click);
+            // 
+            // lbl_Nation_modif_ref
+            // 
+            this.lbl_Nation_modif_ref.AutoSize = true;
+            this.lbl_Nation_modif_ref.Location = new System.Drawing.Point(23, 213);
+            this.lbl_Nation_modif_ref.Name = "lbl_Nation_modif_ref";
+            this.lbl_Nation_modif_ref.Size = new System.Drawing.Size(57, 13);
+            this.lbl_Nation_modif_ref.TabIndex = 21;
+            this.lbl_Nation_modif_ref.Text = "Nationalite";
+            // 
+            // lbl_dateNaiss_modif_ref
+            // 
+            this.lbl_dateNaiss_modif_ref.AutoSize = true;
+            this.lbl_dateNaiss_modif_ref.Location = new System.Drawing.Point(23, 152);
+            this.lbl_dateNaiss_modif_ref.Name = "lbl_dateNaiss_modif_ref";
+            this.lbl_dateNaiss_modif_ref.Size = new System.Drawing.Size(98, 13);
+            this.lbl_dateNaiss_modif_ref.TabIndex = 20;
+            this.lbl_dateNaiss_modif_ref.Text = "Date de Naissance";
+            // 
+            // list_nation_modif_ref
+            // 
+            this.list_nation_modif_ref.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.list_nation_modif_ref.FormattingEnabled = true;
+            this.list_nation_modif_ref.Items.AddRange(new object[] {
+            "Anglais",
+            "Espagnol",
+            "Allemand",
+            "Italien",
+            "Portugais",
+            "Belge",
+            "Suisse",
+            "Polonais",
+            "Ukrainien",
+            "Chinois",
+            "Indien",
+            "Russe",
+            "Japonais",
+            "Americain",
+            "Canadien",
+            "Mexicain",
+            "Bresilien",
+            "Colombien",
+            "Cubain",
+            "Marocain",
+            "Turc",
+            "Algerien",
+            "Tunisien",
+            "Syrien",
+            "Egyptien",
+            "Soudanais",
+            "Congolais",
+            "Senegalais",
+            "Sud-Africain",
+            "Autre"});
+            this.list_nation_modif_ref.Location = new System.Drawing.Point(26, 229);
+            this.list_nation_modif_ref.Name = "list_nation_modif_ref";
+            this.list_nation_modif_ref.Size = new System.Drawing.Size(148, 21);
+            this.list_nation_modif_ref.TabIndex = 19;
+            // 
+            // DatePicker_Naiss_modif_ref
+            // 
+            this.DatePicker_Naiss_modif_ref.Location = new System.Drawing.Point(26, 169);
+            this.DatePicker_Naiss_modif_ref.Name = "DatePicker_Naiss_modif_ref";
+            this.DatePicker_Naiss_modif_ref.Size = new System.Drawing.Size(200, 20);
+            this.DatePicker_Naiss_modif_ref.TabIndex = 18;
+            this.DatePicker_Naiss_modif_ref.ValueChanged += new System.EventHandler(this.DatePicker_Naiss_modif_ref_ValueChanged);
+            // 
+            // rdn_Femme_Modif_ref
+            // 
+            this.rdn_Femme_Modif_ref.AutoSize = true;
+            this.rdn_Femme_Modif_ref.Location = new System.Drawing.Point(115, 97);
+            this.rdn_Femme_Modif_ref.Name = "rdn_Femme_Modif_ref";
+            this.rdn_Femme_Modif_ref.Size = new System.Drawing.Size(59, 17);
+            this.rdn_Femme_Modif_ref.TabIndex = 17;
+            this.rdn_Femme_Modif_ref.TabStop = true;
+            this.rdn_Femme_Modif_ref.Text = "Femme";
+            this.rdn_Femme_Modif_ref.UseVisualStyleBackColor = true;
+            // 
+            // rdn_Homme_Modif_ref
+            // 
+            this.rdn_Homme_Modif_ref.AutoSize = true;
+            this.rdn_Homme_Modif_ref.Location = new System.Drawing.Point(48, 97);
+            this.rdn_Homme_Modif_ref.Name = "rdn_Homme_Modif_ref";
+            this.rdn_Homme_Modif_ref.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.rdn_Homme_Modif_ref.Size = new System.Drawing.Size(61, 17);
+            this.rdn_Homme_Modif_ref.TabIndex = 16;
+            this.rdn_Homme_Modif_ref.TabStop = true;
+            this.rdn_Homme_Modif_ref.Text = "Homme";
+            this.rdn_Homme_Modif_ref.UseVisualStyleBackColor = true;
+            // 
+            // Txt_Prenom_Modif_ref
+            // 
+            this.Txt_Prenom_Modif_ref.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.Txt_Prenom_Modif_ref.Location = new System.Drawing.Point(26, 61);
+            this.Txt_Prenom_Modif_ref.Name = "Txt_Prenom_Modif_ref";
+            this.Txt_Prenom_Modif_ref.Size = new System.Drawing.Size(190, 20);
+            this.Txt_Prenom_Modif_ref.TabIndex = 15;
+            this.Txt_Prenom_Modif_ref.Text = "Prenom";
+            this.Txt_Prenom_Modif_ref.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_Prenom_Modif_ref_KeyDown);
+            this.Txt_Prenom_Modif_ref.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_Prenom_Modif_ref_KeyUp);
+            // 
+            // Txt_Nom_Modif_ref
+            // 
+            this.Txt_Nom_Modif_ref.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.Txt_Nom_Modif_ref.Location = new System.Drawing.Point(26, 35);
+            this.Txt_Nom_Modif_ref.Name = "Txt_Nom_Modif_ref";
+            this.Txt_Nom_Modif_ref.Size = new System.Drawing.Size(190, 20);
+            this.Txt_Nom_Modif_ref.TabIndex = 14;
+            this.Txt_Nom_Modif_ref.Text = "Nom";
+            this.Txt_Nom_Modif_ref.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_Nom_Modif_ref_KeyDown);
+            this.Txt_Nom_Modif_ref.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_Nom_Modif_ref_KeyUp);
             // 
             // tabPagemodifGerant
             // 
@@ -507,6 +676,82 @@
             this.tabPagemodifGerant.TabIndex = 4;
             this.tabPagemodifGerant.Text = "Modifier/Supprimer Gerant";
             this.tabPagemodifGerant.UseVisualStyleBackColor = true;
+            // 
+            // tabPageStock
+            // 
+            this.tabPageStock.Location = new System.Drawing.Point(4, 22);
+            this.tabPageStock.Name = "tabPageStock";
+            this.tabPageStock.Size = new System.Drawing.Size(652, 311);
+            this.tabPageStock.TabIndex = 2;
+            this.tabPageStock.Text = "Gestion Des Stocks";
+            this.tabPageStock.UseVisualStyleBackColor = true;
+            // 
+            // DataGrid_modif_ref
+            // 
+            this.DataGrid_modif_ref.AllowUserToAddRows = false;
+            this.DataGrid_modif_ref.AllowUserToDeleteRows = false;
+            this.DataGrid_modif_ref.AllowUserToResizeRows = false;
+            this.DataGrid_modif_ref.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGrid_modif_ref.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Prenom,
+            this.Sexe,
+            this.DateNaiss,
+            this.Nationalite});
+            this.DataGrid_modif_ref.Location = new System.Drawing.Point(248, 14);
+            this.DataGrid_modif_ref.Name = "DataGrid_modif_ref";
+            this.DataGrid_modif_ref.ReadOnly = true;
+            this.DataGrid_modif_ref.Size = new System.Drawing.Size(401, 263);
+            this.DataGrid_modif_ref.TabIndex = 25;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Nom";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Prenom
+            // 
+            this.Prenom.HeaderText = "Prenom";
+            this.Prenom.Name = "Prenom";
+            this.Prenom.ReadOnly = true;
+            // 
+            // Sexe
+            // 
+            this.Sexe.HeaderText = "Sexe";
+            this.Sexe.Name = "Sexe";
+            this.Sexe.ReadOnly = true;
+            // 
+            // DateNaiss
+            // 
+            this.DateNaiss.HeaderText = "Date de Naissance";
+            this.DateNaiss.Name = "DateNaiss";
+            this.DateNaiss.ReadOnly = true;
+            // 
+            // Nationalite
+            // 
+            this.Nationalite.HeaderText = "Nationalite";
+            this.Nationalite.Name = "Nationalite";
+            this.Nationalite.ReadOnly = true;
+            // 
+            // btn_Suppr_ref
+            // 
+            this.btn_Suppr_ref.Location = new System.Drawing.Point(495, 283);
+            this.btn_Suppr_ref.Name = "btn_Suppr_ref";
+            this.btn_Suppr_ref.Size = new System.Drawing.Size(108, 23);
+            this.btn_Suppr_ref.TabIndex = 26;
+            this.btn_Suppr_ref.Text = "Supprimer";
+            this.btn_Suppr_ref.UseVisualStyleBackColor = true;
+            this.btn_Suppr_ref.Click += new System.EventHandler(this.btn_Suppr_ref_Click);
+            // 
+            // tabPageAccueil
+            // 
+            this.tabPageAccueil.Location = new System.Drawing.Point(4, 22);
+            this.tabPageAccueil.Name = "tabPageAccueil";
+            this.tabPageAccueil.Size = new System.Drawing.Size(652, 311);
+            this.tabPageAccueil.TabIndex = 5;
+            this.tabPageAccueil.Text = "Accueil";
+            this.tabPageAccueil.UseVisualStyleBackColor = true;
             // 
             // Ajout
             // 
@@ -526,6 +771,9 @@
             this.tabPageAjoutGérant.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabPageModifRef.ResumeLayout(false);
+            this.tabPageModifRef.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGrid_modif_ref)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -566,5 +814,24 @@
         private System.Windows.Forms.TabPage tabPageModifRef;
         private System.Windows.Forms.TabPage tabPagemodifGerant;
         private System.Windows.Forms.TabPage tabPageStock;
+        private System.Windows.Forms.Label lbl_err_nation_modif_ref;
+        private System.Windows.Forms.Label lbl_err_sex_modif_ref;
+        private System.Windows.Forms.Button btn_Modif_ref;
+        private System.Windows.Forms.Label lbl_Nation_modif_ref;
+        private System.Windows.Forms.Label lbl_dateNaiss_modif_ref;
+        private System.Windows.Forms.ComboBox list_nation_modif_ref;
+        private System.Windows.Forms.DateTimePicker DatePicker_Naiss_modif_ref;
+        private System.Windows.Forms.RadioButton rdn_Femme_Modif_ref;
+        private System.Windows.Forms.RadioButton rdn_Homme_Modif_ref;
+        private System.Windows.Forms.MaskedTextBox Txt_Prenom_Modif_ref;
+        private System.Windows.Forms.MaskedTextBox Txt_Nom_Modif_ref;
+        private System.Windows.Forms.Button btn_Suppr_ref;
+        private System.Windows.Forms.DataGridView DataGrid_modif_ref;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Prenom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sexe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateNaiss;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nationalite;
+        private System.Windows.Forms.TabPage tabPageAccueil;
     }
 }
