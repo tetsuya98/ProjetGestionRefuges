@@ -44,8 +44,10 @@
             this.Txt_Nom = new System.Windows.Forms.MaskedTextBox();
             this.tabPageRechercheRef = new System.Windows.Forms.TabPage();
             this.tabPageStock = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPageAjoutRef.SuspendLayout();
+            this.tabPageRechercheRef.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -53,12 +55,11 @@
             this.tabControl1.Controls.Add(this.tabPageAjoutRef);
             this.tabControl1.Controls.Add(this.tabPageRechercheRef);
             this.tabControl1.Controls.Add(this.tabPageStock);
-            this.tabControl1.Location = new System.Drawing.Point(16, 15);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(880, 415);
+            this.tabControl1.Size = new System.Drawing.Size(660, 337);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPageAjoutRef
@@ -76,11 +77,10 @@
             this.tabPageAjoutRef.Controls.Add(this.Txt_Prenom);
             this.tabPageAjoutRef.Controls.Add(this.Txt_MDP);
             this.tabPageAjoutRef.Controls.Add(this.Txt_Nom);
-            this.tabPageAjoutRef.Location = new System.Drawing.Point(4, 25);
-            this.tabPageAjoutRef.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPageAjoutRef.Location = new System.Drawing.Point(4, 22);
             this.tabPageAjoutRef.Name = "tabPageAjoutRef";
-            this.tabPageAjoutRef.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPageAjoutRef.Size = new System.Drawing.Size(872, 386);
+            this.tabPageAjoutRef.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageAjoutRef.Size = new System.Drawing.Size(652, 311);
             this.tabPageAjoutRef.TabIndex = 0;
             this.tabPageAjoutRef.Text = "Ajouter un Refugié";
             // 
@@ -88,10 +88,9 @@
             // 
             this.Lbl_ErrNation.AutoSize = true;
             this.Lbl_ErrNation.ForeColor = System.Drawing.Color.Red;
-            this.Lbl_ErrNation.Location = new System.Drawing.Point(523, 224);
-            this.Lbl_ErrNation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lbl_ErrNation.Location = new System.Drawing.Point(392, 182);
             this.Lbl_ErrNation.Name = "Lbl_ErrNation";
-            this.Lbl_ErrNation.Size = new System.Drawing.Size(213, 17);
+            this.Lbl_ErrNation.Size = new System.Drawing.Size(157, 13);
             this.Lbl_ErrNation.TabIndex = 13;
             this.Lbl_ErrNation.Text = "Veuillez renseigner la nationalite";
             this.Lbl_ErrNation.Visible = false;
@@ -100,20 +99,18 @@
             // 
             this.Lbl_Sexe.AutoSize = true;
             this.Lbl_Sexe.ForeColor = System.Drawing.Color.Red;
-            this.Lbl_Sexe.Location = new System.Drawing.Point(156, 161);
-            this.Lbl_Sexe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lbl_Sexe.Location = new System.Drawing.Point(117, 131);
             this.Lbl_Sexe.Name = "Lbl_Sexe";
-            this.Lbl_Sexe.Size = new System.Drawing.Size(177, 17);
+            this.Lbl_Sexe.Size = new System.Drawing.Size(131, 13);
             this.Lbl_Sexe.TabIndex = 12;
             this.Lbl_Sexe.Text = "Veuillez renseigner le sexe";
             this.Lbl_Sexe.Visible = false;
             // 
             // Btn_Ajout
             // 
-            this.Btn_Ajout.Location = new System.Drawing.Point(604, 273);
-            this.Btn_Ajout.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn_Ajout.Location = new System.Drawing.Point(453, 222);
             this.Btn_Ajout.Name = "Btn_Ajout";
-            this.Btn_Ajout.Size = new System.Drawing.Size(144, 28);
+            this.Btn_Ajout.Size = new System.Drawing.Size(108, 23);
             this.Btn_Ajout.TabIndex = 11;
             this.Btn_Ajout.Text = "Ajouter";
             this.Btn_Ajout.UseVisualStyleBackColor = true;
@@ -122,20 +119,18 @@
             // Lbl_Nationalite
             // 
             this.Lbl_Nationalite.AutoSize = true;
-            this.Lbl_Nationalite.Location = new System.Drawing.Point(476, 172);
-            this.Lbl_Nationalite.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lbl_Nationalite.Location = new System.Drawing.Point(357, 140);
             this.Lbl_Nationalite.Name = "Lbl_Nationalite";
-            this.Lbl_Nationalite.Size = new System.Drawing.Size(75, 17);
+            this.Lbl_Nationalite.Size = new System.Drawing.Size(57, 13);
             this.Lbl_Nationalite.TabIndex = 10;
             this.Lbl_Nationalite.Text = "Nationalite";
             // 
             // Lbl_DateNaiss
             // 
             this.Lbl_DateNaiss.AutoSize = true;
-            this.Lbl_DateNaiss.Location = new System.Drawing.Point(476, 50);
-            this.Lbl_DateNaiss.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lbl_DateNaiss.Location = new System.Drawing.Point(357, 41);
             this.Lbl_DateNaiss.Name = "Lbl_DateNaiss";
-            this.Lbl_DateNaiss.Size = new System.Drawing.Size(128, 17);
+            this.Lbl_DateNaiss.Size = new System.Drawing.Size(98, 13);
             this.Lbl_DateNaiss.TabIndex = 9;
             this.Lbl_DateNaiss.Text = "Date de Naissance";
             // 
@@ -174,28 +169,25 @@
             "Senegalais",
             "Sud-Africain",
             "Autre"});
-            this.List_Nationalite.Location = new System.Drawing.Point(465, 192);
-            this.List_Nationalite.Margin = new System.Windows.Forms.Padding(4);
+            this.List_Nationalite.Location = new System.Drawing.Point(349, 156);
             this.List_Nationalite.Name = "List_Nationalite";
-            this.List_Nationalite.Size = new System.Drawing.Size(196, 24);
+            this.List_Nationalite.Size = new System.Drawing.Size(148, 21);
             this.List_Nationalite.TabIndex = 8;
             // 
             // DatePicker_DatNaiss
             // 
-            this.DatePicker_DatNaiss.Location = new System.Drawing.Point(465, 70);
-            this.DatePicker_DatNaiss.Margin = new System.Windows.Forms.Padding(4);
+            this.DatePicker_DatNaiss.Location = new System.Drawing.Point(349, 57);
             this.DatePicker_DatNaiss.Name = "DatePicker_DatNaiss";
-            this.DatePicker_DatNaiss.Size = new System.Drawing.Size(265, 22);
+            this.DatePicker_DatNaiss.Size = new System.Drawing.Size(200, 20);
             this.DatePicker_DatNaiss.TabIndex = 6;
             this.DatePicker_DatNaiss.ValueChanged += new System.EventHandler(this.DatePicker_DatNaiss_ValueChanged);
             // 
             // RdBtn_Femme
             // 
             this.RdBtn_Femme.AutoSize = true;
-            this.RdBtn_Femme.Location = new System.Drawing.Point(211, 137);
-            this.RdBtn_Femme.Margin = new System.Windows.Forms.Padding(4);
+            this.RdBtn_Femme.Location = new System.Drawing.Point(158, 111);
             this.RdBtn_Femme.Name = "RdBtn_Femme";
-            this.RdBtn_Femme.Size = new System.Drawing.Size(75, 21);
+            this.RdBtn_Femme.Size = new System.Drawing.Size(59, 17);
             this.RdBtn_Femme.TabIndex = 5;
             this.RdBtn_Femme.TabStop = true;
             this.RdBtn_Femme.Text = "Femme";
@@ -204,11 +196,10 @@
             // RdBtn_Homme
             // 
             this.RdBtn_Homme.AutoSize = true;
-            this.RdBtn_Homme.Location = new System.Drawing.Point(105, 137);
-            this.RdBtn_Homme.Margin = new System.Windows.Forms.Padding(4);
+            this.RdBtn_Homme.Location = new System.Drawing.Point(79, 111);
             this.RdBtn_Homme.Name = "RdBtn_Homme";
             this.RdBtn_Homme.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.RdBtn_Homme.Size = new System.Drawing.Size(77, 21);
+            this.RdBtn_Homme.Size = new System.Drawing.Size(61, 17);
             this.RdBtn_Homme.TabIndex = 4;
             this.RdBtn_Homme.TabStop = true;
             this.RdBtn_Homme.Text = "Homme";
@@ -217,10 +208,9 @@
             // Txt_Prenom
             // 
             this.Txt_Prenom.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Txt_Prenom.Location = new System.Drawing.Point(77, 85);
-            this.Txt_Prenom.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt_Prenom.Location = new System.Drawing.Point(58, 69);
             this.Txt_Prenom.Name = "Txt_Prenom";
-            this.Txt_Prenom.Size = new System.Drawing.Size(252, 22);
+            this.Txt_Prenom.Size = new System.Drawing.Size(190, 20);
             this.Txt_Prenom.TabIndex = 3;
             this.Txt_Prenom.Text = "Prenom";
             this.Txt_Prenom.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_Prenom_KeyDown);
@@ -229,10 +219,9 @@
             // Txt_MDP
             // 
             this.Txt_MDP.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Txt_MDP.Location = new System.Drawing.Point(77, 252);
-            this.Txt_MDP.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt_MDP.Location = new System.Drawing.Point(58, 205);
             this.Txt_MDP.Name = "Txt_MDP";
-            this.Txt_MDP.Size = new System.Drawing.Size(252, 22);
+            this.Txt_MDP.Size = new System.Drawing.Size(190, 20);
             this.Txt_MDP.TabIndex = 1;
             this.Txt_MDP.Text = "Mot de Passe";
             this.Txt_MDP.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_MDP_KeyDown);
@@ -241,10 +230,9 @@
             // Txt_Nom
             // 
             this.Txt_Nom.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Txt_Nom.Location = new System.Drawing.Point(77, 53);
-            this.Txt_Nom.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt_Nom.Location = new System.Drawing.Point(58, 43);
             this.Txt_Nom.Name = "Txt_Nom";
-            this.Txt_Nom.Size = new System.Drawing.Size(252, 22);
+            this.Txt_Nom.Size = new System.Drawing.Size(190, 20);
             this.Txt_Nom.TabIndex = 0;
             this.Txt_Nom.Text = "Nom";
             this.Txt_Nom.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_Nom_KeyDown);
@@ -252,38 +240,47 @@
             // 
             // tabPageRechercheRef
             // 
-            this.tabPageRechercheRef.Location = new System.Drawing.Point(4, 25);
-            this.tabPageRechercheRef.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPageRechercheRef.Controls.Add(this.label1);
+            this.tabPageRechercheRef.Location = new System.Drawing.Point(4, 22);
             this.tabPageRechercheRef.Name = "tabPageRechercheRef";
-            this.tabPageRechercheRef.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPageRechercheRef.Size = new System.Drawing.Size(872, 386);
+            this.tabPageRechercheRef.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageRechercheRef.Size = new System.Drawing.Size(652, 311);
             this.tabPageRechercheRef.TabIndex = 1;
             this.tabPageRechercheRef.Text = "Rechercher un Refugié";
             this.tabPageRechercheRef.UseVisualStyleBackColor = true;
             // 
             // tabPageStock
             // 
-            this.tabPageStock.Location = new System.Drawing.Point(4, 25);
-            this.tabPageStock.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPageStock.Location = new System.Drawing.Point(4, 22);
             this.tabPageStock.Name = "tabPageStock";
-            this.tabPageStock.Size = new System.Drawing.Size(872, 386);
+            this.tabPageStock.Size = new System.Drawing.Size(652, 311);
             this.tabPageStock.TabIndex = 2;
             this.tabPageStock.Text = "Gestion des Stocks";
             this.tabPageStock.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(235, 97);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+            // 
             // AjoutRefugies
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(912, 444);
+            this.ClientSize = new System.Drawing.Size(684, 361);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AjoutRefugies";
             this.Text = "AjoutRefugies";
             this.Load += new System.EventHandler(this.AjoutRefugies_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPageAjoutRef.ResumeLayout(false);
             this.tabPageAjoutRef.PerformLayout();
+            this.tabPageRechercheRef.ResumeLayout(false);
+            this.tabPageRechercheRef.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -306,5 +303,6 @@
         private System.Windows.Forms.Label Lbl_Nationalite;
         private System.Windows.Forms.Label Lbl_ErrNation;
         private System.Windows.Forms.Label Lbl_Sexe;
+        private System.Windows.Forms.Label label1;
     }
 }

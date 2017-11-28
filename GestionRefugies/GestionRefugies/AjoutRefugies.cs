@@ -20,7 +20,28 @@ namespace GestionRefugies
 
         private void AjoutRefugies_Load(object sender, EventArgs e)
         {
+            List<Refugier> liste = new List<Refugier>();
+            Refugier ref1 = new Refugier("Greboval", "Gerard", "passwd", "h", new DateTime(1998, 01, 01), "francais", 1);
+            Refugier ref2 = new Refugier("Greboval", "Gerard", "passwd", "h", new DateTime(1998, 01, 01), "francais", 1);
+            Refugier ref3 = new Refugier("Greboval", "Gerard", "passwd", "h", new DateTime(1998, 01, 01), "francais", 1);
+            Refugier ref4 = new Refugier("Greboval", "Gerard", "passwd", "h", new DateTime(1998, 01, 01), "francais", 1);
+            Refugier ref5 = new Refugier("Greboval", "Gerard", "passwd", "h", new DateTime(1998, 01, 01), "francais", 1);
+
+            liste.Add(ref1);
+            liste.Add(ref2);
+            liste.Add(ref3);
+            liste.Add(ref4);
+            liste.Add(ref5);
+
+            String[] champs = RefugierManage.RechercherRefugier(liste, "saisie");
             
+
+            foreach (var champ in champs)
+            {
+                label1.Text += champ;
+            }
+
+
         }
 
         #region Txt_Nom
@@ -95,6 +116,8 @@ namespace GestionRefugies
             }
         }
         #endregion
+
+        
 
 
         #region Btn_Ajout

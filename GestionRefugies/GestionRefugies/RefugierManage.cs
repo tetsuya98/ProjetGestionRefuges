@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,7 +20,7 @@ namespace GestionRefugies
 
 
             ///finir la requete sql
-            string sqlCommand = "INSERT INTO refugies (clef, prenom, nom, nationalite, mdp, sexe, dateNais, adresse) VALUES (?,?,?,?,?,?,?,?)";
+            string sqlCommand = "INSERT INTO refugies (clef, prenom, nom, nationalite, sexe, dateNais, adresse) VALUES (?,?,?,?,?,?,?)";
             MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
            
 
@@ -31,7 +32,6 @@ namespace GestionRefugies
             cmd.Parameters.AddWithValue("@nom", Ref.Nom);
             cmd.Parameters.AddWithValue("@prenom", Ref.Prenom);
             cmd.Parameters.AddWithValue("@nationalite", Ref.Nationalite);
-            cmd.Parameters.AddWithValue("@mdp", Ref.Motdepasse);
             cmd.Parameters.AddWithValue("@sexe", Ref.Sexe);
             cmd.Parameters.AddWithValue("@Datenais", Ref.Date_nais);
             cmd.Parameters.AddWithValue("@maison",Ref.Maison.ToString());
@@ -47,6 +47,19 @@ namespace GestionRefugies
                 //traitement de l'exception...
                 return false;
             }
+        }
+
+        public static List<Refugier> Rechercher(List<Refugier> refugiers, string optName, string optPrenom, char optsex, DateTime optdatenaissn, string optnat, )
+        {
+            List<Refugier> liste = new List<Refugier>();
+
+            foreach (var refugier in refugiers)
+            {
+
+            }
+
+
+            return liste;
         }
     }
 }

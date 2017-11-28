@@ -55,7 +55,7 @@ namespace GestionRefugies
             } 
         }
 
-        /*public static bool updateMagasinier(Magasinier maga)
+        public static bool updateMagasinier(Magasinier maga)
         {
             String sql = "UPDATE magasinier nom = ?, adresse = ? WHERE clef = ?";
 
@@ -63,7 +63,9 @@ namespace GestionRefugies
 
             cmd.CommandText = sql;
 
-            cmd.Parameters.AddWithValue("@nom", maga.Id);
+            cmd.Parameters.AddWithValue("@nom", maga.Nom);
+            cmd.Parameters.AddWithValue("@adresse", maga.Adresse);
+            cmd.Parameters.AddWithValue("@clef", maga.Id);
 
             try
             {
@@ -76,6 +78,6 @@ namespace GestionRefugies
             }
 
             
-        }*/
+        }
     }
 }
