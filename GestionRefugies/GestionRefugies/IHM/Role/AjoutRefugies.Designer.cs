@@ -41,7 +41,10 @@
             this.RdBtn_Homme = new System.Windows.Forms.RadioButton();
             this.Txt_Prenom = new System.Windows.Forms.MaskedTextBox();
             this.Txt_Nom = new System.Windows.Forms.MaskedTextBox();
-            this.tabPageAjoutMaga = new System.Windows.Forms.TabPage();
+            this.tabPageAjoutGérant = new System.Windows.Forms.TabPage();
+            this.lbl_errRole = new System.Windows.Forms.Label();
+            this.check_Magasinier = new System.Windows.Forms.CheckBox();
+            this.check_AgentAccueil = new System.Windows.Forms.CheckBox();
             this.lbl_errNationM = new System.Windows.Forms.Label();
             this.lbl_errSexM = new System.Windows.Forms.Label();
             this.btn_AjoutM = new System.Windows.Forms.Button();
@@ -54,30 +57,17 @@
             this.Txt_PrenomM = new System.Windows.Forms.MaskedTextBox();
             this.Txt_MDPM = new System.Windows.Forms.MaskedTextBox();
             this.Txt_NomM = new System.Windows.Forms.MaskedTextBox();
-            this.tabPageAjoutAgentAccueil = new System.Windows.Forms.TabPage();
-            this.lbl_errNationAA = new System.Windows.Forms.Label();
-            this.lbl_errSexAA = new System.Windows.Forms.Label();
-            this.btn_AjoutAA = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lbl_NaissAA = new System.Windows.Forms.Label();
-            this.list_NationAA = new System.Windows.Forms.ComboBox();
-            this.DatePicker_DatNaissAA = new System.Windows.Forms.DateTimePicker();
-            this.rdn_FemmeAA = new System.Windows.Forms.RadioButton();
-            this.rdn_HommeAA = new System.Windows.Forms.RadioButton();
-            this.Txt_PrenomAA = new System.Windows.Forms.MaskedTextBox();
-            this.Txt_MDPAA = new System.Windows.Forms.MaskedTextBox();
-            this.Txt_NomAA = new System.Windows.Forms.MaskedTextBox();
+            this.test = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPageAjoutRef.SuspendLayout();
-            this.tabPageAjoutMaga.SuspendLayout();
-            this.tabPageAjoutAgentAccueil.SuspendLayout();
+            this.tabPageAjoutGérant.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPageAjoutRef);
-            this.tabControl1.Controls.Add(this.tabPageAjoutMaga);
-            this.tabControl1.Controls.Add(this.tabPageAjoutAgentAccueil);
+            this.tabControl1.Controls.Add(this.tabPageAjoutGérant);
+            this.tabControl1.Controls.Add(this.test);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
@@ -249,27 +239,63 @@
             this.Txt_Nom.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_Nom_KeyDown);
             this.Txt_Nom.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_Nom_KeyUp);
             // 
-            // tabPageAjoutMaga
+            // tabPageAjoutGérant
             // 
-            this.tabPageAjoutMaga.BackColor = System.Drawing.Color.Transparent;
-            this.tabPageAjoutMaga.Controls.Add(this.lbl_errNationM);
-            this.tabPageAjoutMaga.Controls.Add(this.lbl_errSexM);
-            this.tabPageAjoutMaga.Controls.Add(this.btn_AjoutM);
-            this.tabPageAjoutMaga.Controls.Add(this.lbl_NationM);
-            this.tabPageAjoutMaga.Controls.Add(this.lbl_DatNaissM);
-            this.tabPageAjoutMaga.Controls.Add(this.list_NationM);
-            this.tabPageAjoutMaga.Controls.Add(this.DatePicker_NaissM);
-            this.tabPageAjoutMaga.Controls.Add(this.rdn_FemmeM);
-            this.tabPageAjoutMaga.Controls.Add(this.rdn_HommeM);
-            this.tabPageAjoutMaga.Controls.Add(this.Txt_PrenomM);
-            this.tabPageAjoutMaga.Controls.Add(this.Txt_MDPM);
-            this.tabPageAjoutMaga.Controls.Add(this.Txt_NomM);
-            this.tabPageAjoutMaga.Location = new System.Drawing.Point(4, 22);
-            this.tabPageAjoutMaga.Name = "tabPageAjoutMaga";
-            this.tabPageAjoutMaga.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAjoutMaga.Size = new System.Drawing.Size(652, 311);
-            this.tabPageAjoutMaga.TabIndex = 1;
-            this.tabPageAjoutMaga.Text = "Ajouter un Magasinier";
+            this.tabPageAjoutGérant.BackColor = System.Drawing.Color.Transparent;
+            this.tabPageAjoutGérant.Controls.Add(this.lbl_errRole);
+            this.tabPageAjoutGérant.Controls.Add(this.check_Magasinier);
+            this.tabPageAjoutGérant.Controls.Add(this.check_AgentAccueil);
+            this.tabPageAjoutGérant.Controls.Add(this.lbl_errNationM);
+            this.tabPageAjoutGérant.Controls.Add(this.lbl_errSexM);
+            this.tabPageAjoutGérant.Controls.Add(this.btn_AjoutM);
+            this.tabPageAjoutGérant.Controls.Add(this.lbl_NationM);
+            this.tabPageAjoutGérant.Controls.Add(this.lbl_DatNaissM);
+            this.tabPageAjoutGérant.Controls.Add(this.list_NationM);
+            this.tabPageAjoutGérant.Controls.Add(this.DatePicker_NaissM);
+            this.tabPageAjoutGérant.Controls.Add(this.rdn_FemmeM);
+            this.tabPageAjoutGérant.Controls.Add(this.rdn_HommeM);
+            this.tabPageAjoutGérant.Controls.Add(this.Txt_PrenomM);
+            this.tabPageAjoutGérant.Controls.Add(this.Txt_MDPM);
+            this.tabPageAjoutGérant.Controls.Add(this.Txt_NomM);
+            this.tabPageAjoutGérant.Location = new System.Drawing.Point(4, 22);
+            this.tabPageAjoutGérant.Name = "tabPageAjoutGérant";
+            this.tabPageAjoutGérant.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageAjoutGérant.Size = new System.Drawing.Size(652, 311);
+            this.tabPageAjoutGérant.TabIndex = 1;
+            this.tabPageAjoutGérant.Text = "Ajouter un Gérant";
+            // 
+            // lbl_errRole
+            // 
+            this.lbl_errRole.AutoSize = true;
+            this.lbl_errRole.ForeColor = System.Drawing.Color.Red;
+            this.lbl_errRole.Location = new System.Drawing.Point(117, 248);
+            this.lbl_errRole.Name = "lbl_errRole";
+            this.lbl_errRole.Size = new System.Drawing.Size(126, 13);
+            this.lbl_errRole.TabIndex = 28;
+            this.lbl_errRole.Text = "Veuillez renseigner le rôle";
+            this.lbl_errRole.Visible = false;
+            // 
+            // check_Magasinier
+            // 
+            this.check_Magasinier.AutoSize = true;
+            this.check_Magasinier.Location = new System.Drawing.Point(173, 228);
+            this.check_Magasinier.Name = "check_Magasinier";
+            this.check_Magasinier.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.check_Magasinier.Size = new System.Drawing.Size(75, 17);
+            this.check_Magasinier.TabIndex = 27;
+            this.check_Magasinier.Text = "Magasiner";
+            this.check_Magasinier.UseVisualStyleBackColor = true;
+            // 
+            // check_AgentAccueil
+            // 
+            this.check_AgentAccueil.AutoSize = true;
+            this.check_AgentAccueil.Location = new System.Drawing.Point(49, 228);
+            this.check_AgentAccueil.Name = "check_AgentAccueil";
+            this.check_AgentAccueil.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.check_AgentAccueil.Size = new System.Drawing.Size(100, 17);
+            this.check_AgentAccueil.TabIndex = 26;
+            this.check_AgentAccueil.Text = "Agent d\'Accueil";
+            this.check_AgentAccueil.UseVisualStyleBackColor = true;
             // 
             // lbl_errNationM
             // 
@@ -425,180 +451,15 @@
             this.Txt_NomM.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_NomM_KeyDown_1);
             this.Txt_NomM.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_NomM_KeyUp);
             // 
-            // tabPageAjoutAgentAccueil
+            // test
             // 
-            this.tabPageAjoutAgentAccueil.BackColor = System.Drawing.Color.Transparent;
-            this.tabPageAjoutAgentAccueil.Controls.Add(this.lbl_errNationAA);
-            this.tabPageAjoutAgentAccueil.Controls.Add(this.lbl_errSexAA);
-            this.tabPageAjoutAgentAccueil.Controls.Add(this.btn_AjoutAA);
-            this.tabPageAjoutAgentAccueil.Controls.Add(this.label4);
-            this.tabPageAjoutAgentAccueil.Controls.Add(this.lbl_NaissAA);
-            this.tabPageAjoutAgentAccueil.Controls.Add(this.list_NationAA);
-            this.tabPageAjoutAgentAccueil.Controls.Add(this.DatePicker_DatNaissAA);
-            this.tabPageAjoutAgentAccueil.Controls.Add(this.rdn_FemmeAA);
-            this.tabPageAjoutAgentAccueil.Controls.Add(this.rdn_HommeAA);
-            this.tabPageAjoutAgentAccueil.Controls.Add(this.Txt_PrenomAA);
-            this.tabPageAjoutAgentAccueil.Controls.Add(this.Txt_MDPAA);
-            this.tabPageAjoutAgentAccueil.Controls.Add(this.Txt_NomAA);
-            this.tabPageAjoutAgentAccueil.Location = new System.Drawing.Point(4, 22);
-            this.tabPageAjoutAgentAccueil.Name = "tabPageAjoutAgentAccueil";
-            this.tabPageAjoutAgentAccueil.Size = new System.Drawing.Size(652, 311);
-            this.tabPageAjoutAgentAccueil.TabIndex = 2;
-            this.tabPageAjoutAgentAccueil.Text = "Ajouter Agent d\'Accueil";
-            // 
-            // lbl_errNationAA
-            // 
-            this.lbl_errNationAA.AutoSize = true;
-            this.lbl_errNationAA.ForeColor = System.Drawing.Color.Red;
-            this.lbl_errNationAA.Location = new System.Drawing.Point(392, 182);
-            this.lbl_errNationAA.Name = "lbl_errNationAA";
-            this.lbl_errNationAA.Size = new System.Drawing.Size(157, 13);
-            this.lbl_errNationAA.TabIndex = 38;
-            this.lbl_errNationAA.Text = "Veuillez renseigner la nationalite";
-            this.lbl_errNationAA.Visible = false;
-            // 
-            // lbl_errSexAA
-            // 
-            this.lbl_errSexAA.AutoSize = true;
-            this.lbl_errSexAA.ForeColor = System.Drawing.Color.Red;
-            this.lbl_errSexAA.Location = new System.Drawing.Point(117, 131);
-            this.lbl_errSexAA.Name = "lbl_errSexAA";
-            this.lbl_errSexAA.Size = new System.Drawing.Size(131, 13);
-            this.lbl_errSexAA.TabIndex = 37;
-            this.lbl_errSexAA.Text = "Veuillez renseigner le sexe";
-            this.lbl_errSexAA.Visible = false;
-            // 
-            // btn_AjoutAA
-            // 
-            this.btn_AjoutAA.Location = new System.Drawing.Point(453, 222);
-            this.btn_AjoutAA.Name = "btn_AjoutAA";
-            this.btn_AjoutAA.Size = new System.Drawing.Size(108, 23);
-            this.btn_AjoutAA.TabIndex = 36;
-            this.btn_AjoutAA.Text = "Ajouter";
-            this.btn_AjoutAA.UseVisualStyleBackColor = true;
-            this.btn_AjoutAA.Click += new System.EventHandler(this.btn_AjoutAA_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(357, 140);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 13);
-            this.label4.TabIndex = 35;
-            this.label4.Text = "Nationalite";
-            // 
-            // lbl_NaissAA
-            // 
-            this.lbl_NaissAA.AutoSize = true;
-            this.lbl_NaissAA.Location = new System.Drawing.Point(357, 41);
-            this.lbl_NaissAA.Name = "lbl_NaissAA";
-            this.lbl_NaissAA.Size = new System.Drawing.Size(98, 13);
-            this.lbl_NaissAA.TabIndex = 34;
-            this.lbl_NaissAA.Text = "Date de Naissance";
-            // 
-            // list_NationAA
-            // 
-            this.list_NationAA.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.list_NationAA.FormattingEnabled = true;
-            this.list_NationAA.Items.AddRange(new object[] {
-            "Anglais",
-            "Espagnol",
-            "Allemand",
-            "Italien",
-            "Portugais",
-            "Belge",
-            "Suisse",
-            "Polonais",
-            "Ukrainien",
-            "Chinois",
-            "Indien",
-            "Russe",
-            "Japonais",
-            "Americain",
-            "Canadien",
-            "Mexicain",
-            "Bresilien",
-            "Colombien",
-            "Cubain",
-            "Marocain",
-            "Turc",
-            "Algerien",
-            "Tunisien",
-            "Syrien",
-            "Egyptien",
-            "Soudanais",
-            "Congolais",
-            "Senegalais",
-            "Sud-Africain",
-            "Autre"});
-            this.list_NationAA.Location = new System.Drawing.Point(349, 156);
-            this.list_NationAA.Name = "list_NationAA";
-            this.list_NationAA.Size = new System.Drawing.Size(148, 21);
-            this.list_NationAA.TabIndex = 33;
-            // 
-            // DatePicker_DatNaissAA
-            // 
-            this.DatePicker_DatNaissAA.Location = new System.Drawing.Point(349, 57);
-            this.DatePicker_DatNaissAA.Name = "DatePicker_DatNaissAA";
-            this.DatePicker_DatNaissAA.Size = new System.Drawing.Size(200, 20);
-            this.DatePicker_DatNaissAA.TabIndex = 32;
-            this.DatePicker_DatNaissAA.ValueChanged += new System.EventHandler(this.DatePicker_DatNaissAA_ValueChanged);
-            // 
-            // rdn_FemmeAA
-            // 
-            this.rdn_FemmeAA.AutoSize = true;
-            this.rdn_FemmeAA.Location = new System.Drawing.Point(158, 111);
-            this.rdn_FemmeAA.Name = "rdn_FemmeAA";
-            this.rdn_FemmeAA.Size = new System.Drawing.Size(59, 17);
-            this.rdn_FemmeAA.TabIndex = 31;
-            this.rdn_FemmeAA.TabStop = true;
-            this.rdn_FemmeAA.Text = "Femme";
-            this.rdn_FemmeAA.UseVisualStyleBackColor = true;
-            // 
-            // rdn_HommeAA
-            // 
-            this.rdn_HommeAA.AutoSize = true;
-            this.rdn_HommeAA.Location = new System.Drawing.Point(79, 111);
-            this.rdn_HommeAA.Name = "rdn_HommeAA";
-            this.rdn_HommeAA.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.rdn_HommeAA.Size = new System.Drawing.Size(61, 17);
-            this.rdn_HommeAA.TabIndex = 30;
-            this.rdn_HommeAA.TabStop = true;
-            this.rdn_HommeAA.Text = "Homme";
-            this.rdn_HommeAA.UseVisualStyleBackColor = true;
-            // 
-            // Txt_PrenomAA
-            // 
-            this.Txt_PrenomAA.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Txt_PrenomAA.Location = new System.Drawing.Point(58, 69);
-            this.Txt_PrenomAA.Name = "Txt_PrenomAA";
-            this.Txt_PrenomAA.Size = new System.Drawing.Size(190, 20);
-            this.Txt_PrenomAA.TabIndex = 29;
-            this.Txt_PrenomAA.Text = "Prenom";
-            this.Txt_PrenomAA.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_PrenomAA_KeyDown);
-            this.Txt_PrenomAA.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_PrenomAA_KeyUp);
-            // 
-            // Txt_MDPAA
-            // 
-            this.Txt_MDPAA.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Txt_MDPAA.Location = new System.Drawing.Point(58, 194);
-            this.Txt_MDPAA.Name = "Txt_MDPAA";
-            this.Txt_MDPAA.Size = new System.Drawing.Size(190, 20);
-            this.Txt_MDPAA.TabIndex = 28;
-            this.Txt_MDPAA.Text = "Mot de Passe";
-            this.Txt_MDPAA.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_MDPAA_KeyDown);
-            this.Txt_MDPAA.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_MDPAA_KeyUp);
-            // 
-            // Txt_NomAA
-            // 
-            this.Txt_NomAA.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Txt_NomAA.Location = new System.Drawing.Point(58, 43);
-            this.Txt_NomAA.Name = "Txt_NomAA";
-            this.Txt_NomAA.Size = new System.Drawing.Size(190, 20);
-            this.Txt_NomAA.TabIndex = 27;
-            this.Txt_NomAA.Text = "Nom";
-            this.Txt_NomAA.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_NomAA_KeyDown);
-            this.Txt_NomAA.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_NomAA_KeyUp);
+            this.test.Location = new System.Drawing.Point(4, 22);
+            this.test.Name = "test";
+            this.test.Size = new System.Drawing.Size(652, 311);
+            this.test.TabIndex = 2;
+            this.test.Text = "test";
+            this.test.UseVisualStyleBackColor = true;
+            this.test.MouseDown += new System.Windows.Forms.MouseEventHandler(this.test_MouseDown);
             // 
             // Ajout
             // 
@@ -606,16 +467,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 361);
             this.Controls.Add(this.tabControl1);
+            this.MaximumSize = new System.Drawing.Size(700, 400);
+            this.MinimumSize = new System.Drawing.Size(700, 400);
             this.Name = "Ajout";
             this.Text = "Ajout";
             this.Load += new System.EventHandler(this.AjoutRefugies_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPageAjoutRef.ResumeLayout(false);
             this.tabPageAjoutRef.PerformLayout();
-            this.tabPageAjoutMaga.ResumeLayout(false);
-            this.tabPageAjoutMaga.PerformLayout();
-            this.tabPageAjoutAgentAccueil.ResumeLayout(false);
-            this.tabPageAjoutAgentAccueil.PerformLayout();
+            this.tabPageAjoutGérant.ResumeLayout(false);
+            this.tabPageAjoutGérant.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -629,8 +490,7 @@
         private System.Windows.Forms.RadioButton RdBtn_Homme;
         private System.Windows.Forms.MaskedTextBox Txt_Prenom;
         private System.Windows.Forms.MaskedTextBox Txt_Nom;
-        private System.Windows.Forms.TabPage tabPageAjoutMaga;
-        private System.Windows.Forms.TabPage tabPageAjoutAgentAccueil;
+        private System.Windows.Forms.TabPage tabPageAjoutGérant;
         private System.Windows.Forms.ComboBox List_Nationalite;
         private System.Windows.Forms.Label Lbl_DateNaiss;
         private System.Windows.Forms.Button Btn_Ajout;
@@ -649,17 +509,9 @@
         private System.Windows.Forms.MaskedTextBox Txt_PrenomM;
         private System.Windows.Forms.MaskedTextBox Txt_MDPM;
         private System.Windows.Forms.MaskedTextBox Txt_NomM;
-        private System.Windows.Forms.Label lbl_errNationAA;
-        private System.Windows.Forms.Label lbl_errSexAA;
-        private System.Windows.Forms.Button btn_AjoutAA;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lbl_NaissAA;
-        private System.Windows.Forms.ComboBox list_NationAA;
-        private System.Windows.Forms.DateTimePicker DatePicker_DatNaissAA;
-        private System.Windows.Forms.RadioButton rdn_FemmeAA;
-        private System.Windows.Forms.RadioButton rdn_HommeAA;
-        private System.Windows.Forms.MaskedTextBox Txt_PrenomAA;
-        private System.Windows.Forms.MaskedTextBox Txt_MDPAA;
-        private System.Windows.Forms.MaskedTextBox Txt_NomAA;
+        private System.Windows.Forms.Label lbl_errRole;
+        private System.Windows.Forms.CheckBox check_Magasinier;
+        private System.Windows.Forms.CheckBox check_AgentAccueil;
+        private System.Windows.Forms.TabPage test;
     }
 }

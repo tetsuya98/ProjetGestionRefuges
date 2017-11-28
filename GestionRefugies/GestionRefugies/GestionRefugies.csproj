@@ -69,17 +69,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AgentAcceuil.cs" />
-    <Compile Include="AjoutRefugies.Designer.cs">
+    <Compile Include="IHM\Role\AjoutRefugies.Designer.cs">
       <DependentUpon>AjoutRefugies.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="IHM\Connexion\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RefugierManage1.cs" />
-    <Compile Include="AjoutRefugies.cs">
+    <Compile Include="IHM\Role\AjoutRefugies.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="IHM\Connexion\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="ManageAgentAccueil.cs" />
@@ -91,10 +91,10 @@
     <Compile Include="Refugier.cs" />
     <Compile Include="RefugierManage.cs" />
     <Compile Include="User.cs" />
-    <EmbeddedResource Include="AjoutRefugies.resx">
+    <EmbeddedResource Include="IHM\Role\AjoutRefugies.resx">
       <DependentUpon>AjoutRefugies.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="IHM\Connexion\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
