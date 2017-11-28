@@ -154,8 +154,7 @@ namespace GestionRefugies
         #endregion
 
         #endregion
-
-
+        
         #region tabPageAjoutGerant
         #region Txt_Nom
         private void Txt_NomM_KeyUp(object sender, KeyEventArgs e)
@@ -395,19 +394,96 @@ namespace GestionRefugies
             }
         }
         #endregion
+        
 
-        #endregion
-
-        #region Boutons Modifier et Supprimer
+        #region Boutons Modifier et Supprimer refugié
         private void btn_Modif_ref_Click(object sender, EventArgs e)
         {
-
+            // appel fonction update ref
         }
 
         private void btn_Suppr_ref_Click(object sender, EventArgs e)
         {
+            //appelfonction delete refugié
+        }
 
-        } 
+        #endregion
+
+        #endregion
+
+        #region tabpageModif/Suppr_Gerant
+
+        #region Txt_nom_modif_gerant
+        private void Txt_nom_modif_gerant_KeyDown(object sender, KeyEventArgs e)
+        {
+            // si on appuie sur un numero ou un caractere special => on supprime l'evenement 
+            if (e.KeyValue >= 96 && e.KeyValue <= 105 || e.KeyValue == 49 || e.KeyValue >= 51 && e.KeyValue <= 53 || e.KeyValue == 56 || e.KeyValue == 106 || e.KeyValue == 107 || e.KeyValue == 110 || e.KeyValue == 111)
+            {
+                e.SuppressKeyPress = true;
+            }
+            if (Txt_nom_modif_gerant.Text == "Nom" || Txt_nom_modif_gerant.Text == "Nom Incorrect")
+            {
+                this.Txt_nom_modif_gerant.ForeColor = System.Drawing.Color.Black;
+                Txt_nom_modif_gerant.Text = "";
+            }
+        }
+
+        private void Txt_nom_modif_gerant_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (Txt_nom_modif_gerant.Text == "")
+            {
+                this.Txt_nom_modif_gerant.ForeColor = System.Drawing.SystemColors.WindowFrame;
+                Txt_nom_modif_gerant.Text = "Nom";
+            }
+        }
+        #endregion
+
+        #region  Txt_prenom_modif_gerant
+        private void Txt_prenom_modif_gerant_KeyDown(object sender, KeyEventArgs e)
+        {
+            // si on appuie sur un numero ou un caractere special => on supprime l'evenement 
+            if (e.KeyValue >= 96 && e.KeyValue <= 105 || e.KeyValue == 49 || e.KeyValue >= 51 && e.KeyValue <= 53 || e.KeyValue == 56 || e.KeyValue == 106 || e.KeyValue == 107 || e.KeyValue == 110 || e.KeyValue == 111)
+            {
+                e.SuppressKeyPress = true;
+            }
+            if (Txt_prenom_modif_gerant.Text == "Prenom" || Txt_prenom_modif_gerant.Text == "Prenom Incorrect")
+            {
+                this.Txt_prenom_modif_gerant.ForeColor = System.Drawing.Color.Black;
+                Txt_prenom_modif_gerant.Text = "";
+            }
+        }
+
+        private void Txt_prenom_modif_gerant_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (Txt_prenom_modif_gerant.Text == "")
+            {
+                this.Txt_prenom_modif_gerant.ForeColor = System.Drawing.SystemColors.WindowFrame;
+                Txt_prenom_modif_gerant.Text = "Prenom";
+            }
+        }
+        #endregion
+
+        #region datePicker_Naiss_modif_gerant
+        private void datePicker_Naiss_modif_gerant_ValueChanged(object sender, EventArgs e)
+        {
+            if (datePicker_Naiss_modif_gerant.Value >= DateTime.Now)
+            {
+                datePicker_Naiss_modif_gerant.Value = DateTime.Now;
+            }
+        }
+        #endregion
+
+        #region Boutons Modifier et Supprimer gerant
+        private void btn_modif_gerant_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_suppr_gerant_Click(object sender, EventArgs e)
+        {
+
+        }  
+        #endregion
         #endregion
     }
 }
