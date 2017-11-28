@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionRefugies
 {
-    abstract class Role
+    public abstract class Role
     {
         #region champs
         private String nom;

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Diagnostics;
 
 namespace GestionRefugies
 {
@@ -28,7 +29,7 @@ namespace GestionRefugies
         /// <summary>
         /// sexe du refugier
         /// </summary>
-        private string sexe;
+        private String sexe;
 
         /// <summary>
         /// Date de naissance du refugier
@@ -69,7 +70,7 @@ namespace GestionRefugies
                 return id;
             }
         }
-        public string Sexe
+        public String Sexe
         {
             get
             {
@@ -100,7 +101,7 @@ namespace GestionRefugies
         #endregion
 
         #region methode
-        public Refugier(string nom, string prenom, string motdepasse, string sexe, DateTime dateNais, string nationalite, int adresse, int id = 0)
+        public Refugier(string nom, string prenom, String sexe, DateTime dateNais, string nationalite, int adresse, int id = 0)
         {
             this.nom = nom;
             this.prenom = prenom;
@@ -212,5 +213,51 @@ namespace GestionRefugies
                 return false;
             }
         }
-    }
+
+        /// <summary>
+        /// Récupère la liste des réfugier dans la base de donnée
+        /// </summary>
+        /// <returns>Retourne la liste de réfugier</returns>
+        public static List<Refugier> select()
+        {
+            List<Refugier> refugiers = new List<Refugier>();
+            string sqlCommand = "SELECT * FROM refugiers";
+            MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
+
+            cmd.CommandText = sqlCommand;
+            MySqlDataReader reader;
+            try
+            {
+                reader = cmd.ExecuteReader();
+            }catch(MySqlException ex)
+            {
+                return null;
+            }
+            
+            while (reader.Read())
+            {
+                System.Diagnostics.Debug.Write("===============================");
+                System.Diagnostics.Debug.Write(reader.GetFieldValue<String>(reader.GetOrdinal("nom")));
+                System.Diagnostics.Debug.Write(reader.GetFieldValue<String>(reader.GetOrdinal("prenom")));
+                System.Diagnostics.Debug.Write(reader.GetFieldValue<String>(reader.GetOrdinal("sexe")));
+                System.Diagnostics.Debug.Write(reader.GetDateTime(reader.GetOrdinal("dateNais")));
+                System.Diagnostics.Debug.Write(reader.GetFieldValue<String>(reader.GetOrdinal("nationalite")));
+                System.Diagnostics.Debug.Write(reader.GetFieldValue<int>(reader.GetOrdinal("adresse")));
+                System.Diagnostics.Debug.Write(reader.GetFieldValue<int>(reader.GetOrdinal("id")));
+                
+                    Refugier tmp = new Refugier(
+                    reader.GetFieldValue<String>(reader.GetOrdinal("nom")),
+                    reader.GetFieldValue<String>(reader.GetOrdinal("prenom")),
+                    reader.GetFieldValue<String>(reader.GetOrdinal("sexe")),
+                    reader.GetDateTime(reader.GetOrdinal("dateNais")),
+                    reader.GetFieldValue<String>(reader.GetOrdinal("nationalite")),
+                    reader.GetFieldValue<int>(reader.GetOrdinal("adresse")),
+                    reader.GetFieldValue<int>(reader.GetOrdinal("id"))
+                );
+                refugiers.Add(tmp);
+            }
+            reader.Close();
+            return refugiers;
+        }
+    }                                                             
 }

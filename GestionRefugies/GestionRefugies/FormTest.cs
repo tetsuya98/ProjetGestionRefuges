@@ -19,7 +19,7 @@ namespace GestionRefugies
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Refugier.add(new Refugier("Lakraa", "Omer", "mdp", "M", DateTime.Now, "français", 3, 1)) == true)
+            if (Refugier.add(new Refugier("Lakraa", "Omer", "M", DateTime.Now, "français", 3, 1)) == true)
             {
                 MessageBox.Show("Sucess");
             }
@@ -31,7 +31,7 @@ namespace GestionRefugies
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (Refugier.update(new Refugier("Lakraa", "Omer", "mdp", "M", DateTime.Now, "français", 3, 1)) == true)
+            if (Refugier.update(new Refugier("Lakraa", "Omer", "M", DateTime.Now, "français", 3, 1)) == true)
             {
                 MessageBox.Show("Sucess");
 
@@ -44,13 +44,24 @@ namespace GestionRefugies
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (Refugier.delete(new Refugier("Lakraa", "Omer", "mdp", "M", DateTime.Now, "français", 3, 1)) == true)
+            if (Refugier.delete(new Refugier("Lakraa", "Omer", "M", DateTime.Now, "français", 3, 1)) == true)
             {
                 MessageBox.Show("Sucess");
             }
             else
             {
                 MessageBox.Show("Fail");
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Lancement");
+            List<Refugier> refugiers = new List<Refugier>();
+            refugiers = Refugier.select();
+            for (int i = 0; i < refugiers.LongCount(); i++)
+            {
+                MessageBox.Show(refugiers.ElementAt(i).ToString());
             }
         }
     }

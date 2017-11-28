@@ -1,4 +1,4 @@
-﻿namespace GestionRefugies
+﻿/*namespace GestionRefugies
 {
     partial class AjoutRefugies
     {
@@ -307,4 +307,4 @@
         private System.Windows.Forms.Label Lbl_ErrNation;
         private System.Windows.Forms.Label Lbl_Sexe;
     }
-}
+}*/
