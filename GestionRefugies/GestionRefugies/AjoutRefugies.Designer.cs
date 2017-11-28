@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageAjoutRef = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.Lbl_ErrNation = new System.Windows.Forms.Label();
             this.Lbl_Sexe = new System.Windows.Forms.Label();
             this.Btn_Ajout = new System.Windows.Forms.Button();
@@ -45,7 +46,7 @@
             this.Txt_Nom = new System.Windows.Forms.MaskedTextBox();
             this.tabPageRechercheRef = new System.Windows.Forms.TabPage();
             this.tabPageStock = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPageAjoutRef.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +66,7 @@
             // tabPageAjoutRef
             // 
             this.tabPageAjoutRef.BackColor = System.Drawing.Color.Transparent;
+            this.tabPageAjoutRef.Controls.Add(this.button2);
             this.tabPageAjoutRef.Controls.Add(this.button1);
             this.tabPageAjoutRef.Controls.Add(this.Lbl_ErrNation);
             this.tabPageAjoutRef.Controls.Add(this.Lbl_Sexe);
@@ -85,6 +87,16 @@
             this.tabPageAjoutRef.Size = new System.Drawing.Size(652, 311);
             this.tabPageAjoutRef.TabIndex = 0;
             this.tabPageAjoutRef.Text = "Ajouter un Refugié";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(486, 251);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 20);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "google map";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Lbl_ErrNation
             // 
@@ -270,15 +282,15 @@
             this.tabPageStock.Text = "Gestion des Stocks";
             this.tabPageStock.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // button2
             // 
-            this.button1.Location = new System.Drawing.Point(486, 251);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 20);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "google map";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button2.Location = new System.Drawing.Point(486, 277);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "Consulter";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // AjoutRefugies
             // 
@@ -316,5 +328,6 @@
         private System.Windows.Forms.Label Lbl_ErrNation;
         private System.Windows.Forms.Label Lbl_Sexe;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
