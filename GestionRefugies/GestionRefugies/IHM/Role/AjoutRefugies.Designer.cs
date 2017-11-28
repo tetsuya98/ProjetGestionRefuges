@@ -42,9 +42,11 @@
             this.Txt_Prenom = new System.Windows.Forms.MaskedTextBox();
             this.Txt_Nom = new System.Windows.Forms.MaskedTextBox();
             this.tabPageAjoutGérant = new System.Windows.Forms.TabPage();
-            this.lbl_errRole = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.check_Magasinier = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.check_AgentAccueil = new System.Windows.Forms.CheckBox();
+            this.lbl_errRole = new System.Windows.Forms.Label();
             this.lbl_errNationM = new System.Windows.Forms.Label();
             this.lbl_errSexM = new System.Windows.Forms.Label();
             this.btn_AjoutM = new System.Windows.Forms.Button();
@@ -57,17 +59,22 @@
             this.Txt_PrenomM = new System.Windows.Forms.MaskedTextBox();
             this.Txt_MDPM = new System.Windows.Forms.MaskedTextBox();
             this.Txt_NomM = new System.Windows.Forms.MaskedTextBox();
-            this.test = new System.Windows.Forms.TabPage();
+            this.tabPageStock = new System.Windows.Forms.TabPage();
+            this.tabPageModifRef = new System.Windows.Forms.TabPage();
+            this.tabPagemodifGerant = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPageAjoutRef.SuspendLayout();
             this.tabPageAjoutGérant.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPageAjoutRef);
             this.tabControl1.Controls.Add(this.tabPageAjoutGérant);
-            this.tabControl1.Controls.Add(this.test);
+            this.tabControl1.Controls.Add(this.tabPageModifRef);
+            this.tabControl1.Controls.Add(this.tabPagemodifGerant);
+            this.tabControl1.Controls.Add(this.tabPageStock);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
@@ -242,9 +249,7 @@
             // tabPageAjoutGérant
             // 
             this.tabPageAjoutGérant.BackColor = System.Drawing.Color.Transparent;
-            this.tabPageAjoutGérant.Controls.Add(this.lbl_errRole);
-            this.tabPageAjoutGérant.Controls.Add(this.check_Magasinier);
-            this.tabPageAjoutGérant.Controls.Add(this.check_AgentAccueil);
+            this.tabPageAjoutGérant.Controls.Add(this.groupBox1);
             this.tabPageAjoutGérant.Controls.Add(this.lbl_errNationM);
             this.tabPageAjoutGérant.Controls.Add(this.lbl_errSexM);
             this.tabPageAjoutGérant.Controls.Add(this.btn_AjoutM);
@@ -264,21 +269,23 @@
             this.tabPageAjoutGérant.TabIndex = 1;
             this.tabPageAjoutGérant.Text = "Ajouter un Gérant";
             // 
-            // lbl_errRole
+            // groupBox1
             // 
-            this.lbl_errRole.AutoSize = true;
-            this.lbl_errRole.ForeColor = System.Drawing.Color.Red;
-            this.lbl_errRole.Location = new System.Drawing.Point(117, 248);
-            this.lbl_errRole.Name = "lbl_errRole";
-            this.lbl_errRole.Size = new System.Drawing.Size(126, 13);
-            this.lbl_errRole.TabIndex = 28;
-            this.lbl_errRole.Text = "Veuillez renseigner le rôle";
-            this.lbl_errRole.Visible = false;
+            this.groupBox1.Controls.Add(this.check_Magasinier);
+            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.check_AgentAccueil);
+            this.groupBox1.Controls.Add(this.lbl_errRole);
+            this.groupBox1.Location = new System.Drawing.Point(47, 208);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(242, 82);
+            this.groupBox1.TabIndex = 30;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Role(s)";
             // 
             // check_Magasinier
             // 
             this.check_Magasinier.AutoSize = true;
-            this.check_Magasinier.Location = new System.Drawing.Point(173, 228);
+            this.check_Magasinier.Location = new System.Drawing.Point(111, 30);
             this.check_Magasinier.Name = "check_Magasinier";
             this.check_Magasinier.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.check_Magasinier.Size = new System.Drawing.Size(75, 17);
@@ -286,16 +293,39 @@
             this.check_Magasinier.Text = "Magasiner";
             this.check_Magasinier.UseVisualStyleBackColor = true;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox1.Location = new System.Drawing.Point(7, 57);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.checkBox1.Size = new System.Drawing.Size(92, 17);
+            this.checkBox1.TabIndex = 29;
+            this.checkBox1.Text = "Administrateur";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // check_AgentAccueil
             // 
             this.check_AgentAccueil.AutoSize = true;
-            this.check_AgentAccueil.Location = new System.Drawing.Point(49, 228);
+            this.check_AgentAccueil.Location = new System.Drawing.Point(-1, 30);
             this.check_AgentAccueil.Name = "check_AgentAccueil";
             this.check_AgentAccueil.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.check_AgentAccueil.Size = new System.Drawing.Size(100, 17);
             this.check_AgentAccueil.TabIndex = 26;
             this.check_AgentAccueil.Text = "Agent d\'Accueil";
             this.check_AgentAccueil.UseVisualStyleBackColor = true;
+            // 
+            // lbl_errRole
+            // 
+            this.lbl_errRole.AutoSize = true;
+            this.lbl_errRole.ForeColor = System.Drawing.Color.Red;
+            this.lbl_errRole.Location = new System.Drawing.Point(108, 57);
+            this.lbl_errRole.Name = "lbl_errRole";
+            this.lbl_errRole.Size = new System.Drawing.Size(126, 13);
+            this.lbl_errRole.TabIndex = 28;
+            this.lbl_errRole.Text = "Veuillez renseigner le rôle";
+            this.lbl_errRole.Visible = false;
             // 
             // lbl_errNationM
             // 
@@ -432,7 +462,7 @@
             // Txt_MDPM
             // 
             this.Txt_MDPM.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Txt_MDPM.Location = new System.Drawing.Point(58, 194);
+            this.Txt_MDPM.Location = new System.Drawing.Point(58, 179);
             this.Txt_MDPM.Name = "Txt_MDPM";
             this.Txt_MDPM.Size = new System.Drawing.Size(190, 20);
             this.Txt_MDPM.TabIndex = 15;
@@ -451,15 +481,32 @@
             this.Txt_NomM.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_NomM_KeyDown_1);
             this.Txt_NomM.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_NomM_KeyUp);
             // 
-            // test
+            // tabPageStock
             // 
-            this.test.Location = new System.Drawing.Point(4, 22);
-            this.test.Name = "test";
-            this.test.Size = new System.Drawing.Size(652, 311);
-            this.test.TabIndex = 2;
-            this.test.Text = "test";
-            this.test.UseVisualStyleBackColor = true;
-            this.test.MouseDown += new System.Windows.Forms.MouseEventHandler(this.test_MouseDown);
+            this.tabPageStock.Location = new System.Drawing.Point(4, 22);
+            this.tabPageStock.Name = "tabPageStock";
+            this.tabPageStock.Size = new System.Drawing.Size(652, 311);
+            this.tabPageStock.TabIndex = 2;
+            this.tabPageStock.Text = "Gestion Des Stocks";
+            this.tabPageStock.UseVisualStyleBackColor = true;
+            // 
+            // tabPageModifRef
+            // 
+            this.tabPageModifRef.Location = new System.Drawing.Point(4, 22);
+            this.tabPageModifRef.Name = "tabPageModifRef";
+            this.tabPageModifRef.Size = new System.Drawing.Size(652, 311);
+            this.tabPageModifRef.TabIndex = 3;
+            this.tabPageModifRef.Text = "Modifier/Supprimer Refugié";
+            this.tabPageModifRef.UseVisualStyleBackColor = true;
+            // 
+            // tabPagemodifGerant
+            // 
+            this.tabPagemodifGerant.Location = new System.Drawing.Point(4, 22);
+            this.tabPagemodifGerant.Name = "tabPagemodifGerant";
+            this.tabPagemodifGerant.Size = new System.Drawing.Size(652, 311);
+            this.tabPagemodifGerant.TabIndex = 4;
+            this.tabPagemodifGerant.Text = "Modifier/Supprimer Gerant";
+            this.tabPagemodifGerant.UseVisualStyleBackColor = true;
             // 
             // Ajout
             // 
@@ -477,6 +524,8 @@
             this.tabPageAjoutRef.PerformLayout();
             this.tabPageAjoutGérant.ResumeLayout(false);
             this.tabPageAjoutGérant.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -512,6 +561,10 @@
         private System.Windows.Forms.Label lbl_errRole;
         private System.Windows.Forms.CheckBox check_Magasinier;
         private System.Windows.Forms.CheckBox check_AgentAccueil;
-        private System.Windows.Forms.TabPage test;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TabPage tabPageModifRef;
+        private System.Windows.Forms.TabPage tabPagemodifGerant;
+        private System.Windows.Forms.TabPage tabPageStock;
     }
 }

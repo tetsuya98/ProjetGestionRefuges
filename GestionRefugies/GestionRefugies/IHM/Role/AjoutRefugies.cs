@@ -333,10 +333,5 @@ namespace GestionRefugies
 
         #endregion
 
-
-        private void test_MouseDown(object sender, MouseEventArgs e)
-        {
-            MessageBox.Show(sender.ToString());
-        }
     }
 }
