@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionRefugies.role
 {
-    class Agent : Role
+    public class Agent : Role
     {
         #region champs
         #endregion

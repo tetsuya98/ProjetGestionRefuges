@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using GestionRefugies.role;
 
 namespace GestionRefugies
 {
@@ -33,9 +34,24 @@ namespace GestionRefugies
         private string motdepasse;
 
         /// <summary>
-        /// Liste des roles de l'utilisateur
+        /// role admin
         /// </summary>
-        private Roles user_r = new Roles(false,false,false); // création de la liste
+        private Administrateur admin;
+
+        /// <summary>
+        /// role agent
+        /// </summary>
+        private Agent agent;
+
+        /// <summary>
+        /// role magasinier
+        /// </summary>
+        private Magasinier magasinier;
+
+        /// <summary>
+        /// roles de l'utilisateur 
+        /// </summary>
+        private Roles user_role = new Roles();
 
         #endregion
 
@@ -47,7 +63,7 @@ namespace GestionRefugies
         /// <param name="nom">nom de l'agent d'acceuil</param>
         /// <param name="prenom">prénom de l'agent</param>
         /// <param name="motdepasse">mot de passe de l'utilisateur</param>
-        public User(string nom, string prenom, string motdepasse, bool admin, bool agent , bool magasinier)
+        public User(string nom, string prenom, string motdepasse, Administrateur admin, Agent agent , Magasinier magasinier)
         {
 
             this.id = nom + prenom[0];
@@ -97,11 +113,11 @@ namespace GestionRefugies
 
         }
 
-        public List<string> Role
+        public Roles User_role
         {
             get
             {
-                return role;
+                return user_role;
             }
 
         }
@@ -144,6 +160,14 @@ namespace GestionRefugies
             cmd.Parameters.AddWithValue("@Prenom", user.Prenom);
             cmd.Parameters.AddWithValue("@Nom", user.Nom);
             cmd.Parameters.AddWithValue("@Motdepasse", user.Motdepasse);
+            if(User_role.Admin==null)
+            {
+                cmd.Parameters.AddWithValue("@Administrateur", false);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@Administrateur", true);
+            }
 
             try
             {
