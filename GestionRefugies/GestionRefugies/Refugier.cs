@@ -59,7 +59,7 @@ namespace GestionRefugies
         {
             get
             {
-                return nom;
+                return prenom;
             }
         }
         public int Id
@@ -110,7 +110,11 @@ namespace GestionRefugies
             this.adresse = adresse;
             this.id = id;
         }
-
+        /// <summary>
+        /// Ajoute dun réfugier dans la base de donnée
+        /// </summary>
+        /// <param name="refugier">Référence du réfugier</param>
+        /// <returns>True si la requete s'execute correctement sinon false</returns>
         public static bool add(Refugier refugier)
         {
 
@@ -127,7 +131,7 @@ namespace GestionRefugies
             cmd.Parameters.AddWithValue("@sexe", refugier.Sexe);
             cmd.Parameters.AddWithValue("@adresse", refugier.Adresse);
             cmd.Parameters.AddWithValue("@dateNais", refugier.DateNais.Date.ToString("yyyy-MM-dd"));
-            
+
 
             try
             {
@@ -141,6 +145,38 @@ namespace GestionRefugies
                 return false;
             }
             #endregion
+        }
+
+        public static bool update(Refugier refugier)
+        {
+
+            string sqlCommand = "UPDATE refugiers  SET nom = ?, prenom = ?, nationalite = ?, sexe = ?, adresse = ?, dateNais = ? WHERE id = ?";
+            MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
+
+            cmd.CommandText = sqlCommand;
+
+            //Envoi des paramètres
+            cmd.Parameters.AddWithValue("@nom", refugier.Nom);
+            cmd.Parameters.AddWithValue("@prenom", refugier.Prenom);
+            cmd.Parameters.AddWithValue("@nationalite", refugier.Nationalite);
+            cmd.Parameters.AddWithValue("@sexe", refugier.Sexe);
+            cmd.Parameters.AddWithValue("@adresse", refugier.Adresse);
+            cmd.Parameters.AddWithValue("@dateNais", refugier.DateNais.Date.ToString("yyyy-MM-dd"));
+            cmd.Parameters.AddWithValue("@id", refugier.Id);
+
+
+
+            try
+            {
+                //Execution de la commande SQL qui peut provoquer des exceptions
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                //traitement de l'exception...
+                return false;
+            }
         }
     }
 }
