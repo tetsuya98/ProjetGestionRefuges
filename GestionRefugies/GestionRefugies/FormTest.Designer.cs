@@ -32,6 +32,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.BT_login = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -66,7 +67,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(156, 123);
+            this.button4.Location = new System.Drawing.Point(156, 119);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(138, 101);
             this.button4.TabIndex = 3;
@@ -74,11 +75,22 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // BT_login
+            // 
+            this.BT_login.Location = new System.Drawing.Point(12, 226);
+            this.BT_login.Name = "BT_login";
+            this.BT_login.Size = new System.Drawing.Size(282, 93);
+            this.BT_login.TabIndex = 4;
+            this.BT_login.Text = "Login";
+            this.BT_login.UseVisualStyleBackColor = true;
+            this.BT_login.Click += new System.EventHandler(this.BT_login_Click);
+            // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(307, 236);
+            this.ClientSize = new System.Drawing.Size(307, 331);
+            this.Controls.Add(this.BT_login);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -95,5 +107,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button BT_login;
     }
 }

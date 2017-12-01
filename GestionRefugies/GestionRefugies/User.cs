@@ -253,6 +253,41 @@ namespace GestionRefugies
             }
         }
 
+        /// <summary>
+        /// Fonction qui indique la validité du login et du mot de passe dans la base de donnée
+        /// </summary>
+        /// <param name="login">Login de l'utilisateur</param>
+        /// <param name="mdp">Mot de passe de l'utilisateur</param>
+        /// <returns></returns>
+        public static bool login(string login, string mdp)
+        {
+            //requete SQL
+            String sqlCommand = "SELECT login FROM users WHERE login = ? AND mdp = ?";
+
+            MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
+
+            cmd.CommandText = sqlCommand;
+            MySqlDataReader reader;
+
+            //Envoi des paramètres
+            cmd.Parameters.AddWithValue("@login", login);
+            cmd.Parameters.AddWithValue("@mdp", mdp);
+
+            try
+            {
+                reader = cmd.ExecuteReader();
+                System.Diagnostics.Debug.Write("===============================");
+                System.Diagnostics.Debug.Write(reader.HasRows);
+                reader.Close();
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                return false;
+            }
+        }
+
+
         #endregion
     }
 }

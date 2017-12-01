@@ -64,5 +64,17 @@ namespace GestionRefugies
                 MessageBox.Show(refugiers.ElementAt(i).ToString());
             }
         }
+
+        private void BT_login_Click(object sender, EventArgs e)
+        {
+            if (User.login("lakraao", "md"))
+            {
+                MessageBox.Show("Sucess");
+            }
+            else
+            {
+                MessageBox.Show("Fail");
+            }
+        }
     }
 }
