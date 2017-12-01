@@ -51,7 +51,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgentAcceuil.cs" />
     <Compile Include="Roles.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="Program.cs" />

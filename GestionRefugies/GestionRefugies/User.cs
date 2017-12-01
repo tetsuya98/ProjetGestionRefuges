@@ -146,7 +146,7 @@ namespace GestionRefugies
         /// </summary>
         /// <param name="user">prend un utilisateur en paramètre</param>
         /// <returns>true si réussi sinon false</returns>
-        public static bool Add(User user)
+        public  bool Add(User user)
         {
             //requete SQL
             String sql = "INSERT INTO users (clef, prenom, nom, mdp , admin, agent, magasinier) VALUES (?,?,?,?,?,?,?)";
@@ -168,6 +168,22 @@ namespace GestionRefugies
             {
                 cmd.Parameters.AddWithValue("@Administrateur", true);
             }
+            if (User_role.Agent == null)
+            {
+                cmd.Parameters.AddWithValue("@Agent", false);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@Agent", true);
+            }
+            if (User_role.Magasinier == null)
+            {
+                cmd.Parameters.AddWithValue("@Magasinier", false);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@Magasinier", true);
+            }
 
             try
             {
@@ -188,7 +204,7 @@ namespace GestionRefugies
         /// </summary>
         /// <param name="user">prend un utilisateur en paramètre</param>
         /// <returns>true si réussi sinon false</returns>
-        public static bool Delete(User user)
+        public  bool Delete(User user)
         {
             //requete SQL
             String sql = "DELETE FROM `users` WHERE `users`.`clef` =? ";
@@ -219,19 +235,44 @@ namespace GestionRefugies
         /// </summary>
         /// <param name="user">prend un utilisateur en paramètre</param>
         /// <returns>true si réussi sinon false</returns>
-        public static bool Udapte(User user)
+        public  bool Udapte(User user)
         {
             //requete SQL
-            String sql = "UPDATE `users` SET `nom` = '?', `prenom` = '?', `mdp` = '?' WHERE `users`.`clef` = '?' VALUES(?,?,?,?)";
+            String sql = "UPDATE `users` SET nom = ?, prenom = ?, mdp = ?, admin = ?, agent = ?, magasinier = ?  WHERE id = '?' VALUES(?,?,?,?,?,?,?)";
 
             MySqlCommand cmd = new MySqlCommand(sql, Database.getBD());
 
             cmd.CommandText = sql;
             //Envoi des paramètres
-            cmd.Parameters.AddWithValue("@Id", user.Id);
-            cmd.Parameters.AddWithValue("@Prenom", user.Prenom);
             cmd.Parameters.AddWithValue("@Nom", user.Nom);
+            cmd.Parameters.AddWithValue("@Prenom", user.Prenom);
             cmd.Parameters.AddWithValue("@Motdepasse", user.Motdepasse);
+            if (User_role.Admin == null)
+            {
+                cmd.Parameters.AddWithValue("@Administrateur", false);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@Administrateur", true);
+            }
+            if (User_role.Agent == null)
+            {
+                cmd.Parameters.AddWithValue("@Agent", false);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@Agent", true);
+            }
+            if (User_role.Magasinier == null)
+            {
+                cmd.Parameters.AddWithValue("@Magasinier", false);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@Magasinier", true);
+            }
+
+            cmd.Parameters.AddWithValue("@Motdepasse", user.Id);
 
             try
             {
@@ -252,7 +293,7 @@ namespace GestionRefugies
         /// </summary>
         /// <param name="user">prend un utilisateur en paramètre(ne regarde que l'id )</param>
         /// <returns>true si réussi sinon false</returns>
-        public static bool Select(User user)
+        public  bool Select(User user)
         {
             //requete SQL
             String sql = "SELECT * FROM users WHERE 'users'.'clef'= ?";
