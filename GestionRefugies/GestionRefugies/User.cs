@@ -70,7 +70,7 @@ namespace GestionRefugies
             this.nom = nom;
             this.prenom = prenom;
             this.motdepasse = Hashage(motdepasse,prenom);
-            this.user_r = new Roles(admin, agent, magasinier);
+            this.user_role = new Roles(admin, agent, magasinier);
         }
 
         #endregion
