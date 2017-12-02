@@ -49,7 +49,8 @@ namespace GestionRefugies
         /// <param name="motdepasse">mot de passe de l'utilisateur</param>
         public User(string nom, string prenom, string motdepasse, bool admin, bool agent , bool magasinier)
         {
-            this.id = nom + prenom[0];
+            Random aleatoire = new Random();
+            this.id = (nom + prenom[0]).ToLower() + aleatoire.Next(1000);
             this.nom = nom;
             this.prenom = prenom;
             this.motdepasse = Hashage(motdepasse,prenom);
@@ -131,18 +132,35 @@ namespace GestionRefugies
         /// <returns>true si réussi sinon false</returns>
         public static bool Add(User user)
         {
-            //requete SQL
-            String sql = "INSERT INTO users (clef, prenom, nom, mdp , admin, agent, magasinier) VALUES (?,?,?,?,?,?,?)";
+            string sqlCommand = "INSERT INTO users (nom, prenom, agent, magasinier, administrateur, mdp, login) VALUES (?,?,?,?,?,?,?)";
+            MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
 
-            MySqlCommand cmd = new MySqlCommand(sql, Database.getBD());
-
-            cmd.CommandText = sql;
+            cmd.CommandText = sqlCommand;
 
             //Envoi des paramètres
-            cmd.Parameters.AddWithValue("@Id", user.Id);
-            cmd.Parameters.AddWithValue("@Prenom", user.Prenom);
-            cmd.Parameters.AddWithValue("@Nom", user.Nom);
-            cmd.Parameters.AddWithValue("@Motdepasse", user.Motdepasse);
+            cmd.Parameters.AddWithValue("@nom", user.Nom);
+            cmd.Parameters.AddWithValue("@prenom", user.Prenom);
+                
+            //Agent
+            if (user.Roles.Agent != null)
+                cmd.Parameters.AddWithValue("@agent", true);
+            else
+                cmd.Parameters.AddWithValue("@agent", false);
+            //Magasinier
+            if (user.Roles.Magasinier != null)
+                cmd.Parameters.AddWithValue("@magasinier", true);
+            else
+                cmd.Parameters.AddWithValue("@magasinier", false);
+
+            //Administrateur
+            if (user.Roles.Adminnistrateur != null)
+                cmd.Parameters.AddWithValue("@administrateur", true);
+            else
+                cmd.Parameters.AddWithValue("@administrateur", false);
+
+            cmd.Parameters.AddWithValue("@mdp", user.Motdepasse);
+            cmd.Parameters.AddWithValue("@login", user.Id);
+
 
             try
             {
@@ -152,7 +170,6 @@ namespace GestionRefugies
             }
             catch (MySqlException ex)
             {
-
                 //traitement de l'exception...
                 return false;
             }

@@ -31,10 +31,9 @@ namespace GestionRefugies
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (Refugier.update(new Refugier("Lakraa", "Omer", "M", DateTime.Now, "français", 3, 1)) == true)
+            if (Refugier.update(new Refugier("Lakraa", "Oumer", "M", DateTime.Now, "français", 3, 3)) == true)
             {
                 MessageBox.Show("Sucess");
-
             }
             else
             {
@@ -44,7 +43,7 @@ namespace GestionRefugies
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (Refugier.delete(new Refugier("Lakraa", "Omer", "M", DateTime.Now, "français", 3, 1)) == true)
+            if (Refugier.delete(new Refugier("Lakraa", "Omer", "M", DateTime.Now, "français", 3, 2)) == true)
             {
                 MessageBox.Show("Sucess");
             }
@@ -86,13 +85,25 @@ namespace GestionRefugies
             {
                 User tmp = users.ElementAt(i);
                 MessageBox.Show("Nom : "+tmp.Nom);
-                if (tmp.Roles.Admin != null)
+                if (tmp.Roles.Adminnistrateur != null)
                 {
                     MessageBox.Show("Je suis administrateur");
                 }
                 else {
                     MessageBox.Show("Je ne suis pas administrateur");
                 }
+            }
+        }
+
+        private void BT_addUser_Click(object sender, EventArgs e)
+        {
+            if (User.Add(new User("Lakraa", "Omer", "mdp", true, false, false)) == true)
+            {
+                MessageBox.Show("Sucess");
+            }
+            else
+            {
+                MessageBox.Show("Fail");
             }
         }
     }

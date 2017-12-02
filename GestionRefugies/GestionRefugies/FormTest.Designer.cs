@@ -127,6 +127,7 @@
             this.BT_addUser.TabIndex = 5;
             this.BT_addUser.Text = "Ajouter";
             this.BT_addUser.UseVisualStyleBackColor = true;
+            this.BT_addUser.Click += new System.EventHandler(this.BT_addUser_Click);
             // 
             // label1
             // 

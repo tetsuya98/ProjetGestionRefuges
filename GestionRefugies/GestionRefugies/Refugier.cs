@@ -146,7 +146,6 @@ namespace GestionRefugies
                 //traitement de l'exception...
                 return false;
             }
-            #endregion
         }
 
         /// <summary>
@@ -259,5 +258,7 @@ namespace GestionRefugies
             reader.Close();
             return refugiers;
         }
-    }                                                             
+        
+        #endregion
+    }
 }
