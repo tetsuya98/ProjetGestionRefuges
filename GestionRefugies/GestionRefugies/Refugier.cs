@@ -55,12 +55,20 @@ namespace GestionRefugies
             {
                 return nom;
             }
+            set
+            {
+                nom = value;
+            }
         }
         public string Prenom
         {
             get
             {
                 return prenom;
+            }
+            set
+            {
+                prenom = value;
             }
         }
         public int Id
@@ -76,6 +84,10 @@ namespace GestionRefugies
             {
                 return sexe;
             }
+            set
+            {
+                sexe = value;
+            }
         }
         public DateTime DateNais
         {
@@ -89,6 +101,10 @@ namespace GestionRefugies
             get
             {
                 return adresse;
+            }
+            set
+            {
+                adresse = value;
             }
         }
         public string Nationalite
