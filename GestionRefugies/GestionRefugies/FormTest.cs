@@ -76,5 +76,24 @@ namespace GestionRefugies
                 MessageBox.Show("Fail");
             }
         }
+
+        private void BT_selectUser_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Lancement");
+            List<User> users = new List<User>();
+            users = User.select();
+            for (int i = 0; i < users.LongCount(); i++)
+            {
+                User tmp = users.ElementAt(i);
+                MessageBox.Show("Nom : "+tmp.Nom);
+                if (tmp.Roles.Admin != null)
+                {
+                    MessageBox.Show("Je suis administrateur");
+                }
+                else {
+                    MessageBox.Show("Je ne suis pas administrateur");
+                }
+            }
+        }
     }
 }

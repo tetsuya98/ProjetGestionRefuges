@@ -96,14 +96,14 @@ namespace GestionRefugies
 
         }
 
-   /*     public List<string> Role
+        public Roles Roles
         {
             get
             {
-                return role;
+                return roles;
             }
 
-        }*/
+        }
         #endregion
 
         #region méthode
@@ -222,7 +222,51 @@ namespace GestionRefugies
             }
         }
 
-        
+        /// <summary>
+        /// fonction Recherche simple dans BD d'un user
+        /// </summary>
+        /// <param name="user">prend un utilisateur en paramètre(ne regarde que l'id )</param>
+        /// <returns>true si réussi sinon false</returns>
+        public static List<User> select()
+        {
+            List<User> users = new List<User>();
+            string sqlCommand = "SELECT * FROM users";
+            MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
+
+            cmd.CommandText = sqlCommand;
+            MySqlDataReader reader;
+            try
+            {
+                reader = cmd.ExecuteReader();
+            }
+            catch (MySqlException ex)
+            {
+                return null;
+            }
+
+            while (reader.Read())
+            {
+                System.Diagnostics.Debug.Write("===============================");
+                System.Diagnostics.Debug.Write(reader.GetFieldValue<String>(reader.GetOrdinal("nom")));
+                System.Diagnostics.Debug.Write(reader.GetFieldValue<String>(reader.GetOrdinal("prenom")));
+                System.Diagnostics.Debug.Write(reader.GetFieldValue<bool>(reader.GetOrdinal("agent")));
+                System.Diagnostics.Debug.Write(reader.GetFieldValue<bool>(reader.GetOrdinal("magasinier")));
+                System.Diagnostics.Debug.Write(reader.GetFieldValue<bool>(reader.GetOrdinal("administrateur")));
+                System.Diagnostics.Debug.Write(reader.GetFieldValue<String>(reader.GetOrdinal("mdp")));
+
+                User tmp = new User(
+                reader.GetFieldValue<String>(reader.GetOrdinal("nom")),
+                reader.GetFieldValue<String>(reader.GetOrdinal("prenom")),
+                reader.GetFieldValue<String>(reader.GetOrdinal("mdp")),
+                reader.GetFieldValue<bool>(reader.GetOrdinal("administrateur")),
+                reader.GetFieldValue<bool>(reader.GetOrdinal("agent")),
+                reader.GetFieldValue<bool>(reader.GetOrdinal("magasinier"))
+            );
+                users.Add(tmp);
+            }
+            reader.Close();
+            return users;
+        }
 
         /// <summary>
         /// Fonction qui indique la validité du login et du mot de passe dans la base de donnée
