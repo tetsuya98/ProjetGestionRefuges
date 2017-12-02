@@ -53,7 +53,7 @@ namespace GestionRefugies
             this.id = (nom + prenom[0]).ToLower() + aleatoire.Next(1000);
             this.nom = nom;
             this.prenom = prenom;
-            this.motdepasse = Hashage(motdepasse,prenom);
+            this.motdepasse = Hashage(motdepasse, id);
             this.roles = new Roles(admin, agent, magasinier);
         }
 
@@ -303,7 +303,7 @@ namespace GestionRefugies
 
             //Envoi des paramètres
             cmd.Parameters.AddWithValue("@login", login);
-            cmd.Parameters.AddWithValue("@mdp", mdp);
+            cmd.Parameters.AddWithValue("@mdp", User.Hashage(mdp, login));
 
             try
             {
