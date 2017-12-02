@@ -106,5 +106,17 @@ namespace GestionRefugies
                 MessageBox.Show("Fail");
             }
         }
+
+        private void BT_delUser_Click(object sender, EventArgs e)
+        {
+            if (User.Delete("LakraaObite") == true)
+            {
+                MessageBox.Show("Sucess");
+            }
+            else
+            {
+                MessageBox.Show("Fail");
+            }
+        }
     }
 }

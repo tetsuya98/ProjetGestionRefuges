@@ -109,6 +109,7 @@
             this.BT_delUser.TabIndex = 7;
             this.BT_delUser.Text = "Supprimer";
             this.BT_delUser.UseVisualStyleBackColor = true;
+            this.BT_delUser.Click += new System.EventHandler(this.BT_delUser_Click);
             // 
             // BT_updateUser
             // 

@@ -180,19 +180,17 @@ namespace GestionRefugies
         /// </summary>
         /// <param name="user">prend un utilisateur en paramètre</param>
         /// <returns>true si réussi sinon false</returns>
-        public static bool Delete(User user)
+        public static bool Delete(string login)
         {
             //requete SQL
-            String sql = "DELETE FROM `users` WHERE `users`.`clef` =? ";
+            String sql = "DELETE FROM users WHERE login = ? ";
 
             MySqlCommand cmd = new MySqlCommand(sql, Database.getBD());
 
             cmd.CommandText = sql;
 
-            cmd.Parameters.AddWithValue("@Id", user.id);
-
-
-
+            cmd.Parameters.AddWithValue("@login", login);
+            
             try
             {
                 //Execution de la commande SQL qui peut provoquer des exceptions
