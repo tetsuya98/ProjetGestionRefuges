@@ -35,7 +35,7 @@ namespace GestionRefugies
         /// <summary>
         /// Liste des roles de l'utilisateur
         /// </summary>
-       // private Roles user_r = new Roles(false,false,false); // création de la liste
+        private Roles roles;
 
         #endregion
 
@@ -49,12 +49,11 @@ namespace GestionRefugies
         /// <param name="motdepasse">mot de passe de l'utilisateur</param>
         public User(string nom, string prenom, string motdepasse, bool admin, bool agent , bool magasinier)
         {
-
             this.id = nom + prenom[0];
             this.nom = nom;
             this.prenom = prenom;
             this.motdepasse = Hashage(motdepasse,prenom);
-            //this.user_r = new Roles(admin, agent, magasinier);
+            this.roles = new Roles(admin, agent, magasinier);
         }
 
         #endregion
@@ -223,35 +222,7 @@ namespace GestionRefugies
             }
         }
 
-        /// <summary>
-        /// fonction Recherche simple dans BD d'un user
-        /// </summary>
-        /// <param name="user">prend un utilisateur en paramètre(ne regarde que l'id )</param>
-        /// <returns>true si réussi sinon false</returns>
-        public static bool Select(User user)
-        {
-            //requete SQL
-            String sql = "SELECT * FROM users WHERE 'users'.'clef'= ?";
-
-            MySqlCommand cmd = new MySqlCommand(sql, Database.getBD());
-
-            cmd.CommandText = sql;
-            //Envoi des paramètres
-            cmd.Parameters.AddWithValue("@Id", user.id);
-
-            try
-            {
-                //Execution de la commande SQL qui peut provoquer des exceptions
-                cmd.ExecuteNonQuery();
-                return true;
-            }
-            catch (MySqlException ex)
-            {
-
-                //traitement de l'exception...
-                return false;
-            }
-        }
+        
 
         /// <summary>
         /// Fonction qui indique la validité du login et du mot de passe dans la base de donnée
@@ -286,7 +257,6 @@ namespace GestionRefugies
                 return false;
             }
         }
-
 
         #endregion
     }
