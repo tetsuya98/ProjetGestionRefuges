@@ -97,7 +97,7 @@ namespace GestionRefugies
 
         private void BT_addUser_Click(object sender, EventArgs e)
         {
-            if (User.Add(new User("Lakraa", "Omer", "mdp", true, false, false)) == true)
+            if (User.add(new User("Bonjour", "Salut", "mdp", true, false, false)) == true)
             {
                 MessageBox.Show("Sucess");
             }
@@ -109,7 +109,21 @@ namespace GestionRefugies
 
         private void BT_delUser_Click(object sender, EventArgs e)
         {
-            if (User.Delete("LakraaObite") == true)
+            if (User.delete("Lakraa") == true)
+            {
+                MessageBox.Show("Sucess");
+            }
+            else
+            {
+                MessageBox.Show("Fail");
+            }
+        }
+
+        private void BT_updateUser_Click(object sender, EventArgs e)
+        {
+            User tmp = new User("Bonjour", "Elvire", "mdp", true, true, false);
+            tmp.Id = "lakraao";
+            if (User.update(tmp) == true)
             {
                 MessageBox.Show("Sucess");
             }

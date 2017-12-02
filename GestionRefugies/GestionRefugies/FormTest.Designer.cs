@@ -119,6 +119,7 @@
             this.BT_updateUser.TabIndex = 6;
             this.BT_updateUser.Text = "Modifier";
             this.BT_updateUser.UseVisualStyleBackColor = true;
+            this.BT_updateUser.Click += new System.EventHandler(this.BT_updateUser_Click);
             // 
             // BT_addUser
             // 

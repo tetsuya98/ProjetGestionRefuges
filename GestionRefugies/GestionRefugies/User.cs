@@ -67,6 +67,10 @@ namespace GestionRefugies
             {
                 return nom;
             }
+            set
+            {
+                nom = value;
+            }
 
         }
 
@@ -75,6 +79,10 @@ namespace GestionRefugies
             get
             {
                 return prenom;
+            }
+            set
+            {
+                prenom = value;
             }
 
         }
@@ -85,6 +93,10 @@ namespace GestionRefugies
             {
                 return id;
             }
+            set
+            {
+                id = value;
+            }
 
         }
       
@@ -94,7 +106,10 @@ namespace GestionRefugies
             {
                 return motdepasse;
             }
-
+            set
+            {
+                motdepasse = value;
+            }
         }
 
         public Roles Roles
@@ -130,7 +145,7 @@ namespace GestionRefugies
         /// </summary>
         /// <param name="user">prend un utilisateur en paramètre</param>
         /// <returns>true si réussi sinon false</returns>
-        public static bool Add(User user)
+        public static bool add(User user)
         {
             string sqlCommand = "INSERT INTO users (nom, prenom, agent, magasinier, administrateur, mdp, login) VALUES (?,?,?,?,?,?,?)";
             MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
@@ -180,7 +195,7 @@ namespace GestionRefugies
         /// </summary>
         /// <param name="user">prend un utilisateur en paramètre</param>
         /// <returns>true si réussi sinon false</returns>
-        public static bool Delete(string login)
+        public static bool delete(string login)
         {
             //requete SQL
             String sql = "DELETE FROM users WHERE login = ? ";
@@ -209,19 +224,37 @@ namespace GestionRefugies
         /// </summary>
         /// <param name="user">prend un utilisateur en paramètre</param>
         /// <returns>true si réussi sinon false</returns>
-        public static bool Udapte(User user)
+        public static bool update(User user)
         {
             //requete SQL
-            String sql = "UPDATE `users` SET `nom` = '?', `prenom` = '?', `mdp` = '?' WHERE `users`.`clef` = '?' VALUES(?,?,?,?)";
+            String sql = "UPDATE users SET nom = ?, prenom = ?, mdp = ?, agent = ?, magasinier = ?, administrateur = ? WHERE login = ? ";
 
             MySqlCommand cmd = new MySqlCommand(sql, Database.getBD());
 
             cmd.CommandText = sql;
             //Envoi des paramètres
-            cmd.Parameters.AddWithValue("@Id", user.Id);
-            cmd.Parameters.AddWithValue("@Prenom", user.Prenom);
             cmd.Parameters.AddWithValue("@Nom", user.Nom);
+            cmd.Parameters.AddWithValue("@Prenom", user.Prenom);
             cmd.Parameters.AddWithValue("@Motdepasse", user.Motdepasse);
+
+            //Agent
+            if (user.Roles.Agent != null)
+                cmd.Parameters.AddWithValue("@agent", true);
+            else
+                cmd.Parameters.AddWithValue("@agent", false);
+            //Magasinier
+            if (user.Roles.Magasinier != null)
+                cmd.Parameters.AddWithValue("@magasinier", true);
+            else
+                cmd.Parameters.AddWithValue("@magasinier", false);
+
+            //Administrateur
+            if (user.Roles.Adminnistrateur != null)
+                cmd.Parameters.AddWithValue("@administrateur", true);
+            else
+                cmd.Parameters.AddWithValue("@administrateur", false);
+
+            cmd.Parameters.AddWithValue("@login", user.Id);
 
             try
             {
