@@ -13,9 +13,11 @@ namespace GestionRefugies
 {
     public partial class Ajout : Form
     {
-        public Ajout()
+        User user_connect;
+        public Ajout(User user_connect)
         {
             InitializeComponent();
+            this.user_connect = user_connect;
         }
 
         private void AjoutRefugies_Load(object sender, EventArgs e)

@@ -12,6 +12,10 @@ namespace GestionRefugies
 {
     public partial class Form_Connexion : Form
     {
+        
+
+        
+
         public Form_Connexion()
         {
             InitializeComponent();
@@ -35,6 +39,18 @@ namespace GestionRefugies
             
             if (((Txt_ID.Text != "") && (Txt_MDP.Text != "")) && (Txt_ID.Text != "Identifiant") && (Txt_MDP.Text != "Mot de Passe"))
             {
+                User connected_user;
+                connected_user = User.login(Txt_ID.Text, Txt_MDP.Text);
+                if(connected_user != null)
+                {
+                    Ajout inter_connect = new Ajout(connected_user);
+                    inter_connect.Show();
+                }
+                else
+                {
+                    MessageBox.Show("ID ou mot de passe incorrect");
+                }
+                
                 
             }
             else
