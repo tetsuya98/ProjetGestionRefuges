@@ -321,11 +321,11 @@ namespace GestionRefugies
         /// </summary>
         /// <param name="login">Login de l'utilisateur</param>
         /// <param name="mdp">Mot de passe de l'utilisateur</param>
-        /// <returns></returns>
-        public static bool login(string login, string mdp)
+        /// <returns>retoutne un objet User de l'utilisateur qui veut se connecte</returns>
+        public static User login(string login, string mdp)
         {
             //requete SQL
-            String sqlCommand = "SELECT login FROM users WHERE login = ? AND mdp = ?";
+            String sqlCommand = "SELECT * FROM users WHERE login = ? AND mdp = ?";
 
             MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
 
@@ -341,13 +341,34 @@ namespace GestionRefugies
                 reader = cmd.ExecuteReader();
                 System.Diagnostics.Debug.Write("===============================");
                 System.Diagnostics.Debug.Write(reader.HasRows);
-                reader.Close();
-                return true;
+                
             }
             catch (MySqlException ex)
             {
-                return false;
+                return null;
             }
+
+            //récupération de l'utiisateur
+            if (reader.HasRows == true)
+            {
+                reader.Read();
+                User tmp = new User(
+                    reader.GetFieldValue<String>(reader.GetOrdinal("nom")),
+                    reader.GetFieldValue<String>(reader.GetOrdinal("prenom")),
+                    reader.GetFieldValue<String>(reader.GetOrdinal("mdp")),
+                    reader.GetFieldValue<bool>(reader.GetOrdinal("administrateur")),
+                    reader.GetFieldValue<bool>(reader.GetOrdinal("agent")),
+                    reader.GetFieldValue<bool>(reader.GetOrdinal("magasinier"))
+                );
+                reader.Close();
+                return tmp;
+            }
+            else
+            {
+                reader.Close();
+                return null;
+            }
+
         }
 
         #endregion
