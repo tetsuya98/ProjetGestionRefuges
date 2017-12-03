@@ -22,7 +22,8 @@ namespace GestionRefugies
         {
             
         }
-
+       
+       
         #region AjoutRefugié
 
         #region Txt_Nom
@@ -329,9 +330,25 @@ namespace GestionRefugies
 
 
 
-        #endregion
 
         #endregion
 
+        #endregion
+
+        private void tabControl1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            // Check Credentials Here
+
+            if ((checkBox2.Checked == true) && (tabControl1.SelectedTab == tabPageAjoutRef))
+            {
+                tabControl1.SelectedTab = tabPageAjoutRef;
+            }
+            else if ((checkBox2.Checked == false) && (tabControl1.SelectedTab == tabPageAjoutRef))
+            {
+                tabControl1.SelectedTab = tabPageStock;
+                MessageBox.Show("Unable to load tab. You have insufficient access privileges.");
+               
+            }
+        }
     }
 }
