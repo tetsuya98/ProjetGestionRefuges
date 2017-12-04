@@ -88,6 +88,7 @@
     <Compile Include="Refugier.cs" />
     <Compile Include="role\Role.cs" />
     <Compile Include="Roles.cs" />
+    <Compile Include="stock\Item.cs" />
     <Compile Include="Test.cs">
       <SubType>Form</SubType>
     </Compile>
