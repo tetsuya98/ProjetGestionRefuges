@@ -244,11 +244,12 @@ namespace GestionRefugies
             try
             {
                 reader = cmd.ExecuteReader();
-            }catch(MySqlException ex)
+            }
+            catch (MySqlException ex)
             {
                 return null;
             }
-            
+
             while (reader.Read())
             {
                 System.Diagnostics.Debug.Write("===============================");
@@ -259,22 +260,115 @@ namespace GestionRefugies
                 System.Diagnostics.Debug.Write(reader.GetFieldValue<String>(reader.GetOrdinal("nationalite")));
                 System.Diagnostics.Debug.Write(reader.GetFieldValue<int>(reader.GetOrdinal("adresse")));
                 System.Diagnostics.Debug.Write(reader.GetFieldValue<int>(reader.GetOrdinal("id")));
-                
-                    Refugier tmp = new Refugier(
-                    reader.GetFieldValue<String>(reader.GetOrdinal("nom")),
-                    reader.GetFieldValue<String>(reader.GetOrdinal("prenom")),
-                    reader.GetFieldValue<String>(reader.GetOrdinal("sexe")),
-                    reader.GetDateTime(reader.GetOrdinal("dateNais")),
-                    reader.GetFieldValue<String>(reader.GetOrdinal("nationalite")),
-                    reader.GetFieldValue<int>(reader.GetOrdinal("adresse")),
-                    reader.GetFieldValue<int>(reader.GetOrdinal("id"))
-                );
+
+                Refugier tmp = new Refugier(
+                reader.GetFieldValue<String>(reader.GetOrdinal("nom")),
+                reader.GetFieldValue<String>(reader.GetOrdinal("prenom")),
+                reader.GetFieldValue<String>(reader.GetOrdinal("sexe")),
+                reader.GetDateTime(reader.GetOrdinal("dateNais")),
+                reader.GetFieldValue<String>(reader.GetOrdinal("nationalite")),
+                reader.GetFieldValue<int>(reader.GetOrdinal("adresse")),
+                reader.GetFieldValue<int>(reader.GetOrdinal("id"))
+            );
                 refugiers.Add(tmp);
             }
             reader.Close();
             return refugiers;
         }
-        
+
+        public static List<Refugier> Rechercher(List<Refugier> refugiers, string optName = "", string optPrenom = "", String optsex = "", DateTime optdatenaissn = new DateTime(), string optnat = "")
+        {
+            List<Refugier> liste = new List<Refugier>();
+            int nom = 2;
+            int prenom = 2;
+            int sex = 2;
+            int date = 2;
+            int nat= 2;
+
+            foreach (var refugier in refugiers)
+            {
+                if (optName.ToLower() == refugier.Nom.ToLower().Substring(0, optName.Length -1) & optName.Length >= 0)
+                {
+                    nom = 0;
+                    if (optName.Length == 0)
+                    {
+                        nom = 2;
+                    }
+                }
+                else
+                {
+                    nom = 1;
+                }
+                if (optPrenom.ToLower() == refugier.Prenom.ToLower().Substring(0, optPrenom.Length) & optPrenom.Length >= 0)
+                {
+                    prenom = 0;
+                    if (optPrenom.Length == 0)
+                    {
+                        prenom = 2;
+                    }
+                }
+                else
+                {
+                    prenom = 1;
+                }
+                if ( optsex.ToLower() == refugier.Sexe.ToLower().Substring(0, optsex.Length - 1) & optsex.Length >= 0)
+                {
+                    sex = 0;
+                    if (optsex.Length == 0)
+                    {
+                        sex = 2;
+                    }
+                }
+                else
+                {
+                    sex = 1;
+                }
+                if ( optdatenaissn == refugier.DateNais | optdatenaissn == DateTime.Today | optdatenaissn == new DateTime())
+                {
+                    date = 0;  
+                }
+                else
+                {
+                    date = 1;
+                }
+                if (optnat.ToLower() == refugier.Nationalite.ToLower().Substring(0, optnat.Length - 1) & optnat.Length >= 0)
+                {
+                    nat = 0;
+                    if (optnat.Length == 0)
+                    {
+                        nat = 2;
+                    }
+                }
+                else
+                {
+                    nat = 1;
+                }
+                //1 = pas bon
+                //2 = rien mis
+                //0 = mis et ok
+
+                if (nom != 2 | prenom != 2 | nat != 2 | sex != 2 | date != 2)
+                {
+                    if (nom != 1 & prenom != 1 & nat != 1 & sex != 1 & date != 1)
+                    {
+                        liste.Add(refugier);
+                    }
+                }
+                else
+                {
+                    liste.Add(refugier);
+                }
+                nom = 2;
+                prenom = 2;
+                sex = 2;
+                date = 2;
+                nat = 2;
+
+            }
+
+            return liste;
+        }
+
         #endregion
     }
 }
