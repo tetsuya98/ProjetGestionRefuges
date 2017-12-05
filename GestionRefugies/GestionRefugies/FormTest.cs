@@ -19,7 +19,22 @@ namespace GestionRefugies
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Refugier.add(new Refugier("Lakraa", "Omer", "M", DateTime.Now, "français", 3, 1)) == true)
+            if (Refugier.add(new Refugier(
+                "Lakraa",
+                "Omer",
+                "M",
+                DateTime.Now,
+                "français",
+                3, 
+                3, 
+                "blue", 
+                "rouge", 
+                "bouclé", 
+                "Orange", 
+                "Non", 
+                "math", 
+                "con", 
+                "autre....")) == true)
             {
                 MessageBox.Show("Sucess");
             }
@@ -31,7 +46,23 @@ namespace GestionRefugies
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (Refugier.update(new Refugier("Lakraa", "Oumer", "M", DateTime.Now, "français", 3, 3)) == true)
+            if (Refugier.update(new Refugier(
+                "Flipo",
+                "Yann",
+                "M",
+                DateTime.Now,
+                "français",
+                3,
+                3,
+                "blue",
+                "rouge",
+                "bouclé",
+                "Orange",
+                "Non",
+                "math",
+                "con",
+                "autre....", 
+                2)) == true)
             {
                 MessageBox.Show("Sucess");
             }
@@ -43,7 +74,23 @@ namespace GestionRefugies
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (Refugier.delete(new Refugier("Lakraa", "Omer", "M", DateTime.Now, "français", 3, 2)) == true)
+            if (Refugier.delete(new Refugier(
+                "Lakraa",
+                "Omer",
+                "M",
+                DateTime.Now,
+                "français",
+                3,
+                3,
+                "blue",
+                "rouge",
+                "bouclé",
+                "Orange",
+                "Non",
+                "math",
+                "con",
+                "autre....",
+                1)) == true)
             {
                 MessageBox.Show("Sucess");
             }
@@ -66,7 +113,7 @@ namespace GestionRefugies
 
         private void BT_login_Click(object sender, EventArgs e)
         {
-            if (User.login("lakraao", "md"))
+            if (User.login("lakraao", "md") != null)
             {
                 MessageBox.Show("Sucess");
             }
@@ -85,7 +132,7 @@ namespace GestionRefugies
             {
                 User tmp = users.ElementAt(i);
                 MessageBox.Show("Nom : "+tmp.Nom);
-                if (tmp.Roles.Adminnistrateur != null)
+                if (tmp.Roles.Administrateur != null)
                 {
                     MessageBox.Show("Je suis administrateur");
                 }

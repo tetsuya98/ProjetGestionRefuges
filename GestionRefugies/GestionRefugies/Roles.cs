@@ -28,7 +28,7 @@ namespace GestionRefugies
         #endregion
 
         #region propriete
-        public Administrateur Adminnistrateur
+        public Administrateur Administrateur
         {
             get
             {

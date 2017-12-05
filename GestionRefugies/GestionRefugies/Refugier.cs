@@ -148,7 +148,7 @@ namespace GestionRefugies
         {
             get
             {
-                return Taille;
+                return taille;
             }
         }
 
@@ -282,7 +282,7 @@ namespace GestionRefugies
         {
 
             ///finir la requete sql
-            string sqlCommand = "INSERT INTO refugiers (nom, prenom, nationalite, sexe, adresse, dateNais) VALUES (?,?,?,?,?,?)";
+            string sqlCommand = "INSERT INTO refugiers (nom, prenom, nationalite, sexe, adresse, dateNais, taille, couleurPeau, couleurCheveux, typeCheveux, couleurYeux, blessure, allergie, handicap, autre) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
 
             cmd.CommandText = sqlCommand;
@@ -294,6 +294,15 @@ namespace GestionRefugies
             cmd.Parameters.AddWithValue("@sexe", refugier.Sexe);
             cmd.Parameters.AddWithValue("@adresse", refugier.Adresse);
             cmd.Parameters.AddWithValue("@dateNais", refugier.DateNais.Date.ToString("yyyy-MM-dd"));
+            cmd.Parameters.AddWithValue("@taille", refugier.Taille);
+            cmd.Parameters.AddWithValue("@couleurPeau", refugier.CouleurPeau);
+            cmd.Parameters.AddWithValue("@couleurCheveux", refugier.CouleurCheveux);
+            cmd.Parameters.AddWithValue("@typeCheveux", refugier.TypeCheveux);
+            cmd.Parameters.AddWithValue("@couleurYeux", refugier.CouleurYeux);
+            cmd.Parameters.AddWithValue("@blessure", refugier.Blessure);
+            cmd.Parameters.AddWithValue("@allergie", refugier.Allergie);
+            cmd.Parameters.AddWithValue("@handicap", refugier.Handicap);
+            cmd.Parameters.AddWithValue("@autre", refugier.Autre);
 
 
             try
@@ -317,7 +326,7 @@ namespace GestionRefugies
         public static bool update(Refugier refugier)
         {
 
-            string sqlCommand = "UPDATE refugiers  SET nom = ?, prenom = ?, nationalite = ?, sexe = ?, adresse = ?, dateNais = ? WHERE id = ?";
+            string sqlCommand = "UPDATE refugiers  SET nom = ?, prenom = ?, nationalite = ?, sexe = ?, adresse = ?, dateNais = ?, taille = ?, couleurPeau = ?, couleurCheveux = ?, typeCheveux = ?, couleurYeux = ?, blessure = ?, allergie = ?, handicap = ?, autre = ? WHERE id = ?";
             MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
 
             cmd.CommandText = sqlCommand;
@@ -329,8 +338,16 @@ namespace GestionRefugies
             cmd.Parameters.AddWithValue("@sexe", refugier.Sexe);
             cmd.Parameters.AddWithValue("@adresse", refugier.Adresse);
             cmd.Parameters.AddWithValue("@dateNais", refugier.DateNais.Date.ToString("yyyy-MM-dd"));
+            cmd.Parameters.AddWithValue("@taille", refugier.Taille);
+            cmd.Parameters.AddWithValue("@couleurPeau", refugier.CouleurPeau);
+            cmd.Parameters.AddWithValue("@couleurCheveux", refugier.CouleurCheveux);
+            cmd.Parameters.AddWithValue("@typeCheveux", refugier.TypeCheveux);
+            cmd.Parameters.AddWithValue("@couleurYeux", refugier.CouleurYeux);
+            cmd.Parameters.AddWithValue("@blessure", refugier.Blessure);
+            cmd.Parameters.AddWithValue("@allergie", refugier.Allergie);
+            cmd.Parameters.AddWithValue("@handicap", refugier.Handicap);
+            cmd.Parameters.AddWithValue("@autre", refugier.Autre);
             cmd.Parameters.AddWithValue("@id", refugier.Id);
-
 
 
             try
@@ -395,16 +412,7 @@ namespace GestionRefugies
             }
             
             while (reader.Read())
-            {
-                System.Diagnostics.Debug.Write("===============================");
-                System.Diagnostics.Debug.Write(reader.GetFieldValue<String>(reader.GetOrdinal("nom")));
-                System.Diagnostics.Debug.Write(reader.GetFieldValue<String>(reader.GetOrdinal("prenom")));
-                System.Diagnostics.Debug.Write(reader.GetFieldValue<String>(reader.GetOrdinal("sexe")));
-                System.Diagnostics.Debug.Write(reader.GetDateTime(reader.GetOrdinal("dateNais")));
-                System.Diagnostics.Debug.Write(reader.GetFieldValue<String>(reader.GetOrdinal("nationalite")));
-                System.Diagnostics.Debug.Write(reader.GetFieldValue<int>(reader.GetOrdinal("adresse")));
-                System.Diagnostics.Debug.Write(reader.GetFieldValue<int>(reader.GetOrdinal("id")));
-                
+            {                
                     Refugier tmp = new Refugier(
                     reader.GetFieldValue<String>(reader.GetOrdinal("nom")),
                     reader.GetFieldValue<String>(reader.GetOrdinal("prenom")),
@@ -412,7 +420,17 @@ namespace GestionRefugies
                     reader.GetDateTime(reader.GetOrdinal("dateNais")),
                     reader.GetFieldValue<String>(reader.GetOrdinal("nationalite")),
                     reader.GetFieldValue<int>(reader.GetOrdinal("adresse")),
+                    reader.GetFieldValue<int>(reader.GetOrdinal("taille")),
+                    reader.GetFieldValue<String>(reader.GetOrdinal("couleurPeau")),
+                    reader.GetFieldValue<String>(reader.GetOrdinal("couleurCheveux")),
+                    reader.GetFieldValue<String>(reader.GetOrdinal("typeCheveux")),
+                    reader.GetFieldValue<String>(reader.GetOrdinal("couleurYeux")),
+                    reader.GetFieldValue<String>(reader.GetOrdinal("blessure")),
+                    reader.GetFieldValue<String>(reader.GetOrdinal("allergie")),
+                    reader.GetFieldValue<String>(reader.GetOrdinal("handicap")),
+                    reader.GetFieldValue<String>(reader.GetOrdinal("autre")),
                     reader.GetFieldValue<int>(reader.GetOrdinal("id"))
+
                 );
                 refugiers.Add(tmp);
             }

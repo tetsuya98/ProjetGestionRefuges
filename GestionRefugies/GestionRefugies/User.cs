@@ -168,7 +168,7 @@ namespace GestionRefugies
                 cmd.Parameters.AddWithValue("@magasinier", false);
 
             //Administrateur
-            if (user.Roles.Adminnistrateur != null)
+            if (user.Roles.Administrateur != null)
                 cmd.Parameters.AddWithValue("@administrateur", true);
             else
                 cmd.Parameters.AddWithValue("@administrateur", false);
@@ -249,7 +249,7 @@ namespace GestionRefugies
                 cmd.Parameters.AddWithValue("@magasinier", false);
 
             //Administrateur
-            if (user.Roles.Adminnistrateur != null)
+            if (user.Roles.Administrateur != null)
                 cmd.Parameters.AddWithValue("@administrateur", true);
             else
                 cmd.Parameters.AddWithValue("@administrateur", false);
