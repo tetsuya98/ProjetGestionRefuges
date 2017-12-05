@@ -13,13 +13,21 @@ namespace GestionRefugies
 {
     public partial class Ajout : Form
     {
+        
         private User connected_user;
+        
         public Ajout(User connect_u)
         {
-            connected_user = connect_u;
             InitializeComponent();
+            connected_user = connect_u;
+            label_nameU.Text = connected_user.Nom;
+
+            if(connected_user.Roles.Magasinier == null) { label_MagaAccess.Text = "false"; } else { label_MagaAccess.Text = "true"; }
+            if(connected_user.Roles.Agent == null) { label_AgentAccess.Text = "false"; } else { label_AgentAccess.Text = "true"; }
+            if(connected_user.Roles.Adminnistrateur == null) { label_AdminAccess.Text = "false"; } else { label_AdminAccess.Text = "true"; }
         }
 
+        
         private void AjoutRefugies_Load(object sender, EventArgs e)
         {
             
@@ -83,7 +91,7 @@ namespace GestionRefugies
         #region Btn_Ajout
         private void Btn_Ajout_Click(object sender, EventArgs e)
         {
-        
+            
             // ce if est degueulasse ... désolé
 
             if (Txt_Nom.Text != "Nom" && Txt_Nom.Text != "Nom Incorrect" && Txt_Prenom.Text != "Prenom" && Txt_Prenom.Text != "Prenom Incorrect" && List_Nationalite.Text != "" && (RdBtn_Femme.Checked == true || RdBtn_Homme.Checked == true))
@@ -493,16 +501,37 @@ namespace GestionRefugies
         {
             // Check Credentials Here
 
-            if ((connected_user.Roles.Adminnistrateur != null) && (tabControl1.SelectedTab == tabPageAjoutRef))
+            if( (connected_user.Roles.Adminnistrateur == null))
             {
-                tabControl1.SelectedTab = tabPageAjoutRef;
-            }
-            else
-            {
-                tabControl1.SelectedTab = tabPageStock;
-                MessageBox.Show("Unable to load tab. You have insufficient access privileges.");
 
+                //save de la page selectionné avant les test
+                TabPage selectPage = new TabPage();
+                selectPage = tabControl1.SelectedTab;
+
+                //test des droit d'accée de l'individu
+                if ((connected_user.Roles.Agent == null) && ( (tabControl1.SelectedTab == tabPageAjoutRef) || (tabControl1.SelectedTab == tabPageAjoutGérant) || (tabControl1.SelectedTab == tabPagemodifGerant) || (tabControl1.SelectedTab == tabPageModifRef) ) )
+                {
+                    tabControl1.SelectedTab = tabPageAccueil;
+                    MessageBox.Show("Unable to load tab. You have insufficient access privileges.");
+                }
+                else
+                {
+                    tabControl1.SelectedTab = selectPage;
+                }
+
+                if ((connected_user.Roles.Magasinier == null) && (tabControl1.SelectedTab == tabPageStock))
+                {
+                    tabControl1.SelectedTab = tabPageAccueil;
+                    MessageBox.Show("Unable to load tab. You have insufficient access privileges.");
+                }
             }
+
+            
+        }
+
+        private void label_nameU_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
