@@ -366,9 +366,9 @@ namespace GestionRefugies
         /// <summary>
         /// Supprime un refugier dans la base de donnée
         /// </summary>
-        /// <param name="refugier">Réfugier à supprimmer</param>
+        /// <param name="refugier">Id du réfugier à supprimmer</param>
         /// <returns>Retourne true si la requete réussi sinon false</returns>
-        public static bool delete(Refugier refugier)
+        public static bool delete(int id)
         {
             string sqlCommand = "DELETE FROM refugiers WHERE id = ?";
             MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
@@ -376,7 +376,7 @@ namespace GestionRefugies
             cmd.CommandText = sqlCommand;
 
             //Envoi des paramètres
-            cmd.Parameters.AddWithValue("@id", refugier.Id);
+            cmd.Parameters.AddWithValue("@id", id);
 
             try
             {
