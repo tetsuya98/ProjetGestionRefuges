@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 05, 2017 at 07:06 AM
+-- Generation Time: Dec 05, 2017 at 07:34 AM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -55,6 +55,14 @@ CREATE TABLE IF NOT EXISTS `refugiers` (
   `sexe` char(10) NOT NULL,
   `adresse` int(11) NOT NULL,
   `dateNais` date NOT NULL,
+  `taille` int(11) NOT NULL,
+  `couleurPeau` varchar(255) NOT NULL,
+  `couleurCheveux` varchar(255) NOT NULL,
+  `couleurYeux` varchar(255) NOT NULL,
+  `blessure` varchar(255) NOT NULL,
+  `allergie` varchar(255) NOT NULL,
+  `handicap` varchar(255) NOT NULL,
+  `autre` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `nom` (`nom`),
   KEY `prenom` (`prenom`)
@@ -64,14 +72,14 @@ CREATE TABLE IF NOT EXISTS `refugiers` (
 -- Dumping data for table `refugiers`
 --
 
-INSERT INTO `refugiers` (`id`, `nom`, `prenom`, `nationalite`, `sexe`, `adresse`, `dateNais`) VALUES
-(3, 'Lakraa', 'Oumer', 'français', 'M', 3, '2017-12-02'),
-(4, 'Flipo', 'Yann', 'français', 'F', 2, '2017-11-08'),
-(5, 'Lakraa', 'Lakraa', 'français', 'M', 3, '2017-11-27'),
-(6, 'Lakraa', 'Lakraa', 'français', 'M', 3, '2017-11-27'),
-(7, 'Lakraa', 'Omer', 'français', 'M', 3, '2017-11-27'),
-(8, 'Lakraa', 'Omer', 'français', 'M', 3, '2017-12-02'),
-(9, 'Lakraa', 'Omer', 'français', 'M', 3, '2017-12-02');
+INSERT INTO `refugiers` (`id`, `nom`, `prenom`, `nationalite`, `sexe`, `adresse`, `dateNais`, `taille`, `couleurPeau`, `couleurCheveux`, `couleurYeux`, `blessure`, `allergie`, `handicap`, `autre`) VALUES
+(3, 'Lakraa', 'Oumer', 'français', 'M', 3, '2017-12-02', 0, '', '', '', '', '', '', ''),
+(4, 'Flipo', 'Yann', 'français', 'F', 2, '2017-11-08', 0, '', '', '', '', '', '', ''),
+(5, 'Lakraa', 'Lakraa', 'français', 'M', 3, '2017-11-27', 0, '', '', '', '', '', '', ''),
+(6, 'Lakraa', 'Lakraa', 'français', 'M', 3, '2017-11-27', 0, '', '', '', '', '', '', ''),
+(7, 'Lakraa', 'Omer', 'français', 'M', 3, '2017-11-27', 0, '', '', '', '', '', '', ''),
+(8, 'Lakraa', 'Omer', 'français', 'M', 3, '2017-12-02', 0, '', '', '', '', '', '', ''),
+(9, 'Lakraa', 'Omer', 'français', 'M', 3, '2017-12-02', 0, '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
