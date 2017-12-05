@@ -39,6 +39,8 @@
             this.label_AgentAccess = new System.Windows.Forms.Label();
             this.label_nameU = new System.Windows.Forms.Label();
             this.tabPageAjoutRef = new System.Windows.Forms.TabPage();
+            this.lbl_RefugeRef = new System.Windows.Forms.Label();
+            this.num_RefugeRef = new System.Windows.Forms.NumericUpDown();
             this.Lbl_ErrNation = new System.Windows.Forms.Label();
             this.Lbl_Sexe = new System.Windows.Forms.Label();
             this.Btn_Ajout = new System.Windows.Forms.Button();
@@ -69,8 +71,18 @@
             this.Txt_MDPM = new System.Windows.Forms.MaskedTextBox();
             this.Txt_NomM = new System.Windows.Forms.MaskedTextBox();
             this.tabPageModifRef = new System.Windows.Forms.TabPage();
+            this.lbl_errsupp_modif_ref = new System.Windows.Forms.Label();
+            this.btn_rechercher_modifref = new System.Windows.Forms.Button();
+            this.lbl_refugeref_modif_ref = new System.Windows.Forms.Label();
+            this.num_refugeref_modif_ref = new System.Windows.Forms.NumericUpDown();
             this.btn_Suppr_ref = new System.Windows.Forms.Button();
             this.DataGrid_modif_ref = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sexe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateNaiss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nationalite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbl_err_nation_modif_ref = new System.Windows.Forms.Label();
             this.lbl_err_sex_modif_ref = new System.Windows.Forms.Label();
             this.btn_Modif_ref = new System.Windows.Forms.Button();
@@ -107,28 +119,19 @@
             this.Txt_prenom_modif_gerant = new System.Windows.Forms.MaskedTextBox();
             this.Txt_nom_modif_gerant = new System.Windows.Forms.MaskedTextBox();
             this.tabPageStock = new System.Windows.Forms.TabPage();
-            this.num_RefugeRef = new System.Windows.Forms.NumericUpDown();
-            this.lbl_RefugeRef = new System.Windows.Forms.Label();
-            this.lbl_refugeref_modif_ref = new System.Windows.Forms.Label();
-            this.num_refugeref_modif_ref = new System.Windows.Forms.NumericUpDown();
-            this.ID = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sexe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateNaiss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nationalite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbl_err_btn_modif_ref = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPageAccueil.SuspendLayout();
             this.tabPageAjoutRef.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.num_RefugeRef)).BeginInit();
             this.tabPageAjoutGérant.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPageModifRef.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.num_refugeref_modif_ref)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_modif_ref)).BeginInit();
             this.tabPagemodifGerant.SuspendLayout();
             this.Group_role_modif_gerant.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_RefugeRef)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_refugeref_modif_ref)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -159,7 +162,7 @@
             this.tabPageAccueil.Controls.Add(this.label_nameU);
             this.tabPageAccueil.Location = new System.Drawing.Point(4, 22);
             this.tabPageAccueil.Name = "tabPageAccueil";
-            this.tabPageAccueil.Size = new System.Drawing.Size(652, 311);
+            this.tabPageAccueil.Size = new System.Drawing.Size(688, 376);
             this.tabPageAccueil.TabIndex = 5;
             this.tabPageAccueil.Text = "Accueil";
             this.tabPageAccueil.UseVisualStyleBackColor = true;
@@ -263,10 +266,28 @@
             this.tabPageAjoutRef.Controls.Add(this.Txt_Nom);
             this.tabPageAjoutRef.Location = new System.Drawing.Point(4, 22);
             this.tabPageAjoutRef.Name = "tabPageAjoutRef";
-            this.tabPageAjoutRef.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPageAjoutRef.Size = new System.Drawing.Size(652, 311);
+            this.tabPageAjoutRef.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageAjoutRef.Size = new System.Drawing.Size(688, 376);
             this.tabPageAjoutRef.TabIndex = 0;
             this.tabPageAjoutRef.Text = "Ajouter un Refugié";
+            // 
+            // lbl_RefugeRef
+            // 
+            this.lbl_RefugeRef.AutoSize = true;
+            this.lbl_RefugeRef.Location = new System.Drawing.Point(103, 177);
+            this.lbl_RefugeRef.Name = "lbl_RefugeRef";
+            this.lbl_RefugeRef.Size = new System.Drawing.Size(55, 13);
+            this.lbl_RefugeRef.TabIndex = 15;
+            this.lbl_RefugeRef.Text = "Refuge n°";
+            this.lbl_RefugeRef.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // num_RefugeRef
+            // 
+            this.num_RefugeRef.Location = new System.Drawing.Point(158, 175);
+            this.num_RefugeRef.Name = "num_RefugeRef";
+            this.num_RefugeRef.Size = new System.Drawing.Size(90, 20);
+            this.num_RefugeRef.TabIndex = 14;
+            this.num_RefugeRef.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Lbl_ErrNation
             // 
@@ -430,8 +451,8 @@
             this.tabPageAjoutGérant.Controls.Add(this.Txt_NomM);
             this.tabPageAjoutGérant.Location = new System.Drawing.Point(4, 22);
             this.tabPageAjoutGérant.Name = "tabPageAjoutGérant";
-            this.tabPageAjoutGérant.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPageAjoutGérant.Size = new System.Drawing.Size(652, 311);
+            this.tabPageAjoutGérant.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageAjoutGérant.Size = new System.Drawing.Size(688, 376);
             this.tabPageAjoutGérant.TabIndex = 1;
             this.tabPageAjoutGérant.Text = "Ajouter un Gérant";
             // 
@@ -650,6 +671,9 @@
             // tabPageModifRef
             // 
             this.tabPageModifRef.BackColor = System.Drawing.Color.Transparent;
+            this.tabPageModifRef.Controls.Add(this.lbl_err_btn_modif_ref);
+            this.tabPageModifRef.Controls.Add(this.lbl_errsupp_modif_ref);
+            this.tabPageModifRef.Controls.Add(this.btn_rechercher_modifref);
             this.tabPageModifRef.Controls.Add(this.lbl_refugeref_modif_ref);
             this.tabPageModifRef.Controls.Add(this.num_refugeref_modif_ref);
             this.tabPageModifRef.Controls.Add(this.btn_Suppr_ref);
@@ -670,6 +694,50 @@
             this.tabPageModifRef.Size = new System.Drawing.Size(688, 376);
             this.tabPageModifRef.TabIndex = 3;
             this.tabPageModifRef.Text = "Modifier/Supprimer Refugié";
+            // 
+            // lbl_errsupp_modif_ref
+            // 
+            this.lbl_errsupp_modif_ref.AutoSize = true;
+            this.lbl_errsupp_modif_ref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_errsupp_modif_ref.Location = new System.Drawing.Point(235, 355);
+            this.lbl_errsupp_modif_ref.Name = "lbl_errsupp_modif_ref";
+            this.lbl_errsupp_modif_ref.Size = new System.Drawing.Size(349, 13);
+            this.lbl_errsupp_modif_ref.TabIndex = 30;
+            this.lbl_errsupp_modif_ref.Text = "Pour la suppression, Veuillez cliquer sur un refugier dans la liste si dessus";
+            this.lbl_errsupp_modif_ref.Visible = false;
+            // 
+            // btn_rechercher_modifref
+            // 
+            this.btn_rechercher_modifref.Location = new System.Drawing.Point(59, 281);
+            this.btn_rechercher_modifref.Name = "btn_rechercher_modifref";
+            this.btn_rechercher_modifref.Size = new System.Drawing.Size(115, 23);
+            this.btn_rechercher_modifref.TabIndex = 29;
+            this.btn_rechercher_modifref.Text = "Recherche";
+            this.btn_rechercher_modifref.UseVisualStyleBackColor = true;
+            this.btn_rechercher_modifref.Click += new System.EventHandler(this.btn_rechercher_modifref_Click);
+            // 
+            // lbl_refugeref_modif_ref
+            // 
+            this.lbl_refugeref_modif_ref.AutoSize = true;
+            this.lbl_refugeref_modif_ref.Location = new System.Drawing.Point(25, 248);
+            this.lbl_refugeref_modif_ref.Name = "lbl_refugeref_modif_ref";
+            this.lbl_refugeref_modif_ref.Size = new System.Drawing.Size(55, 13);
+            this.lbl_refugeref_modif_ref.TabIndex = 28;
+            this.lbl_refugeref_modif_ref.Text = "Refuge n°";
+            this.lbl_refugeref_modif_ref.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // num_refugeref_modif_ref
+            // 
+            this.num_refugeref_modif_ref.Location = new System.Drawing.Point(95, 246);
+            this.num_refugeref_modif_ref.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.num_refugeref_modif_ref.Name = "num_refugeref_modif_ref";
+            this.num_refugeref_modif_ref.Size = new System.Drawing.Size(90, 20);
+            this.num_refugeref_modif_ref.TabIndex = 27;
+            this.num_refugeref_modif_ref.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btn_Suppr_ref
             // 
@@ -697,14 +765,53 @@
             this.DataGrid_modif_ref.Location = new System.Drawing.Point(238, 9);
             this.DataGrid_modif_ref.Name = "DataGrid_modif_ref";
             this.DataGrid_modif_ref.ReadOnly = true;
-            this.DataGrid_modif_ref.Size = new System.Drawing.Size(447, 364);
+            this.DataGrid_modif_ref.Size = new System.Drawing.Size(447, 343);
             this.DataGrid_modif_ref.TabIndex = 25;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ID.Width = 50;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Nom";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Prenom
+            // 
+            this.Prenom.HeaderText = "Prenom";
+            this.Prenom.Name = "Prenom";
+            this.Prenom.ReadOnly = true;
+            // 
+            // Sexe
+            // 
+            this.Sexe.HeaderText = "Sexe";
+            this.Sexe.Name = "Sexe";
+            this.Sexe.ReadOnly = true;
+            // 
+            // DateNaiss
+            // 
+            this.DateNaiss.HeaderText = "Date de Naissance";
+            this.DateNaiss.Name = "DateNaiss";
+            this.DateNaiss.ReadOnly = true;
+            // 
+            // Nationalite
+            // 
+            this.Nationalite.HeaderText = "Nationalite";
+            this.Nationalite.Name = "Nationalite";
+            this.Nationalite.ReadOnly = true;
             // 
             // lbl_err_nation_modif_ref
             // 
             this.lbl_err_nation_modif_ref.AutoSize = true;
             this.lbl_err_nation_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_nation_modif_ref.Location = new System.Drawing.Point(75, 229);
+            this.lbl_err_nation_modif_ref.Location = new System.Drawing.Point(75, 216);
             this.lbl_err_nation_modif_ref.Name = "lbl_err_nation_modif_ref";
             this.lbl_err_nation_modif_ref.Size = new System.Drawing.Size(157, 13);
             this.lbl_err_nation_modif_ref.TabIndex = 24;
@@ -735,7 +842,7 @@
             // lbl_Nation_modif_ref
             // 
             this.lbl_Nation_modif_ref.AutoSize = true;
-            this.lbl_Nation_modif_ref.Location = new System.Drawing.Point(13, 189);
+            this.lbl_Nation_modif_ref.Location = new System.Drawing.Point(13, 176);
             this.lbl_Nation_modif_ref.Name = "lbl_Nation_modif_ref";
             this.lbl_Nation_modif_ref.Size = new System.Drawing.Size(57, 13);
             this.lbl_Nation_modif_ref.TabIndex = 21;
@@ -744,7 +851,7 @@
             // lbl_dateNaiss_modif_ref
             // 
             this.lbl_dateNaiss_modif_ref.AutoSize = true;
-            this.lbl_dateNaiss_modif_ref.Location = new System.Drawing.Point(13, 128);
+            this.lbl_dateNaiss_modif_ref.Location = new System.Drawing.Point(13, 120);
             this.lbl_dateNaiss_modif_ref.Name = "lbl_dateNaiss_modif_ref";
             this.lbl_dateNaiss_modif_ref.Size = new System.Drawing.Size(98, 13);
             this.lbl_dateNaiss_modif_ref.TabIndex = 20;
@@ -785,14 +892,14 @@
             "Senegalais",
             "Sud-Africain",
             "Autre"});
-            this.list_nation_modif_ref.Location = new System.Drawing.Point(16, 205);
+            this.list_nation_modif_ref.Location = new System.Drawing.Point(16, 192);
             this.list_nation_modif_ref.Name = "list_nation_modif_ref";
             this.list_nation_modif_ref.Size = new System.Drawing.Size(190, 21);
             this.list_nation_modif_ref.TabIndex = 19;
             // 
             // DatePicker_Naiss_modif_ref
             // 
-            this.DatePicker_Naiss_modif_ref.Location = new System.Drawing.Point(16, 144);
+            this.DatePicker_Naiss_modif_ref.Location = new System.Drawing.Point(16, 136);
             this.DatePicker_Naiss_modif_ref.Name = "DatePicker_Naiss_modif_ref";
             this.DatePicker_Naiss_modif_ref.Size = new System.Drawing.Size(190, 20);
             this.DatePicker_Naiss_modif_ref.TabIndex = 18;
@@ -862,7 +969,7 @@
             this.tabPagemodifGerant.Controls.Add(this.Txt_nom_modif_gerant);
             this.tabPagemodifGerant.Location = new System.Drawing.Point(4, 22);
             this.tabPagemodifGerant.Name = "tabPagemodifGerant";
-            this.tabPagemodifGerant.Size = new System.Drawing.Size(652, 311);
+            this.tabPagemodifGerant.Size = new System.Drawing.Size(688, 376);
             this.tabPagemodifGerant.TabIndex = 4;
             this.tabPagemodifGerant.Text = "Modifier/Supprimer Gerant";
             // 
@@ -1129,83 +1236,22 @@
             // 
             this.tabPageStock.Location = new System.Drawing.Point(4, 22);
             this.tabPageStock.Name = "tabPageStock";
-            this.tabPageStock.Size = new System.Drawing.Size(652, 311);
+            this.tabPageStock.Size = new System.Drawing.Size(688, 376);
             this.tabPageStock.TabIndex = 2;
             this.tabPageStock.Text = "Gestion Des Stocks";
             this.tabPageStock.UseVisualStyleBackColor = true;
             // 
-            // num_RefugeRef
+            // lbl_err_btn_modif_ref
             // 
-            this.num_RefugeRef.Location = new System.Drawing.Point(158, 175);
-            this.num_RefugeRef.Name = "num_RefugeRef";
-            this.num_RefugeRef.Size = new System.Drawing.Size(90, 20);
-            this.num_RefugeRef.TabIndex = 14;
-            this.num_RefugeRef.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lbl_RefugeRef
-            // 
-            this.lbl_RefugeRef.AutoSize = true;
-            this.lbl_RefugeRef.Location = new System.Drawing.Point(103, 177);
-            this.lbl_RefugeRef.Name = "lbl_RefugeRef";
-            this.lbl_RefugeRef.Size = new System.Drawing.Size(55, 13);
-            this.lbl_RefugeRef.TabIndex = 15;
-            this.lbl_RefugeRef.Text = "Refuge n°";
-            this.lbl_RefugeRef.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_refugeref_modif_ref
-            // 
-            this.lbl_refugeref_modif_ref.AutoSize = true;
-            this.lbl_refugeref_modif_ref.Location = new System.Drawing.Point(25, 259);
-            this.lbl_refugeref_modif_ref.Name = "lbl_refugeref_modif_ref";
-            this.lbl_refugeref_modif_ref.Size = new System.Drawing.Size(55, 13);
-            this.lbl_refugeref_modif_ref.TabIndex = 28;
-            this.lbl_refugeref_modif_ref.Text = "Refuge n°";
-            this.lbl_refugeref_modif_ref.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // num_refugeref_modif_ref
-            // 
-            this.num_refugeref_modif_ref.Location = new System.Drawing.Point(95, 257);
-            this.num_refugeref_modif_ref.Name = "num_refugeref_modif_ref";
-            this.num_refugeref_modif_ref.Size = new System.Drawing.Size(90, 20);
-            this.num_refugeref_modif_ref.TabIndex = 27;
-            this.num_refugeref_modif_ref.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 50;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Nom";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Prenom
-            // 
-            this.Prenom.HeaderText = "Prenom";
-            this.Prenom.Name = "Prenom";
-            this.Prenom.ReadOnly = true;
-            // 
-            // Sexe
-            // 
-            this.Sexe.HeaderText = "Sexe";
-            this.Sexe.Name = "Sexe";
-            this.Sexe.ReadOnly = true;
-            // 
-            // DateNaiss
-            // 
-            this.DateNaiss.HeaderText = "Date de Naissance";
-            this.DateNaiss.Name = "DateNaiss";
-            this.DateNaiss.ReadOnly = true;
-            // 
-            // Nationalite
-            // 
-            this.Nationalite.HeaderText = "Nationalite";
-            this.Nationalite.Name = "Nationalite";
-            this.Nationalite.ReadOnly = true;
+            this.lbl_err_btn_modif_ref.AutoSize = true;
+            this.lbl_err_btn_modif_ref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_btn_modif_ref.Location = new System.Drawing.Point(235, 355);
+            this.lbl_err_btn_modif_ref.Name = "lbl_err_btn_modif_ref";
+            this.lbl_err_btn_modif_ref.Size = new System.Drawing.Size(384, 13);
+            this.lbl_err_btn_modif_ref.TabIndex = 31;
+            this.lbl_err_btn_modif_ref.Text = "Pour la modification, Veuillez cliquer sur UN SEUL refugier dans la liste si dess" +
+    "us";
+            this.lbl_err_btn_modif_ref.Visible = false;
             // 
             // Ajout
             // 
@@ -1223,20 +1269,20 @@
             this.tabPageAccueil.PerformLayout();
             this.tabPageAjoutRef.ResumeLayout(false);
             this.tabPageAjoutRef.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.num_RefugeRef)).EndInit();
             this.tabPageAjoutGérant.ResumeLayout(false);
             this.tabPageAjoutGérant.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPageModifRef.ResumeLayout(false);
             this.tabPageModifRef.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.num_refugeref_modif_ref)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_modif_ref)).EndInit();
             this.tabPagemodifGerant.ResumeLayout(false);
             this.tabPagemodifGerant.PerformLayout();
             this.Group_role_modif_gerant.ResumeLayout(false);
             this.Group_role_modif_gerant.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_RefugeRef)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_refugeref_modif_ref)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1326,11 +1372,14 @@
         private System.Windows.Forms.NumericUpDown num_RefugeRef;
         private System.Windows.Forms.Label lbl_refugeref_modif_ref;
         private System.Windows.Forms.NumericUpDown num_refugeref_modif_ref;
-        private System.Windows.Forms.DataGridViewButtonColumn ID;
+        private System.Windows.Forms.Button btn_rechercher_modifref;
+        private System.Windows.Forms.Label lbl_errsupp_modif_ref;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Prenom;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sexe;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateNaiss;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nationalite;
+        private System.Windows.Forms.Label lbl_err_btn_modif_ref;
     }
 }

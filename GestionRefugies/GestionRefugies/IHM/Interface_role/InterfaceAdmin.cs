@@ -106,7 +106,7 @@ namespace GestionRefugies
                     sex = "M";
                 }
 
-                if (Refugier.add(new Refugier(Txt_Nom.Text, Txt_Prenom.Text, sex, DatePicker_DatNaiss.Value, List_Nationalite.Text, (int)num_RefugeRef.Value)) == true);
+                if (Refugier.add(new Refugier(Txt_Nom.Text, Txt_Prenom.Text, sex, DatePicker_DatNaiss.Value, List_Nationalite.Text, (int)num_RefugeRef.Value, 150," "," "," "," "," "," "," "," ")) == true)
                 {
                     MessageBox.Show("Succes de l'ajout du refugié : " + Txt_Nom.Text + " " + Txt_Prenom.Text);
                 }
@@ -403,18 +403,116 @@ namespace GestionRefugies
             }
         }
         #endregion
-        
+
 
         #region Boutons Modifier et Supprimer refugié
+
+        #region btn recherche
+        private void btn_rechercher_modifref_Click(object sender, EventArgs e)
+        {
+            DataGrid_modif_ref.Rows.Clear();
+            //appel recherche de josselin
+            //pour l'instant c celle d'omer
+            List<Refugier> refugiers = Refugier.select();
+            
+            foreach (var refugier in refugiers)
+            {
+                DataGrid_modif_ref.Rows.Add(refugier.Id, refugier.Nom, refugier.Prenom, refugier.Sexe, refugier.DateNais, refugier.Nationalite);
+            }
+            
+        }
+        #endregion
+
+        #region btn_modifref
         private void btn_Modif_ref_Click(object sender, EventArgs e)
         {
-            // appel fonction update ref
-        }
+            lbl_err_btn_modif_ref.Visible = false;
+            if ((Txt_Nom_Modif_ref.Text != "Nom" && Txt_Nom_Modif_ref.Text != "Nom Incorrect" && Txt_Prenom_Modif_ref.Text != "Prenom" && Txt_Prenom_Modif_ref.Text != "Prenom Incorrect" && list_nation_modif_ref.Text != "" && (rdn_Homme_Modif_ref.Checked == true || rdn_Femme_Modif_ref.Checked == true)))
+            {
+                String sex;
+                if (rdn_FemmeM.Checked == true)
+                {
+                    sex = "F";
+                }
+                else
+                {
+                    sex = "M";
+                }
+                if (DataGrid_modif_ref.SelectedRows.Count == 1)
+                {
 
+                    foreach (System.Windows.Forms.DataGridViewRow refugier in DataGrid_modif_ref.SelectedRows)
+                    {
+                        var result = MessageBox.Show("Voulez vous vraiment modifier l'utilisateur " + refugier.Cells[1].Value + " " + refugier.Cells[2].Value, " ", MessageBoxButtons.YesNo);
+                        if (result == DialogResult.Yes)
+                            if ((Refugier.update(new Refugier(Txt_Nom_Modif_ref.Text, Txt_Prenom_Modif_ref.Text, sex, DatePicker_Naiss_modif_ref.Value, list_nation_modif_ref.Text, (int)num_refugeref_modif_ref.Value, 150, "", "", "", "", "", "", "", "", int.Parse(refugier.Cells[0].Value.ToString()))) == true))
+                        {
+                            MessageBox.Show("Modification Effectuée");
+                            btn_rechercher_modifref_Click(sender, e);
+                        }
+                    }
+                }
+                else
+                {
+                    lbl_err_btn_modif_ref.Visible = true;
+                }
+               
+
+            }
+            else
+            {
+                if (Txt_Nom_Modif_ref.Text == "" || Txt_Nom_Modif_ref.Text == "Nom")
+                {
+                    this.Txt_Nom_Modif_ref.ForeColor = System.Drawing.Color.Red;
+                    Txt_Nom_Modif_ref.Text = "Nom Incorrect";
+                }
+                if (Txt_Prenom_Modif_ref.Text == "" || Txt_Prenom_Modif_ref.Text == "Prenom")
+                {
+                    this.Txt_Prenom_Modif_ref.ForeColor = System.Drawing.Color.Red;
+                    Txt_Prenom_Modif_ref.Text = "Prenom Incorrect";
+                }
+                if (list_nation_modif_ref.Text == "")
+                {
+                    lbl_err_nation_modif_ref.Visible = true;
+                }
+                else
+                {
+                    lbl_err_nation_modif_ref.Visible = false;
+                }
+                if (rdn_HommeM.Checked == false && rdn_FemmeM.Checked == false)
+                {
+                    lbl_err_sex_modif_ref.Visible = true;
+                }
+                else
+                {
+                    lbl_err_sex_modif_ref.Visible = false;
+                }
+
+            }
+        }
+        #endregion
+
+        #region supp-ref
         private void btn_Suppr_ref_Click(object sender, EventArgs e)
         {
-            //appelfonction delete refugié
-        }
+
+            foreach (System.Windows.Forms.DataGridViewRow refugier in DataGrid_modif_ref.SelectedRows)
+            {
+                var result = MessageBox.Show("Voulez vous vraiment supprimer l'utilisateur "+refugier.Cells[1].Value+ " "+refugier.Cells[2].Value," " , MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    if (Refugier.delete((int.Parse(refugier.Cells[0].Value.ToString()))) == true)
+                    {
+                        MessageBox.Show("Suppression Effectuée");
+                        btn_rechercher_modifref_Click(sender,e);
+                    }
+                    
+                }
+               
+            }
+
+        } 
+        #endregion
 
         #endregion
 
@@ -535,5 +633,7 @@ namespace GestionRefugies
         {
 
         }
+
+        
     }
 }
