@@ -99,22 +99,21 @@ namespace GestionRefugies
                 String sex;
                 if (RdBtn_Femme.Checked == true)
                 {
-                    sex = "Femme";
+                    sex = "F";
                 }
                 else
                 {
-                    sex = "Homme";
+                    sex = "M";
                 }
-                //Refugier refu = new Refugier(Txt_Nom.Text, Txt_Prenom.Text, "" ,sex, DatePicker_DatNaiss.Value, List_Nationalite.Text, 1);
-                //bool res = RefugierManage.ajouterRefugier(refu);
-                //if (res)
-                //{
-                //    MessageBox.Show("Ajout validé et enregistré dans la BDD");
-                //}
-                //else
-                //{
-                //    MessageBox.Show("erreur creation refugier");
-                //}
+
+                if (Refugier.add(new Refugier(Txt_Nom.Text, Txt_Prenom.Text, sex, DatePicker_DatNaiss.Value, List_Nationalite.Text, (int)num_RefugeRef.Value)) == true);
+                {
+                    MessageBox.Show("Succes de l'ajout du refugié : " + Txt_Nom.Text + " " + Txt_Prenom.Text);
+                }
+                else
+	            {
+                    MessageBox.Show("Echec de l'Ajout du refugié");
+                }
 
             }
             else
@@ -497,11 +496,13 @@ namespace GestionRefugies
         #endregion
 
 
+
+        #region restrictions
         private void tabControl1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             // Check Credentials Here
 
-            if( (connected_user.Roles.Adminnistrateur == null))
+            if ((connected_user.Roles.Adminnistrateur == null))
             {
 
                 //save de la page selectionné avant les test
@@ -509,7 +510,7 @@ namespace GestionRefugies
                 selectPage = tabControl1.SelectedTab;
 
                 //test des droit d'accée de l'individu
-                if ((connected_user.Roles.Agent == null) && ( (tabControl1.SelectedTab == tabPageAjoutRef) || (tabControl1.SelectedTab == tabPageAjoutGérant) || (tabControl1.SelectedTab == tabPagemodifGerant) || (tabControl1.SelectedTab == tabPageModifRef) ) )
+                if ((connected_user.Roles.Agent == null) && ((tabControl1.SelectedTab == tabPageAjoutRef) || (tabControl1.SelectedTab == tabPageAjoutGérant) || (tabControl1.SelectedTab == tabPagemodifGerant) || (tabControl1.SelectedTab == tabPageModifRef)))
                 {
                     tabControl1.SelectedTab = tabPageAccueil;
                     MessageBox.Show("Unable to load tab. You have insufficient access privileges.");
@@ -526,8 +527,9 @@ namespace GestionRefugies
                 }
             }
 
-            
-        }
+
+        } 
+        #endregion
 
         private void label_nameU_Click(object sender, EventArgs e)
         {
