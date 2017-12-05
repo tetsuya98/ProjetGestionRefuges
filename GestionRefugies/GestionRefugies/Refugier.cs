@@ -287,42 +287,55 @@ namespace GestionRefugies
 
             foreach (var refugier in refugiers)
             {
-                if (optName.ToLower() == refugier.Nom.ToLower().Substring(0, optName.Length -1) & optName.Length >= 0)
+                if(optName.Length <= refugier.Nom.Length)
                 {
-                    nom = 0;
-                    if (optName.Length == 0)
+                    if (optName.ToLower() == refugier.Nom.ToLower().Substring(0, optName.Length) & optName.Length >= 0)
                     {
-                        nom = 2;
+                        nom = 0;
+                        if (optName.Length == 0)
+                        {
+                            nom = 2;
+                        }
+                    }
+                    else
+                    {
+                        nom = 1;
+                    }
+                }else { nom = 1; }
+                
+                if(optPrenom.Length <= refugier.Prenom.Length)
+                {
+                    if (optPrenom.ToLower() == refugier.Prenom.ToLower().Substring(0, optPrenom.Length) & optPrenom.Length >= 0)
+                    {
+                        prenom = 0;
+                        if (optPrenom.Length == 0)
+                        {
+                            prenom = 2;
+                        }
+                    }
+                    else
+                    {
+                        prenom = 1;
                     }
                 }
-                else
+                else { prenom = 1; }
+                
+                if(optsex.Length <= refugier.Sexe.Length)
                 {
-                    nom = 1;
-                }
-                if (optPrenom.ToLower() == refugier.Prenom.ToLower().Substring(0, optPrenom.Length) & optPrenom.Length >= 0)
-                {
-                    prenom = 0;
-                    if (optPrenom.Length == 0)
+                    if (optsex.ToLower() == refugier.Sexe.ToLower().Substring(0, optsex.Length) & optsex.Length >= 0)
                     {
-                        prenom = 2;
+                        sex = 0;
+                        if (optsex.Length == 0)
+                        {
+                            sex = 2;
+                        }
                     }
-                }
-                else
-                {
-                    prenom = 1;
-                }
-                if ( optsex.ToLower() == refugier.Sexe.ToLower().Substring(0, optsex.Length - 1) & optsex.Length >= 0)
-                {
-                    sex = 0;
-                    if (optsex.Length == 0)
+                    else
                     {
-                        sex = 2;
+                        sex = 1;
                     }
-                }
-                else
-                {
-                    sex = 1;
-                }
+                }else { sex = 1; }
+                
                 if ( optdatenaissn == refugier.DateNais | optdatenaissn == DateTime.Today | optdatenaissn == new DateTime())
                 {
                     date = 0;  
@@ -331,18 +344,25 @@ namespace GestionRefugies
                 {
                     date = 1;
                 }
-                if (optnat.ToLower() == refugier.Nationalite.ToLower().Substring(0, optnat.Length - 1) & optnat.Length >= 0)
+
+                if(optnat.Length <= refugier.Nationalite.Length)
                 {
-                    nat = 0;
-                    if (optnat.Length == 0)
+                    if (optnat.ToLower() == refugier.Nationalite.ToLower().Substring(0, optnat.Length) & optnat.Length >= 0)
                     {
-                        nat = 2;
+                        nat = 0;
+                        if (optnat.Length == 0)
+                        {
+                            nat = 2;
+                        }
+                    }
+                    else
+                    {
+                        nat = 1;
                     }
                 }
-                else
-                {
-                    nat = 1;
-                }
+                else { nat = 1; }
+
+
                 //1 = pas bon
                 //2 = rien mis
                 //0 = mis et ok
