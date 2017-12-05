@@ -99,5 +99,52 @@ namespace GestionRefugies
                 Txt_MDP.Text = "Mot de Passe";
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            //ville
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            //pays
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //recherche
+            string ville = textBox1.Text;
+            string pays = textBox2.Text;
+
+            try
+            {
+                StringBuilder queryadress = new StringBuilder();
+                queryadress.Append("https://www.google.fr/maps");
+
+                if (ville != string.Empty)
+                {
+                    queryadress.Append(ville + "," + "+");
+                }
+                if (pays != string.Empty)
+                {
+                    queryadress.Append(pays + "," + "+");
+                }
+            }
+            catch
+            {
+
+            }
+        }
     }
 }
