@@ -46,6 +46,51 @@ namespace GestionRefugies
         /// </summary>
         private string nationalite;
 
+        /// <summary>
+        /// taille du refugiers en cm
+        /// </summary>
+        private int taille;
+
+        /// <summary>
+        /// Couleur de peau du refugier
+        /// </summary>
+        private string couleurPeau;
+
+        /// <summary>
+        /// Couleur de cheveux du refugier
+        /// </summary>
+        private string couleurCheveux;
+
+        /// <summary>
+        /// Type de cheveux du refugier
+        /// </summary>
+        private string typeCheveux;
+
+        /// <summary>
+        /// Couleur des yeux
+        /// </summary>
+        private string couleurYeux;
+
+        /// <summary>
+        /// Blessure éventuelle du refugier
+        /// </summary>
+        private string blessure;
+
+        /// <summary>
+        /// Allergie éventuelle du refugier
+        /// </summary>
+        private string allergie;
+
+        /// <summary>
+        /// handicap éventuelle du refugier
+        /// </summary>
+        private string handicap;
+
+        /// <summary>
+        /// autre description du refugier
+        /// </summary>
+        private string autre;
+
         #endregion
 
         #region propriete
@@ -55,20 +100,12 @@ namespace GestionRefugies
             {
                 return nom;
             }
-            set
-            {
-                nom = value;
-            }
         }
         public string Prenom
         {
             get
             {
                 return prenom;
-            }
-            set
-            {
-                prenom = value;
             }
         }
         public int Id
@@ -84,10 +121,6 @@ namespace GestionRefugies
             {
                 return sexe;
             }
-            set
-            {
-                sexe = value;
-            }
         }
         public DateTime DateNais
         {
@@ -102,10 +135,6 @@ namespace GestionRefugies
             {
                 return adresse;
             }
-            set
-            {
-                adresse = value;
-            }
         }
         public string Nationalite
         {
@@ -114,10 +143,117 @@ namespace GestionRefugies
                 return nationalite;
             }
         }
+
+        public int Taille
+        {
+            get
+            {
+                return Taille;
+            }
+        }
+
+        public string CouleurPeau
+        {
+            get
+            {
+                return couleurPeau;
+            }
+        }
+        public string CouleurCheveux
+        {
+            get
+            {
+                return couleurCheveux;
+            }
+        }
+
+        public string TypeCheveux
+        {
+            get
+            {
+                return typeCheveux;
+            }
+        }
+
+        public string CouleurYeux
+        {
+            get
+            {
+                return couleurYeux;
+            }
+        }
+
+        public string Blessure
+        {
+            get
+            {
+                return blessure;
+            }
+        }
+
+        public string Allergie
+        {
+            get
+            {
+                return allergie;
+            }
+        }
+
+        public string Handicap
+        {
+            get
+            {
+                return handicap;
+            }
+        }
+
+        public string Autre
+        {
+            get
+            {
+                return autre;
+            }
+        }
+
         #endregion
 
         #region methode
-        public Refugier(string nom, string prenom, String sexe, DateTime dateNais, string nationalite, int adresse, int id = 0)
+        /// <summary>
+        /// Créer un réfugier
+        /// </summary>
+        /// <param name="nom">Nom du réfugier</param>
+        /// <param name="prenom">Prénom du réfugier</param>
+        /// <param name="sexe">Sexe du réfugier</param>
+        /// <param name="dateNais">Date de naissance du réfugier</param>
+        /// <param name="nationalite">nationnalité du réfugier</param>
+        /// <param name="adresse">Adresse du réfugié</param>
+        /// <param name="taille">Taille du réfugier en cm</param>
+        /// <param name="couleurPeau">Courleur de peau du réfugier</param>
+        /// <param name="couleurCheveux">Couleur de cheuveux du réfugier</param>
+        /// <param name="typeCheveux">Type de cheuveux du réfugier</param>
+        /// <param name="couleurYeux">Couleur de yeux du réfugier</param>
+        /// <param name="blessure">Blessure éventuelle du réfugier</param>
+        /// <param name="allergie">Allergie éventuelle du réfugier</param>
+        /// <param name="handicap">Handicap éventuelle du réfugier</param>
+        /// <param name="autre">Autre élément de description du réfugier</param>
+        /// <param name="id">Identifiant du réfugier</param>
+        public Refugier(
+            string nom,
+            string prenom,
+            String sexe,
+            DateTime dateNais,
+            string nationalite,
+            int adresse,
+            int taille,
+            string couleurPeau,
+            string couleurCheveux,
+            string typeCheveux,
+            string couleurYeux,
+            string blessure,
+            string allergie,
+            string handicap,
+            string autre,
+            int id = 0)
         {
             this.nom = nom;
             this.prenom = prenom;
@@ -125,6 +261,15 @@ namespace GestionRefugies
             this.dateNais = dateNais;
             this.nationalite = nationalite;
             this.adresse = adresse;
+            this.taille = taille;
+            this.couleurPeau = couleurPeau;
+            this.couleurCheveux = couleurCheveux;
+            this.typeCheveux = typeCheveux;
+            this.couleurYeux = couleurYeux;
+            this.blessure = blessure;
+            this.allergie = allergie;
+            this.handicap = handicap;
+            this.autre = autre;
             this.id = id;
         }
 
