@@ -243,7 +243,7 @@ namespace GestionRefugies
         private void btn_AjoutM_Click_1(object sender, EventArgs e)
         {
             // ce if est degueulasse ... désolé
-            if ((check_AgentAccueil.Checked || check_Magasinier.Checked) && Txt_NomM.Text != "Nom" && Txt_NomM.Text != "Nom Incorrect" && Txt_PrenomM.Text != "Prenom" && Txt_PrenomM.Text != "Prenom Incorrect" && Txt_MDPM.Text != "Mot de passe" && Txt_MDPM.Text != "Mot de passe Incorrect" && list_NationM.Text != "" && (rdn_FemmeM.Checked == true || rdn_HommeM.Checked == true))
+            if ((check_AgentAccueil.Checked || check_Magasinier.Checked || checkBox1.Checked) && Txt_NomM.Text != "Nom" && Txt_NomM.Text != "Nom Incorrect" && Txt_PrenomM.Text != "Prenom" && Txt_PrenomM.Text != "Prenom Incorrect" && Txt_MDPM.Text != "Mot de passe" && Txt_MDPM.Text != "Mot de passe Incorrect" && list_NationM.Text != "" && (rdn_FemmeM.Checked == true || rdn_HommeM.Checked == true))
             {
                 String sex;
                 if (rdn_FemmeM.Checked == true)
@@ -254,18 +254,105 @@ namespace GestionRefugies
                 {
                     sex = "Homme";
                 }
-                //if (check_AgentAccueil.Checked && check_Magasinier.Checked)
-                //{
 
-                //}
-                //else if (check_AgentAccueil.Checked)
-                //{
+                if (checkBox1.Checked)
+                {
+                    if (check_AgentAccueil.Checked && check_Magasinier.Checked)
+                    {
+                        if (User.add(new User(Txt_NomM.Text, Txt_PrenomM.Text, Txt_MDPM.Text, true, true, true)))
+                        {
+                            MessageBox.Show("Success");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fail");
+                        }
+                    }
+                    else if (check_AgentAccueil.Checked && !(check_Magasinier.Checked))
+                    {
+                        if (User.add(new User(Txt_NomM.Text, Txt_PrenomM.Text, Txt_MDPM.Text, true, true, false)))
+                        {
+                            MessageBox.Show("Success");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fail");
+                        }
+                    }
+                    else if (!(check_AgentAccueil.Checked) && check_Magasinier.Checked)
+                    {
+                        if (User.add(new User(Txt_NomM.Text, Txt_PrenomM.Text, Txt_MDPM.Text, true, false, true)))
+                        {
+                            MessageBox.Show("Success");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fail");
+                        }
+                    }
+                    else
+                    {
+                        if (User.add(new User(Txt_NomM.Text, Txt_PrenomM.Text, Txt_MDPM.Text, true, false, false)))
+                        {
+                            MessageBox.Show("Success");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fail");
+                        }
+                    }
+                }
+                else
+                {
+                    if (check_AgentAccueil.Checked && check_Magasinier.Checked)
+                    {
+                        if (User.add(new User(Txt_NomM.Text, Txt_PrenomM.Text, Txt_MDPM.Text, false, true, true)))
+                        {
+                            MessageBox.Show("Success");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fail");
+                        }
+                    }
+                    else if (check_AgentAccueil.Checked && !(check_Magasinier.Checked))
+                    {
+                        if (User.add(new User(Txt_NomM.Text, Txt_PrenomM.Text, Txt_MDPM.Text, false, true, false)))
+                        {
+                            MessageBox.Show("Success");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fail");
+                        }
+                    }
+                    else if (!(check_AgentAccueil.Checked) && check_Magasinier.Checked)
+                    {
+                        if (User.add(new User(Txt_NomM.Text, Txt_PrenomM.Text, Txt_MDPM.Text, false, false, true)))
+                        {
+                            MessageBox.Show("Success");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fail");
+                        }
+                    }
+                    else
+                    {
+                        if (User.add(new User(Txt_NomM.Text, Txt_PrenomM.Text, Txt_MDPM.Text, false, false, false)))
+                        {
+                            MessageBox.Show("Success");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fail");
 
-                //}
-                //else
-                //{
-
-                //}
+                        }
+                    }
+                }
+                
+                
+                
 
 
                 //Magasinier maga = new Magasinier(Txt_NomM.Text, Txt_PrenomM.Text, Txt_MDPM.Text, sex, DatePicker_NaissM.Value, list_NationM.Text, 1);
@@ -530,6 +617,11 @@ namespace GestionRefugies
         }
 
         private void label_nameU_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Txt_MDPM_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }

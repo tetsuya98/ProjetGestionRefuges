@@ -644,9 +644,11 @@
             this.Txt_MDPM.Location = new System.Drawing.Point(77, 220);
             this.Txt_MDPM.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_MDPM.Name = "Txt_MDPM";
+            this.Txt_MDPM.PasswordChar = '○';
             this.Txt_MDPM.Size = new System.Drawing.Size(252, 22);
             this.Txt_MDPM.TabIndex = 15;
             this.Txt_MDPM.Text = "Mot de Passe";
+            this.Txt_MDPM.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.Txt_MDPM_MaskInputRejected);
             this.Txt_MDPM.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_MDPM_KeyDown);
             this.Txt_MDPM.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_MDPM_KeyUp);
             // 
