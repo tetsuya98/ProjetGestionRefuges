@@ -71,6 +71,7 @@
             this.Txt_MDPM = new System.Windows.Forms.MaskedTextBox();
             this.Txt_NomM = new System.Windows.Forms.MaskedTextBox();
             this.tabPageModifRef = new System.Windows.Forms.TabPage();
+            this.lbl_err_btn_modif_ref = new System.Windows.Forms.Label();
             this.lbl_errsupp_modif_ref = new System.Windows.Forms.Label();
             this.btn_rechercher_modifref = new System.Windows.Forms.Button();
             this.lbl_refugeref_modif_ref = new System.Windows.Forms.Label();
@@ -119,7 +120,28 @@
             this.Txt_prenom_modif_gerant = new System.Windows.Forms.MaskedTextBox();
             this.Txt_nom_modif_gerant = new System.Windows.Forms.MaskedTextBox();
             this.tabPageStock = new System.Windows.Forms.TabPage();
-            this.lbl_err_btn_modif_ref = new System.Windows.Forms.Label();
+            this.lbl_taille_ajoutref = new System.Windows.Forms.Label();
+            this.num_taille_ajoutref = new System.Windows.Forms.NumericUpDown();
+            this.lbl_err_coulpeau_ajoutref = new System.Windows.Forms.Label();
+            this.lbl_coulpeau_ajoutref = new System.Windows.Forms.Label();
+            this.txt_coulpeau_ajoutref = new System.Windows.Forms.ComboBox();
+            this.lbl_err_coulchev_ajoutref = new System.Windows.Forms.Label();
+            this.lbl_coulchev_ajoutref = new System.Windows.Forms.Label();
+            this.txt_coulchev_ajoutref = new System.Windows.Forms.ComboBox();
+            this.lbl_err_coulyeux_ajoutref = new System.Windows.Forms.Label();
+            this.lbl_coulyeux_ajoutref = new System.Windows.Forms.Label();
+            this.txt_coulyeux_ajoutref = new System.Windows.Forms.ComboBox();
+            this.lbl_err_bless_ajoutref = new System.Windows.Forms.Label();
+            this.lbl_bless_ajoutref = new System.Windows.Forms.Label();
+            this.txt_bless_ajoutref = new System.Windows.Forms.ComboBox();
+            this.lbl_ref_allerg_ajoutref = new System.Windows.Forms.Label();
+            this.lbl_allerg_ajoutref = new System.Windows.Forms.Label();
+            this.txt_allerg_ajoutref = new System.Windows.Forms.ComboBox();
+            this.lbl_err_handi_ajoutref = new System.Windows.Forms.Label();
+            this.lbl_handi_ajoutref = new System.Windows.Forms.Label();
+            this.txt_handi_ajoutref = new System.Windows.Forms.ComboBox();
+            this.txt_autre_ajoutref = new System.Windows.Forms.MaskedTextBox();
+            this.lbl_autre_ajoutref = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPageAccueil.SuspendLayout();
             this.tabPageAjoutRef.SuspendLayout();
@@ -132,6 +154,7 @@
             this.tabPagemodifGerant.SuspendLayout();
             this.Group_role_modif_gerant.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_taille_ajoutref)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -251,6 +274,28 @@
             // tabPageAjoutRef
             // 
             this.tabPageAjoutRef.BackColor = System.Drawing.Color.Transparent;
+            this.tabPageAjoutRef.Controls.Add(this.lbl_autre_ajoutref);
+            this.tabPageAjoutRef.Controls.Add(this.txt_autre_ajoutref);
+            this.tabPageAjoutRef.Controls.Add(this.lbl_err_handi_ajoutref);
+            this.tabPageAjoutRef.Controls.Add(this.lbl_handi_ajoutref);
+            this.tabPageAjoutRef.Controls.Add(this.txt_handi_ajoutref);
+            this.tabPageAjoutRef.Controls.Add(this.lbl_ref_allerg_ajoutref);
+            this.tabPageAjoutRef.Controls.Add(this.lbl_allerg_ajoutref);
+            this.tabPageAjoutRef.Controls.Add(this.txt_allerg_ajoutref);
+            this.tabPageAjoutRef.Controls.Add(this.lbl_err_bless_ajoutref);
+            this.tabPageAjoutRef.Controls.Add(this.lbl_bless_ajoutref);
+            this.tabPageAjoutRef.Controls.Add(this.txt_bless_ajoutref);
+            this.tabPageAjoutRef.Controls.Add(this.lbl_err_coulyeux_ajoutref);
+            this.tabPageAjoutRef.Controls.Add(this.lbl_coulyeux_ajoutref);
+            this.tabPageAjoutRef.Controls.Add(this.txt_coulyeux_ajoutref);
+            this.tabPageAjoutRef.Controls.Add(this.lbl_err_coulchev_ajoutref);
+            this.tabPageAjoutRef.Controls.Add(this.lbl_coulchev_ajoutref);
+            this.tabPageAjoutRef.Controls.Add(this.txt_coulchev_ajoutref);
+            this.tabPageAjoutRef.Controls.Add(this.lbl_err_coulpeau_ajoutref);
+            this.tabPageAjoutRef.Controls.Add(this.lbl_coulpeau_ajoutref);
+            this.tabPageAjoutRef.Controls.Add(this.txt_coulpeau_ajoutref);
+            this.tabPageAjoutRef.Controls.Add(this.lbl_taille_ajoutref);
+            this.tabPageAjoutRef.Controls.Add(this.num_taille_ajoutref);
             this.tabPageAjoutRef.Controls.Add(this.lbl_RefugeRef);
             this.tabPageAjoutRef.Controls.Add(this.num_RefugeRef);
             this.tabPageAjoutRef.Controls.Add(this.Lbl_ErrNation);
@@ -274,7 +319,7 @@
             // lbl_RefugeRef
             // 
             this.lbl_RefugeRef.AutoSize = true;
-            this.lbl_RefugeRef.Location = new System.Drawing.Point(103, 177);
+            this.lbl_RefugeRef.Location = new System.Drawing.Point(28, 142);
             this.lbl_RefugeRef.Name = "lbl_RefugeRef";
             this.lbl_RefugeRef.Size = new System.Drawing.Size(55, 13);
             this.lbl_RefugeRef.TabIndex = 15;
@@ -283,7 +328,12 @@
             // 
             // num_RefugeRef
             // 
-            this.num_RefugeRef.Location = new System.Drawing.Point(158, 175);
+            this.num_RefugeRef.Location = new System.Drawing.Point(83, 140);
+            this.num_RefugeRef.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.num_RefugeRef.Name = "num_RefugeRef";
             this.num_RefugeRef.Size = new System.Drawing.Size(90, 20);
             this.num_RefugeRef.TabIndex = 14;
@@ -293,7 +343,7 @@
             // 
             this.Lbl_ErrNation.AutoSize = true;
             this.Lbl_ErrNation.ForeColor = System.Drawing.Color.Red;
-            this.Lbl_ErrNation.Location = new System.Drawing.Point(392, 182);
+            this.Lbl_ErrNation.Location = new System.Drawing.Point(346, 132);
             this.Lbl_ErrNation.Name = "Lbl_ErrNation";
             this.Lbl_ErrNation.Size = new System.Drawing.Size(157, 13);
             this.Lbl_ErrNation.TabIndex = 13;
@@ -304,7 +354,7 @@
             // 
             this.Lbl_Sexe.AutoSize = true;
             this.Lbl_Sexe.ForeColor = System.Drawing.Color.Red;
-            this.Lbl_Sexe.Location = new System.Drawing.Point(117, 131);
+            this.Lbl_Sexe.Location = new System.Drawing.Point(90, 114);
             this.Lbl_Sexe.Name = "Lbl_Sexe";
             this.Lbl_Sexe.Size = new System.Drawing.Size(131, 13);
             this.Lbl_Sexe.TabIndex = 12;
@@ -313,9 +363,9 @@
             // 
             // Btn_Ajout
             // 
-            this.Btn_Ajout.Location = new System.Drawing.Point(453, 222);
+            this.Btn_Ajout.Location = new System.Drawing.Point(553, 187);
             this.Btn_Ajout.Name = "Btn_Ajout";
-            this.Btn_Ajout.Size = new System.Drawing.Size(108, 23);
+            this.Btn_Ajout.Size = new System.Drawing.Size(108, 40);
             this.Btn_Ajout.TabIndex = 11;
             this.Btn_Ajout.Text = "Ajouter";
             this.Btn_Ajout.UseVisualStyleBackColor = true;
@@ -324,7 +374,7 @@
             // Lbl_Nationalite
             // 
             this.Lbl_Nationalite.AutoSize = true;
-            this.Lbl_Nationalite.Location = new System.Drawing.Point(357, 140);
+            this.Lbl_Nationalite.Location = new System.Drawing.Point(311, 90);
             this.Lbl_Nationalite.Name = "Lbl_Nationalite";
             this.Lbl_Nationalite.Size = new System.Drawing.Size(57, 13);
             this.Lbl_Nationalite.TabIndex = 10;
@@ -333,7 +383,7 @@
             // Lbl_DateNaiss
             // 
             this.Lbl_DateNaiss.AutoSize = true;
-            this.Lbl_DateNaiss.Location = new System.Drawing.Point(357, 41);
+            this.Lbl_DateNaiss.Location = new System.Drawing.Point(311, 37);
             this.Lbl_DateNaiss.Name = "Lbl_DateNaiss";
             this.Lbl_DateNaiss.Size = new System.Drawing.Size(98, 13);
             this.Lbl_DateNaiss.TabIndex = 9;
@@ -342,6 +392,7 @@
             // List_Nationalite
             // 
             this.List_Nationalite.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.List_Nationalite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.List_Nationalite.FormattingEnabled = true;
             this.List_Nationalite.Items.AddRange(new object[] {
             "Français",
@@ -375,14 +426,14 @@
             "Senegalais",
             "Sud-Africain",
             "Autre"});
-            this.List_Nationalite.Location = new System.Drawing.Point(349, 156);
+            this.List_Nationalite.Location = new System.Drawing.Point(303, 106);
             this.List_Nationalite.Name = "List_Nationalite";
             this.List_Nationalite.Size = new System.Drawing.Size(148, 21);
             this.List_Nationalite.TabIndex = 8;
             // 
             // DatePicker_DatNaiss
             // 
-            this.DatePicker_DatNaiss.Location = new System.Drawing.Point(349, 57);
+            this.DatePicker_DatNaiss.Location = new System.Drawing.Point(303, 53);
             this.DatePicker_DatNaiss.Name = "DatePicker_DatNaiss";
             this.DatePicker_DatNaiss.Size = new System.Drawing.Size(200, 20);
             this.DatePicker_DatNaiss.TabIndex = 6;
@@ -391,7 +442,7 @@
             // RdBtn_Femme
             // 
             this.RdBtn_Femme.AutoSize = true;
-            this.RdBtn_Femme.Location = new System.Drawing.Point(158, 111);
+            this.RdBtn_Femme.Location = new System.Drawing.Point(131, 94);
             this.RdBtn_Femme.Name = "RdBtn_Femme";
             this.RdBtn_Femme.Size = new System.Drawing.Size(59, 17);
             this.RdBtn_Femme.TabIndex = 5;
@@ -402,7 +453,7 @@
             // RdBtn_Homme
             // 
             this.RdBtn_Homme.AutoSize = true;
-            this.RdBtn_Homme.Location = new System.Drawing.Point(79, 111);
+            this.RdBtn_Homme.Location = new System.Drawing.Point(52, 94);
             this.RdBtn_Homme.Name = "RdBtn_Homme";
             this.RdBtn_Homme.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RdBtn_Homme.Size = new System.Drawing.Size(61, 17);
@@ -414,7 +465,7 @@
             // Txt_Prenom
             // 
             this.Txt_Prenom.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Txt_Prenom.Location = new System.Drawing.Point(58, 69);
+            this.Txt_Prenom.Location = new System.Drawing.Point(33, 60);
             this.Txt_Prenom.Name = "Txt_Prenom";
             this.Txt_Prenom.Size = new System.Drawing.Size(190, 20);
             this.Txt_Prenom.TabIndex = 3;
@@ -425,7 +476,7 @@
             // Txt_Nom
             // 
             this.Txt_Nom.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Txt_Nom.Location = new System.Drawing.Point(58, 43);
+            this.Txt_Nom.Location = new System.Drawing.Point(33, 34);
             this.Txt_Nom.Name = "Txt_Nom";
             this.Txt_Nom.Size = new System.Drawing.Size(190, 20);
             this.Txt_Nom.TabIndex = 0;
@@ -695,6 +746,18 @@
             this.tabPageModifRef.TabIndex = 3;
             this.tabPageModifRef.Text = "Modifier/Supprimer Refugié";
             // 
+            // lbl_err_btn_modif_ref
+            // 
+            this.lbl_err_btn_modif_ref.AutoSize = true;
+            this.lbl_err_btn_modif_ref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_btn_modif_ref.Location = new System.Drawing.Point(235, 355);
+            this.lbl_err_btn_modif_ref.Name = "lbl_err_btn_modif_ref";
+            this.lbl_err_btn_modif_ref.Size = new System.Drawing.Size(384, 13);
+            this.lbl_err_btn_modif_ref.TabIndex = 31;
+            this.lbl_err_btn_modif_ref.Text = "Pour la modification, Veuillez cliquer sur UN SEUL refugier dans la liste si dess" +
+    "us";
+            this.lbl_err_btn_modif_ref.Visible = false;
+            // 
             // lbl_errsupp_modif_ref
             // 
             this.lbl_errsupp_modif_ref.AutoSize = true;
@@ -860,8 +923,10 @@
             // list_nation_modif_ref
             // 
             this.list_nation_modif_ref.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.list_nation_modif_ref.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.list_nation_modif_ref.FormattingEnabled = true;
             this.list_nation_modif_ref.Items.AddRange(new object[] {
+            "Français",
             "Anglais",
             "Espagnol",
             "Allemand",
@@ -1241,17 +1306,267 @@
             this.tabPageStock.Text = "Gestion Des Stocks";
             this.tabPageStock.UseVisualStyleBackColor = true;
             // 
-            // lbl_err_btn_modif_ref
+            // lbl_taille_ajoutref
             // 
-            this.lbl_err_btn_modif_ref.AutoSize = true;
-            this.lbl_err_btn_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_btn_modif_ref.Location = new System.Drawing.Point(235, 355);
-            this.lbl_err_btn_modif_ref.Name = "lbl_err_btn_modif_ref";
-            this.lbl_err_btn_modif_ref.Size = new System.Drawing.Size(384, 13);
-            this.lbl_err_btn_modif_ref.TabIndex = 31;
-            this.lbl_err_btn_modif_ref.Text = "Pour la modification, Veuillez cliquer sur UN SEUL refugier dans la liste si dess" +
-    "us";
-            this.lbl_err_btn_modif_ref.Visible = false;
+            this.lbl_taille_ajoutref.AutoSize = true;
+            this.lbl_taille_ajoutref.Location = new System.Drawing.Point(28, 168);
+            this.lbl_taille_ajoutref.Name = "lbl_taille_ajoutref";
+            this.lbl_taille_ajoutref.Size = new System.Drawing.Size(55, 13);
+            this.lbl_taille_ajoutref.TabIndex = 17;
+            this.lbl_taille_ajoutref.Text = "Taille (cm)";
+            this.lbl_taille_ajoutref.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // num_taille_ajoutref
+            // 
+            this.num_taille_ajoutref.Location = new System.Drawing.Point(83, 166);
+            this.num_taille_ajoutref.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.num_taille_ajoutref.Name = "num_taille_ajoutref";
+            this.num_taille_ajoutref.Size = new System.Drawing.Size(90, 20);
+            this.num_taille_ajoutref.TabIndex = 16;
+            this.num_taille_ajoutref.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lbl_err_coulpeau_ajoutref
+            // 
+            this.lbl_err_coulpeau_ajoutref.AutoSize = true;
+            this.lbl_err_coulpeau_ajoutref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_coulpeau_ajoutref.Location = new System.Drawing.Point(33, 241);
+            this.lbl_err_coulpeau_ajoutref.Name = "lbl_err_coulpeau_ajoutref";
+            this.lbl_err_coulpeau_ajoutref.Size = new System.Drawing.Size(188, 13);
+            this.lbl_err_coulpeau_ajoutref.TabIndex = 20;
+            this.lbl_err_coulpeau_ajoutref.Text = "Veuillez renseigner la Couleur de Peau";
+            this.lbl_err_coulpeau_ajoutref.Visible = false;
+            // 
+            // lbl_coulpeau_ajoutref
+            // 
+            this.lbl_coulpeau_ajoutref.AutoSize = true;
+            this.lbl_coulpeau_ajoutref.Location = new System.Drawing.Point(39, 201);
+            this.lbl_coulpeau_ajoutref.Name = "lbl_coulpeau_ajoutref";
+            this.lbl_coulpeau_ajoutref.Size = new System.Drawing.Size(86, 13);
+            this.lbl_coulpeau_ajoutref.TabIndex = 19;
+            this.lbl_coulpeau_ajoutref.Text = "Couleur de Peau";
+            // 
+            // txt_coulpeau_ajoutref
+            // 
+            this.txt_coulpeau_ajoutref.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.txt_coulpeau_ajoutref.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_coulpeau_ajoutref.FormattingEnabled = true;
+            this.txt_coulpeau_ajoutref.Items.AddRange(new object[] {
+            "Blanc",
+            "Noir",
+            "Metissé"});
+            this.txt_coulpeau_ajoutref.Location = new System.Drawing.Point(31, 217);
+            this.txt_coulpeau_ajoutref.Name = "txt_coulpeau_ajoutref";
+            this.txt_coulpeau_ajoutref.Size = new System.Drawing.Size(148, 21);
+            this.txt_coulpeau_ajoutref.TabIndex = 18;
+            // 
+            // lbl_err_coulchev_ajoutref
+            // 
+            this.lbl_err_coulchev_ajoutref.AutoSize = true;
+            this.lbl_err_coulchev_ajoutref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_coulchev_ajoutref.Location = new System.Drawing.Point(18, 298);
+            this.lbl_err_coulchev_ajoutref.Name = "lbl_err_coulchev_ajoutref";
+            this.lbl_err_coulchev_ajoutref.Size = new System.Drawing.Size(205, 13);
+            this.lbl_err_coulchev_ajoutref.TabIndex = 23;
+            this.lbl_err_coulchev_ajoutref.Text = "Veuillez renseigner la Couleur de Cheveux";
+            this.lbl_err_coulchev_ajoutref.Visible = false;
+            // 
+            // lbl_coulchev_ajoutref
+            // 
+            this.lbl_coulchev_ajoutref.AutoSize = true;
+            this.lbl_coulchev_ajoutref.Location = new System.Drawing.Point(39, 258);
+            this.lbl_coulchev_ajoutref.Name = "lbl_coulchev_ajoutref";
+            this.lbl_coulchev_ajoutref.Size = new System.Drawing.Size(103, 13);
+            this.lbl_coulchev_ajoutref.TabIndex = 22;
+            this.lbl_coulchev_ajoutref.Text = "Couleur de Cheveux";
+            // 
+            // txt_coulchev_ajoutref
+            // 
+            this.txt_coulchev_ajoutref.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.txt_coulchev_ajoutref.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_coulchev_ajoutref.FormattingEnabled = true;
+            this.txt_coulchev_ajoutref.Items.AddRange(new object[] {
+            "Blond(e)",
+            "Brun(e)",
+            "Chatain",
+            "Noir",
+            "Blanc",
+            "Poive et Sel",
+            "Bleu",
+            "Vert",
+            "Rose",
+            "Autre"});
+            this.txt_coulchev_ajoutref.Location = new System.Drawing.Point(31, 274);
+            this.txt_coulchev_ajoutref.Name = "txt_coulchev_ajoutref";
+            this.txt_coulchev_ajoutref.Size = new System.Drawing.Size(148, 21);
+            this.txt_coulchev_ajoutref.TabIndex = 21;
+            // 
+            // lbl_err_coulyeux_ajoutref
+            // 
+            this.lbl_err_coulyeux_ajoutref.AutoSize = true;
+            this.lbl_err_coulyeux_ajoutref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_coulyeux_ajoutref.Location = new System.Drawing.Point(18, 354);
+            this.lbl_err_coulyeux_ajoutref.Name = "lbl_err_coulyeux_ajoutref";
+            this.lbl_err_coulyeux_ajoutref.Size = new System.Drawing.Size(192, 13);
+            this.lbl_err_coulyeux_ajoutref.TabIndex = 26;
+            this.lbl_err_coulyeux_ajoutref.Text = "Veuillez renseigner la Couleur des Yeux";
+            this.lbl_err_coulyeux_ajoutref.Visible = false;
+            // 
+            // lbl_coulyeux_ajoutref
+            // 
+            this.lbl_coulyeux_ajoutref.AutoSize = true;
+            this.lbl_coulyeux_ajoutref.Location = new System.Drawing.Point(39, 314);
+            this.lbl_coulyeux_ajoutref.Name = "lbl_coulyeux_ajoutref";
+            this.lbl_coulyeux_ajoutref.Size = new System.Drawing.Size(90, 13);
+            this.lbl_coulyeux_ajoutref.TabIndex = 25;
+            this.lbl_coulyeux_ajoutref.Text = "Couleur des Yeux";
+            // 
+            // txt_coulyeux_ajoutref
+            // 
+            this.txt_coulyeux_ajoutref.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.txt_coulyeux_ajoutref.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_coulyeux_ajoutref.FormattingEnabled = true;
+            this.txt_coulyeux_ajoutref.Items.AddRange(new object[] {
+            "Bleu",
+            "Vert",
+            "Marron",
+            "Autre"});
+            this.txt_coulyeux_ajoutref.Location = new System.Drawing.Point(31, 330);
+            this.txt_coulyeux_ajoutref.Name = "txt_coulyeux_ajoutref";
+            this.txt_coulyeux_ajoutref.Size = new System.Drawing.Size(148, 21);
+            this.txt_coulyeux_ajoutref.TabIndex = 24;
+            // 
+            // lbl_err_bless_ajoutref
+            // 
+            this.lbl_err_bless_ajoutref.AutoSize = true;
+            this.lbl_err_bless_ajoutref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_bless_ajoutref.Location = new System.Drawing.Point(355, 184);
+            this.lbl_err_bless_ajoutref.Name = "lbl_err_bless_ajoutref";
+            this.lbl_err_bless_ajoutref.Size = new System.Drawing.Size(148, 13);
+            this.lbl_err_bless_ajoutref.TabIndex = 29;
+            this.lbl_err_bless_ajoutref.Text = "Veuillez renseigner la blessure";
+            this.lbl_err_bless_ajoutref.Visible = false;
+            // 
+            // lbl_bless_ajoutref
+            // 
+            this.lbl_bless_ajoutref.AutoSize = true;
+            this.lbl_bless_ajoutref.Location = new System.Drawing.Point(311, 144);
+            this.lbl_bless_ajoutref.Name = "lbl_bless_ajoutref";
+            this.lbl_bless_ajoutref.Size = new System.Drawing.Size(47, 13);
+            this.lbl_bless_ajoutref.TabIndex = 28;
+            this.lbl_bless_ajoutref.Text = "Blessure";
+            // 
+            // txt_bless_ajoutref
+            // 
+            this.txt_bless_ajoutref.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.txt_bless_ajoutref.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_bless_ajoutref.FormattingEnabled = true;
+            this.txt_bless_ajoutref.Items.AddRange(new object[] {
+            "Pas de Blessure",
+            "Bessure Tres Urgente",
+            "Blessure Urgente",
+            "Blessure Moyenne",
+            "Blessure Benigne"});
+            this.txt_bless_ajoutref.Location = new System.Drawing.Point(303, 160);
+            this.txt_bless_ajoutref.Name = "txt_bless_ajoutref";
+            this.txt_bless_ajoutref.Size = new System.Drawing.Size(148, 21);
+            this.txt_bless_ajoutref.TabIndex = 27;
+            // 
+            // lbl_ref_allerg_ajoutref
+            // 
+            this.lbl_ref_allerg_ajoutref.AutoSize = true;
+            this.lbl_ref_allerg_ajoutref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_ref_allerg_ajoutref.Location = new System.Drawing.Point(368, 241);
+            this.lbl_ref_allerg_ajoutref.Name = "lbl_ref_allerg_ajoutref";
+            this.lbl_ref_allerg_ajoutref.Size = new System.Drawing.Size(135, 13);
+            this.lbl_ref_allerg_ajoutref.TabIndex = 32;
+            this.lbl_ref_allerg_ajoutref.Text = "Veuillez renseigner l\'allergie";
+            this.lbl_ref_allerg_ajoutref.Visible = false;
+            // 
+            // lbl_allerg_ajoutref
+            // 
+            this.lbl_allerg_ajoutref.AutoSize = true;
+            this.lbl_allerg_ajoutref.Location = new System.Drawing.Point(311, 201);
+            this.lbl_allerg_ajoutref.Name = "lbl_allerg_ajoutref";
+            this.lbl_allerg_ajoutref.Size = new System.Drawing.Size(41, 13);
+            this.lbl_allerg_ajoutref.TabIndex = 31;
+            this.lbl_allerg_ajoutref.Text = "Allergie";
+            // 
+            // txt_allerg_ajoutref
+            // 
+            this.txt_allerg_ajoutref.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.txt_allerg_ajoutref.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_allerg_ajoutref.FormattingEnabled = true;
+            this.txt_allerg_ajoutref.Items.AddRange(new object[] {
+            "Pas d\'Allergies",
+            "Arachide",
+            "Pollen",
+            "Fruit de mer",
+            "Poils d\'animaux",
+            "Oeuf",
+            "Acariens",
+            "Piqure d\'insectes",
+            "Lait",
+            "Ble",
+            "Autre"});
+            this.txt_allerg_ajoutref.Location = new System.Drawing.Point(303, 217);
+            this.txt_allerg_ajoutref.Name = "txt_allerg_ajoutref";
+            this.txt_allerg_ajoutref.Size = new System.Drawing.Size(148, 21);
+            this.txt_allerg_ajoutref.TabIndex = 30;
+            // 
+            // lbl_err_handi_ajoutref
+            // 
+            this.lbl_err_handi_ajoutref.AutoSize = true;
+            this.lbl_err_handi_ajoutref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_handi_ajoutref.Location = new System.Drawing.Point(348, 298);
+            this.lbl_err_handi_ajoutref.Name = "lbl_err_handi_ajoutref";
+            this.lbl_err_handi_ajoutref.Size = new System.Drawing.Size(155, 13);
+            this.lbl_err_handi_ajoutref.TabIndex = 35;
+            this.lbl_err_handi_ajoutref.Text = "Veuillez renseigner le Handicap";
+            this.lbl_err_handi_ajoutref.Visible = false;
+            // 
+            // lbl_handi_ajoutref
+            // 
+            this.lbl_handi_ajoutref.AutoSize = true;
+            this.lbl_handi_ajoutref.Location = new System.Drawing.Point(311, 258);
+            this.lbl_handi_ajoutref.Name = "lbl_handi_ajoutref";
+            this.lbl_handi_ajoutref.Size = new System.Drawing.Size(53, 13);
+            this.lbl_handi_ajoutref.TabIndex = 34;
+            this.lbl_handi_ajoutref.Text = "Handicap";
+            // 
+            // txt_handi_ajoutref
+            // 
+            this.txt_handi_ajoutref.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.txt_handi_ajoutref.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_handi_ajoutref.FormattingEnabled = true;
+            this.txt_handi_ajoutref.Items.AddRange(new object[] {
+            "Pas de Handicap",
+            "Moteur",
+            "Mental"});
+            this.txt_handi_ajoutref.Location = new System.Drawing.Point(303, 274);
+            this.txt_handi_ajoutref.Name = "txt_handi_ajoutref";
+            this.txt_handi_ajoutref.Size = new System.Drawing.Size(148, 21);
+            this.txt_handi_ajoutref.TabIndex = 33;
+            // 
+            // txt_autre_ajoutref
+            // 
+            this.txt_autre_ajoutref.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txt_autre_ajoutref.Location = new System.Drawing.Point(303, 331);
+            this.txt_autre_ajoutref.Name = "txt_autre_ajoutref";
+            this.txt_autre_ajoutref.Size = new System.Drawing.Size(190, 20);
+            this.txt_autre_ajoutref.TabIndex = 36;
+            // 
+            // lbl_autre_ajoutref
+            // 
+            this.lbl_autre_ajoutref.AutoSize = true;
+            this.lbl_autre_ajoutref.Location = new System.Drawing.Point(311, 314);
+            this.lbl_autre_ajoutref.Name = "lbl_autre_ajoutref";
+            this.lbl_autre_ajoutref.Size = new System.Drawing.Size(32, 13);
+            this.lbl_autre_ajoutref.TabIndex = 37;
+            this.lbl_autre_ajoutref.Text = "Autre";
             // 
             // Ajout
             // 
@@ -1259,6 +1574,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(720, 425);
             this.Controls.Add(this.tabControl1);
+            this.ForeColor = System.Drawing.Color.Black;
             this.MaximumSize = new System.Drawing.Size(736, 464);
             this.MinimumSize = new System.Drawing.Size(736, 464);
             this.Name = "Ajout";
@@ -1283,6 +1599,7 @@
             this.Group_role_modif_gerant.ResumeLayout(false);
             this.Group_role_modif_gerant.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_taille_ajoutref)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1381,5 +1698,27 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DateNaiss;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nationalite;
         private System.Windows.Forms.Label lbl_err_btn_modif_ref;
+        private System.Windows.Forms.Label lbl_err_coulchev_ajoutref;
+        private System.Windows.Forms.Label lbl_coulchev_ajoutref;
+        private System.Windows.Forms.ComboBox txt_coulchev_ajoutref;
+        private System.Windows.Forms.Label lbl_err_coulpeau_ajoutref;
+        private System.Windows.Forms.Label lbl_coulpeau_ajoutref;
+        private System.Windows.Forms.ComboBox txt_coulpeau_ajoutref;
+        private System.Windows.Forms.Label lbl_taille_ajoutref;
+        private System.Windows.Forms.NumericUpDown num_taille_ajoutref;
+        private System.Windows.Forms.Label lbl_err_coulyeux_ajoutref;
+        private System.Windows.Forms.Label lbl_coulyeux_ajoutref;
+        private System.Windows.Forms.ComboBox txt_coulyeux_ajoutref;
+        private System.Windows.Forms.Label lbl_ref_allerg_ajoutref;
+        private System.Windows.Forms.Label lbl_allerg_ajoutref;
+        private System.Windows.Forms.ComboBox txt_allerg_ajoutref;
+        private System.Windows.Forms.Label lbl_err_bless_ajoutref;
+        private System.Windows.Forms.Label lbl_bless_ajoutref;
+        private System.Windows.Forms.ComboBox txt_bless_ajoutref;
+        private System.Windows.Forms.Label lbl_err_handi_ajoutref;
+        private System.Windows.Forms.Label lbl_handi_ajoutref;
+        private System.Windows.Forms.ComboBox txt_handi_ajoutref;
+        private System.Windows.Forms.Label lbl_autre_ajoutref;
+        private System.Windows.Forms.MaskedTextBox txt_autre_ajoutref;
     }
 }
