@@ -145,6 +145,25 @@
             this.Txt_prenom_modif_gerant = new System.Windows.Forms.MaskedTextBox();
             this.Txt_nom_modif_gerant = new System.Windows.Forms.MaskedTextBox();
             this.tabPageStock = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.lbl_err_champs_modifref = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPageAccueil.SuspendLayout();
             this.tabPageAjoutRef.SuspendLayout();
@@ -158,6 +177,7 @@
             this.tabPagemodifGerant.SuspendLayout();
             this.Group_role_modif_gerant.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -1028,6 +1048,25 @@
             // tabPageModifRef
             // 
             this.tabPageModifRef.BackColor = System.Drawing.Color.Transparent;
+            this.tabPageModifRef.Controls.Add(this.lbl_err_champs_modifref);
+            this.tabPageModifRef.Controls.Add(this.label5);
+            this.tabPageModifRef.Controls.Add(this.comboBox1);
+            this.tabPageModifRef.Controls.Add(this.label6);
+            this.tabPageModifRef.Controls.Add(this.maskedTextBox1);
+            this.tabPageModifRef.Controls.Add(this.label7);
+            this.tabPageModifRef.Controls.Add(this.comboBox2);
+            this.tabPageModifRef.Controls.Add(this.label8);
+            this.tabPageModifRef.Controls.Add(this.comboBox3);
+            this.tabPageModifRef.Controls.Add(this.label9);
+            this.tabPageModifRef.Controls.Add(this.comboBox4);
+            this.tabPageModifRef.Controls.Add(this.label10);
+            this.tabPageModifRef.Controls.Add(this.comboBox5);
+            this.tabPageModifRef.Controls.Add(this.label11);
+            this.tabPageModifRef.Controls.Add(this.comboBox6);
+            this.tabPageModifRef.Controls.Add(this.label12);
+            this.tabPageModifRef.Controls.Add(this.comboBox7);
+            this.tabPageModifRef.Controls.Add(this.label13);
+            this.tabPageModifRef.Controls.Add(this.numericUpDown1);
             this.tabPageModifRef.Controls.Add(this.lbl_err_btn_modif_ref);
             this.tabPageModifRef.Controls.Add(this.lbl_errsupp_modif_ref);
             this.tabPageModifRef.Controls.Add(this.btn_rechercher_modifref);
@@ -1180,22 +1219,22 @@
             // 
             this.lbl_err_nation_modif_ref.AutoSize = true;
             this.lbl_err_nation_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_nation_modif_ref.Location = new System.Drawing.Point(54, 146);
+            this.lbl_err_nation_modif_ref.Location = new System.Drawing.Point(132, 106);
             this.lbl_err_nation_modif_ref.Name = "lbl_err_nation_modif_ref";
-            this.lbl_err_nation_modif_ref.Size = new System.Drawing.Size(67, 13);
+            this.lbl_err_nation_modif_ref.Size = new System.Drawing.Size(11, 13);
             this.lbl_err_nation_modif_ref.TabIndex = 24;
-            this.lbl_err_nation_modif_ref.Text = "er nationalite";
+            this.lbl_err_nation_modif_ref.Text = "*";
             this.lbl_err_nation_modif_ref.Visible = false;
             // 
             // lbl_err_sex_modif_ref
             // 
             this.lbl_err_sex_modif_ref.AutoSize = true;
             this.lbl_err_sex_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_sex_modif_ref.Location = new System.Drawing.Point(54, 92);
+            this.lbl_err_sex_modif_ref.Location = new System.Drawing.Point(134, 69);
             this.lbl_err_sex_modif_ref.Name = "lbl_err_sex_modif_ref";
-            this.lbl_err_sex_modif_ref.Size = new System.Drawing.Size(44, 13);
+            this.lbl_err_sex_modif_ref.Size = new System.Drawing.Size(11, 13);
             this.lbl_err_sex_modif_ref.TabIndex = 23;
-            this.lbl_err_sex_modif_ref.Text = "err sexe";
+            this.lbl_err_sex_modif_ref.Text = "*";
             this.lbl_err_sex_modif_ref.Visible = false;
             // 
             // btn_Modif_ref
@@ -1612,6 +1651,239 @@
             this.tabPageStock.Text = "Gestion Des Stocks";
             this.tabPageStock.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(169, 106);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 13);
+            this.label5.TabIndex = 57;
+            this.label5.Text = "Type de Cheveux";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Lisse ",
+            "Frisé",
+            "Bouclé",
+            "Gras",
+            "Chauve",
+            "Autre"});
+            this.comboBox1.Location = new System.Drawing.Point(161, 122);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(148, 21);
+            this.comboBox1.TabIndex = 56;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(181, 312);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(32, 13);
+            this.label6.TabIndex = 55;
+            this.label6.Text = "Autre";
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.maskedTextBox1.Location = new System.Drawing.Point(173, 329);
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(148, 20);
+            this.maskedTextBox1.TabIndex = 54;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(181, 205);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 13);
+            this.label7.TabIndex = 53;
+            this.label7.Text = "Handicap";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Pas de Handicap",
+            "Moteur",
+            "Mental"});
+            this.comboBox2.Location = new System.Drawing.Point(173, 221);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(148, 21);
+            this.comboBox2.TabIndex = 52;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(181, 148);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(41, 13);
+            this.label8.TabIndex = 51;
+            this.label8.Text = "Allergie";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Pas d\'Allergies",
+            "Arachide",
+            "Pollen",
+            "Fruit de mer",
+            "Poils d\'animaux",
+            "Oeuf",
+            "Acariens",
+            "Piqure d\'insectes",
+            "Lait",
+            "Ble",
+            "Autre"});
+            this.comboBox3.Location = new System.Drawing.Point(173, 164);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(148, 21);
+            this.comboBox3.TabIndex = 50;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(169, 43);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(47, 13);
+            this.label9.TabIndex = 49;
+            this.label9.Text = "Blessure";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "Pas de Blessure",
+            "Bessure Tres Urgente",
+            "Blessure Urgente",
+            "Blessure Moyenne",
+            "Blessure Benigne"});
+            this.comboBox4.Location = new System.Drawing.Point(161, 59);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(148, 21);
+            this.comboBox4.TabIndex = 48;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(28, 330);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(90, 13);
+            this.label10.TabIndex = 47;
+            this.label10.Text = "Couleur des Yeux";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Items.AddRange(new object[] {
+            "Bleu",
+            "Vert",
+            "Marron",
+            "Autre"});
+            this.comboBox5.Location = new System.Drawing.Point(20, 346);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(148, 21);
+            this.comboBox5.TabIndex = 46;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(28, 274);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(103, 13);
+            this.label11.TabIndex = 45;
+            this.label11.Text = "Couleur de Cheveux";
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Items.AddRange(new object[] {
+            "Blond(e)",
+            "Brun(e)",
+            "Chatain",
+            "Noir",
+            "Blanc",
+            "Poive et Sel",
+            "Bleu",
+            "Vert",
+            "Rose",
+            "Autre"});
+            this.comboBox6.Location = new System.Drawing.Point(20, 290);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(148, 21);
+            this.comboBox6.TabIndex = 44;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(32, 217);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(86, 13);
+            this.label12.TabIndex = 43;
+            this.label12.Text = "Couleur de Peau";
+            // 
+            // comboBox7
+            // 
+            this.comboBox7.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Items.AddRange(new object[] {
+            "Blanc",
+            "Noir",
+            "Metissé"});
+            this.comboBox7.Location = new System.Drawing.Point(20, 233);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(148, 21);
+            this.comboBox7.TabIndex = 42;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(17, 186);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(55, 13);
+            this.label13.TabIndex = 41;
+            this.label13.Text = "Taille (cm)";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(72, 184);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(90, 20);
+            this.numericUpDown1.TabIndex = 40;
+            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lbl_err_champs_modifref
+            // 
+            this.lbl_err_champs_modifref.AutoSize = true;
+            this.lbl_err_champs_modifref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_champs_modifref.Location = new System.Drawing.Point(19, 396);
+            this.lbl_err_champs_modifref.Name = "lbl_err_champs_modifref";
+            this.lbl_err_champs_modifref.Size = new System.Drawing.Size(143, 13);
+            this.lbl_err_champs_modifref.TabIndex = 58;
+            this.lbl_err_champs_modifref.Text = " * Veuillez remplir les Champs";
+            this.lbl_err_champs_modifref.Visible = false;
+            // 
             // Ajout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1644,6 +1916,7 @@
             this.Group_role_modif_gerant.ResumeLayout(false);
             this.Group_role_modif_gerant.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1767,5 +2040,24 @@
         private System.Windows.Forms.Label lbl_err_typchev_ajoutref;
         private System.Windows.Forms.Label lbl_typchev_ajoutref;
         private System.Windows.Forms.ComboBox txt_typchev_ajoutref;
+        private System.Windows.Forms.Label lbl_err_champs_modifref;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
