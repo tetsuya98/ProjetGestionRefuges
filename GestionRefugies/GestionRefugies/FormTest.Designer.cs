@@ -39,6 +39,9 @@
             this.BT_addUser = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.BT_select_camp = new System.Windows.Forms.Button();
+            this.BT_update_camp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -149,11 +152,43 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "User";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(636, 43);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(34, 13);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Camp";
+            // 
+            // BT_select_camp
+            // 
+            this.BT_select_camp.Location = new System.Drawing.Point(588, 166);
+            this.BT_select_camp.Name = "BT_select_camp";
+            this.BT_select_camp.Size = new System.Drawing.Size(138, 101);
+            this.BT_select_camp.TabIndex = 15;
+            this.BT_select_camp.Text = "Afficher";
+            this.BT_select_camp.UseVisualStyleBackColor = true;
+            this.BT_select_camp.Click += new System.EventHandler(this.BT_select_camp_Click);
+            // 
+            // BT_update_camp
+            // 
+            this.BT_update_camp.Location = new System.Drawing.Point(588, 59);
+            this.BT_update_camp.Name = "BT_update_camp";
+            this.BT_update_camp.Size = new System.Drawing.Size(138, 101);
+            this.BT_update_camp.TabIndex = 13;
+            this.BT_update_camp.Text = "Modifier";
+            this.BT_update_camp.UseVisualStyleBackColor = true;
+            this.BT_update_camp.Click += new System.EventHandler(this.BT_update_camp_Click);
+            // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 389);
+            this.ClientSize = new System.Drawing.Size(747, 389);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.BT_select_camp);
+            this.Controls.Add(this.BT_update_camp);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BT_selectUser);
@@ -185,5 +220,8 @@
         private System.Windows.Forms.Button BT_addUser;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button BT_select_camp;
+        private System.Windows.Forms.Button BT_update_camp;
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using MySql.Data.MySqlClient;
 
 namespace GestionRefugies
 {
@@ -60,6 +61,49 @@ namespace GestionRefugies
             this.capacite = capacite;
             this.adresse = adresse;
             this.id = id;
+        }
+
+        /// <summary>
+        /// Récupère un camp dans la base de donnée
+        /// </summary>
+        /// <param name="id">Identifiant du camp à récupérer</param>
+        /// <returns>Retourne un camp</returns>
+        public static Camp select(int id)
+        {
+            string sqlCommand = "SELECT * FROM camps WHERE id = ?";
+            MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
+
+            cmd.CommandText = sqlCommand;
+
+            cmd.Parameters.AddWithValue("@id", id);
+
+            MySqlDataReader reader;
+            try
+            {
+                reader = cmd.ExecuteReader();
+            }
+            catch (MySqlException ex)
+            {
+                return null;
+            }
+
+            reader.Read();
+            Camp tmp = new Camp(
+                reader.GetFieldValue<int>(reader.GetOrdinal("capacite")),
+                reader.GetFieldValue<String>(reader.GetOrdinal("adresse")),
+                id
+            );
+            reader.Close();
+            return tmp;
+        }
+
+        /// <summary>
+        /// Fonction affiche
+        /// </summary>
+        /// <returns>Retourne l'objet sous forme d'une chaine de caractère</returns>
+        public override string ToString()
+        {
+            return " => Camp\n capacite : " + capacite + "\n adresse : " + adresse;
         }
         #endregion
     }

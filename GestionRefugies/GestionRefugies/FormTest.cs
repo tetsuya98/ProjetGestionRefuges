@@ -74,23 +74,7 @@ namespace GestionRefugies
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (Refugier.delete(new Refugier(
-                "Lakraa",
-                "Omer",
-                "M",
-                DateTime.Now,
-                "français",
-                3,
-                3,
-                "blue",
-                "rouge",
-                "bouclé",
-                "Orange",
-                "Non",
-                "math",
-                "con",
-                "autre....",
-                1)) == true)
+            if (Refugier.delete(1) == true)
             {
                 MessageBox.Show("Sucess");
             }
@@ -178,6 +162,16 @@ namespace GestionRefugies
             {
                 MessageBox.Show("Fail");
             }
+        }
+
+        private void BT_update_camp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BT_select_camp_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Camp.select(1).ToString());
         }
     }
 }
