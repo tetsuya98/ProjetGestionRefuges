@@ -678,7 +678,9 @@ namespace GestionRefugies
                 {
                     tabControl1.SelectedTab = tabPageAccueil;
                     MessageBox.Show("Unable to load tab. You have insufficient access privileges.");
+                    
                 }
+
             }
 
 
@@ -686,12 +688,23 @@ namespace GestionRefugies
 
         } 
         #endregion
-
+        
         private void label_nameU_Click(object sender, EventArgs e)
         {
 
         }
 
-        
+        /// <summary>
+        /// modifie la datagridview au load de la tabpagemodifref
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tabControl1_Selected(object sender, TabControlEventArgs e)
+        {
+            if (tabControl1.SelectedTab == tabPageModifRef)
+            {
+                btn_rechercher_modifref_Click(sender,e);
+            }
+        }
     }
 }

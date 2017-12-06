@@ -39,6 +39,9 @@
             this.label_AgentAccess = new System.Windows.Forms.Label();
             this.label_nameU = new System.Windows.Forms.Label();
             this.tabPageAjoutRef = new System.Windows.Forms.TabPage();
+            this.lbl_err_typchev_ajoutref = new System.Windows.Forms.Label();
+            this.lbl_typchev_ajoutref = new System.Windows.Forms.Label();
+            this.txt_typchev_ajoutref = new System.Windows.Forms.ComboBox();
             this.lbl_autre_ajoutref = new System.Windows.Forms.Label();
             this.txt_autre_ajoutref = new System.Windows.Forms.MaskedTextBox();
             this.lbl_err_handi_ajoutref = new System.Windows.Forms.Label();
@@ -142,9 +145,6 @@
             this.Txt_prenom_modif_gerant = new System.Windows.Forms.MaskedTextBox();
             this.Txt_nom_modif_gerant = new System.Windows.Forms.MaskedTextBox();
             this.tabPageStock = new System.Windows.Forms.TabPage();
-            this.lbl_err_typchev_ajoutref = new System.Windows.Forms.Label();
-            this.lbl_typchev_ajoutref = new System.Windows.Forms.Label();
-            this.txt_typchev_ajoutref = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPageAccueil.SuspendLayout();
             this.tabPageAjoutRef.SuspendLayout();
@@ -172,9 +172,10 @@
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(696, 402);
+            this.tabControl1.Size = new System.Drawing.Size(843, 470);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged_1);
+            this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
             // tabPageAccueil
             // 
@@ -188,7 +189,7 @@
             this.tabPageAccueil.Controls.Add(this.label_nameU);
             this.tabPageAccueil.Location = new System.Drawing.Point(4, 22);
             this.tabPageAccueil.Name = "tabPageAccueil";
-            this.tabPageAccueil.Size = new System.Drawing.Size(688, 376);
+            this.tabPageAccueil.Size = new System.Drawing.Size(835, 444);
             this.tabPageAccueil.TabIndex = 5;
             this.tabPageAccueil.Text = "Accueil";
             this.tabPageAccueil.UseVisualStyleBackColor = true;
@@ -318,9 +319,46 @@
             this.tabPageAjoutRef.Location = new System.Drawing.Point(4, 22);
             this.tabPageAjoutRef.Name = "tabPageAjoutRef";
             this.tabPageAjoutRef.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAjoutRef.Size = new System.Drawing.Size(688, 376);
+            this.tabPageAjoutRef.Size = new System.Drawing.Size(835, 444);
             this.tabPageAjoutRef.TabIndex = 0;
             this.tabPageAjoutRef.Text = "Ajouter un Refugié";
+            // 
+            // lbl_err_typchev_ajoutref
+            // 
+            this.lbl_err_typchev_ajoutref.AutoSize = true;
+            this.lbl_err_typchev_ajoutref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_typchev_ajoutref.Location = new System.Drawing.Point(266, 265);
+            this.lbl_err_typchev_ajoutref.Name = "lbl_err_typchev_ajoutref";
+            this.lbl_err_typchev_ajoutref.Size = new System.Drawing.Size(188, 13);
+            this.lbl_err_typchev_ajoutref.TabIndex = 40;
+            this.lbl_err_typchev_ajoutref.Text = "Veuillez renseigner le type de cheveux";
+            this.lbl_err_typchev_ajoutref.Visible = false;
+            // 
+            // lbl_typchev_ajoutref
+            // 
+            this.lbl_typchev_ajoutref.AutoSize = true;
+            this.lbl_typchev_ajoutref.Location = new System.Drawing.Point(262, 225);
+            this.lbl_typchev_ajoutref.Name = "lbl_typchev_ajoutref";
+            this.lbl_typchev_ajoutref.Size = new System.Drawing.Size(91, 13);
+            this.lbl_typchev_ajoutref.TabIndex = 39;
+            this.lbl_typchev_ajoutref.Text = "Type de Cheveux";
+            // 
+            // txt_typchev_ajoutref
+            // 
+            this.txt_typchev_ajoutref.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.txt_typchev_ajoutref.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_typchev_ajoutref.FormattingEnabled = true;
+            this.txt_typchev_ajoutref.Items.AddRange(new object[] {
+            "Lisse ",
+            "Frisé",
+            "Bouclé",
+            "Gras",
+            "Chauve",
+            "Autre"});
+            this.txt_typchev_ajoutref.Location = new System.Drawing.Point(254, 241);
+            this.txt_typchev_ajoutref.Name = "txt_typchev_ajoutref";
+            this.txt_typchev_ajoutref.Size = new System.Drawing.Size(148, 21);
+            this.txt_typchev_ajoutref.TabIndex = 38;
             // 
             // lbl_autre_ajoutref
             // 
@@ -771,7 +809,7 @@
             this.tabPageAjoutGérant.Location = new System.Drawing.Point(4, 22);
             this.tabPageAjoutGérant.Name = "tabPageAjoutGérant";
             this.tabPageAjoutGérant.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAjoutGérant.Size = new System.Drawing.Size(688, 376);
+            this.tabPageAjoutGérant.Size = new System.Drawing.Size(835, 444);
             this.tabPageAjoutGérant.TabIndex = 1;
             this.tabPageAjoutGérant.Text = "Ajouter un Gérant";
             // 
@@ -1010,7 +1048,7 @@
             this.tabPageModifRef.Controls.Add(this.Txt_Nom_Modif_ref);
             this.tabPageModifRef.Location = new System.Drawing.Point(4, 22);
             this.tabPageModifRef.Name = "tabPageModifRef";
-            this.tabPageModifRef.Size = new System.Drawing.Size(688, 376);
+            this.tabPageModifRef.Size = new System.Drawing.Size(835, 444);
             this.tabPageModifRef.TabIndex = 3;
             this.tabPageModifRef.Text = "Modifier/Supprimer Refugié";
             // 
@@ -1018,7 +1056,7 @@
             // 
             this.lbl_err_btn_modif_ref.AutoSize = true;
             this.lbl_err_btn_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_btn_modif_ref.Location = new System.Drawing.Point(235, 355);
+            this.lbl_err_btn_modif_ref.Location = new System.Drawing.Point(448, 420);
             this.lbl_err_btn_modif_ref.Name = "lbl_err_btn_modif_ref";
             this.lbl_err_btn_modif_ref.Size = new System.Drawing.Size(384, 13);
             this.lbl_err_btn_modif_ref.TabIndex = 31;
@@ -1030,7 +1068,7 @@
             // 
             this.lbl_errsupp_modif_ref.AutoSize = true;
             this.lbl_errsupp_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_errsupp_modif_ref.Location = new System.Drawing.Point(235, 355);
+            this.lbl_errsupp_modif_ref.Location = new System.Drawing.Point(483, 420);
             this.lbl_errsupp_modif_ref.Name = "lbl_errsupp_modif_ref";
             this.lbl_errsupp_modif_ref.Size = new System.Drawing.Size(349, 13);
             this.lbl_errsupp_modif_ref.TabIndex = 30;
@@ -1039,7 +1077,7 @@
             // 
             // btn_rechercher_modifref
             // 
-            this.btn_rechercher_modifref.Location = new System.Drawing.Point(59, 281);
+            this.btn_rechercher_modifref.Location = new System.Drawing.Point(16, 415);
             this.btn_rechercher_modifref.Name = "btn_rechercher_modifref";
             this.btn_rechercher_modifref.Size = new System.Drawing.Size(115, 23);
             this.btn_rechercher_modifref.TabIndex = 29;
@@ -1050,7 +1088,7 @@
             // lbl_refugeref_modif_ref
             // 
             this.lbl_refugeref_modif_ref.AutoSize = true;
-            this.lbl_refugeref_modif_ref.Location = new System.Drawing.Point(25, 248);
+            this.lbl_refugeref_modif_ref.Location = new System.Drawing.Point(14, 164);
             this.lbl_refugeref_modif_ref.Name = "lbl_refugeref_modif_ref";
             this.lbl_refugeref_modif_ref.Size = new System.Drawing.Size(55, 13);
             this.lbl_refugeref_modif_ref.TabIndex = 28;
@@ -1059,20 +1097,20 @@
             // 
             // num_refugeref_modif_ref
             // 
-            this.num_refugeref_modif_ref.Location = new System.Drawing.Point(95, 246);
+            this.num_refugeref_modif_ref.Location = new System.Drawing.Point(75, 162);
             this.num_refugeref_modif_ref.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
             this.num_refugeref_modif_ref.Name = "num_refugeref_modif_ref";
-            this.num_refugeref_modif_ref.Size = new System.Drawing.Size(90, 20);
+            this.num_refugeref_modif_ref.Size = new System.Drawing.Size(69, 20);
             this.num_refugeref_modif_ref.TabIndex = 27;
             this.num_refugeref_modif_ref.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btn_Suppr_ref
             // 
-            this.btn_Suppr_ref.Location = new System.Drawing.Point(59, 339);
+            this.btn_Suppr_ref.Location = new System.Drawing.Point(258, 415);
             this.btn_Suppr_ref.Name = "btn_Suppr_ref";
             this.btn_Suppr_ref.Size = new System.Drawing.Size(115, 23);
             this.btn_Suppr_ref.TabIndex = 26;
@@ -1093,10 +1131,10 @@
             this.Sexe,
             this.DateNaiss,
             this.Nationalite});
-            this.DataGrid_modif_ref.Location = new System.Drawing.Point(238, 9);
+            this.DataGrid_modif_ref.Location = new System.Drawing.Point(327, 9);
             this.DataGrid_modif_ref.Name = "DataGrid_modif_ref";
             this.DataGrid_modif_ref.ReadOnly = true;
-            this.DataGrid_modif_ref.Size = new System.Drawing.Size(447, 343);
+            this.DataGrid_modif_ref.Size = new System.Drawing.Size(505, 400);
             this.DataGrid_modif_ref.TabIndex = 25;
             // 
             // ID
@@ -1142,27 +1180,27 @@
             // 
             this.lbl_err_nation_modif_ref.AutoSize = true;
             this.lbl_err_nation_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_nation_modif_ref.Location = new System.Drawing.Point(75, 216);
+            this.lbl_err_nation_modif_ref.Location = new System.Drawing.Point(54, 146);
             this.lbl_err_nation_modif_ref.Name = "lbl_err_nation_modif_ref";
-            this.lbl_err_nation_modif_ref.Size = new System.Drawing.Size(157, 13);
+            this.lbl_err_nation_modif_ref.Size = new System.Drawing.Size(67, 13);
             this.lbl_err_nation_modif_ref.TabIndex = 24;
-            this.lbl_err_nation_modif_ref.Text = "Veuillez renseigner la nationalite";
+            this.lbl_err_nation_modif_ref.Text = "er nationalite";
             this.lbl_err_nation_modif_ref.Visible = false;
             // 
             // lbl_err_sex_modif_ref
             // 
             this.lbl_err_sex_modif_ref.AutoSize = true;
             this.lbl_err_sex_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_sex_modif_ref.Location = new System.Drawing.Point(75, 101);
+            this.lbl_err_sex_modif_ref.Location = new System.Drawing.Point(54, 92);
             this.lbl_err_sex_modif_ref.Name = "lbl_err_sex_modif_ref";
-            this.lbl_err_sex_modif_ref.Size = new System.Drawing.Size(131, 13);
+            this.lbl_err_sex_modif_ref.Size = new System.Drawing.Size(44, 13);
             this.lbl_err_sex_modif_ref.TabIndex = 23;
-            this.lbl_err_sex_modif_ref.Text = "Veuillez renseigner le sexe";
+            this.lbl_err_sex_modif_ref.Text = "err sexe";
             this.lbl_err_sex_modif_ref.Visible = false;
             // 
             // btn_Modif_ref
             // 
-            this.btn_Modif_ref.Location = new System.Drawing.Point(59, 310);
+            this.btn_Modif_ref.Location = new System.Drawing.Point(137, 415);
             this.btn_Modif_ref.Name = "btn_Modif_ref";
             this.btn_Modif_ref.Size = new System.Drawing.Size(115, 23);
             this.btn_Modif_ref.TabIndex = 22;
@@ -1173,7 +1211,7 @@
             // lbl_Nation_modif_ref
             // 
             this.lbl_Nation_modif_ref.AutoSize = true;
-            this.lbl_Nation_modif_ref.Location = new System.Drawing.Point(13, 176);
+            this.lbl_Nation_modif_ref.Location = new System.Drawing.Point(14, 106);
             this.lbl_Nation_modif_ref.Name = "lbl_Nation_modif_ref";
             this.lbl_Nation_modif_ref.Size = new System.Drawing.Size(57, 13);
             this.lbl_Nation_modif_ref.TabIndex = 21;
@@ -1182,7 +1220,7 @@
             // lbl_dateNaiss_modif_ref
             // 
             this.lbl_dateNaiss_modif_ref.AutoSize = true;
-            this.lbl_dateNaiss_modif_ref.Location = new System.Drawing.Point(13, 120);
+            this.lbl_dateNaiss_modif_ref.Location = new System.Drawing.Point(147, 4);
             this.lbl_dateNaiss_modif_ref.Name = "lbl_dateNaiss_modif_ref";
             this.lbl_dateNaiss_modif_ref.Size = new System.Drawing.Size(98, 13);
             this.lbl_dateNaiss_modif_ref.TabIndex = 20;
@@ -1225,23 +1263,23 @@
             "Senegalais",
             "Sud-Africain",
             "Autre"});
-            this.list_nation_modif_ref.Location = new System.Drawing.Point(16, 192);
+            this.list_nation_modif_ref.Location = new System.Drawing.Point(17, 122);
             this.list_nation_modif_ref.Name = "list_nation_modif_ref";
-            this.list_nation_modif_ref.Size = new System.Drawing.Size(190, 21);
+            this.list_nation_modif_ref.Size = new System.Drawing.Size(127, 21);
             this.list_nation_modif_ref.TabIndex = 19;
             // 
             // DatePicker_Naiss_modif_ref
             // 
-            this.DatePicker_Naiss_modif_ref.Location = new System.Drawing.Point(16, 136);
+            this.DatePicker_Naiss_modif_ref.Location = new System.Drawing.Point(150, 20);
             this.DatePicker_Naiss_modif_ref.Name = "DatePicker_Naiss_modif_ref";
-            this.DatePicker_Naiss_modif_ref.Size = new System.Drawing.Size(190, 20);
+            this.DatePicker_Naiss_modif_ref.Size = new System.Drawing.Size(168, 20);
             this.DatePicker_Naiss_modif_ref.TabIndex = 18;
             this.DatePicker_Naiss_modif_ref.ValueChanged += new System.EventHandler(this.DatePicker_Naiss_modif_ref_ValueChanged);
             // 
             // rdn_Femme_Modif_ref
             // 
             this.rdn_Femme_Modif_ref.AutoSize = true;
-            this.rdn_Femme_Modif_ref.Location = new System.Drawing.Point(105, 81);
+            this.rdn_Femme_Modif_ref.Location = new System.Drawing.Point(84, 72);
             this.rdn_Femme_Modif_ref.Name = "rdn_Femme_Modif_ref";
             this.rdn_Femme_Modif_ref.Size = new System.Drawing.Size(59, 17);
             this.rdn_Femme_Modif_ref.TabIndex = 17;
@@ -1252,7 +1290,7 @@
             // rdn_Homme_Modif_ref
             // 
             this.rdn_Homme_Modif_ref.AutoSize = true;
-            this.rdn_Homme_Modif_ref.Location = new System.Drawing.Point(38, 81);
+            this.rdn_Homme_Modif_ref.Location = new System.Drawing.Point(17, 72);
             this.rdn_Homme_Modif_ref.Name = "rdn_Homme_Modif_ref";
             this.rdn_Homme_Modif_ref.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.rdn_Homme_Modif_ref.Size = new System.Drawing.Size(61, 17);
@@ -1266,7 +1304,7 @@
             this.Txt_Prenom_Modif_ref.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.Txt_Prenom_Modif_ref.Location = new System.Drawing.Point(16, 46);
             this.Txt_Prenom_Modif_ref.Name = "Txt_Prenom_Modif_ref";
-            this.Txt_Prenom_Modif_ref.Size = new System.Drawing.Size(190, 20);
+            this.Txt_Prenom_Modif_ref.Size = new System.Drawing.Size(128, 20);
             this.Txt_Prenom_Modif_ref.TabIndex = 15;
             this.Txt_Prenom_Modif_ref.Text = "Prenom";
             this.Txt_Prenom_Modif_ref.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_Prenom_Modif_ref_KeyDown);
@@ -1277,7 +1315,7 @@
             this.Txt_Nom_Modif_ref.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.Txt_Nom_Modif_ref.Location = new System.Drawing.Point(16, 20);
             this.Txt_Nom_Modif_ref.Name = "Txt_Nom_Modif_ref";
-            this.Txt_Nom_Modif_ref.Size = new System.Drawing.Size(190, 20);
+            this.Txt_Nom_Modif_ref.Size = new System.Drawing.Size(128, 20);
             this.Txt_Nom_Modif_ref.TabIndex = 14;
             this.Txt_Nom_Modif_ref.Text = "Nom";
             this.Txt_Nom_Modif_ref.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_Nom_Modif_ref_KeyDown);
@@ -1302,7 +1340,7 @@
             this.tabPagemodifGerant.Controls.Add(this.Txt_nom_modif_gerant);
             this.tabPagemodifGerant.Location = new System.Drawing.Point(4, 22);
             this.tabPagemodifGerant.Name = "tabPagemodifGerant";
-            this.tabPagemodifGerant.Size = new System.Drawing.Size(688, 376);
+            this.tabPagemodifGerant.Size = new System.Drawing.Size(835, 444);
             this.tabPagemodifGerant.TabIndex = 4;
             this.tabPagemodifGerant.Text = "Modifier/Supprimer Gerant";
             // 
@@ -1569,57 +1607,20 @@
             // 
             this.tabPageStock.Location = new System.Drawing.Point(4, 22);
             this.tabPageStock.Name = "tabPageStock";
-            this.tabPageStock.Size = new System.Drawing.Size(688, 376);
+            this.tabPageStock.Size = new System.Drawing.Size(835, 444);
             this.tabPageStock.TabIndex = 2;
             this.tabPageStock.Text = "Gestion Des Stocks";
             this.tabPageStock.UseVisualStyleBackColor = true;
-            // 
-            // lbl_err_typchev_ajoutref
-            // 
-            this.lbl_err_typchev_ajoutref.AutoSize = true;
-            this.lbl_err_typchev_ajoutref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_typchev_ajoutref.Location = new System.Drawing.Point(266, 265);
-            this.lbl_err_typchev_ajoutref.Name = "lbl_err_typchev_ajoutref";
-            this.lbl_err_typchev_ajoutref.Size = new System.Drawing.Size(188, 13);
-            this.lbl_err_typchev_ajoutref.TabIndex = 40;
-            this.lbl_err_typchev_ajoutref.Text = "Veuillez renseigner le type de cheveux";
-            this.lbl_err_typchev_ajoutref.Visible = false;
-            // 
-            // lbl_typchev_ajoutref
-            // 
-            this.lbl_typchev_ajoutref.AutoSize = true;
-            this.lbl_typchev_ajoutref.Location = new System.Drawing.Point(262, 225);
-            this.lbl_typchev_ajoutref.Name = "lbl_typchev_ajoutref";
-            this.lbl_typchev_ajoutref.Size = new System.Drawing.Size(91, 13);
-            this.lbl_typchev_ajoutref.TabIndex = 39;
-            this.lbl_typchev_ajoutref.Text = "Type de Cheveux";
-            // 
-            // txt_typchev_ajoutref
-            // 
-            this.txt_typchev_ajoutref.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.txt_typchev_ajoutref.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txt_typchev_ajoutref.FormattingEnabled = true;
-            this.txt_typchev_ajoutref.Items.AddRange(new object[] {
-            "Lisse ",
-            "Frisé",
-            "Bouclé",
-            "Gras",
-            "Chauve",
-            "Autre"});
-            this.txt_typchev_ajoutref.Location = new System.Drawing.Point(254, 241);
-            this.txt_typchev_ajoutref.Name = "txt_typchev_ajoutref";
-            this.txt_typchev_ajoutref.Size = new System.Drawing.Size(148, 21);
-            this.txt_typchev_ajoutref.TabIndex = 38;
             // 
             // Ajout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(720, 425);
+            this.ClientSize = new System.Drawing.Size(867, 493);
             this.Controls.Add(this.tabControl1);
             this.ForeColor = System.Drawing.Color.Black;
-            this.MaximumSize = new System.Drawing.Size(736, 464);
-            this.MinimumSize = new System.Drawing.Size(736, 464);
+            this.MaximumSize = new System.Drawing.Size(883, 532);
+            this.MinimumSize = new System.Drawing.Size(883, 532);
             this.Name = "Ajout";
             this.Text = "Ajout";
             this.Load += new System.EventHandler(this.AjoutRefugies_Load);
