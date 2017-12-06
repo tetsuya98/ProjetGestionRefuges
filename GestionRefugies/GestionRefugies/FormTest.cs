@@ -166,7 +166,15 @@ namespace GestionRefugies
 
         private void BT_update_camp_Click(object sender, EventArgs e)
         {
-
+            Camp tmp = new Camp(10, "20 rue des champs", 1);
+            if (Camp.update(tmp) == true)
+            {
+                MessageBox.Show("Sucess");
+            }
+            else
+            {
+                MessageBox.Show("Fail");
+            }
         }
 
         private void BT_select_camp_Click(object sender, EventArgs e)

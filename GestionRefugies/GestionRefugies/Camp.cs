@@ -105,6 +105,38 @@ namespace GestionRefugies
         {
             return " => Camp\n capacite : " + capacite + "\n adresse : " + adresse;
         }
+
+        /// <summary>
+        /// Modifie un camp dans la base de donnée
+        /// </summary>
+        /// <param name="camp">le camp avec les champ modifié avec son Id</param>
+        /// <returns>Retourne true si la requete réussi sinon false</returns>
+        public static bool update(Camp camp)
+        {
+
+            string sqlCommand = "UPDATE camps  SET capacite = ?, adresse = ? WHERE id = ?";
+            MySqlCommand cmd = new MySqlCommand(sqlCommand, Database.getBD());
+
+            cmd.CommandText = sqlCommand;
+
+            //Envoi des paramètres
+            cmd.Parameters.AddWithValue("@Capacite", camp.Capacite);
+            cmd.Parameters.AddWithValue("@Aadresse", camp.Adresse);
+            cmd.Parameters.AddWithValue("@Id", camp.Id);
+
+
+            try
+            {
+                //Execution de la commande SQL qui peut provoquer des exceptions
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                //traitement de l'exception...
+                return false;
+            }
+        }
         #endregion
     }
 }
