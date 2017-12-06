@@ -112,6 +112,7 @@
             // 
             // Txt_ID
             // 
+            this.Txt_ID.Cursor = System.Windows.Forms.Cursors.Default;
             this.Txt_ID.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.Txt_ID.Location = new System.Drawing.Point(44, 150);
             this.Txt_ID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -119,7 +120,6 @@
             this.Txt_ID.Size = new System.Drawing.Size(293, 22);
             this.Txt_ID.TabIndex = 10;
             this.Txt_ID.Text = "Identifiant";
-            this.Txt_ID.UseWaitCursor = true;
             this.Txt_ID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_ID_KeyDown);
             this.Txt_ID.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_ID_KeyUp);
             // 
