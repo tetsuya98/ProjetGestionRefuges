@@ -96,6 +96,13 @@
             this.Txt_MDPM = new System.Windows.Forms.MaskedTextBox();
             this.Txt_NomM = new System.Windows.Forms.MaskedTextBox();
             this.tabPageModifRef = new System.Windows.Forms.TabPage();
+            this.lbl_err_handi_modif_ref = new System.Windows.Forms.Label();
+            this.lbl_err_allerg_modifref = new System.Windows.Forms.Label();
+            this.lbl_err_typchev_modif_ref = new System.Windows.Forms.Label();
+            this.lbl_err_bless_modif_ref = new System.Windows.Forms.Label();
+            this.lbl_err_coulyeux_modif_ref = new System.Windows.Forms.Label();
+            this.lbl_err_coulchev_modif_ref = new System.Windows.Forms.Label();
+            this.lbl_err_coulpeau_modif_ref = new System.Windows.Forms.Label();
             this.lbl_err_champs_modifref = new System.Windows.Forms.Label();
             this.lbl_typchev_modifref = new System.Windows.Forms.Label();
             this.txt_typchev_modifref = new System.Windows.Forms.ComboBox();
@@ -122,6 +129,22 @@
             this.num_refugeref_modif_ref = new System.Windows.Forms.NumericUpDown();
             this.btn_Suppr_ref = new System.Windows.Forms.Button();
             this.DataGrid_modif_ref = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sexe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateNaiss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numrefuge = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Taille = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nationalite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Coulpeau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coulyeux = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coulchev = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typchev = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.blessure = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.allergie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.handicap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Autre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbl_err_nation_modif_ref = new System.Windows.Forms.Label();
             this.lbl_err_sex_modif_ref = new System.Windows.Forms.Label();
             this.btn_Modif_ref = new System.Windows.Forms.Button();
@@ -158,29 +181,6 @@
             this.Txt_prenom_modif_gerant = new System.Windows.Forms.MaskedTextBox();
             this.Txt_nom_modif_gerant = new System.Windows.Forms.MaskedTextBox();
             this.tabPageStock = new System.Windows.Forms.TabPage();
-            this.lbl_err_coulpeau_modif_ref = new System.Windows.Forms.Label();
-            this.lbl_err_coulchev_modif_ref = new System.Windows.Forms.Label();
-            this.lbl_err_coulyeux_modif_ref = new System.Windows.Forms.Label();
-            this.lbl_err_bless_modif_ref = new System.Windows.Forms.Label();
-            this.lbl_err_typchev_modif_ref = new System.Windows.Forms.Label();
-            this.lbl_err_allerg_modifref = new System.Windows.Forms.Label();
-            this.lbl_err_handi_modif_ref = new System.Windows.Forms.Label();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sexe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateNaiss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numrefuge = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Taille = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nationalite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Coulpeau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coulyeux = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coulchev = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typchev = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.blessure = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.allergie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.handicap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Autre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPageAccueil.SuspendLayout();
             this.tabPageAjoutRef.SuspendLayout();
@@ -1115,6 +1115,83 @@
             this.tabPageModifRef.TabIndex = 3;
             this.tabPageModifRef.Text = "Modifier/Supprimer Refugié";
             // 
+            // lbl_err_handi_modif_ref
+            // 
+            this.lbl_err_handi_modif_ref.AutoSize = true;
+            this.lbl_err_handi_modif_ref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_handi_modif_ref.Location = new System.Drawing.Point(298, 217);
+            this.lbl_err_handi_modif_ref.Name = "lbl_err_handi_modif_ref";
+            this.lbl_err_handi_modif_ref.Size = new System.Drawing.Size(11, 13);
+            this.lbl_err_handi_modif_ref.TabIndex = 65;
+            this.lbl_err_handi_modif_ref.Text = "*";
+            this.lbl_err_handi_modif_ref.Visible = false;
+            // 
+            // lbl_err_allerg_modifref
+            // 
+            this.lbl_err_allerg_modifref.AutoSize = true;
+            this.lbl_err_allerg_modifref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_allerg_modifref.Location = new System.Drawing.Point(298, 164);
+            this.lbl_err_allerg_modifref.Name = "lbl_err_allerg_modifref";
+            this.lbl_err_allerg_modifref.Size = new System.Drawing.Size(11, 13);
+            this.lbl_err_allerg_modifref.TabIndex = 64;
+            this.lbl_err_allerg_modifref.Text = "*";
+            this.lbl_err_allerg_modifref.Visible = false;
+            // 
+            // lbl_err_typchev_modif_ref
+            // 
+            this.lbl_err_typchev_modif_ref.AutoSize = true;
+            this.lbl_err_typchev_modif_ref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_typchev_modif_ref.Location = new System.Drawing.Point(298, 106);
+            this.lbl_err_typchev_modif_ref.Name = "lbl_err_typchev_modif_ref";
+            this.lbl_err_typchev_modif_ref.Size = new System.Drawing.Size(11, 13);
+            this.lbl_err_typchev_modif_ref.TabIndex = 63;
+            this.lbl_err_typchev_modif_ref.Text = "*";
+            this.lbl_err_typchev_modif_ref.Visible = false;
+            // 
+            // lbl_err_bless_modif_ref
+            // 
+            this.lbl_err_bless_modif_ref.AutoSize = true;
+            this.lbl_err_bless_modif_ref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_bless_modif_ref.Location = new System.Drawing.Point(298, 56);
+            this.lbl_err_bless_modif_ref.Name = "lbl_err_bless_modif_ref";
+            this.lbl_err_bless_modif_ref.Size = new System.Drawing.Size(11, 13);
+            this.lbl_err_bless_modif_ref.TabIndex = 62;
+            this.lbl_err_bless_modif_ref.Text = "*";
+            this.lbl_err_bless_modif_ref.Visible = false;
+            // 
+            // lbl_err_coulyeux_modif_ref
+            // 
+            this.lbl_err_coulyeux_modif_ref.AutoSize = true;
+            this.lbl_err_coulyeux_modif_ref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_coulyeux_modif_ref.Location = new System.Drawing.Point(134, 330);
+            this.lbl_err_coulyeux_modif_ref.Name = "lbl_err_coulyeux_modif_ref";
+            this.lbl_err_coulyeux_modif_ref.Size = new System.Drawing.Size(11, 13);
+            this.lbl_err_coulyeux_modif_ref.TabIndex = 61;
+            this.lbl_err_coulyeux_modif_ref.Text = "*";
+            this.lbl_err_coulyeux_modif_ref.Visible = false;
+            // 
+            // lbl_err_coulchev_modif_ref
+            // 
+            this.lbl_err_coulchev_modif_ref.AutoSize = true;
+            this.lbl_err_coulchev_modif_ref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_coulchev_modif_ref.Location = new System.Drawing.Point(134, 274);
+            this.lbl_err_coulchev_modif_ref.Name = "lbl_err_coulchev_modif_ref";
+            this.lbl_err_coulchev_modif_ref.Size = new System.Drawing.Size(11, 13);
+            this.lbl_err_coulchev_modif_ref.TabIndex = 60;
+            this.lbl_err_coulchev_modif_ref.Text = "*";
+            this.lbl_err_coulchev_modif_ref.Visible = false;
+            // 
+            // lbl_err_coulpeau_modif_ref
+            // 
+            this.lbl_err_coulpeau_modif_ref.AutoSize = true;
+            this.lbl_err_coulpeau_modif_ref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_coulpeau_modif_ref.Location = new System.Drawing.Point(134, 217);
+            this.lbl_err_coulpeau_modif_ref.Name = "lbl_err_coulpeau_modif_ref";
+            this.lbl_err_coulpeau_modif_ref.Size = new System.Drawing.Size(11, 13);
+            this.lbl_err_coulpeau_modif_ref.TabIndex = 59;
+            this.lbl_err_coulpeau_modif_ref.Text = "*";
+            this.lbl_err_coulpeau_modif_ref.Visible = false;
+            // 
             // lbl_err_champs_modifref
             // 
             this.lbl_err_champs_modifref.AutoSize = true;
@@ -1151,6 +1228,7 @@
             this.txt_typchev_modifref.Name = "txt_typchev_modifref";
             this.txt_typchev_modifref.Size = new System.Drawing.Size(148, 21);
             this.txt_typchev_modifref.TabIndex = 56;
+            this.txt_typchev_modifref.TextChanged += new System.EventHandler(this.txt_typchev_modifref_TextChanged);
             // 
             // lbl_autre_modifref
             // 
@@ -1191,6 +1269,7 @@
             this.txt_handi_modifref.Name = "txt_handi_modifref";
             this.txt_handi_modifref.Size = new System.Drawing.Size(148, 21);
             this.txt_handi_modifref.TabIndex = 52;
+            this.txt_handi_modifref.TextChanged += new System.EventHandler(this.txt_handi_modifref_TextChanged);
             // 
             // lbl_allerg_modifref
             // 
@@ -1222,6 +1301,7 @@
             this.txt_allerg_modifref.Name = "txt_allerg_modifref";
             this.txt_allerg_modifref.Size = new System.Drawing.Size(148, 21);
             this.txt_allerg_modifref.TabIndex = 50;
+            this.txt_allerg_modifref.TextChanged += new System.EventHandler(this.txt_allerg_modifref_TextChanged);
             // 
             // lbl_bless_modifref
             // 
@@ -1247,6 +1327,7 @@
             this.txt_bless_modifref.Name = "txt_bless_modifref";
             this.txt_bless_modifref.Size = new System.Drawing.Size(148, 21);
             this.txt_bless_modifref.TabIndex = 48;
+            this.txt_bless_modifref.TextChanged += new System.EventHandler(this.txt_bless_modifref_TextChanged);
             // 
             // lbl_coulyeux_modifref
             // 
@@ -1271,6 +1352,7 @@
             this.txt_coulyeux_modifref.Name = "txt_coulyeux_modifref";
             this.txt_coulyeux_modifref.Size = new System.Drawing.Size(125, 21);
             this.txt_coulyeux_modifref.TabIndex = 46;
+            this.txt_coulyeux_modifref.TextChanged += new System.EventHandler(this.txt_coulyeux_modifref_TextChanged);
             // 
             // lbl_coulchev_modifref
             // 
@@ -1301,6 +1383,7 @@
             this.txt_coulchev_modifref.Name = "txt_coulchev_modifref";
             this.txt_coulchev_modifref.Size = new System.Drawing.Size(125, 21);
             this.txt_coulchev_modifref.TabIndex = 44;
+            this.txt_coulchev_modifref.TextChanged += new System.EventHandler(this.txt_coulchev_modifref_TextChanged);
             // 
             // lbl_coulpeau_modifref
             // 
@@ -1324,6 +1407,7 @@
             this.txt_coulpeau_modifref.Name = "txt_coulpeau_modifref";
             this.txt_coulpeau_modifref.Size = new System.Drawing.Size(125, 21);
             this.txt_coulpeau_modifref.TabIndex = 42;
+            this.txt_coulpeau_modifref.TextChanged += new System.EventHandler(this.txt_coulpeau_modifref_TextChanged);
             // 
             // lbl_taille_modifref
             // 
@@ -1443,6 +1527,105 @@
             this.DataGrid_modif_ref.Size = new System.Drawing.Size(505, 400);
             this.DataGrid_modif_ref.TabIndex = 25;
             // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ID.Width = 50;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Nom";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Prenom
+            // 
+            this.Prenom.HeaderText = "Prenom";
+            this.Prenom.Name = "Prenom";
+            this.Prenom.ReadOnly = true;
+            // 
+            // Sexe
+            // 
+            this.Sexe.HeaderText = "Sexe";
+            this.Sexe.Name = "Sexe";
+            this.Sexe.ReadOnly = true;
+            // 
+            // DateNaiss
+            // 
+            this.DateNaiss.HeaderText = "Date de Naissance";
+            this.DateNaiss.Name = "DateNaiss";
+            this.DateNaiss.ReadOnly = true;
+            // 
+            // numrefuge
+            // 
+            this.numrefuge.HeaderText = "N°Refuge";
+            this.numrefuge.Name = "numrefuge";
+            this.numrefuge.ReadOnly = true;
+            // 
+            // Taille
+            // 
+            this.Taille.HeaderText = "Taille";
+            this.Taille.Name = "Taille";
+            this.Taille.ReadOnly = true;
+            // 
+            // Nationalite
+            // 
+            this.Nationalite.HeaderText = "Nationalite";
+            this.Nationalite.Name = "Nationalite";
+            this.Nationalite.ReadOnly = true;
+            // 
+            // Coulpeau
+            // 
+            this.Coulpeau.HeaderText = "Couleur de Peau";
+            this.Coulpeau.Name = "Coulpeau";
+            this.Coulpeau.ReadOnly = true;
+            // 
+            // coulyeux
+            // 
+            this.coulyeux.HeaderText = "Couleur des Yeux";
+            this.coulyeux.Name = "coulyeux";
+            this.coulyeux.ReadOnly = true;
+            // 
+            // coulchev
+            // 
+            this.coulchev.HeaderText = "Couleur des Cheveux";
+            this.coulchev.Name = "coulchev";
+            this.coulchev.ReadOnly = true;
+            // 
+            // typchev
+            // 
+            this.typchev.HeaderText = "Type de Cheveux";
+            this.typchev.Name = "typchev";
+            this.typchev.ReadOnly = true;
+            // 
+            // blessure
+            // 
+            this.blessure.HeaderText = "Blessure";
+            this.blessure.Name = "blessure";
+            this.blessure.ReadOnly = true;
+            // 
+            // allergie
+            // 
+            this.allergie.HeaderText = "Allergie";
+            this.allergie.Name = "allergie";
+            this.allergie.ReadOnly = true;
+            // 
+            // handicap
+            // 
+            this.handicap.HeaderText = "Handicap";
+            this.handicap.Name = "handicap";
+            this.handicap.ReadOnly = true;
+            // 
+            // Autre
+            // 
+            this.Autre.HeaderText = "Autre";
+            this.Autre.Name = "Autre";
+            this.Autre.ReadOnly = true;
+            // 
             // lbl_err_nation_modif_ref
             // 
             this.lbl_err_nation_modif_ref.AutoSize = true;
@@ -1534,6 +1717,7 @@
             this.list_nation_modif_ref.Name = "list_nation_modif_ref";
             this.list_nation_modif_ref.Size = new System.Drawing.Size(127, 21);
             this.list_nation_modif_ref.TabIndex = 19;
+            this.list_nation_modif_ref.TextChanged += new System.EventHandler(this.list_nation_modif_ref_TextChanged);
             // 
             // DatePicker_Naiss_modif_ref
             // 
@@ -1878,182 +2062,6 @@
             this.tabPageStock.TabIndex = 2;
             this.tabPageStock.Text = "Gestion Des Stocks";
             this.tabPageStock.UseVisualStyleBackColor = true;
-            // 
-            // lbl_err_coulpeau_modif_ref
-            // 
-            this.lbl_err_coulpeau_modif_ref.AutoSize = true;
-            this.lbl_err_coulpeau_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_coulpeau_modif_ref.Location = new System.Drawing.Point(134, 217);
-            this.lbl_err_coulpeau_modif_ref.Name = "lbl_err_coulpeau_modif_ref";
-            this.lbl_err_coulpeau_modif_ref.Size = new System.Drawing.Size(11, 13);
-            this.lbl_err_coulpeau_modif_ref.TabIndex = 59;
-            this.lbl_err_coulpeau_modif_ref.Text = "*";
-            this.lbl_err_coulpeau_modif_ref.Visible = false;
-            // 
-            // lbl_err_coulchev_modif_ref
-            // 
-            this.lbl_err_coulchev_modif_ref.AutoSize = true;
-            this.lbl_err_coulchev_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_coulchev_modif_ref.Location = new System.Drawing.Point(134, 274);
-            this.lbl_err_coulchev_modif_ref.Name = "lbl_err_coulchev_modif_ref";
-            this.lbl_err_coulchev_modif_ref.Size = new System.Drawing.Size(11, 13);
-            this.lbl_err_coulchev_modif_ref.TabIndex = 60;
-            this.lbl_err_coulchev_modif_ref.Text = "*";
-            this.lbl_err_coulchev_modif_ref.Visible = false;
-            // 
-            // lbl_err_coulyeux_modif_ref
-            // 
-            this.lbl_err_coulyeux_modif_ref.AutoSize = true;
-            this.lbl_err_coulyeux_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_coulyeux_modif_ref.Location = new System.Drawing.Point(134, 330);
-            this.lbl_err_coulyeux_modif_ref.Name = "lbl_err_coulyeux_modif_ref";
-            this.lbl_err_coulyeux_modif_ref.Size = new System.Drawing.Size(11, 13);
-            this.lbl_err_coulyeux_modif_ref.TabIndex = 61;
-            this.lbl_err_coulyeux_modif_ref.Text = "*";
-            this.lbl_err_coulyeux_modif_ref.Visible = false;
-            // 
-            // lbl_err_bless_modif_ref
-            // 
-            this.lbl_err_bless_modif_ref.AutoSize = true;
-            this.lbl_err_bless_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_bless_modif_ref.Location = new System.Drawing.Point(298, 56);
-            this.lbl_err_bless_modif_ref.Name = "lbl_err_bless_modif_ref";
-            this.lbl_err_bless_modif_ref.Size = new System.Drawing.Size(11, 13);
-            this.lbl_err_bless_modif_ref.TabIndex = 62;
-            this.lbl_err_bless_modif_ref.Text = "*";
-            this.lbl_err_bless_modif_ref.Visible = false;
-            // 
-            // lbl_err_typchev_modif_ref
-            // 
-            this.lbl_err_typchev_modif_ref.AutoSize = true;
-            this.lbl_err_typchev_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_typchev_modif_ref.Location = new System.Drawing.Point(298, 106);
-            this.lbl_err_typchev_modif_ref.Name = "lbl_err_typchev_modif_ref";
-            this.lbl_err_typchev_modif_ref.Size = new System.Drawing.Size(11, 13);
-            this.lbl_err_typchev_modif_ref.TabIndex = 63;
-            this.lbl_err_typchev_modif_ref.Text = "*";
-            this.lbl_err_typchev_modif_ref.Visible = false;
-            // 
-            // lbl_err_allerg_modifref
-            // 
-            this.lbl_err_allerg_modifref.AutoSize = true;
-            this.lbl_err_allerg_modifref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_allerg_modifref.Location = new System.Drawing.Point(298, 164);
-            this.lbl_err_allerg_modifref.Name = "lbl_err_allerg_modifref";
-            this.lbl_err_allerg_modifref.Size = new System.Drawing.Size(11, 13);
-            this.lbl_err_allerg_modifref.TabIndex = 64;
-            this.lbl_err_allerg_modifref.Text = "*";
-            this.lbl_err_allerg_modifref.Visible = false;
-            // 
-            // lbl_err_handi_modif_ref
-            // 
-            this.lbl_err_handi_modif_ref.AutoSize = true;
-            this.lbl_err_handi_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_handi_modif_ref.Location = new System.Drawing.Point(298, 217);
-            this.lbl_err_handi_modif_ref.Name = "lbl_err_handi_modif_ref";
-            this.lbl_err_handi_modif_ref.Size = new System.Drawing.Size(11, 13);
-            this.lbl_err_handi_modif_ref.TabIndex = 65;
-            this.lbl_err_handi_modif_ref.Text = "*";
-            this.lbl_err_handi_modif_ref.Visible = false;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ID.Width = 50;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Nom";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Prenom
-            // 
-            this.Prenom.HeaderText = "Prenom";
-            this.Prenom.Name = "Prenom";
-            this.Prenom.ReadOnly = true;
-            // 
-            // Sexe
-            // 
-            this.Sexe.HeaderText = "Sexe";
-            this.Sexe.Name = "Sexe";
-            this.Sexe.ReadOnly = true;
-            // 
-            // DateNaiss
-            // 
-            this.DateNaiss.HeaderText = "Date de Naissance";
-            this.DateNaiss.Name = "DateNaiss";
-            this.DateNaiss.ReadOnly = true;
-            // 
-            // numrefuge
-            // 
-            this.numrefuge.HeaderText = "N°Refuge";
-            this.numrefuge.Name = "numrefuge";
-            this.numrefuge.ReadOnly = true;
-            // 
-            // Taille
-            // 
-            this.Taille.HeaderText = "Taille";
-            this.Taille.Name = "Taille";
-            this.Taille.ReadOnly = true;
-            // 
-            // Nationalite
-            // 
-            this.Nationalite.HeaderText = "Nationalite";
-            this.Nationalite.Name = "Nationalite";
-            this.Nationalite.ReadOnly = true;
-            // 
-            // Coulpeau
-            // 
-            this.Coulpeau.HeaderText = "Couleur de Peau";
-            this.Coulpeau.Name = "Coulpeau";
-            this.Coulpeau.ReadOnly = true;
-            // 
-            // coulyeux
-            // 
-            this.coulyeux.HeaderText = "Couleur des Yeux";
-            this.coulyeux.Name = "coulyeux";
-            this.coulyeux.ReadOnly = true;
-            // 
-            // coulchev
-            // 
-            this.coulchev.HeaderText = "Couleur des Cheveux";
-            this.coulchev.Name = "coulchev";
-            this.coulchev.ReadOnly = true;
-            // 
-            // typchev
-            // 
-            this.typchev.HeaderText = "Type de Cheveux";
-            this.typchev.Name = "typchev";
-            this.typchev.ReadOnly = true;
-            // 
-            // blessure
-            // 
-            this.blessure.HeaderText = "Blessure";
-            this.blessure.Name = "blessure";
-            this.blessure.ReadOnly = true;
-            // 
-            // allergie
-            // 
-            this.allergie.HeaderText = "Allergie";
-            this.allergie.Name = "allergie";
-            this.allergie.ReadOnly = true;
-            // 
-            // handicap
-            // 
-            this.handicap.HeaderText = "Handicap";
-            this.handicap.Name = "handicap";
-            this.handicap.ReadOnly = true;
-            // 
-            // Autre
-            // 
-            this.Autre.HeaderText = "Autre";
-            this.Autre.Name = "Autre";
-            this.Autre.ReadOnly = true;
             // 
             // Ajout
             // 
