@@ -94,7 +94,19 @@ namespace GestionRefugies
             
             // ce if est degueulasse ... désolé
 
-            if (txt_typchev_ajoutref.Text != "" && txt_coulpeau_ajoutref.Text != "" && txt_allerg_ajoutref.Text != "" && txt_bless_ajoutref.Text != "" && txt_coulchev_ajoutref.Text != "" && txt_coulyeux_ajoutref.Text != "" && txt_handi_ajoutref.Text != "" &&  Txt_Nom.Text != "Nom" && Txt_Nom.Text != "Nom Incorrect" && Txt_Prenom.Text != "Prenom" && Txt_Prenom.Text != "Prenom Incorrect" && List_Nationalite.Text != "" && (RdBtn_Femme.Checked == true || RdBtn_Homme.Checked == true))
+            if (txt_typchev_ajoutref.Text != "" && 
+                txt_coulpeau_ajoutref.Text != "" && 
+                txt_allerg_ajoutref.Text != "" && 
+                txt_bless_ajoutref.Text != "" && 
+                txt_coulchev_ajoutref.Text != "" && 
+                txt_coulyeux_ajoutref.Text != "" && 
+                txt_handi_ajoutref.Text != "" &&  
+                Txt_Nom.Text != "Nom" && 
+                Txt_Nom.Text != "Nom Incorrect" && 
+                Txt_Prenom.Text != "Prenom" && 
+                Txt_Prenom.Text != "Prenom Incorrect" && 
+                List_Nationalite.Text != "" && 
+                (RdBtn_Femme.Checked == true || RdBtn_Homme.Checked == true))
             {
                 String sex;
                 if (RdBtn_Femme.Checked == true)
@@ -461,7 +473,7 @@ namespace GestionRefugies
         #endregion
 
 
-        #region Boutons Modifier et Supprimer refugié
+        #region Boutons Recercher Modifier et Supprimer refugié
 
         #region btn recherche
         private void btn_rechercher_modifref_Click(object sender, EventArgs e)
@@ -473,7 +485,25 @@ namespace GestionRefugies
             
             foreach (var refugier in refugiers)
             {
-                DataGrid_modif_ref.Rows.Add(refugier.Id, refugier.Nom, refugier.Prenom, refugier.Sexe, refugier.DateNais, refugier.Nationalite);
+                DataGrid_modif_ref.Rows.Add(
+                    refugier.Id, 
+                    refugier.Nom, 
+                    refugier.Prenom, 
+                    refugier.Sexe, 
+                    refugier.DateNais, 
+                    refugier.Nationalite, 
+                    refugier.Adresse,
+                    refugier.Taille,
+                    refugier.CouleurPeau,
+                    refugier.CouleurYeux,
+                    refugier.CouleurCheveux,
+                    refugier.TypeCheveux,
+                    refugier.Blessure,
+                    refugier.Allergie,
+                    refugier.Handicap,
+                    refugier.Autre
+
+                    );
             }
             
         }
@@ -483,10 +513,12 @@ namespace GestionRefugies
         private void btn_Modif_ref_Click(object sender, EventArgs e)
         {
             lbl_err_btn_modif_ref.Visible = false;
-            if ((Txt_Nom_Modif_ref.Text != "Nom" && Txt_Nom_Modif_ref.Text != "Nom Incorrect" && Txt_Prenom_Modif_ref.Text != "Prenom" && Txt_Prenom_Modif_ref.Text != "Prenom Incorrect" && list_nation_modif_ref.Text != "" && (rdn_Homme_Modif_ref.Checked == true || rdn_Femme_Modif_ref.Checked == true)))
+            
+            if ((txt_allerg_modifref.Text != ""  && txt_bless_modifref.Text != "" && txt_coulchev_modifref.Text != "" && txt_coulpeau_modifref.Text != "" && txt_coulyeux_modifref.Text != "" && txt_handi_modifref.Text != "" && txt_typchev_modifref.Text != "" && Txt_Nom_Modif_ref.Text != "Nom" && Txt_Nom_Modif_ref.Text != "Nom Incorrect" && Txt_Prenom_Modif_ref.Text != "Prenom" && Txt_Prenom_Modif_ref.Text != "Prenom Incorrect" && list_nation_modif_ref.Text != "" && (rdn_Homme_Modif_ref.Checked == true || rdn_Femme_Modif_ref.Checked == true)))
             {
+                lbl_err_champs_modifref.Visible = false;
                 String sex;
-                if (rdn_FemmeM.Checked == true)
+                if (rdn_Femme_Modif_ref.Checked == true)
                 {
                     sex = "F";
                 }
@@ -501,7 +533,7 @@ namespace GestionRefugies
                     {
                         var result = MessageBox.Show("Voulez vous vraiment modifier l'utilisateur " + refugier.Cells[1].Value + " " + refugier.Cells[2].Value, " ", MessageBoxButtons.YesNo);
                         if (result == DialogResult.Yes)
-                            if ((Refugier.update(new Refugier(Txt_Nom_Modif_ref.Text, Txt_Prenom_Modif_ref.Text, sex, DatePicker_Naiss_modif_ref.Value, list_nation_modif_ref.Text, (int)num_refugeref_modif_ref.Value, 150, "", "", "", "", "", "", "", "", int.Parse(refugier.Cells[0].Value.ToString()))) == true))
+                            if ((Refugier.update(new Refugier(Txt_Nom_Modif_ref.Text, Txt_Prenom_Modif_ref.Text, sex, DatePicker_Naiss_modif_ref.Value, list_nation_modif_ref.Text, (int)num_refugeref_modif_ref.Value, (int)num_taille_modifref.Value,txt_coulpeau_modifref.Text,txt_coulchev_modifref.Text ,txt_typchev_modifref.Text, txt_coulyeux_modifref.Text, txt_bless_modifref.Text, txt_allerg_modifref.Text, txt_handi_modifref.Text, txt_autre_modifref.Text, int.Parse(refugier.Cells[0].Value.ToString()))) == true))
                         {
                             MessageBox.Show("Modification Effectuée");
                             btn_rechercher_modifref_Click(sender, e);
@@ -512,11 +544,66 @@ namespace GestionRefugies
                 {
                     lbl_err_btn_modif_ref.Visible = true;
                 }
-               
-
             }
             else
             {
+                lbl_err_champs_modifref.Visible = true;
+                if (txt_allerg_modifref.Text == "")
+                {
+                    lbl_err_allerg_modifref.Visible = true;
+                }
+                else
+                {
+                    lbl_err_allerg_modifref.Visible = false;
+                }
+                if (txt_coulpeau_modifref.Text == "")
+                {
+                    lbl_err_coulpeau_modif_ref.Visible = true;
+                }
+                else
+                {
+                    lbl_err_coulpeau_modif_ref.Visible = false;
+                }
+                if (txt_bless_modifref.Text == "")
+                {
+                    lbl_err_bless_modif_ref.Visible = true;
+                }
+                else
+                {
+                    lbl_err_bless_modif_ref.Visible = false;
+                }
+                if (txt_coulchev_modifref.Text == "")
+                {
+                    lbl_err_coulchev_modif_ref.Visible = true;
+                }
+                else
+                {
+                    lbl_err_coulchev_modif_ref.Visible = false;
+                }
+                if (txt_coulyeux_modifref.Text == "")
+                {
+                    lbl_err_coulyeux_modif_ref.Visible = true;
+                }
+                else
+                {
+                    lbl_err_coulyeux_modif_ref.Visible = false;
+                }
+                if (txt_handi_modifref.Text == "")
+                {
+                    lbl_err_handi_modif_ref.Visible = true;
+                }
+                else
+                {
+                    lbl_err_handi_modif_ref.Visible = false;
+                }
+                if (txt_typchev_modifref.Text == "")
+                {
+                    lbl_err_typchev_modif_ref.Visible = true;
+                }
+                else
+                {
+                    lbl_err_typchev_modif_ref.Visible = false;
+                }
                 if (Txt_Nom_Modif_ref.Text == "" || Txt_Nom_Modif_ref.Text == "Nom")
                 {
                     this.Txt_Nom_Modif_ref.ForeColor = System.Drawing.Color.Red;
