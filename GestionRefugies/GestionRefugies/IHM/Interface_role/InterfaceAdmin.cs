@@ -533,5 +533,26 @@ namespace GestionRefugies
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            List<Refugier> refugiers = new List<Refugier>();
+            string sexe;
+            if (radioButton1.Checked)
+            {
+                sexe = "homme";
+            }
+            if (radioButton2.Checked)
+            {
+                sexe = "femme";
+            }
+            else { sexe = " ? "};
+            refugiers = Rechercher(refugiers, maskedTextBox1.Text, maskedTextBox2.Text, sexe,dateTimePicker1.Value, comboBox2.);
+        }
     }
 }

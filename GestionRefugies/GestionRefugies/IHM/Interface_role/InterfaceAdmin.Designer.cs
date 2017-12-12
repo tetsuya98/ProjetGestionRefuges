@@ -113,6 +113,14 @@
             this.Txt_nom_modif_gerant = new System.Windows.Forms.MaskedTextBox();
             this.tabPageStock = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -131,6 +139,14 @@
             this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPageAccueil.SuspendLayout();
             this.tabPageAjoutRef.SuspendLayout();
@@ -274,10 +290,10 @@
             this.tabPageAjoutRef.Controls.Add(this.RdBtn_Homme);
             this.tabPageAjoutRef.Controls.Add(this.Txt_Prenom);
             this.tabPageAjoutRef.Controls.Add(this.Txt_Nom);
-            this.tabPageAjoutRef.Location = new System.Drawing.Point(4, 40);
+            this.tabPageAjoutRef.Location = new System.Drawing.Point(4, 22);
             this.tabPageAjoutRef.Name = "tabPageAjoutRef";
             this.tabPageAjoutRef.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAjoutRef.Size = new System.Drawing.Size(652, 293);
+            this.tabPageAjoutRef.Size = new System.Drawing.Size(688, 376);
             this.tabPageAjoutRef.TabIndex = 0;
             this.tabPageAjoutRef.Text = "Ajouter un Refugié";
             // 
@@ -440,10 +456,10 @@
             this.tabPageAjoutGérant.Controls.Add(this.Txt_PrenomM);
             this.tabPageAjoutGérant.Controls.Add(this.Txt_MDPM);
             this.tabPageAjoutGérant.Controls.Add(this.Txt_NomM);
-            this.tabPageAjoutGérant.Location = new System.Drawing.Point(4, 40);
+            this.tabPageAjoutGérant.Location = new System.Drawing.Point(4, 22);
             this.tabPageAjoutGérant.Name = "tabPageAjoutGérant";
             this.tabPageAjoutGérant.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAjoutGérant.Size = new System.Drawing.Size(652, 293);
+            this.tabPageAjoutGérant.Size = new System.Drawing.Size(688, 376);
             this.tabPageAjoutGérant.TabIndex = 1;
             this.tabPageAjoutGérant.Text = "Ajouter un Gérant";
             // 
@@ -675,9 +691,9 @@
             this.tabPageModifRef.Controls.Add(this.rdn_Homme_Modif_ref);
             this.tabPageModifRef.Controls.Add(this.Txt_Prenom_Modif_ref);
             this.tabPageModifRef.Controls.Add(this.Txt_Nom_Modif_ref);
-            this.tabPageModifRef.Location = new System.Drawing.Point(4, 40);
+            this.tabPageModifRef.Location = new System.Drawing.Point(4, 22);
             this.tabPageModifRef.Name = "tabPageModifRef";
-            this.tabPageModifRef.Size = new System.Drawing.Size(652, 293);
+            this.tabPageModifRef.Size = new System.Drawing.Size(688, 376);
             this.tabPageModifRef.TabIndex = 3;
             this.tabPageModifRef.Text = "Modifier/Supprimer Refugié";
             // 
@@ -899,9 +915,9 @@
             this.tabPagemodifGerant.Controls.Add(this.rdn_Homme_modif_gerant);
             this.tabPagemodifGerant.Controls.Add(this.Txt_prenom_modif_gerant);
             this.tabPagemodifGerant.Controls.Add(this.Txt_nom_modif_gerant);
-            this.tabPagemodifGerant.Location = new System.Drawing.Point(4, 40);
+            this.tabPagemodifGerant.Location = new System.Drawing.Point(4, 22);
             this.tabPagemodifGerant.Name = "tabPagemodifGerant";
-            this.tabPagemodifGerant.Size = new System.Drawing.Size(652, 293);
+            this.tabPagemodifGerant.Size = new System.Drawing.Size(688, 376);
             this.tabPagemodifGerant.TabIndex = 4;
             this.tabPagemodifGerant.Text = "Modifier/Supprimer Gerant";
             // 
@@ -990,6 +1006,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(401, 263);
             this.dataGridView1.TabIndex = 38;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -1166,15 +1183,31 @@
             // 
             // tabPageStock
             // 
-            this.tabPageStock.Location = new System.Drawing.Point(4, 40);
+            this.tabPageStock.Location = new System.Drawing.Point(4, 22);
             this.tabPageStock.Name = "tabPageStock";
-            this.tabPageStock.Size = new System.Drawing.Size(652, 293);
+            this.tabPageStock.Size = new System.Drawing.Size(688, 376);
             this.tabPageStock.TabIndex = 2;
             this.tabPageStock.Text = "Gestion Des Stocks";
             this.tabPageStock.UseVisualStyleBackColor = true;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.maskedTextBox3);
+            this.tabPage1.Controls.Add(this.textBox5);
+            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.textBox6);
+            this.tabPage1.Controls.Add(this.textBox4);
+            this.tabPage1.Controls.Add(this.textBox3);
+            this.tabPage1.Controls.Add(this.textBox2);
+            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.label7);
+            this.tabPage1.Controls.Add(this.label8);
+            this.tabPage1.Controls.Add(this.comboBox2);
+            this.tabPage1.Controls.Add(this.dateTimePicker1);
+            this.tabPage1.Controls.Add(this.radioButton1);
+            this.tabPage1.Controls.Add(this.radioButton2);
+            this.tabPage1.Controls.Add(this.maskedTextBox2);
+            this.tabPage1.Controls.Add(this.maskedTextBox1);
             this.tabPage1.Controls.Add(this.dataGridView2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -1182,6 +1215,112 @@
             this.tabPage1.TabIndex = 6;
             this.tabPage1.Text = "Recherche";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(21, 91);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 13);
+            this.label7.TabIndex = 30;
+            this.label7.Text = "Nationalite";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(14, 131);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(98, 13);
+            this.label8.TabIndex = 29;
+            this.label8.Text = "Date de Naissance";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Anglais",
+            "Espagnol",
+            "Allemand",
+            "Italien",
+            "Portugais",
+            "Belge",
+            "Suisse",
+            "Polonais",
+            "Ukrainien",
+            "Chinois",
+            "Indien",
+            "Russe",
+            "Japonais",
+            "Americain",
+            "Canadien",
+            "Mexicain",
+            "Bresilien",
+            "Colombien",
+            "Cubain",
+            "Marocain",
+            "Turc",
+            "Algerien",
+            "Tunisien",
+            "Syrien",
+            "Egyptien",
+            "Soudanais",
+            "Congolais",
+            "Senegalais",
+            "Sud-Africain",
+            "Autre"});
+            this.comboBox2.Location = new System.Drawing.Point(17, 107);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(148, 21);
+            this.comboBox2.TabIndex = 28;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(6, 147);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(177, 20);
+            this.dateTimePicker1.TabIndex = 27;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(101, 71);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(59, 17);
+            this.radioButton1.TabIndex = 26;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Femme";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(17, 71);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.radioButton2.Size = new System.Drawing.Size(61, 17);
+            this.radioButton2.TabIndex = 25;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Homme";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.maskedTextBox2.Location = new System.Drawing.Point(17, 45);
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(149, 20);
+            this.maskedTextBox2.TabIndex = 22;
+            this.maskedTextBox2.Text = "Prenom";
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.maskedTextBox1.Location = new System.Drawing.Point(17, 19);
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(149, 20);
+            this.maskedTextBox1.TabIndex = 21;
+            this.maskedTextBox1.Text = "Nom";
             // 
             // dataGridView2
             // 
@@ -1204,7 +1343,7 @@
             this.Column16,
             this.Column17,
             this.Column18});
-            this.dataGridView2.Location = new System.Drawing.Point(172, 3);
+            this.dataGridView2.Location = new System.Drawing.Point(189, 19);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(487, 347);
             this.dataGridView2.TabIndex = 0;
@@ -1294,6 +1433,75 @@
             this.Column18.HeaderText = "autre";
             this.Column18.Name = "Column18";
             // 
+            // textBox1
+            // 
+            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBox1.Location = new System.Drawing.Point(6, 199);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(89, 20);
+            this.textBox1.TabIndex = 31;
+            this.textBox1.Text = "eyes color";
+            // 
+            // textBox2
+            // 
+            this.textBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBox2.Location = new System.Drawing.Point(6, 225);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(89, 20);
+            this.textBox2.TabIndex = 32;
+            this.textBox2.Text = "hair color";
+            // 
+            // textBox3
+            // 
+            this.textBox3.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBox3.Location = new System.Drawing.Point(6, 249);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(89, 20);
+            this.textBox3.TabIndex = 33;
+            this.textBox3.Text = "hair texture";
+            // 
+            // textBox4
+            // 
+            this.textBox4.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBox4.Location = new System.Drawing.Point(101, 199);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(82, 20);
+            this.textBox4.TabIndex = 34;
+            this.textBox4.Text = "handicap";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(101, 249);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(82, 20);
+            this.textBox6.TabIndex = 36;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(40, 316);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(102, 28);
+            this.button1.TabIndex = 39;
+            this.button1.Text = "afficher";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(101, 225);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(82, 20);
+            this.textBox5.TabIndex = 40;
+            // 
+            // maskedTextBox3
+            // 
+            this.maskedTextBox3.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.maskedTextBox3.Location = new System.Drawing.Point(17, 173);
+            this.maskedTextBox3.Name = "maskedTextBox3";
+            this.maskedTextBox3.Size = new System.Drawing.Size(149, 20);
+            this.maskedTextBox3.TabIndex = 41;
+            this.maskedTextBox3.Text = "Adresse";
+            // 
             // Ajout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1323,6 +1531,7 @@
             this.Group_role_modif_gerant.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
@@ -1433,5 +1642,21 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
     }
 }
