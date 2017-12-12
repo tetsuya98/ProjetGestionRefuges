@@ -535,7 +535,7 @@ namespace GestionRefugies
             if ((Txt_Nom_Modif_ref.Text != "Nom" && Txt_Nom_Modif_ref.Text != "Nom Incorrect" && Txt_Prenom_Modif_ref.Text != "Prenom" && Txt_Prenom_Modif_ref.Text != "Prenom Incorrect" && list_nation_modif_ref.Text != "" && (rdn_Homme_Modif_ref.Checked == true || rdn_Femme_Modif_ref.Checked == true)))
             {
                 String sex;
-                if (rdn_FemmeM.Checked == true)
+                if (rdn_Femme_Modif_ref.Checked == true)
                 {
                     sex = "F";
                 }
@@ -551,10 +551,10 @@ namespace GestionRefugies
                         var result = MessageBox.Show("Voulez vous vraiment modifier l'utilisateur " + refugier.Cells[1].Value + " " + refugier.Cells[2].Value, " ", MessageBoxButtons.YesNo);
                         if (result == DialogResult.Yes)
                             if ((Refugier.update(new Refugier(Txt_Nom_Modif_ref.Text, Txt_Prenom_Modif_ref.Text, sex, DatePicker_Naiss_modif_ref.Value, list_nation_modif_ref.Text, (int)num_refugeref_modif_ref.Value, 150, "", "", "", "", "", "", "", "", int.Parse(refugier.Cells[0].Value.ToString()))) == true))
-                        {
-                            MessageBox.Show("Modification Effectuée");
-                            btn_rechercher_modifref_Click(sender, e);
-                        }
+                            {
+                                MessageBox.Show("Modification Effectuée");
+                                btn_rechercher_modifref_Click(sender, e);
+                            }
                     }
                 }
                 else
@@ -584,7 +584,7 @@ namespace GestionRefugies
                 {
                     lbl_err_nation_modif_ref.Visible = false;
                 }
-                if (rdn_HommeM.Checked == false && rdn_FemmeM.Checked == false)
+                if (rdn_Homme_Modif_ref.Checked == false && rdn_Femme_Modif_ref.Checked == false)
                 {
                     lbl_err_sex_modif_ref.Visible = true;
                 }
@@ -675,24 +675,132 @@ namespace GestionRefugies
         }
         #endregion
 
-        #region datePicker_Naiss_modif_gerant
-        private void datePicker_Naiss_modif_gerant_ValueChanged(object sender, EventArgs e)
-        {
-            if (datePicker_Naiss_modif_gerant.Value >= DateTime.Now)
-            {
-                datePicker_Naiss_modif_gerant.Value = DateTime.Now;
-            }
-        }
-        #endregion
+   
 
         #region Boutons Modifier et Supprimer gerant
         private void btn_modif_gerant_Click(object sender, EventArgs e)
         {
+            lbl_err_btn_modif_ref.Visible = false;
+            if ((Txt_nom_modif_gerant.Text != "Nom" && Txt_nom_modif_gerant.Text != "Nom Incorrect" && Txt_prenom_modif_gerant.Text != "Prenom" && Txt_prenom_modif_gerant.Text != "Prenom Incorrect" ))
+            {
+                if (dataGridView1.SelectedRows.Count == 1)
+                {
+
+                    foreach (System.Windows.Forms.DataGridViewRow user in dataGridView1.SelectedRows)
+                    {
+                        var result = MessageBox.Show("Voulez vous vraiment modifier l'utilisateur " + user.Cells[1].Value + " " + user.Cells[2].Value, " ", MessageBoxButtons.YesNo);
+                        if (result == DialogResult.Yes)
+                        {
+                            if (check_Admin_modif_gerant.Checked)
+                            {
+                                if (check_AA_modif_gerant.Checked && check_maga_modif_gerant.Checked)
+                                {
+                                    if ((User.update(new User(Txt_Nom_Modif_ref.Text, Txt_Prenom_Modif_ref.Text, maskedTextBoxmodif_ger.Text, true, true, true))))
+                                    {
+                                        MessageBox.Show("Modification Effectuée");
+                                        btn_rechercher_modifref_Click(sender, e);
+                                    }
+                                }
+                                else if (!(check_AA_modif_gerant.Checked) && check_maga_modif_gerant.Checked)
+                                {
+                                    if ((User.update(new User(Txt_Nom_Modif_ref.Text, Txt_Prenom_Modif_ref.Text, maskedTextBoxmodif_ger.Text, true, false, true))))
+                                    {
+                                        MessageBox.Show("Modification Effectuée");
+                                        btn_rechercher_modifref_Click(sender, e);
+                                    }
+                                }
+                                else if (check_AA_modif_gerant.Checked && !(check_maga_modif_gerant.Checked))
+                                {
+                                    if ((User.update(new User(Txt_Nom_Modif_ref.Text, Txt_Prenom_Modif_ref.Text, maskedTextBoxmodif_ger.Text, true, true, false))))
+                                    {
+                                        MessageBox.Show("Modification Effectuée");
+                                        btn_rechercher_modifref_Click(sender, e);
+                                    }
+                                }
+                                else if (!(check_AA_modif_gerant.Checked) && !(check_maga_modif_gerant.Checked))
+                                {
+                                    if ((User.update(new User(Txt_Nom_Modif_ref.Text, Txt_Prenom_Modif_ref.Text, maskedTextBoxmodif_ger.Text, true, false, false))))
+                                    {
+                                        MessageBox.Show("Modification Effectuée");
+                                        btn_rechercher_modifref_Click(sender, e);
+                                    }
+                                }
+
+                            }
+                            else
+                            {
+                                if (check_AA_modif_gerant.Checked && check_maga_modif_gerant.Checked)
+                                {
+                                    if ((User.update(new User(Txt_Nom_Modif_ref.Text, Txt_Prenom_Modif_ref.Text, maskedTextBoxmodif_ger.Text, false, true, true))))
+                                    {
+                                        MessageBox.Show("Modification Effectuée");
+                                        btn_rechercher_modifref_Click(sender, e);
+                                    }
+                                }
+                                else if (!(check_AA_modif_gerant.Checked) && check_maga_modif_gerant.Checked)
+                                {
+                                    if ((User.update(new User(Txt_Nom_Modif_ref.Text, Txt_Prenom_Modif_ref.Text, maskedTextBoxmodif_ger.Text, false, false, true))))
+                                    {
+                                        MessageBox.Show("Modification Effectuée");
+                                        btn_rechercher_modifref_Click(sender, e);
+                                    }
+                                }
+                                else if (check_AA_modif_gerant.Checked && !(check_maga_modif_gerant.Checked))
+                                {
+                                    if ((User.update(new User(Txt_Nom_Modif_ref.Text, Txt_Prenom_Modif_ref.Text, maskedTextBoxmodif_ger.Text, false, true, false))))
+                                    {
+                                        MessageBox.Show("Modification Effectuée");
+                                        btn_rechercher_modifref_Click(sender, e);
+                                    }
+                                }
+                                else if (!(check_AA_modif_gerant.Checked) && !(check_maga_modif_gerant.Checked))
+                                {
+                                    if ((User.update(new User(Txt_Nom_Modif_ref.Text, Txt_Prenom_Modif_ref.Text, maskedTextBoxmodif_ger.Text, false, false, false))))
+                                    {
+                                        MessageBox.Show("Modification Effectuée");
+                                        btn_rechercher_modifref_Click(sender, e);
+                                    }
+                                }
+                            }
+                        }
+
+
+                    }
+                }
+            }
+            else
+            {
+                if (Txt_nom_modif_gerant.Text == "" || Txt_nom_modif_gerant.Text == "Nom")
+                {
+                    this.Txt_nom_modif_gerant.ForeColor = System.Drawing.Color.Red;
+                    Txt_nom_modif_gerant.Text = "Nom Incorrect";
+                }
+                if (Txt_prenom_modif_gerant.Text == "" || Txt_prenom_modif_gerant.Text == "Prenom")
+                {
+                    this.Txt_prenom_modif_gerant.ForeColor = System.Drawing.Color.Red;
+                    Txt_prenom_modif_gerant.Text = "Prenom Incorrect";
+                }
+
+            }
 
         }
 
         private void btn_suppr_gerant_Click(object sender, EventArgs e)
         {
+            foreach (System.Windows.Forms.DataGridViewRow user in dataGridView1.SelectedRows)
+            {
+                var result = MessageBox.Show("Voulez vous vraiment supprimer l'utilisateur " + user.Cells[1].Value + " " + user.Cells[2].Value, " ", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    if (User.delete((user.Cells[0].Value.ToString())) == true)
+                    {
+                        MessageBox.Show("Suppression Effectuée");
+                        btn_rechercher_modifref_Click(sender, e);
+                    }
+
+                }
+
+            }
 
         }
         #endregion
@@ -713,26 +821,33 @@ namespace GestionRefugies
                 selectPage = tabControl1.SelectedTab;
 
                 //test des droit d'accée de l'individu
-                if ((connected_user.Roles.Agent == null) && ((tabControl1.SelectedTab == tabPageAjoutRef) || (tabControl1.SelectedTab == tabPageAjoutGérant) || (tabControl1.SelectedTab == tabPagemodifGerant) || (tabControl1.SelectedTab == tabPageModifRef)))
+                if ( (connected_user.Roles.Agent == null) && ((tabControl1.SelectedTab == tabPageAjoutRef) || (tabControl1.SelectedTab == tabPageModifRef)))
                 {
                     tabControl1.SelectedTab = tabPageAccueil;
                     MessageBox.Show("Unable to load tab. You have insufficient access privileges.");
                 }
-                else
+                
+                if (tabControl1.SelectedTab == tabPageAjoutGérant)
                 {
-                    tabControl1.SelectedTab = selectPage;
-                }
+                    tabControl1.SelectedTab = tabPageAccueil;
+                    MessageBox.Show("Unable to load tab. You have insufficient access privileges.");
 
+                }
+                if(tabControl1.SelectedTab == tabPagemodifGerant)
+                {
+                    tabControl1.SelectedTab = tabPageAccueil;
+                    MessageBox.Show("Unable to load tab. You have insufficient access privileges.");
+
+                }
                 if ((connected_user.Roles.Magasinier == null) && (tabControl1.SelectedTab == tabPageStock))
                 {
                     tabControl1.SelectedTab = tabPageAccueil;
                     MessageBox.Show("Unable to load tab. You have insufficient access privileges.");
                     
                 }
+                
 
             }
-
-
 
 
         } 

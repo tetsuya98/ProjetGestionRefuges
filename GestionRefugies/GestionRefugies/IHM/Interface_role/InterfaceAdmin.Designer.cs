@@ -141,21 +141,14 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbl_err_nation_modif_gerant = new System.Windows.Forms.Label();
-            this.lbl_err_sex_modif_gerant = new System.Windows.Forms.Label();
+            this.RoleAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoleMagasinier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoleAgentA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_modif_gerant = new System.Windows.Forms.Button();
-            this.lbl_nation_modif_gerant = new System.Windows.Forms.Label();
-            this.lbl_dateNaiss_modif_gerant = new System.Windows.Forms.Label();
-            this.list_nation_modif_gerant = new System.Windows.Forms.ComboBox();
-            this.datePicker_Naiss_modif_gerant = new System.Windows.Forms.DateTimePicker();
-            this.rdn_Femme_modif_gerant = new System.Windows.Forms.RadioButton();
-            this.rdn_Homme_modif_gerant = new System.Windows.Forms.RadioButton();
             this.Txt_prenom_modif_gerant = new System.Windows.Forms.MaskedTextBox();
             this.Txt_nom_modif_gerant = new System.Windows.Forms.MaskedTextBox();
             this.tabPageStock = new System.Windows.Forms.TabPage();
+            this.maskedTextBoxmodif_ger = new System.Windows.Forms.MaskedTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPageAccueil.SuspendLayout();
             this.tabPageAjoutRef.SuspendLayout();
@@ -181,7 +174,7 @@
             this.tabControl1.Controls.Add(this.tabPagemodifGerant);
             this.tabControl1.Controls.Add(this.tabPageStock);
             this.tabControl1.Location = new System.Drawing.Point(16, 14);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -201,7 +194,7 @@
             this.tabPageAccueil.Controls.Add(this.label_AgentAccess);
             this.tabPageAccueil.Controls.Add(this.label_nameU);
             this.tabPageAccueil.Location = new System.Drawing.Point(4, 25);
-            this.tabPageAccueil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageAccueil.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageAccueil.Name = "tabPageAccueil";
             this.tabPageAccueil.Size = new System.Drawing.Size(1116, 549);
             this.tabPageAccueil.TabIndex = 5;
@@ -323,9 +316,9 @@
             this.tabPageAjoutRef.Controls.Add(this.Txt_Prenom);
             this.tabPageAjoutRef.Controls.Add(this.Txt_Nom);
             this.tabPageAjoutRef.Location = new System.Drawing.Point(4, 25);
-            this.tabPageAjoutRef.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageAjoutRef.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageAjoutRef.Name = "tabPageAjoutRef";
-            this.tabPageAjoutRef.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageAjoutRef.Padding = new System.Windows.Forms.Padding(4);
             this.tabPageAjoutRef.Size = new System.Drawing.Size(1116, 549);
             this.tabPageAjoutRef.TabIndex = 0;
             this.tabPageAjoutRef.Text = "Ajouter un Refugié";
@@ -365,7 +358,7 @@
             "Chauve",
             "Autre"});
             this.txt_typchev_ajoutref.Location = new System.Drawing.Point(339, 297);
-            this.txt_typchev_ajoutref.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_typchev_ajoutref.Margin = new System.Windows.Forms.Padding(4);
             this.txt_typchev_ajoutref.Name = "txt_typchev_ajoutref";
             this.txt_typchev_ajoutref.Size = new System.Drawing.Size(196, 24);
             this.txt_typchev_ajoutref.TabIndex = 38;
@@ -384,7 +377,7 @@
             // 
             this.txt_autre_ajoutref.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txt_autre_ajoutref.Location = new System.Drawing.Point(644, 267);
-            this.txt_autre_ajoutref.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_autre_ajoutref.Margin = new System.Windows.Forms.Padding(4);
             this.txt_autre_ajoutref.Name = "txt_autre_ajoutref";
             this.txt_autre_ajoutref.Size = new System.Drawing.Size(252, 22);
             this.txt_autre_ajoutref.TabIndex = 36;
@@ -421,7 +414,7 @@
             "Moteur",
             "Mental"});
             this.txt_handi_ajoutref.Location = new System.Drawing.Point(644, 134);
-            this.txt_handi_ajoutref.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_handi_ajoutref.Margin = new System.Windows.Forms.Padding(4);
             this.txt_handi_ajoutref.Name = "txt_handi_ajoutref";
             this.txt_handi_ajoutref.Size = new System.Drawing.Size(196, 24);
             this.txt_handi_ajoutref.TabIndex = 33;
@@ -466,7 +459,7 @@
             "Ble",
             "Autre"});
             this.txt_allerg_ajoutref.Location = new System.Drawing.Point(644, 64);
-            this.txt_allerg_ajoutref.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_allerg_ajoutref.Margin = new System.Windows.Forms.Padding(4);
             this.txt_allerg_ajoutref.Name = "txt_allerg_ajoutref";
             this.txt_allerg_ajoutref.Size = new System.Drawing.Size(196, 24);
             this.txt_allerg_ajoutref.TabIndex = 30;
@@ -505,7 +498,7 @@
             "Blessure Moyenne",
             "Blessure Benigne"});
             this.txt_bless_ajoutref.Location = new System.Drawing.Point(339, 219);
-            this.txt_bless_ajoutref.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_bless_ajoutref.Margin = new System.Windows.Forms.Padding(4);
             this.txt_bless_ajoutref.Name = "txt_bless_ajoutref";
             this.txt_bless_ajoutref.Size = new System.Drawing.Size(196, 24);
             this.txt_bless_ajoutref.TabIndex = 27;
@@ -543,7 +536,7 @@
             "Marron",
             "Autre"});
             this.txt_coulyeux_ajoutref.Location = new System.Drawing.Point(41, 406);
-            this.txt_coulyeux_ajoutref.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_coulyeux_ajoutref.Margin = new System.Windows.Forms.Padding(4);
             this.txt_coulyeux_ajoutref.Name = "txt_coulyeux_ajoutref";
             this.txt_coulyeux_ajoutref.Size = new System.Drawing.Size(196, 24);
             this.txt_coulyeux_ajoutref.TabIndex = 24;
@@ -587,7 +580,7 @@
             "Rose",
             "Autre"});
             this.txt_coulchev_ajoutref.Location = new System.Drawing.Point(41, 337);
-            this.txt_coulchev_ajoutref.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_coulchev_ajoutref.Margin = new System.Windows.Forms.Padding(4);
             this.txt_coulchev_ajoutref.Name = "txt_coulchev_ajoutref";
             this.txt_coulchev_ajoutref.Size = new System.Drawing.Size(196, 24);
             this.txt_coulchev_ajoutref.TabIndex = 21;
@@ -624,7 +617,7 @@
             "Noir",
             "Metissé"});
             this.txt_coulpeau_ajoutref.Location = new System.Drawing.Point(41, 267);
-            this.txt_coulpeau_ajoutref.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_coulpeau_ajoutref.Margin = new System.Windows.Forms.Padding(4);
             this.txt_coulpeau_ajoutref.Name = "txt_coulpeau_ajoutref";
             this.txt_coulpeau_ajoutref.Size = new System.Drawing.Size(196, 24);
             this.txt_coulpeau_ajoutref.TabIndex = 18;
@@ -643,7 +636,7 @@
             // num_taille_ajoutref
             // 
             this.num_taille_ajoutref.Location = new System.Drawing.Point(111, 204);
-            this.num_taille_ajoutref.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.num_taille_ajoutref.Margin = new System.Windows.Forms.Padding(4);
             this.num_taille_ajoutref.Maximum = new decimal(new int[] {
             300,
             0,
@@ -668,7 +661,7 @@
             // num_RefugeRef
             // 
             this.num_RefugeRef.Location = new System.Drawing.Point(111, 172);
-            this.num_RefugeRef.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.num_RefugeRef.Margin = new System.Windows.Forms.Padding(4);
             this.num_RefugeRef.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -706,7 +699,7 @@
             // Btn_Ajout
             // 
             this.Btn_Ajout.Location = new System.Drawing.Point(504, 405);
-            this.Btn_Ajout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Btn_Ajout.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_Ajout.Name = "Btn_Ajout";
             this.Btn_Ajout.Size = new System.Drawing.Size(193, 26);
             this.Btn_Ajout.TabIndex = 11;
@@ -772,7 +765,7 @@
             "Sud-Africain",
             "Autre"});
             this.List_Nationalite.Location = new System.Drawing.Point(339, 130);
-            this.List_Nationalite.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.List_Nationalite.Margin = new System.Windows.Forms.Padding(4);
             this.List_Nationalite.Name = "List_Nationalite";
             this.List_Nationalite.Size = new System.Drawing.Size(196, 24);
             this.List_Nationalite.TabIndex = 8;
@@ -780,7 +773,7 @@
             // DatePicker_DatNaiss
             // 
             this.DatePicker_DatNaiss.Location = new System.Drawing.Point(339, 65);
-            this.DatePicker_DatNaiss.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DatePicker_DatNaiss.Margin = new System.Windows.Forms.Padding(4);
             this.DatePicker_DatNaiss.Name = "DatePicker_DatNaiss";
             this.DatePicker_DatNaiss.Size = new System.Drawing.Size(265, 22);
             this.DatePicker_DatNaiss.TabIndex = 6;
@@ -790,7 +783,7 @@
             // 
             this.RdBtn_Femme.AutoSize = true;
             this.RdBtn_Femme.Location = new System.Drawing.Point(175, 116);
-            this.RdBtn_Femme.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RdBtn_Femme.Margin = new System.Windows.Forms.Padding(4);
             this.RdBtn_Femme.Name = "RdBtn_Femme";
             this.RdBtn_Femme.Size = new System.Drawing.Size(75, 21);
             this.RdBtn_Femme.TabIndex = 5;
@@ -802,7 +795,7 @@
             // 
             this.RdBtn_Homme.AutoSize = true;
             this.RdBtn_Homme.Location = new System.Drawing.Point(69, 116);
-            this.RdBtn_Homme.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RdBtn_Homme.Margin = new System.Windows.Forms.Padding(4);
             this.RdBtn_Homme.Name = "RdBtn_Homme";
             this.RdBtn_Homme.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RdBtn_Homme.Size = new System.Drawing.Size(77, 21);
@@ -815,7 +808,7 @@
             // 
             this.Txt_Prenom.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.Txt_Prenom.Location = new System.Drawing.Point(44, 74);
-            this.Txt_Prenom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Txt_Prenom.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_Prenom.Name = "Txt_Prenom";
             this.Txt_Prenom.Size = new System.Drawing.Size(252, 22);
             this.Txt_Prenom.TabIndex = 3;
@@ -827,7 +820,7 @@
             // 
             this.Txt_Nom.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.Txt_Nom.Location = new System.Drawing.Point(44, 42);
-            this.Txt_Nom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Txt_Nom.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_Nom.Name = "Txt_Nom";
             this.Txt_Nom.Size = new System.Drawing.Size(252, 22);
             this.Txt_Nom.TabIndex = 0;
@@ -844,9 +837,9 @@
             this.tabPageAjoutGérant.Controls.Add(this.Txt_MDPM);
             this.tabPageAjoutGérant.Controls.Add(this.Txt_NomM);
             this.tabPageAjoutGérant.Location = new System.Drawing.Point(4, 25);
-            this.tabPageAjoutGérant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageAjoutGérant.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageAjoutGérant.Name = "tabPageAjoutGérant";
-            this.tabPageAjoutGérant.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageAjoutGérant.Padding = new System.Windows.Forms.Padding(4);
             this.tabPageAjoutGérant.Size = new System.Drawing.Size(1116, 549);
             this.tabPageAjoutGérant.TabIndex = 1;
             this.tabPageAjoutGérant.Text = "Ajouter un Gérant";
@@ -858,9 +851,9 @@
             this.groupBox1.Controls.Add(this.check_AgentAccueil);
             this.groupBox1.Controls.Add(this.lbl_errRole);
             this.groupBox1.Location = new System.Drawing.Point(63, 256);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(323, 101);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
@@ -870,7 +863,7 @@
             // 
             this.check_Magasinier.AutoSize = true;
             this.check_Magasinier.Location = new System.Drawing.Point(148, 37);
-            this.check_Magasinier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.check_Magasinier.Margin = new System.Windows.Forms.Padding(4);
             this.check_Magasinier.Name = "check_Magasinier";
             this.check_Magasinier.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.check_Magasinier.Size = new System.Drawing.Size(96, 21);
@@ -883,7 +876,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkBox1.Location = new System.Drawing.Point(9, 70);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.checkBox1.Size = new System.Drawing.Size(121, 21);
@@ -895,7 +888,7 @@
             // 
             this.check_AgentAccueil.AutoSize = true;
             this.check_AgentAccueil.Location = new System.Drawing.Point(-1, 37);
-            this.check_AgentAccueil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.check_AgentAccueil.Margin = new System.Windows.Forms.Padding(4);
             this.check_AgentAccueil.Name = "check_AgentAccueil";
             this.check_AgentAccueil.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.check_AgentAccueil.Size = new System.Drawing.Size(127, 21);
@@ -918,7 +911,7 @@
             // btn_AjoutM
             // 
             this.btn_AjoutM.Location = new System.Drawing.Point(235, 400);
-            this.btn_AjoutM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_AjoutM.Margin = new System.Windows.Forms.Padding(4);
             this.btn_AjoutM.Name = "btn_AjoutM";
             this.btn_AjoutM.Size = new System.Drawing.Size(144, 28);
             this.btn_AjoutM.TabIndex = 23;
@@ -930,7 +923,7 @@
             // 
             this.Txt_PrenomM.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.Txt_PrenomM.Location = new System.Drawing.Point(77, 85);
-            this.Txt_PrenomM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Txt_PrenomM.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_PrenomM.Name = "Txt_PrenomM";
             this.Txt_PrenomM.Size = new System.Drawing.Size(252, 22);
             this.Txt_PrenomM.TabIndex = 16;
@@ -942,7 +935,7 @@
             // 
             this.Txt_MDPM.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.Txt_MDPM.Location = new System.Drawing.Point(77, 220);
-            this.Txt_MDPM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Txt_MDPM.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_MDPM.Name = "Txt_MDPM";
             this.Txt_MDPM.PasswordChar = '○';
             this.Txt_MDPM.Size = new System.Drawing.Size(335, 22);
@@ -956,7 +949,7 @@
             // 
             this.Txt_NomM.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.Txt_NomM.Location = new System.Drawing.Point(77, 53);
-            this.Txt_NomM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Txt_NomM.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_NomM.Name = "Txt_NomM";
             this.Txt_NomM.Size = new System.Drawing.Size(252, 22);
             this.Txt_NomM.TabIndex = 14;
@@ -1005,7 +998,7 @@
             this.tabPageModifRef.Controls.Add(this.Txt_Prenom_Modif_ref);
             this.tabPageModifRef.Controls.Add(this.Txt_Nom_Modif_ref);
             this.tabPageModifRef.Location = new System.Drawing.Point(4, 25);
-            this.tabPageModifRef.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageModifRef.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageModifRef.Name = "tabPageModifRef";
             this.tabPageModifRef.Size = new System.Drawing.Size(1116, 549);
             this.tabPageModifRef.TabIndex = 3;
@@ -1046,7 +1039,7 @@
             "Chauve",
             "Autre"});
             this.comboBox1.Location = new System.Drawing.Point(215, 150);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(196, 24);
             this.comboBox1.TabIndex = 56;
@@ -1065,7 +1058,7 @@
             // 
             this.maskedTextBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.maskedTextBox1.Location = new System.Drawing.Point(231, 405);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(196, 22);
             this.maskedTextBox1.TabIndex = 54;
@@ -1090,7 +1083,7 @@
             "Moteur",
             "Mental"});
             this.comboBox2.Location = new System.Drawing.Point(231, 272);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(196, 24);
             this.comboBox2.TabIndex = 52;
@@ -1123,7 +1116,7 @@
             "Ble",
             "Autre"});
             this.comboBox3.Location = new System.Drawing.Point(231, 202);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(196, 24);
             this.comboBox3.TabIndex = 50;
@@ -1150,7 +1143,7 @@
             "Blessure Moyenne",
             "Blessure Benigne"});
             this.comboBox4.Location = new System.Drawing.Point(215, 73);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(196, 24);
             this.comboBox4.TabIndex = 48;
@@ -1176,7 +1169,7 @@
             "Marron",
             "Autre"});
             this.comboBox5.Location = new System.Drawing.Point(27, 426);
-            this.comboBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox5.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(196, 24);
             this.comboBox5.TabIndex = 46;
@@ -1208,7 +1201,7 @@
             "Rose",
             "Autre"});
             this.comboBox6.Location = new System.Drawing.Point(27, 357);
-            this.comboBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox6.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(196, 24);
             this.comboBox6.TabIndex = 44;
@@ -1233,7 +1226,7 @@
             "Noir",
             "Metissé"});
             this.comboBox7.Location = new System.Drawing.Point(27, 287);
-            this.comboBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox7.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox7.Name = "comboBox7";
             this.comboBox7.Size = new System.Drawing.Size(196, 24);
             this.comboBox7.TabIndex = 42;
@@ -1252,7 +1245,7 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(96, 226);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             300,
             0,
@@ -1291,7 +1284,7 @@
             // btn_rechercher_modifref
             // 
             this.btn_rechercher_modifref.Location = new System.Drawing.Point(21, 511);
-            this.btn_rechercher_modifref.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_rechercher_modifref.Margin = new System.Windows.Forms.Padding(4);
             this.btn_rechercher_modifref.Name = "btn_rechercher_modifref";
             this.btn_rechercher_modifref.Size = new System.Drawing.Size(153, 28);
             this.btn_rechercher_modifref.TabIndex = 29;
@@ -1313,7 +1306,7 @@
             // num_refugeref_modif_ref
             // 
             this.num_refugeref_modif_ref.Location = new System.Drawing.Point(100, 199);
-            this.num_refugeref_modif_ref.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.num_refugeref_modif_ref.Margin = new System.Windows.Forms.Padding(4);
             this.num_refugeref_modif_ref.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -1327,7 +1320,7 @@
             // btn_Suppr_ref
             // 
             this.btn_Suppr_ref.Location = new System.Drawing.Point(344, 511);
-            this.btn_Suppr_ref.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Suppr_ref.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Suppr_ref.Name = "btn_Suppr_ref";
             this.btn_Suppr_ref.Size = new System.Drawing.Size(153, 28);
             this.btn_Suppr_ref.TabIndex = 26;
@@ -1349,7 +1342,7 @@
             this.DateNaiss,
             this.Nationalite});
             this.DataGrid_modif_ref.Location = new System.Drawing.Point(436, 11);
-            this.DataGrid_modif_ref.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DataGrid_modif_ref.Margin = new System.Windows.Forms.Padding(4);
             this.DataGrid_modif_ref.Name = "DataGrid_modif_ref";
             this.DataGrid_modif_ref.ReadOnly = true;
             this.DataGrid_modif_ref.Size = new System.Drawing.Size(673, 492);
@@ -1421,7 +1414,7 @@
             // btn_Modif_ref
             // 
             this.btn_Modif_ref.Location = new System.Drawing.Point(183, 511);
-            this.btn_Modif_ref.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Modif_ref.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Modif_ref.Name = "btn_Modif_ref";
             this.btn_Modif_ref.Size = new System.Drawing.Size(153, 28);
             this.btn_Modif_ref.TabIndex = 22;
@@ -1487,7 +1480,7 @@
             "Sud-Africain",
             "Autre"});
             this.list_nation_modif_ref.Location = new System.Drawing.Point(23, 150);
-            this.list_nation_modif_ref.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.list_nation_modif_ref.Margin = new System.Windows.Forms.Padding(4);
             this.list_nation_modif_ref.Name = "list_nation_modif_ref";
             this.list_nation_modif_ref.Size = new System.Drawing.Size(168, 24);
             this.list_nation_modif_ref.TabIndex = 19;
@@ -1495,7 +1488,7 @@
             // DatePicker_Naiss_modif_ref
             // 
             this.DatePicker_Naiss_modif_ref.Location = new System.Drawing.Point(200, 25);
-            this.DatePicker_Naiss_modif_ref.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DatePicker_Naiss_modif_ref.Margin = new System.Windows.Forms.Padding(4);
             this.DatePicker_Naiss_modif_ref.Name = "DatePicker_Naiss_modif_ref";
             this.DatePicker_Naiss_modif_ref.Size = new System.Drawing.Size(223, 22);
             this.DatePicker_Naiss_modif_ref.TabIndex = 18;
@@ -1505,7 +1498,7 @@
             // 
             this.rdn_Femme_Modif_ref.AutoSize = true;
             this.rdn_Femme_Modif_ref.Location = new System.Drawing.Point(112, 89);
-            this.rdn_Femme_Modif_ref.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdn_Femme_Modif_ref.Margin = new System.Windows.Forms.Padding(4);
             this.rdn_Femme_Modif_ref.Name = "rdn_Femme_Modif_ref";
             this.rdn_Femme_Modif_ref.Size = new System.Drawing.Size(75, 21);
             this.rdn_Femme_Modif_ref.TabIndex = 17;
@@ -1517,7 +1510,7 @@
             // 
             this.rdn_Homme_Modif_ref.AutoSize = true;
             this.rdn_Homme_Modif_ref.Location = new System.Drawing.Point(23, 89);
-            this.rdn_Homme_Modif_ref.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdn_Homme_Modif_ref.Margin = new System.Windows.Forms.Padding(4);
             this.rdn_Homme_Modif_ref.Name = "rdn_Homme_Modif_ref";
             this.rdn_Homme_Modif_ref.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.rdn_Homme_Modif_ref.Size = new System.Drawing.Size(77, 21);
@@ -1530,7 +1523,7 @@
             // 
             this.Txt_Prenom_Modif_ref.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.Txt_Prenom_Modif_ref.Location = new System.Drawing.Point(21, 57);
-            this.Txt_Prenom_Modif_ref.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Txt_Prenom_Modif_ref.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_Prenom_Modif_ref.Name = "Txt_Prenom_Modif_ref";
             this.Txt_Prenom_Modif_ref.Size = new System.Drawing.Size(169, 22);
             this.Txt_Prenom_Modif_ref.TabIndex = 15;
@@ -1542,7 +1535,7 @@
             // 
             this.Txt_Nom_Modif_ref.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.Txt_Nom_Modif_ref.Location = new System.Drawing.Point(21, 25);
-            this.Txt_Nom_Modif_ref.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Txt_Nom_Modif_ref.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_Nom_Modif_ref.Name = "Txt_Nom_Modif_ref";
             this.Txt_Nom_Modif_ref.Size = new System.Drawing.Size(169, 22);
             this.Txt_Nom_Modif_ref.TabIndex = 14;
@@ -1553,22 +1546,15 @@
             // tabPagemodifGerant
             // 
             this.tabPagemodifGerant.BackColor = System.Drawing.Color.Transparent;
+            this.tabPagemodifGerant.Controls.Add(this.maskedTextBoxmodif_ger);
             this.tabPagemodifGerant.Controls.Add(this.Group_role_modif_gerant);
             this.tabPagemodifGerant.Controls.Add(this.btn_suppr_gerant);
             this.tabPagemodifGerant.Controls.Add(this.dataGridView1);
-            this.tabPagemodifGerant.Controls.Add(this.lbl_err_nation_modif_gerant);
-            this.tabPagemodifGerant.Controls.Add(this.lbl_err_sex_modif_gerant);
             this.tabPagemodifGerant.Controls.Add(this.btn_modif_gerant);
-            this.tabPagemodifGerant.Controls.Add(this.lbl_nation_modif_gerant);
-            this.tabPagemodifGerant.Controls.Add(this.lbl_dateNaiss_modif_gerant);
-            this.tabPagemodifGerant.Controls.Add(this.list_nation_modif_gerant);
-            this.tabPagemodifGerant.Controls.Add(this.datePicker_Naiss_modif_gerant);
-            this.tabPagemodifGerant.Controls.Add(this.rdn_Femme_modif_gerant);
-            this.tabPagemodifGerant.Controls.Add(this.rdn_Homme_modif_gerant);
             this.tabPagemodifGerant.Controls.Add(this.Txt_prenom_modif_gerant);
             this.tabPagemodifGerant.Controls.Add(this.Txt_nom_modif_gerant);
             this.tabPagemodifGerant.Location = new System.Drawing.Point(4, 25);
-            this.tabPagemodifGerant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPagemodifGerant.Margin = new System.Windows.Forms.Padding(4);
             this.tabPagemodifGerant.Name = "tabPagemodifGerant";
             this.tabPagemodifGerant.Size = new System.Drawing.Size(1116, 549);
             this.tabPagemodifGerant.TabIndex = 4;
@@ -1580,10 +1566,10 @@
             this.Group_role_modif_gerant.Controls.Add(this.check_Admin_modif_gerant);
             this.Group_role_modif_gerant.Controls.Add(this.check_AA_modif_gerant);
             this.Group_role_modif_gerant.Controls.Add(this.lbl_err_role_modif_gerant);
-            this.Group_role_modif_gerant.Location = new System.Drawing.Point(4, 278);
-            this.Group_role_modif_gerant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Group_role_modif_gerant.Location = new System.Drawing.Point(1, 148);
+            this.Group_role_modif_gerant.Margin = new System.Windows.Forms.Padding(4);
             this.Group_role_modif_gerant.Name = "Group_role_modif_gerant";
-            this.Group_role_modif_gerant.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Group_role_modif_gerant.Padding = new System.Windows.Forms.Padding(4);
             this.Group_role_modif_gerant.Size = new System.Drawing.Size(308, 92);
             this.Group_role_modif_gerant.TabIndex = 40;
             this.Group_role_modif_gerant.TabStop = false;
@@ -1593,7 +1579,7 @@
             // 
             this.check_maga_modif_gerant.AutoSize = true;
             this.check_maga_modif_gerant.Location = new System.Drawing.Point(148, 23);
-            this.check_maga_modif_gerant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.check_maga_modif_gerant.Margin = new System.Windows.Forms.Padding(4);
             this.check_maga_modif_gerant.Name = "check_maga_modif_gerant";
             this.check_maga_modif_gerant.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.check_maga_modif_gerant.Size = new System.Drawing.Size(96, 21);
@@ -1606,7 +1592,7 @@
             this.check_Admin_modif_gerant.AutoSize = true;
             this.check_Admin_modif_gerant.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.check_Admin_modif_gerant.Location = new System.Drawing.Point(11, 52);
-            this.check_Admin_modif_gerant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.check_Admin_modif_gerant.Margin = new System.Windows.Forms.Padding(4);
             this.check_Admin_modif_gerant.Name = "check_Admin_modif_gerant";
             this.check_Admin_modif_gerant.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.check_Admin_modif_gerant.Size = new System.Drawing.Size(121, 21);
@@ -1618,7 +1604,7 @@
             // 
             this.check_AA_modif_gerant.AutoSize = true;
             this.check_AA_modif_gerant.Location = new System.Drawing.Point(0, 23);
-            this.check_AA_modif_gerant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.check_AA_modif_gerant.Margin = new System.Windows.Forms.Padding(4);
             this.check_AA_modif_gerant.Name = "check_AA_modif_gerant";
             this.check_AA_modif_gerant.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.check_AA_modif_gerant.Size = new System.Drawing.Size(127, 21);
@@ -1641,7 +1627,7 @@
             // btn_suppr_gerant
             // 
             this.btn_suppr_gerant.Location = new System.Drawing.Point(587, 342);
-            this.btn_suppr_gerant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_suppr_gerant.Margin = new System.Windows.Forms.Padding(4);
             this.btn_suppr_gerant.Name = "btn_suppr_gerant";
             this.btn_suppr_gerant.Size = new System.Drawing.Size(144, 28);
             this.btn_suppr_gerant.TabIndex = 39;
@@ -1658,11 +1644,11 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
-            this.dataGridView1.Location = new System.Drawing.Point(317, 11);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RoleAdmin,
+            this.RoleMagasinier,
+            this.RoleAgentA});
+            this.dataGridView1.Location = new System.Drawing.Point(358, 10);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(535, 324);
@@ -1680,52 +1666,28 @@
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn3
+            // RoleAdmin
             // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Sexe";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.RoleAdmin.HeaderText = "Administrateur";
+            this.RoleAdmin.Name = "RoleAdmin";
+            this.RoleAdmin.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn4
+            // RoleMagasinier
             // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Date de Naissance";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.RoleMagasinier.HeaderText = "Magasinier";
+            this.RoleMagasinier.Name = "RoleMagasinier";
+            this.RoleMagasinier.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn5
+            // RoleAgentA
             // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Nationalite";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // lbl_err_nation_modif_gerant
-            // 
-            this.lbl_err_nation_modif_gerant.AutoSize = true;
-            this.lbl_err_nation_modif_gerant.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_nation_modif_gerant.Location = new System.Drawing.Point(100, 261);
-            this.lbl_err_nation_modif_gerant.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_err_nation_modif_gerant.Name = "lbl_err_nation_modif_gerant";
-            this.lbl_err_nation_modif_gerant.Size = new System.Drawing.Size(213, 17);
-            this.lbl_err_nation_modif_gerant.TabIndex = 37;
-            this.lbl_err_nation_modif_gerant.Text = "Veuillez renseigner la nationalite";
-            this.lbl_err_nation_modif_gerant.Visible = false;
-            // 
-            // lbl_err_sex_modif_gerant
-            // 
-            this.lbl_err_sex_modif_gerant.AutoSize = true;
-            this.lbl_err_sex_modif_gerant.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_sex_modif_gerant.Location = new System.Drawing.Point(100, 113);
-            this.lbl_err_sex_modif_gerant.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_err_sex_modif_gerant.Name = "lbl_err_sex_modif_gerant";
-            this.lbl_err_sex_modif_gerant.Size = new System.Drawing.Size(177, 17);
-            this.lbl_err_sex_modif_gerant.TabIndex = 36;
-            this.lbl_err_sex_modif_gerant.Text = "Veuillez renseigner le sexe";
-            this.lbl_err_sex_modif_gerant.Visible = false;
+            this.RoleAgentA.HeaderText = "Agent d\'Accueil";
+            this.RoleAgentA.Name = "RoleAgentA";
+            this.RoleAgentA.ReadOnly = true;
             // 
             // btn_modif_gerant
             // 
             this.btn_modif_gerant.Location = new System.Drawing.Point(435, 342);
-            this.btn_modif_gerant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_modif_gerant.Margin = new System.Windows.Forms.Padding(4);
             this.btn_modif_gerant.Name = "btn_modif_gerant";
             this.btn_modif_gerant.Size = new System.Drawing.Size(144, 28);
             this.btn_modif_gerant.TabIndex = 35;
@@ -1733,106 +1695,11 @@
             this.btn_modif_gerant.UseVisualStyleBackColor = true;
             this.btn_modif_gerant.Click += new System.EventHandler(this.btn_modif_gerant_Click);
             // 
-            // lbl_nation_modif_gerant
-            // 
-            this.lbl_nation_modif_gerant.AutoSize = true;
-            this.lbl_nation_modif_gerant.Location = new System.Drawing.Point(17, 212);
-            this.lbl_nation_modif_gerant.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_nation_modif_gerant.Name = "lbl_nation_modif_gerant";
-            this.lbl_nation_modif_gerant.Size = new System.Drawing.Size(75, 17);
-            this.lbl_nation_modif_gerant.TabIndex = 34;
-            this.lbl_nation_modif_gerant.Text = "Nationalite";
-            // 
-            // lbl_dateNaiss_modif_gerant
-            // 
-            this.lbl_dateNaiss_modif_gerant.AutoSize = true;
-            this.lbl_dateNaiss_modif_gerant.Location = new System.Drawing.Point(17, 149);
-            this.lbl_dateNaiss_modif_gerant.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_dateNaiss_modif_gerant.Name = "lbl_dateNaiss_modif_gerant";
-            this.lbl_dateNaiss_modif_gerant.Size = new System.Drawing.Size(128, 17);
-            this.lbl_dateNaiss_modif_gerant.TabIndex = 33;
-            this.lbl_dateNaiss_modif_gerant.Text = "Date de Naissance";
-            // 
-            // list_nation_modif_gerant
-            // 
-            this.list_nation_modif_gerant.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.list_nation_modif_gerant.FormattingEnabled = true;
-            this.list_nation_modif_gerant.Items.AddRange(new object[] {
-            "Anglais",
-            "Espagnol",
-            "Allemand",
-            "Italien",
-            "Portugais",
-            "Belge",
-            "Suisse",
-            "Polonais",
-            "Ukrainien",
-            "Chinois",
-            "Indien",
-            "Russe",
-            "Japonais",
-            "Americain",
-            "Canadien",
-            "Mexicain",
-            "Bresilien",
-            "Colombien",
-            "Cubain",
-            "Marocain",
-            "Turc",
-            "Algerien",
-            "Tunisien",
-            "Syrien",
-            "Egyptien",
-            "Soudanais",
-            "Congolais",
-            "Senegalais",
-            "Sud-Africain",
-            "Autre"});
-            this.list_nation_modif_gerant.Location = new System.Drawing.Point(21, 231);
-            this.list_nation_modif_gerant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.list_nation_modif_gerant.Name = "list_nation_modif_gerant";
-            this.list_nation_modif_gerant.Size = new System.Drawing.Size(196, 24);
-            this.list_nation_modif_gerant.TabIndex = 32;
-            // 
-            // datePicker_Naiss_modif_gerant
-            // 
-            this.datePicker_Naiss_modif_gerant.Location = new System.Drawing.Point(21, 169);
-            this.datePicker_Naiss_modif_gerant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.datePicker_Naiss_modif_gerant.Name = "datePicker_Naiss_modif_gerant";
-            this.datePicker_Naiss_modif_gerant.Size = new System.Drawing.Size(265, 22);
-            this.datePicker_Naiss_modif_gerant.TabIndex = 31;
-            this.datePicker_Naiss_modif_gerant.ValueChanged += new System.EventHandler(this.datePicker_Naiss_modif_gerant_ValueChanged);
-            // 
-            // rdn_Femme_modif_gerant
-            // 
-            this.rdn_Femme_modif_gerant.AutoSize = true;
-            this.rdn_Femme_modif_gerant.Location = new System.Drawing.Point(140, 89);
-            this.rdn_Femme_modif_gerant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.rdn_Femme_modif_gerant.Name = "rdn_Femme_modif_gerant";
-            this.rdn_Femme_modif_gerant.Size = new System.Drawing.Size(75, 21);
-            this.rdn_Femme_modif_gerant.TabIndex = 30;
-            this.rdn_Femme_modif_gerant.TabStop = true;
-            this.rdn_Femme_modif_gerant.Text = "Femme";
-            this.rdn_Femme_modif_gerant.UseVisualStyleBackColor = true;
-            // 
-            // rdn_Homme_modif_gerant
-            // 
-            this.rdn_Homme_modif_gerant.AutoSize = true;
-            this.rdn_Homme_modif_gerant.Location = new System.Drawing.Point(51, 89);
-            this.rdn_Homme_modif_gerant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.rdn_Homme_modif_gerant.Name = "rdn_Homme_modif_gerant";
-            this.rdn_Homme_modif_gerant.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.rdn_Homme_modif_gerant.Size = new System.Drawing.Size(77, 21);
-            this.rdn_Homme_modif_gerant.TabIndex = 29;
-            this.rdn_Homme_modif_gerant.TabStop = true;
-            this.rdn_Homme_modif_gerant.Text = "Homme";
-            this.rdn_Homme_modif_gerant.UseVisualStyleBackColor = true;
-            // 
             // Txt_prenom_modif_gerant
             // 
             this.Txt_prenom_modif_gerant.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.Txt_prenom_modif_gerant.Location = new System.Drawing.Point(21, 57);
-            this.Txt_prenom_modif_gerant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Txt_prenom_modif_gerant.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_prenom_modif_gerant.Name = "Txt_prenom_modif_gerant";
             this.Txt_prenom_modif_gerant.Size = new System.Drawing.Size(252, 22);
             this.Txt_prenom_modif_gerant.TabIndex = 28;
@@ -1844,7 +1711,7 @@
             // 
             this.Txt_nom_modif_gerant.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.Txt_nom_modif_gerant.Location = new System.Drawing.Point(21, 25);
-            this.Txt_nom_modif_gerant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Txt_nom_modif_gerant.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_nom_modif_gerant.Name = "Txt_nom_modif_gerant";
             this.Txt_nom_modif_gerant.Size = new System.Drawing.Size(252, 22);
             this.Txt_nom_modif_gerant.TabIndex = 27;
@@ -1855,12 +1722,23 @@
             // tabPageStock
             // 
             this.tabPageStock.Location = new System.Drawing.Point(4, 25);
-            this.tabPageStock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageStock.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageStock.Name = "tabPageStock";
             this.tabPageStock.Size = new System.Drawing.Size(1116, 549);
             this.tabPageStock.TabIndex = 2;
             this.tabPageStock.Text = "Gestion Des Stocks";
             this.tabPageStock.UseVisualStyleBackColor = true;
+            // 
+            // maskedTextBoxmodif_ger
+            // 
+            this.maskedTextBoxmodif_ger.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.maskedTextBoxmodif_ger.Location = new System.Drawing.Point(21, 118);
+            this.maskedTextBoxmodif_ger.Margin = new System.Windows.Forms.Padding(4);
+            this.maskedTextBoxmodif_ger.Name = "maskedTextBoxmodif_ger";
+            this.maskedTextBoxmodif_ger.PasswordChar = '○';
+            this.maskedTextBoxmodif_ger.Size = new System.Drawing.Size(252, 22);
+            this.maskedTextBoxmodif_ger.TabIndex = 41;
+            this.maskedTextBoxmodif_ger.Text = "Mot de Passe";
             // 
             // Ajout
             // 
@@ -1869,7 +1747,7 @@
             this.ClientSize = new System.Drawing.Size(1153, 597);
             this.Controls.Add(this.tabControl1);
             this.ForeColor = System.Drawing.Color.Black;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(1171, 644);
             this.MinimumSize = new System.Drawing.Size(1171, 644);
             this.Name = "Ajout";
@@ -1949,20 +1827,7 @@
         private System.Windows.Forms.Label lbl_err_role_modif_gerant;
         private System.Windows.Forms.Button btn_suppr_gerant;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.Label lbl_err_nation_modif_gerant;
-        private System.Windows.Forms.Label lbl_err_sex_modif_gerant;
         private System.Windows.Forms.Button btn_modif_gerant;
-        private System.Windows.Forms.Label lbl_nation_modif_gerant;
-        private System.Windows.Forms.Label lbl_dateNaiss_modif_gerant;
-        private System.Windows.Forms.ComboBox list_nation_modif_gerant;
-        private System.Windows.Forms.DateTimePicker datePicker_Naiss_modif_gerant;
-        private System.Windows.Forms.RadioButton rdn_Femme_modif_gerant;
-        private System.Windows.Forms.RadioButton rdn_Homme_modif_gerant;
         private System.Windows.Forms.MaskedTextBox Txt_prenom_modif_gerant;
         private System.Windows.Forms.MaskedTextBox Txt_nom_modif_gerant;
         private System.Windows.Forms.Label label_nameU;
@@ -2030,5 +1895,11 @@
         private System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RoleAdmin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RoleMagasinier;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RoleAgentA;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxmodif_ger;
     }
 }
