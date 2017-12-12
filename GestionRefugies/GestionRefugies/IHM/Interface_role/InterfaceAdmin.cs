@@ -15,6 +15,7 @@ namespace GestionRefugies
     {
 
         private User connected_user;
+        private List<Refugier> listeRefu = null;
 
         public Ajout(User connect_u)
         {
@@ -74,11 +75,40 @@ namespace GestionRefugies
             List_Nationalite.Text = null;
             RdBtn_Femme.Checked = false;
             RdBtn_Homme.Checked = false;
-            num_RefugeRef.Value = 0;
-            num_taille_ajoutref.Value = 0;
+            num_RefugeRef.Value = 1;
+            num_taille_ajoutref.Value = 1;
+        }
+
+        private void Maj_data_modifRef()
+        {
+            DataGrid_modif_ref.Rows.Clear();
+            listeRefu = Refugier.select();
+
+            foreach (var refugier in listeRefu)
+            {
+                DataGrid_modif_ref.Rows.Add(
+                    refugier.Id,
+                    refugier.Nom,
+                    refugier.Prenom,
+                    refugier.Sexe,
+                    refugier.DateNais,
+                    refugier.Nationalite,
+                    refugier.Adresse,
+                    refugier.Taille,
+                    refugier.CouleurPeau,
+                    refugier.CouleurYeux,
+                    refugier.CouleurCheveux,
+                    refugier.TypeCheveux,
+                    refugier.Blessure,
+                    refugier.Allergie,
+                    refugier.Handicap,
+                    refugier.Autre
+
+                    );
+            }
         }
         #endregion
-        
+
         #region restrictions
         private void tabControl1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -604,16 +634,53 @@ namespace GestionRefugies
         #region Boutons Recercher Modifier et Supprimer refugié
 
 
+        
 
         #region btn recherche
         private void btn_rechercher_modifref_Click(object sender, EventArgs e)
         {
             DataGrid_modif_ref.Rows.Clear();
-            //appel recherche de josselin
-            //pour l'instant c celle d'omer
-            List<Refugier> refugiers = Refugier.select();
+            
+            String sex,nom,prenom;
 
-            foreach (var refugier in refugiers)
+            if (Txt_Nom_Modif_ref.Text == "Nom" | Txt_Nom_Modif_ref.Text == "Nom Incorrect")
+            {
+                nom = "";
+            }
+            else
+            {
+                nom = Txt_Nom_Modif_ref.Text;
+            }
+
+            if (Txt_Prenom_Modif_ref.Text == "Prenom" | Txt_Prenom_Modif_ref.Text == "Prenom Incorrect")
+            {
+                prenom = "";
+            }
+            else
+            {
+                prenom = Txt_Prenom_Modif_ref.Text;
+            }
+
+            if (rdn_Femme_Modif_ref.Checked == true)
+            {
+                sex = "F";
+            }
+            else
+            {
+                if (rdn_Homme_Modif_ref.Checked == true)
+                {
+                    sex = "M";
+                }
+                else
+                {
+                    sex = "";
+                }
+            }
+
+            //appel recherche de josselin
+            listeRefu = Refugier.Rechercher(Refugier.select(), nom, prenom, sex, DatePicker_Naiss_modif_ref.Value, list_nation_modif_ref.Text, (int)num_refugeref_modif_ref.Value, (int)num_taille_modifref.Value, txt_coulpeau_modifref.Text, txt_coulchev_modifref.Text, txt_typchev_modifref.Text, txt_coulyeux_modifref.Text, txt_bless_modifref.Text, txt_allerg_modifref.Text, txt_handi_modifref.Text, txt_autre_modifref.Text);
+
+            foreach (var refugier in listeRefu)
             {
                 DataGrid_modif_ref.Rows.Add(
                     refugier.Id,
@@ -786,7 +853,7 @@ namespace GestionRefugies
                     {
                         if (Refugier.delete((int.Parse(refugier.Cells[0].Value.ToString()))) == true)
                         {
-                            btn_rechercher_modifref_Click(sender, e);
+                            Maj_data_modifRef();
                         }
                     }
                 }
@@ -801,7 +868,7 @@ namespace GestionRefugies
 
                         if (Refugier.delete((int.Parse(refugier.Cells[0].Value.ToString()))) == true)
                         {
-                            btn_rechercher_modifref_Click(sender, e);
+                            Maj_data_modifRef();
                         }
                     }
                 }
@@ -909,7 +976,7 @@ namespace GestionRefugies
             if (tabControl1.SelectedTab == tabPageModifRef)
             {
                 //faire un select()
-                btn_rechercher_modifref_Click(sender, e);
+                Maj_data_modifRef();
                 Maj_Champs_modifref();
                 
             }

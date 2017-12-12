@@ -134,9 +134,9 @@
             this.Prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sexe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateNaiss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numrefuge = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Taille = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nationalite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Taille = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numrefuge = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Coulpeau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coulyeux = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coulchev = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -654,10 +654,20 @@
             0,
             0,
             0});
+            this.num_taille_ajoutref.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.num_taille_ajoutref.Name = "num_taille_ajoutref";
             this.num_taille_ajoutref.Size = new System.Drawing.Size(90, 20);
             this.num_taille_ajoutref.TabIndex = 16;
             this.num_taille_ajoutref.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.num_taille_ajoutref.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // lbl_RefugeRef
             // 
@@ -677,10 +687,20 @@
             0,
             0,
             0});
+            this.num_RefugeRef.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.num_RefugeRef.Name = "num_RefugeRef";
             this.num_RefugeRef.Size = new System.Drawing.Size(90, 20);
             this.num_RefugeRef.TabIndex = 14;
             this.num_RefugeRef.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.num_RefugeRef.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // Lbl_ErrNation
             // 
@@ -1510,9 +1530,9 @@
             this.Prenom,
             this.Sexe,
             this.DateNaiss,
-            this.numrefuge,
-            this.Taille,
             this.Nationalite,
+            this.Taille,
+            this.numrefuge,
             this.Coulpeau,
             this.coulyeux,
             this.coulchev,
@@ -1560,11 +1580,11 @@
             this.DateNaiss.Name = "DateNaiss";
             this.DateNaiss.ReadOnly = true;
             // 
-            // numrefuge
+            // Nationalite
             // 
-            this.numrefuge.HeaderText = "N°Refuge";
-            this.numrefuge.Name = "numrefuge";
-            this.numrefuge.ReadOnly = true;
+            this.Nationalite.HeaderText = "Nationalite";
+            this.Nationalite.Name = "Nationalite";
+            this.Nationalite.ReadOnly = true;
             // 
             // Taille
             // 
@@ -1572,11 +1592,11 @@
             this.Taille.Name = "Taille";
             this.Taille.ReadOnly = true;
             // 
-            // Nationalite
+            // numrefuge
             // 
-            this.Nationalite.HeaderText = "Nationalite";
-            this.Nationalite.Name = "Nationalite";
-            this.Nationalite.ReadOnly = true;
+            this.numrefuge.HeaderText = "N°Refuge";
+            this.numrefuge.Name = "numrefuge";
+            this.numrefuge.ReadOnly = true;
             // 
             // Coulpeau
             // 
@@ -1725,6 +1745,7 @@
             this.DatePicker_Naiss_modif_ref.Name = "DatePicker_Naiss_modif_ref";
             this.DatePicker_Naiss_modif_ref.Size = new System.Drawing.Size(168, 20);
             this.DatePicker_Naiss_modif_ref.TabIndex = 18;
+            this.DatePicker_Naiss_modif_ref.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.DatePicker_Naiss_modif_ref.ValueChanged += new System.EventHandler(this.DatePicker_Naiss_modif_ref_ValueChanged);
             // 
             // rdn_Femme_Modif_ref
@@ -2244,9 +2265,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Prenom;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sexe;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateNaiss;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numrefuge;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Taille;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nationalite;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Taille;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numrefuge;
         private System.Windows.Forms.DataGridViewTextBoxColumn Coulpeau;
         private System.Windows.Forms.DataGridViewTextBoxColumn coulyeux;
         private System.Windows.Forms.DataGridViewTextBoxColumn coulchev;
