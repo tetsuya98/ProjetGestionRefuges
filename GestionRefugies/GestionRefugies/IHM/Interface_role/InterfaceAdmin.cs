@@ -298,17 +298,9 @@ namespace GestionRefugies
         private void btn_AjoutM_Click_1(object sender, EventArgs e)
         {
             // ce if est degueulasse ... désolé
-            if ((check_AgentAccueil.Checked || check_Magasinier.Checked || checkBox1.Checked) && Txt_NomM.Text != "Nom" && Txt_NomM.Text != "Nom Incorrect" && Txt_PrenomM.Text != "Prenom" && Txt_PrenomM.Text != "Prenom Incorrect" && Txt_MDPM.Text != "Mot de passe" && Txt_MDPM.Text != "Mot de passe Incorrect" && list_NationM.Text != "" && (rdn_FemmeM.Checked == true || rdn_HommeM.Checked == true))
+            if ((check_AgentAccueil.Checked || check_Magasinier.Checked || checkBox1.Checked) && Txt_NomM.Text != "Nom" && Txt_NomM.Text != "Nom Incorrect" && Txt_PrenomM.Text != "Prenom" && Txt_PrenomM.Text != "Prenom Incorrect" && Txt_MDPM.Text != "Mot de passe" && Txt_MDPM.Text != "Mot de passe Incorrect" )
             {
-                String sex;
-                if (rdn_FemmeM.Checked == true)
-                {
-                    sex = "Femme";
-                }
-                else
-                {
-                    sex = "Homme";
-                }
+                
 
                 if (checkBox1.Checked)
                 {
@@ -439,22 +431,6 @@ namespace GestionRefugies
                     this.Txt_MDPM.ForeColor = System.Drawing.Color.Red;
                     Txt_MDPM.Text = "Mot de Passe Incorrect";
                 }
-                if (list_NationM.Text == "")
-                {
-                    lbl_errNationM.Visible = true;
-                }
-                else
-                {
-                    lbl_errNationM.Visible = false;
-                }
-                if (rdn_HommeM.Checked == false && rdn_FemmeM.Checked == false)
-                {
-                    lbl_errSexM.Visible = true;
-                }
-                else
-                {
-                    lbl_errSexM.Visible = false;
-                }
                 if (!check_AgentAccueil.Checked && !check_Magasinier.Checked)
                 {
                     lbl_errRole.Visible = true;
@@ -467,21 +443,7 @@ namespace GestionRefugies
         }
         #endregion
         
-        #region Datepicker_DateNaiss
         
-        private void DatePicker_NaissM_ValueChanged_1(object sender, EventArgs e)
-        {
-            if (DatePicker_NaissM.Value >= DateTime.Now)
-            {
-                DatePicker_NaissM.Value = DateTime.Now;
-            }
-        }
-
-
-
-
-        #endregion
-
         #endregion
 
         #region tabPageModif/Suppr_Ref
