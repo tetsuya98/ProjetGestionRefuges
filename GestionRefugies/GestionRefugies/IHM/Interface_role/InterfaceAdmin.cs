@@ -35,7 +35,37 @@ namespace GestionRefugies
         }
 
 
-        #region Maj des Champs
+        #region Maj des Champs et label_erreur
+
+        private void Maj_labelerr_ajoutref()
+        {
+            Lbl_err_Sexe.Visible = false;
+            Lbl_ErrNation.Visible = false;
+            lbl_err_allerg_ajoutref.Visible = false;
+            lbl_err_bless_ajoutref.Visible = false;
+            lbl_err_coulchev_ajoutref.Visible = false;
+            lbl_err_coulpeau_ajoutref.Visible = false;
+            lbl_err_coulyeux_ajoutref.Visible = false;
+            lbl_err_handi_ajoutref.Visible = false;
+            lbl_err_typchev_ajoutref.Visible = false;
+        }
+
+        private void Maj_labelerr_modifref()
+        {
+            lbl_err_sex_modif_ref.Visible = false;
+            lbl_err_nation_modif_ref.Visible = false;
+            lbl_err_allerg_modifref.Visible = false;
+            lbl_err_bless_modif_ref.Visible = false;
+            lbl_err_coulpeau_modif_ref.Visible = false;
+            lbl_err_coulchev_modif_ref.Visible = false;
+            lbl_err_coulyeux_modif_ref.Visible = false;
+            lbl_err_typchev_modif_ref.Visible = false;
+            lbl_err_handi_modif_ref.Visible = false;
+            lbl_err_champs_modifref.Visible = false;
+            lbl_err_btn_modif_ref.Visible = false;
+            lbl_errsupp_modif_ref.Visible = false;
+        }
+
         private void Maj_Champs_modifref()
         {
             txt_allerg_modifref.Text = null;
@@ -53,6 +83,7 @@ namespace GestionRefugies
             list_nation_modif_ref.Text = null;
             rdn_Femme_Modif_ref.Checked = false;
             rdn_Homme_Modif_ref.Checked = false;
+            DatePicker_Naiss_modif_ref.Value = new DateTime(1900,01,01);
             num_refugeref_modif_ref.Value = 0;
             num_taille_modifref.Value = 0;
 
@@ -75,6 +106,7 @@ namespace GestionRefugies
             List_Nationalite.Text = null;
             RdBtn_Femme.Checked = false;
             RdBtn_Homme.Checked = false;
+            DatePicker_DatNaiss.Value = DateTime.Today;
             num_RefugeRef.Value = 1;
             num_taille_ajoutref.Value = 1;
         }
@@ -109,46 +141,8 @@ namespace GestionRefugies
         }
         #endregion
 
-        #region restrictions
-        private void tabControl1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            // Check Credentials Here
-
-            if ((connected_user.Roles.Adminnistrateur == null))
-            {
-
-                //save de la page selectionné avant les test
-                TabPage selectPage = new TabPage();
-                selectPage = tabControl1.SelectedTab;
-
-                //test des droit d'accée de l'individu
-                if ((connected_user.Roles.Agent == null) && ((tabControl1.SelectedTab == tabPageAjoutRef) || (tabControl1.SelectedTab == tabPageAjoutGérant) || (tabControl1.SelectedTab == tabPagemodifGerant) || (tabControl1.SelectedTab == tabPageModifRef)))
-                {
-                    tabControl1.SelectedTab = tabPageAccueil;
-                    MessageBox.Show("Unable to load tab. You have insufficient access privileges.");
-                }
-                else
-                {
-                    tabControl1.SelectedTab = selectPage;
-                }
-
-                if ((connected_user.Roles.Magasinier == null) && (tabControl1.SelectedTab == tabPageStock))
-                {
-                    tabControl1.SelectedTab = tabPageAccueil;
-                    MessageBox.Show("Unable to load tab. You have insufficient access privileges.");
-
-                }
-
-            }
-
-
-
-
-        }
-        #endregion
-
-
-
+       
+        
         #region tabPageAjoutRefugié
 
         #region Txt_Nom
@@ -209,6 +203,7 @@ namespace GestionRefugies
         {
 
             // ce if est degueulasse ... désolé
+            
 
             if (txt_typchev_ajoutref.Text != "" &&
                 txt_coulpeau_ajoutref.Text != "" &&
@@ -322,24 +317,31 @@ namespace GestionRefugies
                 }
                 if (RdBtn_Homme.Checked == false && RdBtn_Femme.Checked == false)
                 {
-                    Lbl_Sexe.Visible = true;
+                    Lbl_err_Sexe.Visible = true;
                 }
                 else
                 {
-                    Lbl_Sexe.Visible = false;
+                    Lbl_err_Sexe.Visible = false;
                 }
             }
         }
         #endregion
 
+        #region btn_reinit
+        private void btn_reinit_ajoutref_Click(object sender, EventArgs e)
+        {
+            Maj_labelerr_ajoutref();
+            Maj_Champs_ajoutref();
+        } 
+        #endregion
 
         #region Datepicker_DateNaiss
         private void DatePicker_DatNaiss_ValueChanged(object sender, EventArgs e)
         {
 
-            if (DatePicker_DatNaiss.Value >= DateTime.Now)
+            if (DatePicker_DatNaiss.Value >= DateTime.Today)
             {
-                DatePicker_DatNaiss.Value = DateTime.Now;
+                DatePicker_DatNaiss.Value = DateTime.Today;
             }
         }
 
@@ -627,14 +629,31 @@ namespace GestionRefugies
         private void txt_handi_modifref_TextChanged(object sender, EventArgs e)
         {
             lbl_err_handi_modif_ref.Visible = false;
+        }
+        private void rdn_Femme_Modif_ref_CheckedChanged(object sender, EventArgs e)
+        {
+            lbl_err_sex_modif_ref.Visible = false;
+        }
+
+        private void rdn_Homme_Modif_ref_CheckedChanged(object sender, EventArgs e)
+        {
+            lbl_err_sex_modif_ref.Visible = false;
+        }
+
+        #endregion
+
+
+        #region Boutons Reinitialiser Rechercher Modifier et Supprimer refugié
+
+        #region btn_reinit
+        private void btn_reinit_modifref_Click(object sender, EventArgs e)
+        {
+            Maj_Champs_modifref();
+            Maj_labelerr_modifref();
+            Maj_data_modifRef();
         } 
         #endregion
-        
 
-        #region Boutons Recercher Modifier et Supprimer refugié
-
-
-        
 
         #region btn recherche
         private void btn_rechercher_modifref_Click(object sender, EventArgs e)
@@ -752,7 +771,13 @@ namespace GestionRefugies
             }
             else
             {
+                if (DataGrid_modif_ref.SelectedRows.Count != 1)
+                {
+                    lbl_err_btn_modif_ref.Visible = true;
+                }
+
                 lbl_err_champs_modifref.Visible = true;
+
                 if (txt_allerg_modifref.Text == "")
                 {
                     lbl_err_allerg_modifref.Visible = true;
@@ -844,31 +869,40 @@ namespace GestionRefugies
         private void btn_Suppr_ref_Click(object sender, EventArgs e)
         {
 
-            if (DataGrid_modif_ref.SelectedRows.Count > 1)
+            if (DataGrid_modif_ref.SelectedRows.Count == 0)
             {
-                var result = MessageBox.Show("Voulez vous vraiment supprimer les " + DataGrid_modif_ref.SelectedRows.Count + "utilisateurs ", " ", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
-                {
-                    foreach (System.Windows.Forms.DataGridViewRow refugier in DataGrid_modif_ref.SelectedRows)
-                    {
-                        if (Refugier.delete((int.Parse(refugier.Cells[0].Value.ToString()))) == true)
-                        {
-                            Maj_data_modifRef();
-                        }
-                    }
-                }
+                lbl_errsupp_modif_ref.Visible = true;
             }
             else
             {
-                foreach (System.Windows.Forms.DataGridViewRow refugier in DataGrid_modif_ref.SelectedRows)
+                lbl_errsupp_modif_ref.Visible = false;
+
+                if (DataGrid_modif_ref.SelectedRows.Count > 1)
                 {
-                    var result = MessageBox.Show("Voulez vous vraiment supprimer l'utilisateur " + refugier.Cells[1].Value + " " + refugier.Cells[2].Value, " ", MessageBoxButtons.YesNo);
+                    var result = MessageBox.Show("Voulez vous vraiment supprimer les " + DataGrid_modif_ref.SelectedRows.Count + "utilisateurs ", " ", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
                     {
-
-                        if (Refugier.delete((int.Parse(refugier.Cells[0].Value.ToString()))) == true)
+                        foreach (System.Windows.Forms.DataGridViewRow refugier in DataGrid_modif_ref.SelectedRows)
                         {
-                            Maj_data_modifRef();
+                            if (Refugier.delete((int.Parse(refugier.Cells[0].Value.ToString()))) == true)
+                            {
+                                Maj_data_modifRef();
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (System.Windows.Forms.DataGridViewRow refugier in DataGrid_modif_ref.SelectedRows)
+                    {
+                        var result = MessageBox.Show("Voulez vous vraiment supprimer l'utilisateur " + refugier.Cells[1].Value + " " + refugier.Cells[2].Value, " ", MessageBoxButtons.YesNo);
+                        if (result == DialogResult.Yes)
+                        {
+
+                            if (Refugier.delete((int.Parse(refugier.Cells[0].Value.ToString()))) == true)
+                            {
+                                Maj_data_modifRef();
+                            }
                         }
                     }
                 }
@@ -966,8 +1000,12 @@ namespace GestionRefugies
 
 
 
+        #region Se qui se passe au load des pages
+
+
+        #region Maj des données 
         /// <summary>
-        /// modifie la datagridview au load de la tabpagemodifref
+        /// remet a jour les données et labels des tabpages lorqu'on clique dessus
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -975,19 +1013,62 @@ namespace GestionRefugies
         {
             if (tabControl1.SelectedTab == tabPageModifRef)
             {
-                //faire un select()
-                Maj_data_modifRef();
-                Maj_Champs_modifref();
                 
+                Maj_data_modifRef();
+                Maj_labelerr_modifref();
+                Maj_Champs_modifref();
+
             }
 
             if (tabControl1.SelectedTab == tabPageAjoutRef)
             {
+                Maj_labelerr_ajoutref();
                 Maj_Champs_ajoutref();
             }
-        }
+        } 
+        #endregion
 
-       
+        #region restrictions
+        private void tabControl1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            // Check Credentials Here
+
+            if ((connected_user.Roles.Adminnistrateur == null))
+            {
+
+                //save de la page selectionné avant les test
+                TabPage selectPage = new TabPage();
+                selectPage = tabControl1.SelectedTab;
+
+                //test des droit d'accée de l'individu
+                if ((connected_user.Roles.Agent == null) && ((tabControl1.SelectedTab == tabPageAjoutRef) || (tabControl1.SelectedTab == tabPageAjoutGérant) || (tabControl1.SelectedTab == tabPagemodifGerant) || (tabControl1.SelectedTab == tabPageModifRef)))
+                {
+                    tabControl1.SelectedTab = tabPageAccueil;
+                    MessageBox.Show("Unable to load tab. You have insufficient access privileges.");
+                }
+                else
+                {
+                    tabControl1.SelectedTab = selectPage;
+                }
+
+                if ((connected_user.Roles.Magasinier == null) && (tabControl1.SelectedTab == tabPageStock))
+                {
+                    tabControl1.SelectedTab = tabPageAccueil;
+                    MessageBox.Show("Unable to load tab. You have insufficient access privileges.");
+
+                }
+
+            }
+
+
+
+
+        }
+        #endregion
+
+        #endregion
+
+
     }
 
 }
