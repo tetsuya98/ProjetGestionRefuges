@@ -527,13 +527,22 @@ namespace GestionRefugies
                 }
                 else { sex = 1; }
 
-                if (optdatenaissn == refugier.DateNais | optdatenaissn == DateTime.Today | optdatenaissn == new DateTime())
+
+                if (optdatenaissn == new DateTime(1900, 01, 01))
                 {
-                    date = 0;
+                    date = 2;
                 }
                 else
                 {
-                    date = 1;
+                    if (optdatenaissn == refugier.DateNais)
+                    {
+                        date = 0;
+                    }
+                    else
+                    {
+                        date = 1;
+                        System.Diagnostics.Debug.WriteLine(DateTime.Now);
+                    }
                 }
 
                 if (optnat.Length <= refugier.Nationalite.Length)
@@ -641,26 +650,10 @@ namespace GestionRefugies
                 }
                 else { eyes = 1; }
 
-                if (optHairColor.Length <= refugier.couleurCheveux.Length)
-                {
-                    if (optHairColor.ToLower() == refugier.couleurCheveux.ToLower().Substring(0, optHairColor.Length) & optHairColor.Length >= 0)
-                    {
-                        HairCol = 0;
-                        if (optHairColor.Length == 0)
-                        {
-                            HairCol = 2;
-                        }
-                    }
-                    else
-                    {
-                        HairCol = 1;
-                    }
-                }
-                else { HairCol = 1; }
 
                 if (optwound.Length <= refugier.blessure.Length)
                 {
-                    if (optwound.ToLower() == refugier.blessure.ToLower().Substring(0,optwound.Length) & optwound.Length >= 0)
+                    if (optwound.ToLower() == refugier.blessure.ToLower().Substring(0, optwound.Length) & optwound.Length >= 0)
                     {
                         wound = 0;
                         if (optwound.Length == 0)
@@ -676,7 +669,7 @@ namespace GestionRefugies
                 else { wound = 1; }
 
 
-                if (optHairColor.Length <= refugier.couleurCheveux.Length)
+                if (optAllerg.Length <= refugier.Allergie.Length)
                 {
                     if (optAllerg.ToLower() == refugier.Allergie.ToLower().Substring(0, optAllerg.Length) & optAllerg.Length >= 0)
                     {
@@ -715,7 +708,7 @@ namespace GestionRefugies
                     if (optOther.ToLower() == refugier.Autre.ToLower().Substring(0, optOther.Length) & optOther.Length >= 0)
                     {
                         other = 0;
-                        if (optHairColor.Length == 0)
+                        if (optOther.Length == 0)
                         {
                             other = 2;
                         }
@@ -737,16 +730,14 @@ namespace GestionRefugies
                 //2 = rien mis
                 //0 = mis et ok
 
-                if (nom != 2 | prenom != 2 | nat != 2 | sex != 2 | date != 2 | adresse != 2 | taille != 2 | Skin != 2 | HairCol != 2 | HairType != 2 | eyes != 2 | wound != 2 | allerg != 2)
+                if (nom != 1 & prenom != 1 & nat != 1 & sex != 1 & date != 1 & adresse != 1 & taille != 1 & Skin != 1 & HairCol != 1 & HairType != 1 & eyes != 1 & wound != 1 & allerg != 1 & handi != 1 & other != 1)
                 {
-                    if (nom != 1 & prenom != 1 & nat != 1 & sex != 1 & date != 1 | adresse != 1 | taille != 1 | Skin != 1 | HairCol != 1 | HairType != 1 | eyes != 1 | wound != 1 | allerg != 1)
-                    {
-                        liste.Add(refugier);
-                    }
+                    liste.Add(refugier);
+                    System.Diagnostics.Debug.WriteLine("Ref ADDED");
                 }
                 else
                 {
-                    liste.Add(refugier);
+                    System.Diagnostics.Debug.WriteLine("Ref non ADDED");
                 }
                 
 
