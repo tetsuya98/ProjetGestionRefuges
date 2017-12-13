@@ -547,12 +547,23 @@ namespace GestionRefugies
             {
                 sexe = "homme";
             }
-            if (radioButton2.Checked)
+            else if (radioButton2.Checked)
             {
                 sexe = "femme";
             }
-            else { sexe = " ? "};
-            refugiers = Rechercher(refugiers, maskedTextBox1.Text, maskedTextBox2.Text, sexe,dateTimePicker1.Value, comboBox2.);
+            else { sexe = " ? "; }
+            refugiers = Rechercher(refugiers, maskedTextBox1.Text, maskedTextBox2.Text, sexe,dateTimePicker1.Value, comboBox2.SelectedItem);
+            int i = 1;
+            foreach ( Refugier refugier in refugiers)
+            {
+                dataGridView1.Rows.Add(i,refugier.Nom , refugier.Prenom, refugier.Nationalite, refugier.Sexe, refugier.Adresse, refugier.DateNais );
+                i++;
+            }
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -113,6 +113,14 @@
             this.Txt_nom_modif_gerant = new System.Windows.Forms.MaskedTextBox();
             this.tabPageStock = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -139,14 +147,6 @@
             this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPageAccueil.SuspendLayout();
             this.tabPageAjoutRef.SuspendLayout();
@@ -1215,6 +1215,76 @@
             this.tabPage1.TabIndex = 6;
             this.tabPage1.Text = "Recherche";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // maskedTextBox3
+            // 
+            this.maskedTextBox3.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.maskedTextBox3.Location = new System.Drawing.Point(17, 173);
+            this.maskedTextBox3.Name = "maskedTextBox3";
+            this.maskedTextBox3.Size = new System.Drawing.Size(149, 20);
+            this.maskedTextBox3.TabIndex = 41;
+            this.maskedTextBox3.Text = "Adresse";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(101, 225);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(82, 20);
+            this.textBox5.TabIndex = 40;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(40, 316);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(102, 28);
+            this.button1.TabIndex = 39;
+            this.button1.Text = "afficher";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(101, 249);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(82, 20);
+            this.textBox6.TabIndex = 36;
+            // 
+            // textBox4
+            // 
+            this.textBox4.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBox4.Location = new System.Drawing.Point(101, 199);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(82, 20);
+            this.textBox4.TabIndex = 34;
+            this.textBox4.Text = "handicap";
+            // 
+            // textBox3
+            // 
+            this.textBox3.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBox3.Location = new System.Drawing.Point(6, 249);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(89, 20);
+            this.textBox3.TabIndex = 33;
+            this.textBox3.Text = "hair texture";
+            // 
+            // textBox2
+            // 
+            this.textBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBox2.Location = new System.Drawing.Point(6, 225);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(89, 20);
+            this.textBox2.TabIndex = 32;
+            this.textBox2.Text = "hair color";
+            // 
+            // textBox1
+            // 
+            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBox1.Location = new System.Drawing.Point(6, 199);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(89, 20);
+            this.textBox1.TabIndex = 31;
+            this.textBox1.Text = "eyes color";
             // 
             // label7
             // 
@@ -1432,75 +1502,6 @@
             // 
             this.Column18.HeaderText = "autre";
             this.Column18.Name = "Column18";
-            // 
-            // textBox1
-            // 
-            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox1.Location = new System.Drawing.Point(6, 199);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(89, 20);
-            this.textBox1.TabIndex = 31;
-            this.textBox1.Text = "eyes color";
-            // 
-            // textBox2
-            // 
-            this.textBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox2.Location = new System.Drawing.Point(6, 225);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(89, 20);
-            this.textBox2.TabIndex = 32;
-            this.textBox2.Text = "hair color";
-            // 
-            // textBox3
-            // 
-            this.textBox3.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox3.Location = new System.Drawing.Point(6, 249);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(89, 20);
-            this.textBox3.TabIndex = 33;
-            this.textBox3.Text = "hair texture";
-            // 
-            // textBox4
-            // 
-            this.textBox4.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox4.Location = new System.Drawing.Point(101, 199);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(82, 20);
-            this.textBox4.TabIndex = 34;
-            this.textBox4.Text = "handicap";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(101, 249);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(82, 20);
-            this.textBox6.TabIndex = 36;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(40, 316);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 28);
-            this.button1.TabIndex = 39;
-            this.button1.Text = "afficher";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(101, 225);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(82, 20);
-            this.textBox5.TabIndex = 40;
-            // 
-            // maskedTextBox3
-            // 
-            this.maskedTextBox3.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.maskedTextBox3.Location = new System.Drawing.Point(17, 173);
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(149, 20);
-            this.maskedTextBox3.TabIndex = 41;
-            this.maskedTextBox3.Text = "Adresse";
             // 
             // Ajout
             // 
