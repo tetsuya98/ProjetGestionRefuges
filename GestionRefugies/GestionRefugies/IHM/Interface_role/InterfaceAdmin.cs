@@ -552,12 +552,34 @@ namespace GestionRefugies
                 sexe = "femme";
             }
             else { sexe = " ? "; }
-            refugiers = Rechercher(refugiers, maskedTextBox1.Text, maskedTextBox2.Text, sexe,dateTimePicker1.Value, comboBox2.SelectedItem);
-            int i = 1;
+
+            int adresse;
+            adresse = Convert.ToInt32(textBox1.Text);
+            adresse = int.Parse(textBox1.Text);
+
+            int taille;
+            taille = Convert.ToInt32(textBox2.Text);
+            taille = int.Parse(textBox2.Text);
+
+            refugiers = Refugier.Rechercher( refugiers,
+                                    maskedTextBox1.Text,
+                                    maskedTextBox2.Text,
+                                    sexe,
+                                    dateTimePicker1.Value,
+                                    comboBox2.SelectedText,
+                                    adresse,
+                                    taille,
+                                    textBox3.Text,
+                                    textBox4.Text,
+                                    textBox5.Text,
+                                    textBox6.Text,
+                                    textBox7.Text);
+            int i = 0;
             foreach ( Refugier refugier in refugiers)
             {
-                dataGridView1.Rows.Add(i,refugier.Nom , refugier.Prenom, refugier.Nationalite, refugier.Sexe, refugier.Adresse, refugier.DateNais );
                 i++;
+                dataGridView1.Rows.Add(i,refugier.Nom , refugier.Prenom, refugier.Sexe, refugier.DateNais, refugier.Nationalite, refugier.Adresse, refugier.Taille , refugier.CouleurPeau , refugier.CouleurCheveux , refugier.TypeCheveux, refugier.CouleurYeux, refugier.Blessure, refugier.Allergie, refugier.Handicap, refugier.Autre );
+               
             }
         }
 

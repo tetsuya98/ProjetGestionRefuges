@@ -113,6 +113,7 @@
             this.Txt_nom_modif_gerant = new System.Windows.Forms.MaskedTextBox();
             this.tabPageStock = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.textBox7 = new System.Windows.Forms.TextBox();
             this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -130,19 +131,20 @@
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -1192,6 +1194,9 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.textBox9);
+            this.tabPage1.Controls.Add(this.textBox8);
+            this.tabPage1.Controls.Add(this.textBox7);
             this.tabPage1.Controls.Add(this.maskedTextBox3);
             this.tabPage1.Controls.Add(this.textBox5);
             this.tabPage1.Controls.Add(this.button1);
@@ -1217,21 +1222,32 @@
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // textBox7
+            // 
+            this.textBox7.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBox7.Location = new System.Drawing.Point(101, 225);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(82, 20);
+            this.textBox7.TabIndex = 42;
+            this.textBox7.Text = "allergie";
+            // 
             // maskedTextBox3
             // 
             this.maskedTextBox3.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.maskedTextBox3.Location = new System.Drawing.Point(17, 173);
+            this.maskedTextBox3.Location = new System.Drawing.Point(6, 173);
             this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(149, 20);
+            this.maskedTextBox3.Size = new System.Drawing.Size(89, 20);
             this.maskedTextBox3.TabIndex = 41;
             this.maskedTextBox3.Text = "Adresse";
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(101, 225);
+            this.textBox5.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBox5.Location = new System.Drawing.Point(101, 173);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(82, 20);
             this.textBox5.TabIndex = 40;
+            this.textBox5.Text = "eyes color";
             // 
             // button1
             // 
@@ -1245,19 +1261,21 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(101, 249);
+            this.textBox6.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBox6.Location = new System.Drawing.Point(101, 199);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(82, 20);
             this.textBox6.TabIndex = 36;
+            this.textBox6.Text = "wound";
             // 
             // textBox4
             // 
             this.textBox4.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox4.Location = new System.Drawing.Point(101, 199);
+            this.textBox4.Location = new System.Drawing.Point(6, 275);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(82, 20);
+            this.textBox4.Size = new System.Drawing.Size(89, 20);
             this.textBox4.TabIndex = 34;
-            this.textBox4.Text = "handicap";
+            this.textBox4.Text = "hair type";
             // 
             // textBox3
             // 
@@ -1266,7 +1284,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(89, 20);
             this.textBox3.TabIndex = 33;
-            this.textBox3.Text = "hair texture";
+            this.textBox3.Text = "hair color";
             // 
             // textBox2
             // 
@@ -1275,7 +1293,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(89, 20);
             this.textBox2.TabIndex = 32;
-            this.textBox2.Text = "hair color";
+            this.textBox2.Text = "skin";
             // 
             // textBox1
             // 
@@ -1284,12 +1302,12 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(89, 20);
             this.textBox1.TabIndex = 31;
-            this.textBox1.Text = "eyes color";
+            this.textBox1.Text = "lenght";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 91);
+            this.label7.Location = new System.Drawing.Point(3, 130);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 13);
             this.label7.TabIndex = 30;
@@ -1298,7 +1316,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(14, 131);
+            this.label8.Location = new System.Drawing.Point(3, 91);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(98, 13);
             this.label8.TabIndex = 29;
@@ -1339,14 +1357,14 @@
             "Senegalais",
             "Sud-Africain",
             "Autre"});
-            this.comboBox2.Location = new System.Drawing.Point(17, 107);
+            this.comboBox2.Location = new System.Drawing.Point(12, 146);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(148, 21);
             this.comboBox2.TabIndex = 28;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(6, 147);
+            this.dateTimePicker1.Location = new System.Drawing.Point(12, 107);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(177, 20);
             this.dateTimePicker1.TabIndex = 27;
@@ -1399,16 +1417,15 @@
             this.Column2,
             this.Column3,
             this.Column4,
-            this.Column5,
             this.Column6,
-            this.Column7,
             this.Column8,
+            this.Column5,
+            this.Column7,
             this.Column9,
             this.Column10,
             this.Column11,
             this.Column12,
             this.Column13,
-            this.Column14,
             this.Column15,
             this.Column16,
             this.Column17,
@@ -1417,6 +1434,24 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(487, 347);
             this.dataGridView2.TabIndex = 0;
+            // 
+            // textBox8
+            // 
+            this.textBox8.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBox8.Location = new System.Drawing.Point(101, 251);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(82, 20);
+            this.textBox8.TabIndex = 43;
+            this.textBox8.Text = "handicap";
+            // 
+            // textBox9
+            // 
+            this.textBox9.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBox9.Location = new System.Drawing.Point(101, 275);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(82, 20);
+            this.textBox9.TabIndex = 44;
+            this.textBox9.Text = "other";
             // 
             // Column2
             // 
@@ -1433,25 +1468,25 @@
             this.Column4.HeaderText = "Nom";
             this.Column4.Name = "Column4";
             // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "nationalité";
-            this.Column5.Name = "Column5";
-            // 
             // Column6
             // 
             this.Column6.HeaderText = "Sexe";
             this.Column6.Name = "Column6";
             // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "adresse";
-            this.Column7.Name = "Column7";
-            // 
             // Column8
             // 
             this.Column8.HeaderText = "Date de naissance";
             this.Column8.Name = "Column8";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "nationalité";
+            this.Column5.Name = "Column5";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "adresse";
+            this.Column7.Name = "Column7";
             // 
             // Column9
             // 
@@ -1477,11 +1512,6 @@
             // 
             this.Column13.HeaderText = "couleurYeux";
             this.Column13.Name = "Column13";
-            // 
-            // Column14
-            // 
-            this.Column14.HeaderText = "Column14";
-            this.Column14.Name = "Column14";
             // 
             // Column15
             // 
@@ -1626,23 +1656,6 @@
         private System.Windows.Forms.Label label_AgentAccess;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
         private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Label label7;
@@ -1659,5 +1672,24 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
     }
 }
