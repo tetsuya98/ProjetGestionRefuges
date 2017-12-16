@@ -369,8 +369,115 @@ namespace GestionRefugies
                 return null;
             }
 
+
         }
 
+        #endregion
+
+        #region Fonction recherche user
+        public static List<User> Rechercher(List<User> users,
+            string optName = "",
+            string optPrenom = "",
+            string optid = "",
+            bool optadmin = false,
+            bool optmaga = false,
+            bool optagent = false)
+        {
+            List<User> liste = new List<User>();
+
+            foreach (var user in users)
+            {
+                int nom = 2;
+                int prenom = 2;
+                int id = 2;
+                int role = 2;
+                Roles roles = new Roles(optadmin, optagent, optmaga);
+
+                if (optName.Length <= user.Nom.Length)
+                {
+                    if (optName.ToLower() == user.Nom.ToLower().Substring(0, optName.Length) & optName.Length >= 0)
+                    {
+                        nom = 0;
+                        if (optName.Length == 0)
+                        {
+                            nom = 2;
+                        }
+                    }
+                    else
+                    {
+                        nom = 1;
+                    }
+                }
+                else { nom = 1; }
+
+                if (optPrenom.Length <= user.Prenom.Length)
+                {
+                    if (optPrenom.ToLower() == user.Prenom.ToLower().Substring(0, optPrenom.Length) & optPrenom.Length >= 0)
+                    {
+                        prenom = 0;
+                        if (optPrenom.Length == 0)
+                        {
+                            prenom = 2;
+                        }
+                    }
+                    else
+                    {
+                        prenom = 1;
+                    }
+                }
+                else { prenom = 1; }
+
+                if (optid.Length <= user.Id.Length)
+                {
+                    if (optid.ToLower() == user.Id.ToLower().Substring(0, optid.Length) & optid.Length >= 0)
+                    {
+                        id = 0;
+                        if (optid.Length == 0)
+                        {
+                            id = 2;
+                        }
+                    }
+                    else
+                    {
+                        id = 1;
+                    }
+                }
+                else { id = 1; }
+
+                if (user.Roles == roles)
+                {
+                    role = 0;
+                }
+                else { role = 1; }
+
+
+
+
+
+
+
+
+
+
+                //1 = pas bon
+                //2 = rien mis
+                //0 = mis et ok
+
+                if (nom != 1 & prenom != 1 & id != 1 & role != 1)
+                {
+                    liste.Add(user);
+                    System.Diagnostics.Debug.WriteLine("User ADDED");
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine("User non ADDED");
+                }
+
+
+            }
+
+            return liste;
+        }
         #endregion
     }
 }

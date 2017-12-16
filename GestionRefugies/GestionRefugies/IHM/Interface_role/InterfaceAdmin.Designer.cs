@@ -41,6 +41,9 @@ namespace GestionRefugies
             this.label_AgentAccess = new System.Windows.Forms.Label();
             this.label_nameU = new System.Windows.Forms.Label();
             this.tabPageAjoutRef = new System.Windows.Forms.TabPage();
+            this.btn_reinit_ajoutref = new System.Windows.Forms.Button();
+            this.Txt_Prenom = new System.Windows.Forms.MaskedTextBox();
+            this.Txt_Nom = new System.Windows.Forms.MaskedTextBox();
             this.lbl_err_typchev_ajoutref = new System.Windows.Forms.Label();
             this.lbl_typchev_ajoutref = new System.Windows.Forms.Label();
             this.txt_typchev_ajoutref = new System.Windows.Forms.ComboBox();
@@ -88,6 +91,16 @@ namespace GestionRefugies
             this.Txt_MDPM = new System.Windows.Forms.MaskedTextBox();
             this.Txt_NomM = new System.Windows.Forms.MaskedTextBox();
             this.tabPageModifRef = new System.Windows.Forms.TabPage();
+            this.btn_reinit_modifref = new System.Windows.Forms.Button();
+            this.lbl_err_handi_modif_ref = new System.Windows.Forms.Label();
+            this.lbl_err_allerg_modifref = new System.Windows.Forms.Label();
+            this.lbl_err_typchev_modif_ref = new System.Windows.Forms.Label();
+            this.lbl_err_bless_modif_ref = new System.Windows.Forms.Label();
+            this.lbl_err_coulyeux_modif_ref = new System.Windows.Forms.Label();
+            this.lbl_err_coulchev_modif_ref = new System.Windows.Forms.Label();
+            this.lbl_err_coulpeau_modif_ref = new System.Windows.Forms.Label();
+            this.Txt_Prenom_Modifref = new System.Windows.Forms.MaskedTextBox();
+            this.Txt_Nom_Modifref = new System.Windows.Forms.MaskedTextBox();
             this.lbl_err_champs_modifref = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_typchev_modifref = new System.Windows.Forms.ComboBox();
@@ -114,6 +127,22 @@ namespace GestionRefugies
             this.num_refugeref_modif_ref = new System.Windows.Forms.NumericUpDown();
             this.btn_Suppr_ref = new System.Windows.Forms.Button();
             this.DataGrid_modif_ref = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sexe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateNaiss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nationalite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numrefug = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Taille = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Coulpeau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coulyeux = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coulchev = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typchev = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.blessure = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.allergie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.handicap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Autre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbl_err_nation_modif_ref = new System.Windows.Forms.Label();
             this.lbl_err_sex_modif_ref = new System.Windows.Forms.Label();
             this.btn_Modif_ref = new System.Windows.Forms.Button();
@@ -141,35 +170,7 @@ namespace GestionRefugies
             this.Txt_prenom_modif_gerant = new System.Windows.Forms.MaskedTextBox();
             this.Txt_nom_modif_gerant = new System.Windows.Forms.MaskedTextBox();
             this.tabPageStock = new System.Windows.Forms.TabPage();
-            this.Txt_Nom = new System.Windows.Forms.MaskedTextBox();
-            this.Txt_Prenom = new System.Windows.Forms.MaskedTextBox();
-            this.btn_reinit_ajoutref = new System.Windows.Forms.Button();
-            this.Txt_Nom_Modifref = new System.Windows.Forms.MaskedTextBox();
-            this.Txt_Prenom_Modifref = new System.Windows.Forms.MaskedTextBox();
-            this.lbl_err_coulpeau_modif_ref = new System.Windows.Forms.Label();
-            this.lbl_err_coulchev_modif_ref = new System.Windows.Forms.Label();
-            this.lbl_err_coulyeux_modif_ref = new System.Windows.Forms.Label();
-            this.lbl_err_bless_modif_ref = new System.Windows.Forms.Label();
-            this.lbl_err_typchev_modif_ref = new System.Windows.Forms.Label();
-            this.lbl_err_allerg_modifref = new System.Windows.Forms.Label();
-            this.lbl_err_handi_modif_ref = new System.Windows.Forms.Label();
-            this.btn_reinit_modifref = new System.Windows.Forms.Button();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sexe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateNaiss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nationalite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numrefug = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Taille = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Coulpeau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coulyeux = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coulchev = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typchev = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.blessure = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.allergie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.handicap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Autre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_recherche_modif_user = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPageAccueil.SuspendLayout();
             this.tabPageAjoutRef.SuspendLayout();
@@ -344,6 +345,34 @@ namespace GestionRefugies
             this.tabPageAjoutRef.Size = new System.Drawing.Size(1116, 549);
             this.tabPageAjoutRef.TabIndex = 0;
             this.tabPageAjoutRef.Text = "Ajouter un Refugié";
+            // 
+            // btn_reinit_ajoutref
+            // 
+            this.btn_reinit_ajoutref.Location = new System.Drawing.Point(707, 404);
+            this.btn_reinit_ajoutref.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_reinit_ajoutref.Name = "btn_reinit_ajoutref";
+            this.btn_reinit_ajoutref.Size = new System.Drawing.Size(193, 26);
+            this.btn_reinit_ajoutref.TabIndex = 43;
+            this.btn_reinit_ajoutref.Text = "reinitialiser";
+            this.btn_reinit_ajoutref.UseVisualStyleBackColor = true;
+            // 
+            // Txt_Prenom
+            // 
+            this.Txt_Prenom.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.Txt_Prenom.Location = new System.Drawing.Point(31, 69);
+            this.Txt_Prenom.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt_Prenom.Name = "Txt_Prenom";
+            this.Txt_Prenom.Size = new System.Drawing.Size(252, 22);
+            this.Txt_Prenom.TabIndex = 42;
+            // 
+            // Txt_Nom
+            // 
+            this.Txt_Nom.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.Txt_Nom.Location = new System.Drawing.Point(31, 39);
+            this.Txt_Nom.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt_Nom.Name = "Txt_Nom";
+            this.Txt_Nom.Size = new System.Drawing.Size(252, 22);
+            this.Txt_Nom.TabIndex = 41;
             // 
             // lbl_err_typchev_ajoutref
             // 
@@ -1011,6 +1040,120 @@ namespace GestionRefugies
             this.tabPageModifRef.Text = "Modifier/Supprimer Refugié";
             this.tabPageModifRef.Click += new System.EventHandler(this.tabPageModifRef_Click);
             // 
+            // btn_reinit_modifref
+            // 
+            this.btn_reinit_modifref.Location = new System.Drawing.Point(274, 475);
+            this.btn_reinit_modifref.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_reinit_modifref.Name = "btn_reinit_modifref";
+            this.btn_reinit_modifref.Size = new System.Drawing.Size(153, 28);
+            this.btn_reinit_modifref.TabIndex = 68;
+            this.btn_reinit_modifref.Text = "reinitialiser";
+            this.btn_reinit_modifref.UseVisualStyleBackColor = true;
+            // 
+            // lbl_err_handi_modif_ref
+            // 
+            this.lbl_err_handi_modif_ref.AutoSize = true;
+            this.lbl_err_handi_modif_ref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_handi_modif_ref.Location = new System.Drawing.Point(410, 252);
+            this.lbl_err_handi_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_err_handi_modif_ref.Name = "lbl_err_handi_modif_ref";
+            this.lbl_err_handi_modif_ref.Size = new System.Drawing.Size(13, 17);
+            this.lbl_err_handi_modif_ref.TabIndex = 67;
+            this.lbl_err_handi_modif_ref.Text = "*";
+            this.lbl_err_handi_modif_ref.Visible = false;
+            // 
+            // lbl_err_allerg_modifref
+            // 
+            this.lbl_err_allerg_modifref.AutoSize = true;
+            this.lbl_err_allerg_modifref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_allerg_modifref.Location = new System.Drawing.Point(414, 182);
+            this.lbl_err_allerg_modifref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_err_allerg_modifref.Name = "lbl_err_allerg_modifref";
+            this.lbl_err_allerg_modifref.Size = new System.Drawing.Size(13, 17);
+            this.lbl_err_allerg_modifref.TabIndex = 66;
+            this.lbl_err_allerg_modifref.Text = "*";
+            this.lbl_err_allerg_modifref.Visible = false;
+            // 
+            // lbl_err_typchev_modif_ref
+            // 
+            this.lbl_err_typchev_modif_ref.AutoSize = true;
+            this.lbl_err_typchev_modif_ref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_typchev_modif_ref.Location = new System.Drawing.Point(398, 130);
+            this.lbl_err_typchev_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_err_typchev_modif_ref.Name = "lbl_err_typchev_modif_ref";
+            this.lbl_err_typchev_modif_ref.Size = new System.Drawing.Size(13, 17);
+            this.lbl_err_typchev_modif_ref.TabIndex = 65;
+            this.lbl_err_typchev_modif_ref.Text = "*";
+            this.lbl_err_typchev_modif_ref.Visible = false;
+            // 
+            // lbl_err_bless_modif_ref
+            // 
+            this.lbl_err_bless_modif_ref.AutoSize = true;
+            this.lbl_err_bless_modif_ref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_bless_modif_ref.Location = new System.Drawing.Point(398, 55);
+            this.lbl_err_bless_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_err_bless_modif_ref.Name = "lbl_err_bless_modif_ref";
+            this.lbl_err_bless_modif_ref.Size = new System.Drawing.Size(13, 17);
+            this.lbl_err_bless_modif_ref.TabIndex = 64;
+            this.lbl_err_bless_modif_ref.Text = "*";
+            this.lbl_err_bless_modif_ref.Visible = false;
+            // 
+            // lbl_err_coulyeux_modif_ref
+            // 
+            this.lbl_err_coulyeux_modif_ref.AutoSize = true;
+            this.lbl_err_coulyeux_modif_ref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_coulyeux_modif_ref.Location = new System.Drawing.Point(210, 405);
+            this.lbl_err_coulyeux_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_err_coulyeux_modif_ref.Name = "lbl_err_coulyeux_modif_ref";
+            this.lbl_err_coulyeux_modif_ref.Size = new System.Drawing.Size(13, 17);
+            this.lbl_err_coulyeux_modif_ref.TabIndex = 63;
+            this.lbl_err_coulyeux_modif_ref.Text = "*";
+            this.lbl_err_coulyeux_modif_ref.Visible = false;
+            // 
+            // lbl_err_coulchev_modif_ref
+            // 
+            this.lbl_err_coulchev_modif_ref.AutoSize = true;
+            this.lbl_err_coulchev_modif_ref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_coulchev_modif_ref.Location = new System.Drawing.Point(210, 336);
+            this.lbl_err_coulchev_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_err_coulchev_modif_ref.Name = "lbl_err_coulchev_modif_ref";
+            this.lbl_err_coulchev_modif_ref.Size = new System.Drawing.Size(13, 17);
+            this.lbl_err_coulchev_modif_ref.TabIndex = 62;
+            this.lbl_err_coulchev_modif_ref.Text = "*";
+            this.lbl_err_coulchev_modif_ref.Visible = false;
+            // 
+            // lbl_err_coulpeau_modif_ref
+            // 
+            this.lbl_err_coulpeau_modif_ref.AutoSize = true;
+            this.lbl_err_coulpeau_modif_ref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_coulpeau_modif_ref.Location = new System.Drawing.Point(206, 266);
+            this.lbl_err_coulpeau_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_err_coulpeau_modif_ref.Name = "lbl_err_coulpeau_modif_ref";
+            this.lbl_err_coulpeau_modif_ref.Size = new System.Drawing.Size(13, 17);
+            this.lbl_err_coulpeau_modif_ref.TabIndex = 61;
+            this.lbl_err_coulpeau_modif_ref.Text = "*";
+            this.lbl_err_coulpeau_modif_ref.Visible = false;
+            // 
+            // Txt_Prenom_Modifref
+            // 
+            this.Txt_Prenom_Modifref.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.Txt_Prenom_Modifref.Location = new System.Drawing.Point(21, 50);
+            this.Txt_Prenom_Modifref.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt_Prenom_Modifref.Name = "Txt_Prenom_Modifref";
+            this.Txt_Prenom_Modifref.Size = new System.Drawing.Size(151, 22);
+            this.Txt_Prenom_Modifref.TabIndex = 60;
+            this.Txt_Prenom_Modifref.Text = "Prenom";
+            // 
+            // Txt_Nom_Modifref
+            // 
+            this.Txt_Nom_Modifref.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.Txt_Nom_Modifref.Location = new System.Drawing.Point(20, 11);
+            this.Txt_Nom_Modifref.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt_Nom_Modifref.Name = "Txt_Nom_Modifref";
+            this.Txt_Nom_Modifref.Size = new System.Drawing.Size(154, 22);
+            this.Txt_Nom_Modifref.TabIndex = 59;
+            this.Txt_Nom_Modifref.Text = "Nom";
+            // 
             // lbl_err_champs_modifref
             // 
             this.lbl_err_champs_modifref.AutoSize = true;
@@ -1365,6 +1508,105 @@ namespace GestionRefugies
             this.DataGrid_modif_ref.Size = new System.Drawing.Size(627, 483);
             this.DataGrid_modif_ref.TabIndex = 25;
             // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ID.Width = 50;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Nom";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Prenom
+            // 
+            this.Prenom.HeaderText = "Prenom";
+            this.Prenom.Name = "Prenom";
+            this.Prenom.ReadOnly = true;
+            // 
+            // Sexe
+            // 
+            this.Sexe.HeaderText = "Sexe";
+            this.Sexe.Name = "Sexe";
+            this.Sexe.ReadOnly = true;
+            // 
+            // DateNaiss
+            // 
+            this.DateNaiss.HeaderText = "Date de Naissance";
+            this.DateNaiss.Name = "DateNaiss";
+            this.DateNaiss.ReadOnly = true;
+            // 
+            // Nationalite
+            // 
+            this.Nationalite.HeaderText = "Nationalite";
+            this.Nationalite.Name = "Nationalite";
+            this.Nationalite.ReadOnly = true;
+            // 
+            // numrefug
+            // 
+            this.numrefug.HeaderText = "N° Refuge";
+            this.numrefug.Name = "numrefug";
+            this.numrefug.ReadOnly = true;
+            // 
+            // Taille
+            // 
+            this.Taille.HeaderText = "Taille";
+            this.Taille.Name = "Taille";
+            this.Taille.ReadOnly = true;
+            // 
+            // Coulpeau
+            // 
+            this.Coulpeau.HeaderText = "Couleur de peau";
+            this.Coulpeau.Name = "Coulpeau";
+            this.Coulpeau.ReadOnly = true;
+            // 
+            // coulyeux
+            // 
+            this.coulyeux.HeaderText = "Couleur des yeux";
+            this.coulyeux.Name = "coulyeux";
+            this.coulyeux.ReadOnly = true;
+            // 
+            // coulchev
+            // 
+            this.coulchev.HeaderText = "Couleur des cheveux";
+            this.coulchev.Name = "coulchev";
+            this.coulchev.ReadOnly = true;
+            // 
+            // typchev
+            // 
+            this.typchev.HeaderText = "Type de cheveux";
+            this.typchev.Name = "typchev";
+            this.typchev.ReadOnly = true;
+            // 
+            // blessure
+            // 
+            this.blessure.HeaderText = "Blessure";
+            this.blessure.Name = "blessure";
+            this.blessure.ReadOnly = true;
+            // 
+            // allergie
+            // 
+            this.allergie.HeaderText = "Allergie";
+            this.allergie.Name = "allergie";
+            this.allergie.ReadOnly = true;
+            // 
+            // handicap
+            // 
+            this.handicap.HeaderText = "Handicap";
+            this.handicap.Name = "handicap";
+            this.handicap.ReadOnly = true;
+            // 
+            // Autre
+            // 
+            this.Autre.HeaderText = "Autre";
+            this.Autre.Name = "Autre";
+            this.Autre.ReadOnly = true;
+            // 
             // lbl_err_nation_modif_ref
             // 
             this.lbl_err_nation_modif_ref.AutoSize = true;
@@ -1501,6 +1743,7 @@ namespace GestionRefugies
             // tabPagemodifGerant
             // 
             this.tabPagemodifGerant.BackColor = System.Drawing.Color.Transparent;
+            this.tabPagemodifGerant.Controls.Add(this.btn_recherche_modif_user);
             this.tabPagemodifGerant.Controls.Add(this.maskedTextBoxmodif_ger);
             this.tabPagemodifGerant.Controls.Add(this.Group_role_modif_gerant);
             this.tabPagemodifGerant.Controls.Add(this.btn_suppr_gerant);
@@ -1557,7 +1800,7 @@ namespace GestionRefugies
             // 
             this.check_Admin_modif_gerant.AutoSize = true;
             this.check_Admin_modif_gerant.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.check_Admin_modif_gerant.Location = new System.Drawing.Point(11, 52);
+            this.check_Admin_modif_gerant.Location = new System.Drawing.Point(6, 52);
             this.check_Admin_modif_gerant.Margin = new System.Windows.Forms.Padding(4);
             this.check_Admin_modif_gerant.Name = "check_Admin_modif_gerant";
             this.check_Admin_modif_gerant.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -1592,7 +1835,7 @@ namespace GestionRefugies
             // 
             // btn_suppr_gerant
             // 
-            this.btn_suppr_gerant.Location = new System.Drawing.Point(587, 342);
+            this.btn_suppr_gerant.Location = new System.Drawing.Point(170, 342);
             this.btn_suppr_gerant.Margin = new System.Windows.Forms.Padding(4);
             this.btn_suppr_gerant.Name = "btn_suppr_gerant";
             this.btn_suppr_gerant.Size = new System.Drawing.Size(144, 28);
@@ -1652,7 +1895,7 @@ namespace GestionRefugies
             // 
             // btn_modif_gerant
             // 
-            this.btn_modif_gerant.Location = new System.Drawing.Point(435, 342);
+            this.btn_modif_gerant.Location = new System.Drawing.Point(12, 342);
             this.btn_modif_gerant.Margin = new System.Windows.Forms.Padding(4);
             this.btn_modif_gerant.Name = "btn_modif_gerant";
             this.btn_modif_gerant.Size = new System.Drawing.Size(144, 28);
@@ -1695,246 +1938,15 @@ namespace GestionRefugies
             this.tabPageStock.Text = "Gestion Des Stocks";
             this.tabPageStock.UseVisualStyleBackColor = true;
             // 
-            // Txt_Nom
+            // btn_recherche_modif_user
             // 
-            this.Txt_Nom.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Txt_Nom.Location = new System.Drawing.Point(31, 39);
-            this.Txt_Nom.Margin = new System.Windows.Forms.Padding(4);
-            this.Txt_Nom.Name = "Txt_Nom";
-            this.Txt_Nom.Size = new System.Drawing.Size(252, 22);
-            this.Txt_Nom.TabIndex = 41;
-            // 
-            // Txt_Prenom
-            // 
-            this.Txt_Prenom.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Txt_Prenom.Location = new System.Drawing.Point(31, 69);
-            this.Txt_Prenom.Margin = new System.Windows.Forms.Padding(4);
-            this.Txt_Prenom.Name = "Txt_Prenom";
-            this.Txt_Prenom.Size = new System.Drawing.Size(252, 22);
-            this.Txt_Prenom.TabIndex = 42;
-            // 
-            // btn_reinit_ajoutref
-            // 
-            this.btn_reinit_ajoutref.Location = new System.Drawing.Point(707, 404);
-            this.btn_reinit_ajoutref.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_reinit_ajoutref.Name = "btn_reinit_ajoutref";
-            this.btn_reinit_ajoutref.Size = new System.Drawing.Size(193, 26);
-            this.btn_reinit_ajoutref.TabIndex = 43;
-            this.btn_reinit_ajoutref.Text = "reinitialiser";
-            this.btn_reinit_ajoutref.UseVisualStyleBackColor = true;
-            // 
-            // Txt_Nom_Modifref
-            // 
-            this.Txt_Nom_Modifref.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Txt_Nom_Modifref.Location = new System.Drawing.Point(20, 11);
-            this.Txt_Nom_Modifref.Margin = new System.Windows.Forms.Padding(4);
-            this.Txt_Nom_Modifref.Name = "Txt_Nom_Modifref";
-            this.Txt_Nom_Modifref.Size = new System.Drawing.Size(154, 22);
-            this.Txt_Nom_Modifref.TabIndex = 59;
-            this.Txt_Nom_Modifref.Text = "Nom";
-            // 
-            // Txt_Prenom_Modifref
-            // 
-            this.Txt_Prenom_Modifref.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Txt_Prenom_Modifref.Location = new System.Drawing.Point(21, 50);
-            this.Txt_Prenom_Modifref.Margin = new System.Windows.Forms.Padding(4);
-            this.Txt_Prenom_Modifref.Name = "Txt_Prenom_Modifref";
-            this.Txt_Prenom_Modifref.Size = new System.Drawing.Size(151, 22);
-            this.Txt_Prenom_Modifref.TabIndex = 60;
-            this.Txt_Prenom_Modifref.Text = "Prenom";
-            // 
-            // lbl_err_coulpeau_modif_ref
-            // 
-            this.lbl_err_coulpeau_modif_ref.AutoSize = true;
-            this.lbl_err_coulpeau_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_coulpeau_modif_ref.Location = new System.Drawing.Point(206, 266);
-            this.lbl_err_coulpeau_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_err_coulpeau_modif_ref.Name = "lbl_err_coulpeau_modif_ref";
-            this.lbl_err_coulpeau_modif_ref.Size = new System.Drawing.Size(13, 17);
-            this.lbl_err_coulpeau_modif_ref.TabIndex = 61;
-            this.lbl_err_coulpeau_modif_ref.Text = "*";
-            this.lbl_err_coulpeau_modif_ref.Visible = false;
-            // 
-            // lbl_err_coulchev_modif_ref
-            // 
-            this.lbl_err_coulchev_modif_ref.AutoSize = true;
-            this.lbl_err_coulchev_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_coulchev_modif_ref.Location = new System.Drawing.Point(210, 336);
-            this.lbl_err_coulchev_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_err_coulchev_modif_ref.Name = "lbl_err_coulchev_modif_ref";
-            this.lbl_err_coulchev_modif_ref.Size = new System.Drawing.Size(13, 17);
-            this.lbl_err_coulchev_modif_ref.TabIndex = 62;
-            this.lbl_err_coulchev_modif_ref.Text = "*";
-            this.lbl_err_coulchev_modif_ref.Visible = false;
-            // 
-            // lbl_err_coulyeux_modif_ref
-            // 
-            this.lbl_err_coulyeux_modif_ref.AutoSize = true;
-            this.lbl_err_coulyeux_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_coulyeux_modif_ref.Location = new System.Drawing.Point(210, 405);
-            this.lbl_err_coulyeux_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_err_coulyeux_modif_ref.Name = "lbl_err_coulyeux_modif_ref";
-            this.lbl_err_coulyeux_modif_ref.Size = new System.Drawing.Size(13, 17);
-            this.lbl_err_coulyeux_modif_ref.TabIndex = 63;
-            this.lbl_err_coulyeux_modif_ref.Text = "*";
-            this.lbl_err_coulyeux_modif_ref.Visible = false;
-            // 
-            // lbl_err_bless_modif_ref
-            // 
-            this.lbl_err_bless_modif_ref.AutoSize = true;
-            this.lbl_err_bless_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_bless_modif_ref.Location = new System.Drawing.Point(398, 55);
-            this.lbl_err_bless_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_err_bless_modif_ref.Name = "lbl_err_bless_modif_ref";
-            this.lbl_err_bless_modif_ref.Size = new System.Drawing.Size(13, 17);
-            this.lbl_err_bless_modif_ref.TabIndex = 64;
-            this.lbl_err_bless_modif_ref.Text = "*";
-            this.lbl_err_bless_modif_ref.Visible = false;
-            // 
-            // lbl_err_typchev_modif_ref
-            // 
-            this.lbl_err_typchev_modif_ref.AutoSize = true;
-            this.lbl_err_typchev_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_typchev_modif_ref.Location = new System.Drawing.Point(398, 130);
-            this.lbl_err_typchev_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_err_typchev_modif_ref.Name = "lbl_err_typchev_modif_ref";
-            this.lbl_err_typchev_modif_ref.Size = new System.Drawing.Size(13, 17);
-            this.lbl_err_typchev_modif_ref.TabIndex = 65;
-            this.lbl_err_typchev_modif_ref.Text = "*";
-            this.lbl_err_typchev_modif_ref.Visible = false;
-            // 
-            // lbl_err_allerg_modifref
-            // 
-            this.lbl_err_allerg_modifref.AutoSize = true;
-            this.lbl_err_allerg_modifref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_allerg_modifref.Location = new System.Drawing.Point(414, 182);
-            this.lbl_err_allerg_modifref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_err_allerg_modifref.Name = "lbl_err_allerg_modifref";
-            this.lbl_err_allerg_modifref.Size = new System.Drawing.Size(13, 17);
-            this.lbl_err_allerg_modifref.TabIndex = 66;
-            this.lbl_err_allerg_modifref.Text = "*";
-            this.lbl_err_allerg_modifref.Visible = false;
-            // 
-            // lbl_err_handi_modif_ref
-            // 
-            this.lbl_err_handi_modif_ref.AutoSize = true;
-            this.lbl_err_handi_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_handi_modif_ref.Location = new System.Drawing.Point(410, 252);
-            this.lbl_err_handi_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_err_handi_modif_ref.Name = "lbl_err_handi_modif_ref";
-            this.lbl_err_handi_modif_ref.Size = new System.Drawing.Size(13, 17);
-            this.lbl_err_handi_modif_ref.TabIndex = 67;
-            this.lbl_err_handi_modif_ref.Text = "*";
-            this.lbl_err_handi_modif_ref.Visible = false;
-            // 
-            // btn_reinit_modifref
-            // 
-            this.btn_reinit_modifref.Location = new System.Drawing.Point(274, 475);
-            this.btn_reinit_modifref.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_reinit_modifref.Name = "btn_reinit_modifref";
-            this.btn_reinit_modifref.Size = new System.Drawing.Size(153, 28);
-            this.btn_reinit_modifref.TabIndex = 68;
-            this.btn_reinit_modifref.Text = "reinitialiser";
-            this.btn_reinit_modifref.UseVisualStyleBackColor = true;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ID.Width = 50;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Nom";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Prenom
-            // 
-            this.Prenom.HeaderText = "Prenom";
-            this.Prenom.Name = "Prenom";
-            this.Prenom.ReadOnly = true;
-            // 
-            // Sexe
-            // 
-            this.Sexe.HeaderText = "Sexe";
-            this.Sexe.Name = "Sexe";
-            this.Sexe.ReadOnly = true;
-            // 
-            // DateNaiss
-            // 
-            this.DateNaiss.HeaderText = "Date de Naissance";
-            this.DateNaiss.Name = "DateNaiss";
-            this.DateNaiss.ReadOnly = true;
-            // 
-            // Nationalite
-            // 
-            this.Nationalite.HeaderText = "Nationalite";
-            this.Nationalite.Name = "Nationalite";
-            this.Nationalite.ReadOnly = true;
-            // 
-            // numrefug
-            // 
-            this.numrefug.HeaderText = "N° Refuge";
-            this.numrefug.Name = "numrefug";
-            this.numrefug.ReadOnly = true;
-            // 
-            // Taille
-            // 
-            this.Taille.HeaderText = "Taille";
-            this.Taille.Name = "Taille";
-            this.Taille.ReadOnly = true;
-            // 
-            // Coulpeau
-            // 
-            this.Coulpeau.HeaderText = "Couleur de peau";
-            this.Coulpeau.Name = "Coulpeau";
-            this.Coulpeau.ReadOnly = true;
-            // 
-            // coulyeux
-            // 
-            this.coulyeux.HeaderText = "Couleur des yeux";
-            this.coulyeux.Name = "coulyeux";
-            this.coulyeux.ReadOnly = true;
-            // 
-            // coulchev
-            // 
-            this.coulchev.HeaderText = "Couleur des cheveux";
-            this.coulchev.Name = "coulchev";
-            this.coulchev.ReadOnly = true;
-            // 
-            // typchev
-            // 
-            this.typchev.HeaderText = "Type de cheveux";
-            this.typchev.Name = "typchev";
-            this.typchev.ReadOnly = true;
-            // 
-            // blessure
-            // 
-            this.blessure.HeaderText = "Blessure";
-            this.blessure.Name = "blessure";
-            this.blessure.ReadOnly = true;
-            // 
-            // allergie
-            // 
-            this.allergie.HeaderText = "Allergie";
-            this.allergie.Name = "allergie";
-            this.allergie.ReadOnly = true;
-            // 
-            // handicap
-            // 
-            this.handicap.HeaderText = "Handicap";
-            this.handicap.Name = "handicap";
-            this.handicap.ReadOnly = true;
-            // 
-            // Autre
-            // 
-            this.Autre.HeaderText = "Autre";
-            this.Autre.Name = "Autre";
-            this.Autre.ReadOnly = true;
+            this.btn_recherche_modif_user.Location = new System.Drawing.Point(12, 306);
+            this.btn_recherche_modif_user.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_recherche_modif_user.Name = "btn_recherche_modif_user";
+            this.btn_recherche_modif_user.Size = new System.Drawing.Size(144, 28);
+            this.btn_recherche_modif_user.TabIndex = 42;
+            this.btn_recherche_modif_user.Text = "Rechercher";
+            this.btn_recherche_modif_user.UseVisualStyleBackColor = true;
             // 
             // Ajout
             // 
@@ -2121,5 +2133,6 @@ namespace GestionRefugies
         private System.Windows.Forms.DataGridViewTextBoxColumn allergie;
         private System.Windows.Forms.DataGridViewTextBoxColumn handicap;
         private System.Windows.Forms.DataGridViewTextBoxColumn Autre;
+        private System.Windows.Forms.Button btn_recherche_modif_user;
     }
 }
