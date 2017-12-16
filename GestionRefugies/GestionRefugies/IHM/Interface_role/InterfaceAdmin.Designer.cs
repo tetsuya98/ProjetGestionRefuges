@@ -1976,7 +1976,7 @@ namespace GestionRefugies
 
         private void tabPageModifRef_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            
         }
 
         #endregion
