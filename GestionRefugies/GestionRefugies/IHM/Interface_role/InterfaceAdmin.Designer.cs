@@ -1,4 +1,6 @@
-﻿namespace GestionRefugies
+﻿using System;
+
+namespace GestionRefugies
 {
     partial class Ajout
     {
@@ -67,7 +69,7 @@
             this.lbl_RefugeRef = new System.Windows.Forms.Label();
             this.num_RefugeRef = new System.Windows.Forms.NumericUpDown();
             this.Lbl_ErrNation = new System.Windows.Forms.Label();
-            this.Lbl_Sexe = new System.Windows.Forms.Label();
+            this.Lbl_errSexe = new System.Windows.Forms.Label();
             this.Btn_Ajout = new System.Windows.Forms.Button();
             this.Lbl_Nationalite = new System.Windows.Forms.Label();
             this.Lbl_DateNaiss = new System.Windows.Forms.Label();
@@ -75,8 +77,6 @@
             this.DatePicker_DatNaiss = new System.Windows.Forms.DateTimePicker();
             this.RdBtn_Femme = new System.Windows.Forms.RadioButton();
             this.RdBtn_Homme = new System.Windows.Forms.RadioButton();
-            this.Txt_Prenom = new System.Windows.Forms.MaskedTextBox();
-            this.Txt_Nom = new System.Windows.Forms.MaskedTextBox();
             this.tabPageAjoutGérant = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.check_Magasinier = new System.Windows.Forms.CheckBox();
@@ -90,23 +90,23 @@
             this.tabPageModifRef = new System.Windows.Forms.TabPage();
             this.lbl_err_champs_modifref = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txt_typchev_modifref = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.txt_autre_modifref = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.txt_handi_modifref = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.txt_allerg_modifref = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.txt_bless_modifref = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.txt_coulyeux_modifref = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.txt_coulchev_modifref = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.txt_coulpeau_modifref = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.num_taille_modifref = new System.Windows.Forms.NumericUpDown();
             this.lbl_err_btn_modif_ref = new System.Windows.Forms.Label();
             this.lbl_errsupp_modif_ref = new System.Windows.Forms.Label();
             this.btn_rechercher_modifref = new System.Windows.Forms.Button();
@@ -114,12 +114,6 @@
             this.num_refugeref_modif_ref = new System.Windows.Forms.NumericUpDown();
             this.btn_Suppr_ref = new System.Windows.Forms.Button();
             this.DataGrid_modif_ref = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sexe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateNaiss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nationalite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbl_err_nation_modif_ref = new System.Windows.Forms.Label();
             this.lbl_err_sex_modif_ref = new System.Windows.Forms.Label();
             this.btn_Modif_ref = new System.Windows.Forms.Button();
@@ -129,9 +123,8 @@
             this.DatePicker_Naiss_modif_ref = new System.Windows.Forms.DateTimePicker();
             this.rdn_Femme_Modif_ref = new System.Windows.Forms.RadioButton();
             this.rdn_Homme_Modif_ref = new System.Windows.Forms.RadioButton();
-            this.Txt_Prenom_Modif_ref = new System.Windows.Forms.MaskedTextBox();
-            this.Txt_Nom_Modif_ref = new System.Windows.Forms.MaskedTextBox();
             this.tabPagemodifGerant = new System.Windows.Forms.TabPage();
+            this.maskedTextBoxmodif_ger = new System.Windows.Forms.MaskedTextBox();
             this.Group_role_modif_gerant = new System.Windows.Forms.GroupBox();
             this.check_maga_modif_gerant = new System.Windows.Forms.CheckBox();
             this.check_Admin_modif_gerant = new System.Windows.Forms.CheckBox();
@@ -148,7 +141,35 @@
             this.Txt_prenom_modif_gerant = new System.Windows.Forms.MaskedTextBox();
             this.Txt_nom_modif_gerant = new System.Windows.Forms.MaskedTextBox();
             this.tabPageStock = new System.Windows.Forms.TabPage();
-            this.maskedTextBoxmodif_ger = new System.Windows.Forms.MaskedTextBox();
+            this.Txt_Nom = new System.Windows.Forms.MaskedTextBox();
+            this.Txt_Prenom = new System.Windows.Forms.MaskedTextBox();
+            this.btn_reinit_ajoutref = new System.Windows.Forms.Button();
+            this.Txt_Nom_Modifref = new System.Windows.Forms.MaskedTextBox();
+            this.Txt_Prenom_Modifref = new System.Windows.Forms.MaskedTextBox();
+            this.lbl_err_coulpeau_modif_ref = new System.Windows.Forms.Label();
+            this.lbl_err_coulchev_modif_ref = new System.Windows.Forms.Label();
+            this.lbl_err_coulyeux_modif_ref = new System.Windows.Forms.Label();
+            this.lbl_err_bless_modif_ref = new System.Windows.Forms.Label();
+            this.lbl_err_typchev_modif_ref = new System.Windows.Forms.Label();
+            this.lbl_err_allerg_modifref = new System.Windows.Forms.Label();
+            this.lbl_err_handi_modif_ref = new System.Windows.Forms.Label();
+            this.btn_reinit_modifref = new System.Windows.Forms.Button();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sexe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateNaiss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nationalite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numrefug = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Taille = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Coulpeau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coulyeux = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coulchev = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typchev = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.blessure = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.allergie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.handicap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Autre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPageAccueil.SuspendLayout();
             this.tabPageAjoutRef.SuspendLayout();
@@ -157,7 +178,7 @@
             this.tabPageAjoutGérant.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPageModifRef.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_taille_modifref)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_refugeref_modif_ref)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_modif_ref)).BeginInit();
             this.tabPagemodifGerant.SuspendLayout();
@@ -277,6 +298,9 @@
             // tabPageAjoutRef
             // 
             this.tabPageAjoutRef.BackColor = System.Drawing.Color.Transparent;
+            this.tabPageAjoutRef.Controls.Add(this.btn_reinit_ajoutref);
+            this.tabPageAjoutRef.Controls.Add(this.Txt_Prenom);
+            this.tabPageAjoutRef.Controls.Add(this.Txt_Nom);
             this.tabPageAjoutRef.Controls.Add(this.lbl_err_typchev_ajoutref);
             this.tabPageAjoutRef.Controls.Add(this.lbl_typchev_ajoutref);
             this.tabPageAjoutRef.Controls.Add(this.txt_typchev_ajoutref);
@@ -305,7 +329,7 @@
             this.tabPageAjoutRef.Controls.Add(this.lbl_RefugeRef);
             this.tabPageAjoutRef.Controls.Add(this.num_RefugeRef);
             this.tabPageAjoutRef.Controls.Add(this.Lbl_ErrNation);
-            this.tabPageAjoutRef.Controls.Add(this.Lbl_Sexe);
+            this.tabPageAjoutRef.Controls.Add(this.Lbl_errSexe);
             this.tabPageAjoutRef.Controls.Add(this.Btn_Ajout);
             this.tabPageAjoutRef.Controls.Add(this.Lbl_Nationalite);
             this.tabPageAjoutRef.Controls.Add(this.Lbl_DateNaiss);
@@ -313,8 +337,6 @@
             this.tabPageAjoutRef.Controls.Add(this.DatePicker_DatNaiss);
             this.tabPageAjoutRef.Controls.Add(this.RdBtn_Femme);
             this.tabPageAjoutRef.Controls.Add(this.RdBtn_Homme);
-            this.tabPageAjoutRef.Controls.Add(this.Txt_Prenom);
-            this.tabPageAjoutRef.Controls.Add(this.Txt_Nom);
             this.tabPageAjoutRef.Location = new System.Drawing.Point(4, 25);
             this.tabPageAjoutRef.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageAjoutRef.Name = "tabPageAjoutRef";
@@ -684,17 +706,17 @@
             this.Lbl_ErrNation.Text = "Veuillez renseigner la nationalite";
             this.Lbl_ErrNation.Visible = false;
             // 
-            // Lbl_Sexe
+            // Lbl_errSexe
             // 
-            this.Lbl_Sexe.AutoSize = true;
-            this.Lbl_Sexe.ForeColor = System.Drawing.Color.Red;
-            this.Lbl_Sexe.Location = new System.Drawing.Point(120, 140);
-            this.Lbl_Sexe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Lbl_Sexe.Name = "Lbl_Sexe";
-            this.Lbl_Sexe.Size = new System.Drawing.Size(177, 17);
-            this.Lbl_Sexe.TabIndex = 12;
-            this.Lbl_Sexe.Text = "Veuillez renseigner le sexe";
-            this.Lbl_Sexe.Visible = false;
+            this.Lbl_errSexe.AutoSize = true;
+            this.Lbl_errSexe.ForeColor = System.Drawing.Color.Red;
+            this.Lbl_errSexe.Location = new System.Drawing.Point(120, 140);
+            this.Lbl_errSexe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lbl_errSexe.Name = "Lbl_errSexe";
+            this.Lbl_errSexe.Size = new System.Drawing.Size(177, 17);
+            this.Lbl_errSexe.TabIndex = 12;
+            this.Lbl_errSexe.Text = "Veuillez renseigner le sexe";
+            this.Lbl_errSexe.Visible = false;
             // 
             // Btn_Ajout
             // 
@@ -803,30 +825,6 @@
             this.RdBtn_Homme.TabStop = true;
             this.RdBtn_Homme.Text = "Homme";
             this.RdBtn_Homme.UseVisualStyleBackColor = true;
-            // 
-            // Txt_Prenom
-            // 
-            this.Txt_Prenom.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Txt_Prenom.Location = new System.Drawing.Point(44, 74);
-            this.Txt_Prenom.Margin = new System.Windows.Forms.Padding(4);
-            this.Txt_Prenom.Name = "Txt_Prenom";
-            this.Txt_Prenom.Size = new System.Drawing.Size(252, 22);
-            this.Txt_Prenom.TabIndex = 3;
-            this.Txt_Prenom.Text = "Prenom";
-            this.Txt_Prenom.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_Prenom_KeyDown);
-            this.Txt_Prenom.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_Prenom_KeyUp);
-            // 
-            // Txt_Nom
-            // 
-            this.Txt_Nom.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Txt_Nom.Location = new System.Drawing.Point(44, 42);
-            this.Txt_Nom.Margin = new System.Windows.Forms.Padding(4);
-            this.Txt_Nom.Name = "Txt_Nom";
-            this.Txt_Nom.Size = new System.Drawing.Size(252, 22);
-            this.Txt_Nom.TabIndex = 0;
-            this.Txt_Nom.Text = "Nom";
-            this.Txt_Nom.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_Nom_KeyDown);
-            this.Txt_Nom.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_Nom_KeyUp);
             // 
             // tabPageAjoutGérant
             // 
@@ -960,25 +958,35 @@
             // tabPageModifRef
             // 
             this.tabPageModifRef.BackColor = System.Drawing.Color.Transparent;
+            this.tabPageModifRef.Controls.Add(this.btn_reinit_modifref);
+            this.tabPageModifRef.Controls.Add(this.lbl_err_handi_modif_ref);
+            this.tabPageModifRef.Controls.Add(this.lbl_err_allerg_modifref);
+            this.tabPageModifRef.Controls.Add(this.lbl_err_typchev_modif_ref);
+            this.tabPageModifRef.Controls.Add(this.lbl_err_bless_modif_ref);
+            this.tabPageModifRef.Controls.Add(this.lbl_err_coulyeux_modif_ref);
+            this.tabPageModifRef.Controls.Add(this.lbl_err_coulchev_modif_ref);
+            this.tabPageModifRef.Controls.Add(this.lbl_err_coulpeau_modif_ref);
+            this.tabPageModifRef.Controls.Add(this.Txt_Prenom_Modifref);
+            this.tabPageModifRef.Controls.Add(this.Txt_Nom_Modifref);
             this.tabPageModifRef.Controls.Add(this.lbl_err_champs_modifref);
             this.tabPageModifRef.Controls.Add(this.label5);
-            this.tabPageModifRef.Controls.Add(this.comboBox1);
+            this.tabPageModifRef.Controls.Add(this.txt_typchev_modifref);
             this.tabPageModifRef.Controls.Add(this.label6);
-            this.tabPageModifRef.Controls.Add(this.maskedTextBox1);
+            this.tabPageModifRef.Controls.Add(this.txt_autre_modifref);
             this.tabPageModifRef.Controls.Add(this.label7);
-            this.tabPageModifRef.Controls.Add(this.comboBox2);
+            this.tabPageModifRef.Controls.Add(this.txt_handi_modifref);
             this.tabPageModifRef.Controls.Add(this.label8);
-            this.tabPageModifRef.Controls.Add(this.comboBox3);
+            this.tabPageModifRef.Controls.Add(this.txt_allerg_modifref);
             this.tabPageModifRef.Controls.Add(this.label9);
-            this.tabPageModifRef.Controls.Add(this.comboBox4);
+            this.tabPageModifRef.Controls.Add(this.txt_bless_modifref);
             this.tabPageModifRef.Controls.Add(this.label10);
-            this.tabPageModifRef.Controls.Add(this.comboBox5);
+            this.tabPageModifRef.Controls.Add(this.txt_coulyeux_modifref);
             this.tabPageModifRef.Controls.Add(this.label11);
-            this.tabPageModifRef.Controls.Add(this.comboBox6);
+            this.tabPageModifRef.Controls.Add(this.txt_coulchev_modifref);
             this.tabPageModifRef.Controls.Add(this.label12);
-            this.tabPageModifRef.Controls.Add(this.comboBox7);
+            this.tabPageModifRef.Controls.Add(this.txt_coulpeau_modifref);
             this.tabPageModifRef.Controls.Add(this.label13);
-            this.tabPageModifRef.Controls.Add(this.numericUpDown1);
+            this.tabPageModifRef.Controls.Add(this.num_taille_modifref);
             this.tabPageModifRef.Controls.Add(this.lbl_err_btn_modif_ref);
             this.tabPageModifRef.Controls.Add(this.lbl_errsupp_modif_ref);
             this.tabPageModifRef.Controls.Add(this.btn_rechercher_modifref);
@@ -995,14 +1003,13 @@
             this.tabPageModifRef.Controls.Add(this.DatePicker_Naiss_modif_ref);
             this.tabPageModifRef.Controls.Add(this.rdn_Femme_Modif_ref);
             this.tabPageModifRef.Controls.Add(this.rdn_Homme_Modif_ref);
-            this.tabPageModifRef.Controls.Add(this.Txt_Prenom_Modif_ref);
-            this.tabPageModifRef.Controls.Add(this.Txt_Nom_Modif_ref);
             this.tabPageModifRef.Location = new System.Drawing.Point(4, 25);
             this.tabPageModifRef.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageModifRef.Name = "tabPageModifRef";
             this.tabPageModifRef.Size = new System.Drawing.Size(1116, 549);
             this.tabPageModifRef.TabIndex = 3;
             this.tabPageModifRef.Text = "Modifier/Supprimer Refugié";
+            this.tabPageModifRef.Click += new System.EventHandler(this.tabPageModifRef_Click);
             // 
             // lbl_err_champs_modifref
             // 
@@ -1026,23 +1033,23 @@
             this.label5.TabIndex = 57;
             this.label5.Text = "Type de Cheveux";
             // 
-            // comboBox1
+            // txt_typchev_modifref
             // 
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.txt_typchev_modifref.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.txt_typchev_modifref.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_typchev_modifref.FormattingEnabled = true;
+            this.txt_typchev_modifref.Items.AddRange(new object[] {
             "Lisse ",
             "Frisé",
             "Bouclé",
             "Gras",
             "Chauve",
             "Autre"});
-            this.comboBox1.Location = new System.Drawing.Point(215, 150);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(196, 24);
-            this.comboBox1.TabIndex = 56;
+            this.txt_typchev_modifref.Location = new System.Drawing.Point(215, 150);
+            this.txt_typchev_modifref.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_typchev_modifref.Name = "txt_typchev_modifref";
+            this.txt_typchev_modifref.Size = new System.Drawing.Size(196, 24);
+            this.txt_typchev_modifref.TabIndex = 56;
             // 
             // label6
             // 
@@ -1054,14 +1061,14 @@
             this.label6.TabIndex = 55;
             this.label6.Text = "Autre";
             // 
-            // maskedTextBox1
+            // txt_autre_modifref
             // 
-            this.maskedTextBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.maskedTextBox1.Location = new System.Drawing.Point(231, 405);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(196, 22);
-            this.maskedTextBox1.TabIndex = 54;
+            this.txt_autre_modifref.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txt_autre_modifref.Location = new System.Drawing.Point(231, 405);
+            this.txt_autre_modifref.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_autre_modifref.Name = "txt_autre_modifref";
+            this.txt_autre_modifref.Size = new System.Drawing.Size(196, 22);
+            this.txt_autre_modifref.TabIndex = 54;
             // 
             // label7
             // 
@@ -1073,20 +1080,20 @@
             this.label7.TabIndex = 53;
             this.label7.Text = "Handicap";
             // 
-            // comboBox2
+            // txt_handi_modifref
             // 
-            this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.txt_handi_modifref.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.txt_handi_modifref.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_handi_modifref.FormattingEnabled = true;
+            this.txt_handi_modifref.Items.AddRange(new object[] {
             "Pas de Handicap",
             "Moteur",
             "Mental"});
-            this.comboBox2.Location = new System.Drawing.Point(231, 272);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(196, 24);
-            this.comboBox2.TabIndex = 52;
+            this.txt_handi_modifref.Location = new System.Drawing.Point(231, 272);
+            this.txt_handi_modifref.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_handi_modifref.Name = "txt_handi_modifref";
+            this.txt_handi_modifref.Size = new System.Drawing.Size(196, 24);
+            this.txt_handi_modifref.TabIndex = 52;
             // 
             // label8
             // 
@@ -1098,12 +1105,12 @@
             this.label8.TabIndex = 51;
             this.label8.Text = "Allergie";
             // 
-            // comboBox3
+            // txt_allerg_modifref
             // 
-            this.comboBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.txt_allerg_modifref.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.txt_allerg_modifref.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_allerg_modifref.FormattingEnabled = true;
+            this.txt_allerg_modifref.Items.AddRange(new object[] {
             "Pas d\'Allergies",
             "Arachide",
             "Pollen",
@@ -1115,11 +1122,11 @@
             "Lait",
             "Ble",
             "Autre"});
-            this.comboBox3.Location = new System.Drawing.Point(231, 202);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(196, 24);
-            this.comboBox3.TabIndex = 50;
+            this.txt_allerg_modifref.Location = new System.Drawing.Point(231, 202);
+            this.txt_allerg_modifref.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_allerg_modifref.Name = "txt_allerg_modifref";
+            this.txt_allerg_modifref.Size = new System.Drawing.Size(196, 24);
+            this.txt_allerg_modifref.TabIndex = 50;
             // 
             // label9
             // 
@@ -1131,22 +1138,22 @@
             this.label9.TabIndex = 49;
             this.label9.Text = "Blessure";
             // 
-            // comboBox4
+            // txt_bless_modifref
             // 
-            this.comboBox4.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.txt_bless_modifref.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.txt_bless_modifref.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_bless_modifref.FormattingEnabled = true;
+            this.txt_bless_modifref.Items.AddRange(new object[] {
             "Pas de Blessure",
             "Bessure Tres Urgente",
             "Blessure Urgente",
             "Blessure Moyenne",
             "Blessure Benigne"});
-            this.comboBox4.Location = new System.Drawing.Point(215, 73);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(196, 24);
-            this.comboBox4.TabIndex = 48;
+            this.txt_bless_modifref.Location = new System.Drawing.Point(215, 73);
+            this.txt_bless_modifref.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_bless_modifref.Name = "txt_bless_modifref";
+            this.txt_bless_modifref.Size = new System.Drawing.Size(196, 24);
+            this.txt_bless_modifref.TabIndex = 48;
             // 
             // label10
             // 
@@ -1158,21 +1165,21 @@
             this.label10.TabIndex = 47;
             this.label10.Text = "Couleur des Yeux";
             // 
-            // comboBox5
+            // txt_coulyeux_modifref
             // 
-            this.comboBox5.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
+            this.txt_coulyeux_modifref.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.txt_coulyeux_modifref.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_coulyeux_modifref.FormattingEnabled = true;
+            this.txt_coulyeux_modifref.Items.AddRange(new object[] {
             "Bleu",
             "Vert",
             "Marron",
             "Autre"});
-            this.comboBox5.Location = new System.Drawing.Point(27, 426);
-            this.comboBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(196, 24);
-            this.comboBox5.TabIndex = 46;
+            this.txt_coulyeux_modifref.Location = new System.Drawing.Point(27, 426);
+            this.txt_coulyeux_modifref.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_coulyeux_modifref.Name = "txt_coulyeux_modifref";
+            this.txt_coulyeux_modifref.Size = new System.Drawing.Size(196, 24);
+            this.txt_coulyeux_modifref.TabIndex = 46;
             // 
             // label11
             // 
@@ -1184,12 +1191,12 @@
             this.label11.TabIndex = 45;
             this.label11.Text = "Couleur de Cheveux";
             // 
-            // comboBox6
+            // txt_coulchev_modifref
             // 
-            this.comboBox6.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Items.AddRange(new object[] {
+            this.txt_coulchev_modifref.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.txt_coulchev_modifref.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_coulchev_modifref.FormattingEnabled = true;
+            this.txt_coulchev_modifref.Items.AddRange(new object[] {
             "Blond(e)",
             "Brun(e)",
             "Chatain",
@@ -1200,11 +1207,11 @@
             "Vert",
             "Rose",
             "Autre"});
-            this.comboBox6.Location = new System.Drawing.Point(27, 357);
-            this.comboBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(196, 24);
-            this.comboBox6.TabIndex = 44;
+            this.txt_coulchev_modifref.Location = new System.Drawing.Point(27, 357);
+            this.txt_coulchev_modifref.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_coulchev_modifref.Name = "txt_coulchev_modifref";
+            this.txt_coulchev_modifref.Size = new System.Drawing.Size(196, 24);
+            this.txt_coulchev_modifref.TabIndex = 44;
             // 
             // label12
             // 
@@ -1216,20 +1223,20 @@
             this.label12.TabIndex = 43;
             this.label12.Text = "Couleur de Peau";
             // 
-            // comboBox7
+            // txt_coulpeau_modifref
             // 
-            this.comboBox7.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Items.AddRange(new object[] {
+            this.txt_coulpeau_modifref.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.txt_coulpeau_modifref.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt_coulpeau_modifref.FormattingEnabled = true;
+            this.txt_coulpeau_modifref.Items.AddRange(new object[] {
             "Blanc",
             "Noir",
             "Metissé"});
-            this.comboBox7.Location = new System.Drawing.Point(27, 287);
-            this.comboBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(196, 24);
-            this.comboBox7.TabIndex = 42;
+            this.txt_coulpeau_modifref.Location = new System.Drawing.Point(27, 287);
+            this.txt_coulpeau_modifref.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_coulpeau_modifref.Name = "txt_coulpeau_modifref";
+            this.txt_coulpeau_modifref.Size = new System.Drawing.Size(196, 24);
+            this.txt_coulpeau_modifref.TabIndex = 42;
             // 
             // label13
             // 
@@ -1242,25 +1249,25 @@
             this.label13.Text = "Taille (cm)";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // numericUpDown1
+            // num_taille_modifref
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(96, 226);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.num_taille_modifref.Location = new System.Drawing.Point(100, 226);
+            this.num_taille_modifref.Margin = new System.Windows.Forms.Padding(4);
+            this.num_taille_modifref.Maximum = new decimal(new int[] {
             300,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown1.TabIndex = 40;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.num_taille_modifref.Name = "num_taille_modifref";
+            this.num_taille_modifref.Size = new System.Drawing.Size(116, 22);
+            this.num_taille_modifref.TabIndex = 40;
+            this.num_taille_modifref.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lbl_err_btn_modif_ref
             // 
             this.lbl_err_btn_modif_ref.AutoSize = true;
             this.lbl_err_btn_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_btn_modif_ref.Location = new System.Drawing.Point(597, 517);
+            this.lbl_err_btn_modif_ref.Location = new System.Drawing.Point(602, 517);
             this.lbl_err_btn_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_err_btn_modif_ref.Name = "lbl_err_btn_modif_ref";
             this.lbl_err_btn_modif_ref.Size = new System.Drawing.Size(518, 17);
@@ -1340,52 +1347,23 @@
             this.Prenom,
             this.Sexe,
             this.DateNaiss,
-            this.Nationalite});
-            this.DataGrid_modif_ref.Location = new System.Drawing.Point(436, 11);
+            this.Nationalite,
+            this.numrefug,
+            this.Taille,
+            this.Coulpeau,
+            this.coulyeux,
+            this.coulchev,
+            this.typchev,
+            this.blessure,
+            this.allergie,
+            this.handicap,
+            this.Autre});
+            this.DataGrid_modif_ref.Location = new System.Drawing.Point(485, 21);
             this.DataGrid_modif_ref.Margin = new System.Windows.Forms.Padding(4);
             this.DataGrid_modif_ref.Name = "DataGrid_modif_ref";
             this.DataGrid_modif_ref.ReadOnly = true;
-            this.DataGrid_modif_ref.Size = new System.Drawing.Size(673, 492);
+            this.DataGrid_modif_ref.Size = new System.Drawing.Size(627, 483);
             this.DataGrid_modif_ref.TabIndex = 25;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ID.Width = 50;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Nom";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Prenom
-            // 
-            this.Prenom.HeaderText = "Prenom";
-            this.Prenom.Name = "Prenom";
-            this.Prenom.ReadOnly = true;
-            // 
-            // Sexe
-            // 
-            this.Sexe.HeaderText = "Sexe";
-            this.Sexe.Name = "Sexe";
-            this.Sexe.ReadOnly = true;
-            // 
-            // DateNaiss
-            // 
-            this.DateNaiss.HeaderText = "Date de Naissance";
-            this.DateNaiss.Name = "DateNaiss";
-            this.DateNaiss.ReadOnly = true;
-            // 
-            // Nationalite
-            // 
-            this.Nationalite.HeaderText = "Nationalite";
-            this.Nationalite.Name = "Nationalite";
-            this.Nationalite.ReadOnly = true;
             // 
             // lbl_err_nation_modif_ref
             // 
@@ -1492,6 +1470,7 @@
             this.DatePicker_Naiss_modif_ref.Name = "DatePicker_Naiss_modif_ref";
             this.DatePicker_Naiss_modif_ref.Size = new System.Drawing.Size(223, 22);
             this.DatePicker_Naiss_modif_ref.TabIndex = 18;
+            this.DatePicker_Naiss_modif_ref.Value = new System.DateTime(1900, 1, 1, 15, 18, 0, 0);
             this.DatePicker_Naiss_modif_ref.ValueChanged += new System.EventHandler(this.DatePicker_Naiss_modif_ref_ValueChanged);
             // 
             // rdn_Femme_Modif_ref
@@ -1519,30 +1498,6 @@
             this.rdn_Homme_Modif_ref.Text = "Homme";
             this.rdn_Homme_Modif_ref.UseVisualStyleBackColor = true;
             // 
-            // Txt_Prenom_Modif_ref
-            // 
-            this.Txt_Prenom_Modif_ref.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Txt_Prenom_Modif_ref.Location = new System.Drawing.Point(21, 57);
-            this.Txt_Prenom_Modif_ref.Margin = new System.Windows.Forms.Padding(4);
-            this.Txt_Prenom_Modif_ref.Name = "Txt_Prenom_Modif_ref";
-            this.Txt_Prenom_Modif_ref.Size = new System.Drawing.Size(169, 22);
-            this.Txt_Prenom_Modif_ref.TabIndex = 15;
-            this.Txt_Prenom_Modif_ref.Text = "Prenom";
-            this.Txt_Prenom_Modif_ref.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_Prenom_Modif_ref_KeyDown);
-            this.Txt_Prenom_Modif_ref.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_Prenom_Modif_ref_KeyUp);
-            // 
-            // Txt_Nom_Modif_ref
-            // 
-            this.Txt_Nom_Modif_ref.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Txt_Nom_Modif_ref.Location = new System.Drawing.Point(21, 25);
-            this.Txt_Nom_Modif_ref.Margin = new System.Windows.Forms.Padding(4);
-            this.Txt_Nom_Modif_ref.Name = "Txt_Nom_Modif_ref";
-            this.Txt_Nom_Modif_ref.Size = new System.Drawing.Size(169, 22);
-            this.Txt_Nom_Modif_ref.TabIndex = 14;
-            this.Txt_Nom_Modif_ref.Text = "Nom";
-            this.Txt_Nom_Modif_ref.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_Nom_Modif_ref_KeyDown);
-            this.Txt_Nom_Modif_ref.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_Nom_Modif_ref_KeyUp);
-            // 
             // tabPagemodifGerant
             // 
             this.tabPagemodifGerant.BackColor = System.Drawing.Color.Transparent;
@@ -1559,6 +1514,17 @@
             this.tabPagemodifGerant.Size = new System.Drawing.Size(1116, 549);
             this.tabPagemodifGerant.TabIndex = 4;
             this.tabPagemodifGerant.Text = "Modifier/Supprimer Gerant";
+            // 
+            // maskedTextBoxmodif_ger
+            // 
+            this.maskedTextBoxmodif_ger.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.maskedTextBoxmodif_ger.Location = new System.Drawing.Point(21, 118);
+            this.maskedTextBoxmodif_ger.Margin = new System.Windows.Forms.Padding(4);
+            this.maskedTextBoxmodif_ger.Name = "maskedTextBoxmodif_ger";
+            this.maskedTextBoxmodif_ger.PasswordChar = '○';
+            this.maskedTextBoxmodif_ger.Size = new System.Drawing.Size(252, 22);
+            this.maskedTextBoxmodif_ger.TabIndex = 41;
+            this.maskedTextBoxmodif_ger.Text = "Mot de Passe";
             // 
             // Group_role_modif_gerant
             // 
@@ -1729,16 +1695,246 @@
             this.tabPageStock.Text = "Gestion Des Stocks";
             this.tabPageStock.UseVisualStyleBackColor = true;
             // 
-            // maskedTextBoxmodif_ger
+            // Txt_Nom
             // 
-            this.maskedTextBoxmodif_ger.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.maskedTextBoxmodif_ger.Location = new System.Drawing.Point(21, 118);
-            this.maskedTextBoxmodif_ger.Margin = new System.Windows.Forms.Padding(4);
-            this.maskedTextBoxmodif_ger.Name = "maskedTextBoxmodif_ger";
-            this.maskedTextBoxmodif_ger.PasswordChar = '○';
-            this.maskedTextBoxmodif_ger.Size = new System.Drawing.Size(252, 22);
-            this.maskedTextBoxmodif_ger.TabIndex = 41;
-            this.maskedTextBoxmodif_ger.Text = "Mot de Passe";
+            this.Txt_Nom.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.Txt_Nom.Location = new System.Drawing.Point(31, 39);
+            this.Txt_Nom.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt_Nom.Name = "Txt_Nom";
+            this.Txt_Nom.Size = new System.Drawing.Size(252, 22);
+            this.Txt_Nom.TabIndex = 41;
+            // 
+            // Txt_Prenom
+            // 
+            this.Txt_Prenom.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.Txt_Prenom.Location = new System.Drawing.Point(31, 69);
+            this.Txt_Prenom.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt_Prenom.Name = "Txt_Prenom";
+            this.Txt_Prenom.Size = new System.Drawing.Size(252, 22);
+            this.Txt_Prenom.TabIndex = 42;
+            // 
+            // btn_reinit_ajoutref
+            // 
+            this.btn_reinit_ajoutref.Location = new System.Drawing.Point(707, 404);
+            this.btn_reinit_ajoutref.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_reinit_ajoutref.Name = "btn_reinit_ajoutref";
+            this.btn_reinit_ajoutref.Size = new System.Drawing.Size(193, 26);
+            this.btn_reinit_ajoutref.TabIndex = 43;
+            this.btn_reinit_ajoutref.Text = "reinitialiser";
+            this.btn_reinit_ajoutref.UseVisualStyleBackColor = true;
+            // 
+            // Txt_Nom_Modifref
+            // 
+            this.Txt_Nom_Modifref.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.Txt_Nom_Modifref.Location = new System.Drawing.Point(20, 11);
+            this.Txt_Nom_Modifref.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt_Nom_Modifref.Name = "Txt_Nom_Modifref";
+            this.Txt_Nom_Modifref.Size = new System.Drawing.Size(154, 22);
+            this.Txt_Nom_Modifref.TabIndex = 59;
+            this.Txt_Nom_Modifref.Text = "Nom";
+            // 
+            // Txt_Prenom_Modifref
+            // 
+            this.Txt_Prenom_Modifref.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.Txt_Prenom_Modifref.Location = new System.Drawing.Point(21, 50);
+            this.Txt_Prenom_Modifref.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt_Prenom_Modifref.Name = "Txt_Prenom_Modifref";
+            this.Txt_Prenom_Modifref.Size = new System.Drawing.Size(151, 22);
+            this.Txt_Prenom_Modifref.TabIndex = 60;
+            this.Txt_Prenom_Modifref.Text = "Prenom";
+            // 
+            // lbl_err_coulpeau_modif_ref
+            // 
+            this.lbl_err_coulpeau_modif_ref.AutoSize = true;
+            this.lbl_err_coulpeau_modif_ref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_coulpeau_modif_ref.Location = new System.Drawing.Point(206, 266);
+            this.lbl_err_coulpeau_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_err_coulpeau_modif_ref.Name = "lbl_err_coulpeau_modif_ref";
+            this.lbl_err_coulpeau_modif_ref.Size = new System.Drawing.Size(13, 17);
+            this.lbl_err_coulpeau_modif_ref.TabIndex = 61;
+            this.lbl_err_coulpeau_modif_ref.Text = "*";
+            this.lbl_err_coulpeau_modif_ref.Visible = false;
+            // 
+            // lbl_err_coulchev_modif_ref
+            // 
+            this.lbl_err_coulchev_modif_ref.AutoSize = true;
+            this.lbl_err_coulchev_modif_ref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_coulchev_modif_ref.Location = new System.Drawing.Point(210, 336);
+            this.lbl_err_coulchev_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_err_coulchev_modif_ref.Name = "lbl_err_coulchev_modif_ref";
+            this.lbl_err_coulchev_modif_ref.Size = new System.Drawing.Size(13, 17);
+            this.lbl_err_coulchev_modif_ref.TabIndex = 62;
+            this.lbl_err_coulchev_modif_ref.Text = "*";
+            this.lbl_err_coulchev_modif_ref.Visible = false;
+            // 
+            // lbl_err_coulyeux_modif_ref
+            // 
+            this.lbl_err_coulyeux_modif_ref.AutoSize = true;
+            this.lbl_err_coulyeux_modif_ref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_coulyeux_modif_ref.Location = new System.Drawing.Point(210, 405);
+            this.lbl_err_coulyeux_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_err_coulyeux_modif_ref.Name = "lbl_err_coulyeux_modif_ref";
+            this.lbl_err_coulyeux_modif_ref.Size = new System.Drawing.Size(13, 17);
+            this.lbl_err_coulyeux_modif_ref.TabIndex = 63;
+            this.lbl_err_coulyeux_modif_ref.Text = "*";
+            this.lbl_err_coulyeux_modif_ref.Visible = false;
+            // 
+            // lbl_err_bless_modif_ref
+            // 
+            this.lbl_err_bless_modif_ref.AutoSize = true;
+            this.lbl_err_bless_modif_ref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_bless_modif_ref.Location = new System.Drawing.Point(398, 55);
+            this.lbl_err_bless_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_err_bless_modif_ref.Name = "lbl_err_bless_modif_ref";
+            this.lbl_err_bless_modif_ref.Size = new System.Drawing.Size(13, 17);
+            this.lbl_err_bless_modif_ref.TabIndex = 64;
+            this.lbl_err_bless_modif_ref.Text = "*";
+            this.lbl_err_bless_modif_ref.Visible = false;
+            // 
+            // lbl_err_typchev_modif_ref
+            // 
+            this.lbl_err_typchev_modif_ref.AutoSize = true;
+            this.lbl_err_typchev_modif_ref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_typchev_modif_ref.Location = new System.Drawing.Point(398, 130);
+            this.lbl_err_typchev_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_err_typchev_modif_ref.Name = "lbl_err_typchev_modif_ref";
+            this.lbl_err_typchev_modif_ref.Size = new System.Drawing.Size(13, 17);
+            this.lbl_err_typchev_modif_ref.TabIndex = 65;
+            this.lbl_err_typchev_modif_ref.Text = "*";
+            this.lbl_err_typchev_modif_ref.Visible = false;
+            // 
+            // lbl_err_allerg_modifref
+            // 
+            this.lbl_err_allerg_modifref.AutoSize = true;
+            this.lbl_err_allerg_modifref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_allerg_modifref.Location = new System.Drawing.Point(414, 182);
+            this.lbl_err_allerg_modifref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_err_allerg_modifref.Name = "lbl_err_allerg_modifref";
+            this.lbl_err_allerg_modifref.Size = new System.Drawing.Size(13, 17);
+            this.lbl_err_allerg_modifref.TabIndex = 66;
+            this.lbl_err_allerg_modifref.Text = "*";
+            this.lbl_err_allerg_modifref.Visible = false;
+            // 
+            // lbl_err_handi_modif_ref
+            // 
+            this.lbl_err_handi_modif_ref.AutoSize = true;
+            this.lbl_err_handi_modif_ref.ForeColor = System.Drawing.Color.Red;
+            this.lbl_err_handi_modif_ref.Location = new System.Drawing.Point(410, 252);
+            this.lbl_err_handi_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_err_handi_modif_ref.Name = "lbl_err_handi_modif_ref";
+            this.lbl_err_handi_modif_ref.Size = new System.Drawing.Size(13, 17);
+            this.lbl_err_handi_modif_ref.TabIndex = 67;
+            this.lbl_err_handi_modif_ref.Text = "*";
+            this.lbl_err_handi_modif_ref.Visible = false;
+            // 
+            // btn_reinit_modifref
+            // 
+            this.btn_reinit_modifref.Location = new System.Drawing.Point(274, 475);
+            this.btn_reinit_modifref.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_reinit_modifref.Name = "btn_reinit_modifref";
+            this.btn_reinit_modifref.Size = new System.Drawing.Size(153, 28);
+            this.btn_reinit_modifref.TabIndex = 68;
+            this.btn_reinit_modifref.Text = "reinitialiser";
+            this.btn_reinit_modifref.UseVisualStyleBackColor = true;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ID.Width = 50;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Nom";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Prenom
+            // 
+            this.Prenom.HeaderText = "Prenom";
+            this.Prenom.Name = "Prenom";
+            this.Prenom.ReadOnly = true;
+            // 
+            // Sexe
+            // 
+            this.Sexe.HeaderText = "Sexe";
+            this.Sexe.Name = "Sexe";
+            this.Sexe.ReadOnly = true;
+            // 
+            // DateNaiss
+            // 
+            this.DateNaiss.HeaderText = "Date de Naissance";
+            this.DateNaiss.Name = "DateNaiss";
+            this.DateNaiss.ReadOnly = true;
+            // 
+            // Nationalite
+            // 
+            this.Nationalite.HeaderText = "Nationalite";
+            this.Nationalite.Name = "Nationalite";
+            this.Nationalite.ReadOnly = true;
+            // 
+            // numrefug
+            // 
+            this.numrefug.HeaderText = "N° Refuge";
+            this.numrefug.Name = "numrefug";
+            this.numrefug.ReadOnly = true;
+            // 
+            // Taille
+            // 
+            this.Taille.HeaderText = "Taille";
+            this.Taille.Name = "Taille";
+            this.Taille.ReadOnly = true;
+            // 
+            // Coulpeau
+            // 
+            this.Coulpeau.HeaderText = "Couleur de peau";
+            this.Coulpeau.Name = "Coulpeau";
+            this.Coulpeau.ReadOnly = true;
+            // 
+            // coulyeux
+            // 
+            this.coulyeux.HeaderText = "Couleur des yeux";
+            this.coulyeux.Name = "coulyeux";
+            this.coulyeux.ReadOnly = true;
+            // 
+            // coulchev
+            // 
+            this.coulchev.HeaderText = "Couleur des cheveux";
+            this.coulchev.Name = "coulchev";
+            this.coulchev.ReadOnly = true;
+            // 
+            // typchev
+            // 
+            this.typchev.HeaderText = "Type de cheveux";
+            this.typchev.Name = "typchev";
+            this.typchev.ReadOnly = true;
+            // 
+            // blessure
+            // 
+            this.blessure.HeaderText = "Blessure";
+            this.blessure.Name = "blessure";
+            this.blessure.ReadOnly = true;
+            // 
+            // allergie
+            // 
+            this.allergie.HeaderText = "Allergie";
+            this.allergie.Name = "allergie";
+            this.allergie.ReadOnly = true;
+            // 
+            // handicap
+            // 
+            this.handicap.HeaderText = "Handicap";
+            this.handicap.Name = "handicap";
+            this.handicap.ReadOnly = true;
+            // 
+            // Autre
+            // 
+            this.Autre.HeaderText = "Autre";
+            this.Autre.Name = "Autre";
+            this.Autre.ReadOnly = true;
             // 
             // Ajout
             // 
@@ -1766,7 +1962,7 @@
             this.groupBox1.PerformLayout();
             this.tabPageModifRef.ResumeLayout(false);
             this.tabPageModifRef.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_taille_modifref)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_refugeref_modif_ref)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_modif_ref)).EndInit();
             this.tabPagemodifGerant.ResumeLayout(false);
@@ -1778,6 +1974,11 @@
 
         }
 
+        private void tabPageModifRef_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
@@ -1785,15 +1986,13 @@
         private System.Windows.Forms.DateTimePicker DatePicker_DatNaiss;
         private System.Windows.Forms.RadioButton RdBtn_Femme;
         private System.Windows.Forms.RadioButton RdBtn_Homme;
-        private System.Windows.Forms.MaskedTextBox Txt_Prenom;
-        private System.Windows.Forms.MaskedTextBox Txt_Nom;
         private System.Windows.Forms.TabPage tabPageAjoutGérant;
         private System.Windows.Forms.ComboBox List_Nationalite;
         private System.Windows.Forms.Label Lbl_DateNaiss;
         private System.Windows.Forms.Button Btn_Ajout;
         private System.Windows.Forms.Label Lbl_Nationalite;
         private System.Windows.Forms.Label Lbl_ErrNation;
-        private System.Windows.Forms.Label Lbl_Sexe;
+        private System.Windows.Forms.Label Lbl_errSexe;
         private System.Windows.Forms.Button btn_AjoutM;
         private System.Windows.Forms.MaskedTextBox Txt_PrenomM;
         private System.Windows.Forms.MaskedTextBox Txt_MDPM;
@@ -1815,8 +2014,6 @@
         private System.Windows.Forms.DateTimePicker DatePicker_Naiss_modif_ref;
         private System.Windows.Forms.RadioButton rdn_Femme_Modif_ref;
         private System.Windows.Forms.RadioButton rdn_Homme_Modif_ref;
-        private System.Windows.Forms.MaskedTextBox Txt_Prenom_Modif_ref;
-        private System.Windows.Forms.MaskedTextBox Txt_Nom_Modif_ref;
         private System.Windows.Forms.Button btn_Suppr_ref;
         private System.Windows.Forms.DataGridView DataGrid_modif_ref;
         private System.Windows.Forms.TabPage tabPageAccueil;
@@ -1844,12 +2041,6 @@
         private System.Windows.Forms.NumericUpDown num_refugeref_modif_ref;
         private System.Windows.Forms.Button btn_rechercher_modifref;
         private System.Windows.Forms.Label lbl_errsupp_modif_ref;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Prenom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sexe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateNaiss;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nationalite;
         private System.Windows.Forms.Label lbl_err_btn_modif_ref;
         private System.Windows.Forms.Label lbl_err_coulchev_ajoutref;
         private System.Windows.Forms.Label lbl_coulchev_ajoutref;
@@ -1878,28 +2069,57 @@
         private System.Windows.Forms.ComboBox txt_typchev_ajoutref;
         private System.Windows.Forms.Label lbl_err_champs_modifref;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox txt_typchev_modifref;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox txt_autre_modifref;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox txt_handi_modifref;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox txt_allerg_modifref;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox txt_bless_modifref;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox txt_coulyeux_modifref;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox txt_coulchev_modifref;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.ComboBox txt_coulpeau_modifref;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown num_taille_modifref;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoleAdmin;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoleMagasinier;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoleAgentA;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxmodif_ger;
+        private System.Windows.Forms.MaskedTextBox Txt_Prenom;
+        private System.Windows.Forms.MaskedTextBox Txt_Nom;
+        private System.Windows.Forms.Button btn_reinit_ajoutref;
+        private System.Windows.Forms.MaskedTextBox Txt_Prenom_Modifref;
+        private System.Windows.Forms.MaskedTextBox Txt_Nom_Modifref;
+        private System.Windows.Forms.Label lbl_err_coulpeau_modif_ref;
+        private System.Windows.Forms.Label lbl_err_coulchev_modif_ref;
+        private System.Windows.Forms.Label lbl_err_coulyeux_modif_ref;
+        private System.Windows.Forms.Label lbl_err_bless_modif_ref;
+        private System.Windows.Forms.Label lbl_err_typchev_modif_ref;
+        private System.Windows.Forms.Label lbl_err_allerg_modifref;
+        private System.Windows.Forms.Label lbl_err_handi_modif_ref;
+        private System.Windows.Forms.Button btn_reinit_modifref;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Prenom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sexe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateNaiss;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nationalite;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numrefug;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Taille;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Coulpeau;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coulyeux;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coulchev;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typchev;
+        private System.Windows.Forms.DataGridViewTextBoxColumn blessure;
+        private System.Windows.Forms.DataGridViewTextBoxColumn allergie;
+        private System.Windows.Forms.DataGridViewTextBoxColumn handicap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Autre;
     }
 }
