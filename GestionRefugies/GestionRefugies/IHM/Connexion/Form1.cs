@@ -27,7 +27,7 @@ namespace GestionRefugies
         /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
-            StringBuilder adresse = new StringBuilder("https://www.google.com/maps?q=");
+            StringBuilder adresse = new StringBuilder("https://www.unicef.org/fr");
             webBrowser1.Navigate(adresse.ToString());
             this.Txt_Adress.Text = /*appel de BD*/ "Adresse du Camps";
         } 
@@ -116,7 +116,7 @@ namespace GestionRefugies
             string pays = textBox2.Text;
 
 
-            StringBuilder adresse = new StringBuilder("https://www.google.com/maps?q=");
+            StringBuilder adresse = new StringBuilder("https://www.viamichelin.fr/web/Cartes-plans?address=");
 
             adresse.Append(ville);
             adresse.Append(pays);
