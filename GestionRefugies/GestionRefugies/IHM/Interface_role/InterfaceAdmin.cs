@@ -1300,9 +1300,18 @@ namespace GestionRefugies
 
 
 
+
         #endregion
 
-        
+        private void deconnect_Click(object sender, EventArgs e)
+        {
+            var disconnect_res = MessageBox.Show("Voulez vous vraiment vous déconnecter ?"," ", MessageBoxButtons.YesNo);
+            if (disconnect_res == DialogResult.Yes)
+            {
+                this.Close();
+            }
+
+        }
     }
 
 }

@@ -45,7 +45,8 @@ namespace GestionRefugies
                 {
                     Ajout inter_connect = new Ajout(connected_user);
                     inter_connect.Show();
-                    this.Hide();
+                   
+                    
                 }
                 else
                 {
@@ -99,5 +100,7 @@ namespace GestionRefugies
                 Txt_MDP.Text = "Mot de Passe";
             }
         }
+
+        
     }
 }

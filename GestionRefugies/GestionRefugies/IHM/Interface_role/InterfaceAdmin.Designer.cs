@@ -32,6 +32,8 @@ namespace GestionRefugies
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageAccueil = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.deconnect = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -81,6 +83,7 @@ namespace GestionRefugies
             this.RdBtn_Femme = new System.Windows.Forms.RadioButton();
             this.RdBtn_Homme = new System.Windows.Forms.RadioButton();
             this.tabPageAjoutGérant = new System.Windows.Forms.TabPage();
+            this.btn_reinit_ajoutgerant = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.check_Magasinier = new System.Windows.Forms.CheckBox();
             this.check_admin = new System.Windows.Forms.CheckBox();
@@ -173,7 +176,6 @@ namespace GestionRefugies
             this.Txt_prenom_modif_gerant = new System.Windows.Forms.MaskedTextBox();
             this.Txt_nom_modif_gerant = new System.Windows.Forms.MaskedTextBox();
             this.tabPageStock = new System.Windows.Forms.TabPage();
-            this.btn_reinit_ajoutgerant = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPageAccueil.SuspendLayout();
             this.tabPageAjoutRef.SuspendLayout();
@@ -198,17 +200,20 @@ namespace GestionRefugies
             this.tabControl1.Controls.Add(this.tabPageModifRef);
             this.tabControl1.Controls.Add(this.tabPagemodifGerant);
             this.tabControl1.Controls.Add(this.tabPageStock);
-            this.tabControl1.Location = new System.Drawing.Point(12, 11);
+            this.tabControl1.Location = new System.Drawing.Point(16, 14);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(843, 470);
+            this.tabControl1.Size = new System.Drawing.Size(1124, 578);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged_1);
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
             // tabPageAccueil
             // 
+            this.tabPageAccueil.Controls.Add(this.label5);
+            this.tabPageAccueil.Controls.Add(this.deconnect);
             this.tabPageAccueil.Controls.Add(this.label4);
             this.tabPageAccueil.Controls.Add(this.label3);
             this.tabPageAccueil.Controls.Add(this.label2);
@@ -217,90 +222,116 @@ namespace GestionRefugies
             this.tabPageAccueil.Controls.Add(this.label_MagaAccess);
             this.tabPageAccueil.Controls.Add(this.label_AgentAccess);
             this.tabPageAccueil.Controls.Add(this.label_nameU);
-            this.tabPageAccueil.Location = new System.Drawing.Point(4, 22);
+            this.tabPageAccueil.Location = new System.Drawing.Point(4, 25);
+            this.tabPageAccueil.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageAccueil.Name = "tabPageAccueil";
-            this.tabPageAccueil.Size = new System.Drawing.Size(835, 444);
+            this.tabPageAccueil.Size = new System.Drawing.Size(1116, 549);
             this.tabPageAccueil.TabIndex = 5;
             this.tabPageAccueil.Text = "Accueil";
             this.tabPageAccueil.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(28, 37);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(349, 20);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Bonjour, ci-dessous vos droit d\'accées :";
+            // 
+            // deconnect
+            // 
+            this.deconnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deconnect.ForeColor = System.Drawing.Color.Red;
+            this.deconnect.Location = new System.Drawing.Point(888, 469);
+            this.deconnect.Name = "deconnect";
+            this.deconnect.Size = new System.Drawing.Size(188, 39);
+            this.deconnect.TabIndex = 8;
+            this.deconnect.Text = "Se déconnecter";
+            this.deconnect.UseVisualStyleBackColor = true;
+            this.deconnect.Click += new System.EventHandler(this.deconnect_Click);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 145);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label4.Location = new System.Drawing.Point(21, 272);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 13);
+            this.label4.Size = new System.Drawing.Size(118, 17);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Admin Access";
+            this.label4.Text = "Admin Access :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 107);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.label3.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label3.Location = new System.Drawing.Point(21, 226);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 13);
+            this.label3.Size = new System.Drawing.Size(113, 17);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Maga Access";
+            this.label3.Text = "Maga Access :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 72);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label2.Location = new System.Drawing.Point(21, 183);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 13);
+            this.label2.Size = new System.Drawing.Size(116, 17);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Access Agent";
+            this.label2.Text = "Access Agent :";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 37);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
+            this.label1.Location = new System.Drawing.Point(21, 140);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.Size = new System.Drawing.Size(53, 17);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Nom";
+            this.label1.Text = "Nom   :";
             // 
             // label_AdminAccess
             // 
             this.label_AdminAccess.AutoSize = true;
-            this.label_AdminAccess.Location = new System.Drawing.Point(98, 145);
-            this.label_AdminAccess.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_AdminAccess.Location = new System.Drawing.Point(158, 272);
             this.label_AdminAccess.Name = "label_AdminAccess";
-            this.label_AdminAccess.Size = new System.Drawing.Size(35, 13);
+            this.label_AdminAccess.Size = new System.Drawing.Size(46, 17);
             this.label_AdminAccess.TabIndex = 3;
             this.label_AdminAccess.Text = "label1";
             // 
             // label_MagaAccess
             // 
             this.label_MagaAccess.AutoSize = true;
-            this.label_MagaAccess.Location = new System.Drawing.Point(98, 107);
-            this.label_MagaAccess.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_MagaAccess.Location = new System.Drawing.Point(158, 226);
             this.label_MagaAccess.Name = "label_MagaAccess";
-            this.label_MagaAccess.Size = new System.Drawing.Size(35, 13);
+            this.label_MagaAccess.Size = new System.Drawing.Size(46, 17);
             this.label_MagaAccess.TabIndex = 2;
             this.label_MagaAccess.Text = "label1";
             // 
             // label_AgentAccess
             // 
             this.label_AgentAccess.AutoSize = true;
-            this.label_AgentAccess.Location = new System.Drawing.Point(98, 72);
-            this.label_AgentAccess.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_AgentAccess.Location = new System.Drawing.Point(158, 183);
             this.label_AgentAccess.Name = "label_AgentAccess";
-            this.label_AgentAccess.Size = new System.Drawing.Size(35, 13);
+            this.label_AgentAccess.Size = new System.Drawing.Size(46, 17);
             this.label_AgentAccess.TabIndex = 1;
             this.label_AgentAccess.Text = "label1";
             // 
             // label_nameU
             // 
             this.label_nameU.AutoSize = true;
-            this.label_nameU.Location = new System.Drawing.Point(66, 37);
-            this.label_nameU.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_nameU.Location = new System.Drawing.Point(94, 140);
             this.label_nameU.Name = "label_nameU";
-            this.label_nameU.Size = new System.Drawing.Size(35, 13);
+            this.label_nameU.Size = new System.Drawing.Size(46, 17);
             this.label_nameU.TabIndex = 0;
             this.label_nameU.Text = "label1";
             // 
@@ -346,18 +377,20 @@ namespace GestionRefugies
             this.tabPageAjoutRef.Controls.Add(this.DatePicker_DatNaiss);
             this.tabPageAjoutRef.Controls.Add(this.RdBtn_Femme);
             this.tabPageAjoutRef.Controls.Add(this.RdBtn_Homme);
-            this.tabPageAjoutRef.Location = new System.Drawing.Point(4, 22);
+            this.tabPageAjoutRef.Location = new System.Drawing.Point(4, 25);
+            this.tabPageAjoutRef.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageAjoutRef.Name = "tabPageAjoutRef";
-            this.tabPageAjoutRef.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAjoutRef.Size = new System.Drawing.Size(835, 444);
+            this.tabPageAjoutRef.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPageAjoutRef.Size = new System.Drawing.Size(1116, 549);
             this.tabPageAjoutRef.TabIndex = 0;
             this.tabPageAjoutRef.Text = "Ajouter un Refugié";
             // 
             // btn_reinit_ajoutref
             // 
-            this.btn_reinit_ajoutref.Location = new System.Drawing.Point(572, 363);
+            this.btn_reinit_ajoutref.Location = new System.Drawing.Point(763, 447);
+            this.btn_reinit_ajoutref.Margin = new System.Windows.Forms.Padding(4);
             this.btn_reinit_ajoutref.Name = "btn_reinit_ajoutref";
-            this.btn_reinit_ajoutref.Size = new System.Drawing.Size(190, 20);
+            this.btn_reinit_ajoutref.Size = new System.Drawing.Size(253, 25);
             this.btn_reinit_ajoutref.TabIndex = 43;
             this.btn_reinit_ajoutref.Text = "Reinitialiser";
             this.btn_reinit_ajoutref.UseVisualStyleBackColor = true;
@@ -366,9 +399,10 @@ namespace GestionRefugies
             // Txt_Prenom
             // 
             this.Txt_Prenom.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Txt_Prenom.Location = new System.Drawing.Point(36, 56);
+            this.Txt_Prenom.Location = new System.Drawing.Point(48, 69);
+            this.Txt_Prenom.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_Prenom.Name = "Txt_Prenom";
-            this.Txt_Prenom.Size = new System.Drawing.Size(190, 20);
+            this.Txt_Prenom.Size = new System.Drawing.Size(252, 22);
             this.Txt_Prenom.TabIndex = 42;
             this.Txt_Prenom.Text = "Prenom";
             this.Txt_Prenom.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_Prenom_KeyDown);
@@ -377,9 +411,10 @@ namespace GestionRefugies
             // Txt_Nom
             // 
             this.Txt_Nom.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Txt_Nom.Location = new System.Drawing.Point(36, 32);
+            this.Txt_Nom.Location = new System.Drawing.Point(48, 39);
+            this.Txt_Nom.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_Nom.Name = "Txt_Nom";
-            this.Txt_Nom.Size = new System.Drawing.Size(190, 20);
+            this.Txt_Nom.Size = new System.Drawing.Size(252, 22);
             this.Txt_Nom.TabIndex = 41;
             this.Txt_Nom.Text = "Nom";
             this.Txt_Nom.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_Nom_KeyDown);
@@ -389,9 +424,10 @@ namespace GestionRefugies
             // 
             this.lbl_err_typchev_ajoutref.AutoSize = true;
             this.lbl_err_typchev_ajoutref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_typchev_ajoutref.Location = new System.Drawing.Point(300, 314);
+            this.lbl_err_typchev_ajoutref.Location = new System.Drawing.Point(400, 386);
+            this.lbl_err_typchev_ajoutref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_err_typchev_ajoutref.Name = "lbl_err_typchev_ajoutref";
-            this.lbl_err_typchev_ajoutref.Size = new System.Drawing.Size(188, 13);
+            this.lbl_err_typchev_ajoutref.Size = new System.Drawing.Size(251, 17);
             this.lbl_err_typchev_ajoutref.TabIndex = 40;
             this.lbl_err_typchev_ajoutref.Text = "Veuillez renseigner le type de cheveux";
             this.lbl_err_typchev_ajoutref.Visible = false;
@@ -399,9 +435,10 @@ namespace GestionRefugies
             // lbl_typchev_ajoutref
             // 
             this.lbl_typchev_ajoutref.AutoSize = true;
-            this.lbl_typchev_ajoutref.Location = new System.Drawing.Point(296, 274);
+            this.lbl_typchev_ajoutref.Location = new System.Drawing.Point(395, 337);
+            this.lbl_typchev_ajoutref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_typchev_ajoutref.Name = "lbl_typchev_ajoutref";
-            this.lbl_typchev_ajoutref.Size = new System.Drawing.Size(91, 13);
+            this.lbl_typchev_ajoutref.Size = new System.Drawing.Size(118, 17);
             this.lbl_typchev_ajoutref.TabIndex = 39;
             this.lbl_typchev_ajoutref.Text = "Type de Cheveux";
             // 
@@ -417,35 +454,39 @@ namespace GestionRefugies
             "Gras",
             "Chauve",
             "Autre"});
-            this.txt_typchev_ajoutref.Location = new System.Drawing.Point(288, 290);
+            this.txt_typchev_ajoutref.Location = new System.Drawing.Point(384, 357);
+            this.txt_typchev_ajoutref.Margin = new System.Windows.Forms.Padding(4);
             this.txt_typchev_ajoutref.Name = "txt_typchev_ajoutref";
-            this.txt_typchev_ajoutref.Size = new System.Drawing.Size(190, 21);
+            this.txt_typchev_ajoutref.Size = new System.Drawing.Size(252, 24);
             this.txt_typchev_ajoutref.TabIndex = 38;
             // 
             // lbl_autre_ajoutref
             // 
             this.lbl_autre_ajoutref.AutoSize = true;
-            this.lbl_autre_ajoutref.Location = new System.Drawing.Point(580, 216);
+            this.lbl_autre_ajoutref.Location = new System.Drawing.Point(773, 266);
+            this.lbl_autre_ajoutref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_autre_ajoutref.Name = "lbl_autre_ajoutref";
-            this.lbl_autre_ajoutref.Size = new System.Drawing.Size(87, 13);
+            this.lbl_autre_ajoutref.Size = new System.Drawing.Size(117, 17);
             this.lbl_autre_ajoutref.TabIndex = 37;
             this.lbl_autre_ajoutref.Text = "Autre ( facultatif )";
             // 
             // txt_autre_ajoutref
             // 
             this.txt_autre_ajoutref.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txt_autre_ajoutref.Location = new System.Drawing.Point(572, 233);
+            this.txt_autre_ajoutref.Location = new System.Drawing.Point(763, 287);
+            this.txt_autre_ajoutref.Margin = new System.Windows.Forms.Padding(4);
             this.txt_autre_ajoutref.Name = "txt_autre_ajoutref";
-            this.txt_autre_ajoutref.Size = new System.Drawing.Size(190, 20);
+            this.txt_autre_ajoutref.Size = new System.Drawing.Size(252, 22);
             this.txt_autre_ajoutref.TabIndex = 36;
             // 
             // lbl_err_handi_ajoutref
             // 
             this.lbl_err_handi_ajoutref.AutoSize = true;
             this.lbl_err_handi_ajoutref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_handi_ajoutref.Location = new System.Drawing.Point(617, 158);
+            this.lbl_err_handi_ajoutref.Location = new System.Drawing.Point(823, 194);
+            this.lbl_err_handi_ajoutref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_err_handi_ajoutref.Name = "lbl_err_handi_ajoutref";
-            this.lbl_err_handi_ajoutref.Size = new System.Drawing.Size(155, 13);
+            this.lbl_err_handi_ajoutref.Size = new System.Drawing.Size(208, 17);
             this.lbl_err_handi_ajoutref.TabIndex = 35;
             this.lbl_err_handi_ajoutref.Text = "Veuillez renseigner le Handicap";
             this.lbl_err_handi_ajoutref.Visible = false;
@@ -453,9 +494,10 @@ namespace GestionRefugies
             // lbl_handi_ajoutref
             // 
             this.lbl_handi_ajoutref.AutoSize = true;
-            this.lbl_handi_ajoutref.Location = new System.Drawing.Point(580, 118);
+            this.lbl_handi_ajoutref.Location = new System.Drawing.Point(773, 145);
+            this.lbl_handi_ajoutref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_handi_ajoutref.Name = "lbl_handi_ajoutref";
-            this.lbl_handi_ajoutref.Size = new System.Drawing.Size(53, 13);
+            this.lbl_handi_ajoutref.Size = new System.Drawing.Size(68, 17);
             this.lbl_handi_ajoutref.TabIndex = 34;
             this.lbl_handi_ajoutref.Text = "Handicap";
             // 
@@ -468,18 +510,20 @@ namespace GestionRefugies
             "Pas de Handicap",
             "Moteur",
             "Mental"});
-            this.txt_handi_ajoutref.Location = new System.Drawing.Point(572, 134);
+            this.txt_handi_ajoutref.Location = new System.Drawing.Point(763, 165);
+            this.txt_handi_ajoutref.Margin = new System.Windows.Forms.Padding(4);
             this.txt_handi_ajoutref.Name = "txt_handi_ajoutref";
-            this.txt_handi_ajoutref.Size = new System.Drawing.Size(190, 21);
+            this.txt_handi_ajoutref.Size = new System.Drawing.Size(252, 24);
             this.txt_handi_ajoutref.TabIndex = 33;
             // 
             // lbl_err_allerg_ajoutref
             // 
             this.lbl_err_allerg_ajoutref.AutoSize = true;
             this.lbl_err_allerg_ajoutref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_allerg_ajoutref.Location = new System.Drawing.Point(637, 77);
+            this.lbl_err_allerg_ajoutref.Location = new System.Drawing.Point(849, 95);
+            this.lbl_err_allerg_ajoutref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_err_allerg_ajoutref.Name = "lbl_err_allerg_ajoutref";
-            this.lbl_err_allerg_ajoutref.Size = new System.Drawing.Size(135, 13);
+            this.lbl_err_allerg_ajoutref.Size = new System.Drawing.Size(185, 17);
             this.lbl_err_allerg_ajoutref.TabIndex = 32;
             this.lbl_err_allerg_ajoutref.Text = "Veuillez renseigner l\'allergie";
             this.lbl_err_allerg_ajoutref.Visible = false;
@@ -487,9 +531,10 @@ namespace GestionRefugies
             // lbl_allerg_ajoutref
             // 
             this.lbl_allerg_ajoutref.AutoSize = true;
-            this.lbl_allerg_ajoutref.Location = new System.Drawing.Point(580, 37);
+            this.lbl_allerg_ajoutref.Location = new System.Drawing.Point(773, 46);
+            this.lbl_allerg_ajoutref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_allerg_ajoutref.Name = "lbl_allerg_ajoutref";
-            this.lbl_allerg_ajoutref.Size = new System.Drawing.Size(41, 13);
+            this.lbl_allerg_ajoutref.Size = new System.Drawing.Size(55, 17);
             this.lbl_allerg_ajoutref.TabIndex = 31;
             this.lbl_allerg_ajoutref.Text = "Allergie";
             // 
@@ -510,18 +555,20 @@ namespace GestionRefugies
             "Lait",
             "Ble",
             "Autre"});
-            this.txt_allerg_ajoutref.Location = new System.Drawing.Point(572, 53);
+            this.txt_allerg_ajoutref.Location = new System.Drawing.Point(763, 65);
+            this.txt_allerg_ajoutref.Margin = new System.Windows.Forms.Padding(4);
             this.txt_allerg_ajoutref.Name = "txt_allerg_ajoutref";
-            this.txt_allerg_ajoutref.Size = new System.Drawing.Size(190, 21);
+            this.txt_allerg_ajoutref.Size = new System.Drawing.Size(252, 24);
             this.txt_allerg_ajoutref.TabIndex = 30;
             // 
             // lbl_err_bless_ajoutref
             // 
             this.lbl_err_bless_ajoutref.AutoSize = true;
             this.lbl_err_bless_ajoutref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_bless_ajoutref.Location = new System.Drawing.Point(340, 240);
+            this.lbl_err_bless_ajoutref.Location = new System.Drawing.Point(453, 295);
+            this.lbl_err_bless_ajoutref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_err_bless_ajoutref.Name = "lbl_err_bless_ajoutref";
-            this.lbl_err_bless_ajoutref.Size = new System.Drawing.Size(148, 13);
+            this.lbl_err_bless_ajoutref.Size = new System.Drawing.Size(202, 17);
             this.lbl_err_bless_ajoutref.TabIndex = 29;
             this.lbl_err_bless_ajoutref.Text = "Veuillez renseigner la blessure";
             this.lbl_err_bless_ajoutref.Visible = false;
@@ -529,9 +576,10 @@ namespace GestionRefugies
             // lbl_bless_ajoutref
             // 
             this.lbl_bless_ajoutref.AutoSize = true;
-            this.lbl_bless_ajoutref.Location = new System.Drawing.Point(296, 200);
+            this.lbl_bless_ajoutref.Location = new System.Drawing.Point(395, 246);
+            this.lbl_bless_ajoutref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_bless_ajoutref.Name = "lbl_bless_ajoutref";
-            this.lbl_bless_ajoutref.Size = new System.Drawing.Size(47, 13);
+            this.lbl_bless_ajoutref.Size = new System.Drawing.Size(63, 17);
             this.lbl_bless_ajoutref.TabIndex = 28;
             this.lbl_bless_ajoutref.Text = "Blessure";
             // 
@@ -546,18 +594,20 @@ namespace GestionRefugies
             "Blessure Urgente",
             "Blessure Moyenne",
             "Blessure Benigne"});
-            this.txt_bless_ajoutref.Location = new System.Drawing.Point(288, 216);
+            this.txt_bless_ajoutref.Location = new System.Drawing.Point(384, 266);
+            this.txt_bless_ajoutref.Margin = new System.Windows.Forms.Padding(4);
             this.txt_bless_ajoutref.Name = "txt_bless_ajoutref";
-            this.txt_bless_ajoutref.Size = new System.Drawing.Size(190, 21);
+            this.txt_bless_ajoutref.Size = new System.Drawing.Size(252, 24);
             this.txt_bless_ajoutref.TabIndex = 27;
             // 
             // lbl_err_coulyeux_ajoutref
             // 
             this.lbl_err_coulyeux_ajoutref.AutoSize = true;
             this.lbl_err_coulyeux_ajoutref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_coulyeux_ajoutref.Location = new System.Drawing.Point(41, 387);
+            this.lbl_err_coulyeux_ajoutref.Location = new System.Drawing.Point(55, 476);
+            this.lbl_err_coulyeux_ajoutref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_err_coulyeux_ajoutref.Name = "lbl_err_coulyeux_ajoutref";
-            this.lbl_err_coulyeux_ajoutref.Size = new System.Drawing.Size(192, 13);
+            this.lbl_err_coulyeux_ajoutref.Size = new System.Drawing.Size(259, 17);
             this.lbl_err_coulyeux_ajoutref.TabIndex = 26;
             this.lbl_err_coulyeux_ajoutref.Text = "Veuillez renseigner la Couleur des Yeux";
             this.lbl_err_coulyeux_ajoutref.Visible = false;
@@ -565,9 +615,10 @@ namespace GestionRefugies
             // lbl_coulyeux_ajoutref
             // 
             this.lbl_coulyeux_ajoutref.AutoSize = true;
-            this.lbl_coulyeux_ajoutref.Location = new System.Drawing.Point(52, 347);
+            this.lbl_coulyeux_ajoutref.Location = new System.Drawing.Point(69, 427);
+            this.lbl_coulyeux_ajoutref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_coulyeux_ajoutref.Name = "lbl_coulyeux_ajoutref";
-            this.lbl_coulyeux_ajoutref.Size = new System.Drawing.Size(90, 13);
+            this.lbl_coulyeux_ajoutref.Size = new System.Drawing.Size(119, 17);
             this.lbl_coulyeux_ajoutref.TabIndex = 25;
             this.lbl_coulyeux_ajoutref.Text = "Couleur des Yeux";
             // 
@@ -581,18 +632,20 @@ namespace GestionRefugies
             "Vert",
             "Marron",
             "Autre"});
-            this.txt_coulyeux_ajoutref.Location = new System.Drawing.Point(36, 363);
+            this.txt_coulyeux_ajoutref.Location = new System.Drawing.Point(48, 447);
+            this.txt_coulyeux_ajoutref.Margin = new System.Windows.Forms.Padding(4);
             this.txt_coulyeux_ajoutref.Name = "txt_coulyeux_ajoutref";
-            this.txt_coulyeux_ajoutref.Size = new System.Drawing.Size(190, 21);
+            this.txt_coulyeux_ajoutref.Size = new System.Drawing.Size(252, 24);
             this.txt_coulyeux_ajoutref.TabIndex = 24;
             // 
             // lbl_err_coulchev_ajoutref
             // 
             this.lbl_err_coulchev_ajoutref.AutoSize = true;
             this.lbl_err_coulchev_ajoutref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_coulchev_ajoutref.Location = new System.Drawing.Point(41, 314);
+            this.lbl_err_coulchev_ajoutref.Location = new System.Drawing.Point(55, 386);
+            this.lbl_err_coulchev_ajoutref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_err_coulchev_ajoutref.Name = "lbl_err_coulchev_ajoutref";
-            this.lbl_err_coulchev_ajoutref.Size = new System.Drawing.Size(205, 13);
+            this.lbl_err_coulchev_ajoutref.Size = new System.Drawing.Size(275, 17);
             this.lbl_err_coulchev_ajoutref.TabIndex = 23;
             this.lbl_err_coulchev_ajoutref.Text = "Veuillez renseigner la Couleur de Cheveux";
             this.lbl_err_coulchev_ajoutref.Visible = false;
@@ -600,9 +653,10 @@ namespace GestionRefugies
             // lbl_coulchev_ajoutref
             // 
             this.lbl_coulchev_ajoutref.AutoSize = true;
-            this.lbl_coulchev_ajoutref.Location = new System.Drawing.Point(52, 274);
+            this.lbl_coulchev_ajoutref.Location = new System.Drawing.Point(69, 337);
+            this.lbl_coulchev_ajoutref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_coulchev_ajoutref.Name = "lbl_coulchev_ajoutref";
-            this.lbl_coulchev_ajoutref.Size = new System.Drawing.Size(103, 13);
+            this.lbl_coulchev_ajoutref.Size = new System.Drawing.Size(135, 17);
             this.lbl_coulchev_ajoutref.TabIndex = 22;
             this.lbl_coulchev_ajoutref.Text = "Couleur de Cheveux";
             // 
@@ -622,18 +676,20 @@ namespace GestionRefugies
             "Vert",
             "Rose",
             "Autre"});
-            this.txt_coulchev_ajoutref.Location = new System.Drawing.Point(36, 290);
+            this.txt_coulchev_ajoutref.Location = new System.Drawing.Point(48, 357);
+            this.txt_coulchev_ajoutref.Margin = new System.Windows.Forms.Padding(4);
             this.txt_coulchev_ajoutref.Name = "txt_coulchev_ajoutref";
-            this.txt_coulchev_ajoutref.Size = new System.Drawing.Size(190, 21);
+            this.txt_coulchev_ajoutref.Size = new System.Drawing.Size(252, 24);
             this.txt_coulchev_ajoutref.TabIndex = 21;
             // 
             // lbl_err_coulpeau_ajoutref
             // 
             this.lbl_err_coulpeau_ajoutref.AutoSize = true;
             this.lbl_err_coulpeau_ajoutref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_coulpeau_ajoutref.Location = new System.Drawing.Point(41, 241);
+            this.lbl_err_coulpeau_ajoutref.Location = new System.Drawing.Point(55, 297);
+            this.lbl_err_coulpeau_ajoutref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_err_coulpeau_ajoutref.Name = "lbl_err_coulpeau_ajoutref";
-            this.lbl_err_coulpeau_ajoutref.Size = new System.Drawing.Size(188, 13);
+            this.lbl_err_coulpeau_ajoutref.Size = new System.Drawing.Size(254, 17);
             this.lbl_err_coulpeau_ajoutref.TabIndex = 20;
             this.lbl_err_coulpeau_ajoutref.Text = "Veuillez renseigner la Couleur de Peau";
             this.lbl_err_coulpeau_ajoutref.Visible = false;
@@ -641,9 +697,10 @@ namespace GestionRefugies
             // lbl_coulpeau_ajoutref
             // 
             this.lbl_coulpeau_ajoutref.AutoSize = true;
-            this.lbl_coulpeau_ajoutref.Location = new System.Drawing.Point(52, 200);
+            this.lbl_coulpeau_ajoutref.Location = new System.Drawing.Point(69, 246);
+            this.lbl_coulpeau_ajoutref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_coulpeau_ajoutref.Name = "lbl_coulpeau_ajoutref";
-            this.lbl_coulpeau_ajoutref.Size = new System.Drawing.Size(86, 13);
+            this.lbl_coulpeau_ajoutref.Size = new System.Drawing.Size(114, 17);
             this.lbl_coulpeau_ajoutref.TabIndex = 19;
             this.lbl_coulpeau_ajoutref.Text = "Couleur de Peau";
             // 
@@ -656,24 +713,27 @@ namespace GestionRefugies
             "Blanc",
             "Noir",
             "Metissé"});
-            this.txt_coulpeau_ajoutref.Location = new System.Drawing.Point(36, 216);
+            this.txt_coulpeau_ajoutref.Location = new System.Drawing.Point(48, 266);
+            this.txt_coulpeau_ajoutref.Margin = new System.Windows.Forms.Padding(4);
             this.txt_coulpeau_ajoutref.Name = "txt_coulpeau_ajoutref";
-            this.txt_coulpeau_ajoutref.Size = new System.Drawing.Size(190, 21);
+            this.txt_coulpeau_ajoutref.Size = new System.Drawing.Size(252, 24);
             this.txt_coulpeau_ajoutref.TabIndex = 18;
             // 
             // lbl_taille_ajoutref
             // 
             this.lbl_taille_ajoutref.AutoSize = true;
-            this.lbl_taille_ajoutref.Location = new System.Drawing.Point(41, 168);
+            this.lbl_taille_ajoutref.Location = new System.Drawing.Point(55, 207);
+            this.lbl_taille_ajoutref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_taille_ajoutref.Name = "lbl_taille_ajoutref";
-            this.lbl_taille_ajoutref.Size = new System.Drawing.Size(55, 13);
+            this.lbl_taille_ajoutref.Size = new System.Drawing.Size(74, 17);
             this.lbl_taille_ajoutref.TabIndex = 17;
             this.lbl_taille_ajoutref.Text = "Taille (cm)";
             this.lbl_taille_ajoutref.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // num_taille_ajoutref
             // 
-            this.num_taille_ajoutref.Location = new System.Drawing.Point(96, 166);
+            this.num_taille_ajoutref.Location = new System.Drawing.Point(128, 204);
+            this.num_taille_ajoutref.Margin = new System.Windows.Forms.Padding(4);
             this.num_taille_ajoutref.Maximum = new decimal(new int[] {
             300,
             0,
@@ -685,7 +745,7 @@ namespace GestionRefugies
             0,
             0});
             this.num_taille_ajoutref.Name = "num_taille_ajoutref";
-            this.num_taille_ajoutref.Size = new System.Drawing.Size(90, 20);
+            this.num_taille_ajoutref.Size = new System.Drawing.Size(120, 22);
             this.num_taille_ajoutref.TabIndex = 16;
             this.num_taille_ajoutref.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.num_taille_ajoutref.Value = new decimal(new int[] {
@@ -697,16 +757,18 @@ namespace GestionRefugies
             // lbl_RefugeRef
             // 
             this.lbl_RefugeRef.AutoSize = true;
-            this.lbl_RefugeRef.Location = new System.Drawing.Point(41, 142);
+            this.lbl_RefugeRef.Location = new System.Drawing.Point(55, 175);
+            this.lbl_RefugeRef.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_RefugeRef.Name = "lbl_RefugeRef";
-            this.lbl_RefugeRef.Size = new System.Drawing.Size(55, 13);
+            this.lbl_RefugeRef.Size = new System.Drawing.Size(72, 17);
             this.lbl_RefugeRef.TabIndex = 15;
             this.lbl_RefugeRef.Text = "Refuge n°";
             this.lbl_RefugeRef.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // num_RefugeRef
             // 
-            this.num_RefugeRef.Location = new System.Drawing.Point(96, 140);
+            this.num_RefugeRef.Location = new System.Drawing.Point(128, 172);
+            this.num_RefugeRef.Margin = new System.Windows.Forms.Padding(4);
             this.num_RefugeRef.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -718,7 +780,7 @@ namespace GestionRefugies
             0,
             0});
             this.num_RefugeRef.Name = "num_RefugeRef";
-            this.num_RefugeRef.Size = new System.Drawing.Size(90, 20);
+            this.num_RefugeRef.Size = new System.Drawing.Size(120, 22);
             this.num_RefugeRef.TabIndex = 14;
             this.num_RefugeRef.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.num_RefugeRef.Value = new decimal(new int[] {
@@ -731,9 +793,10 @@ namespace GestionRefugies
             // 
             this.Lbl_ErrNation.AutoSize = true;
             this.Lbl_ErrNation.ForeColor = System.Drawing.Color.Red;
-            this.Lbl_ErrNation.Location = new System.Drawing.Point(331, 160);
+            this.Lbl_ErrNation.Location = new System.Drawing.Point(441, 197);
+            this.Lbl_ErrNation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_ErrNation.Name = "Lbl_ErrNation";
-            this.Lbl_ErrNation.Size = new System.Drawing.Size(157, 13);
+            this.Lbl_ErrNation.Size = new System.Drawing.Size(213, 17);
             this.Lbl_ErrNation.TabIndex = 13;
             this.Lbl_ErrNation.Text = "Veuillez renseigner la nationalite";
             this.Lbl_ErrNation.Visible = false;
@@ -742,18 +805,20 @@ namespace GestionRefugies
             // 
             this.Lbl_errSexe.AutoSize = true;
             this.Lbl_errSexe.ForeColor = System.Drawing.Color.Red;
-            this.Lbl_errSexe.Location = new System.Drawing.Point(92, 113);
+            this.Lbl_errSexe.Location = new System.Drawing.Point(123, 139);
+            this.Lbl_errSexe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_errSexe.Name = "Lbl_errSexe";
-            this.Lbl_errSexe.Size = new System.Drawing.Size(131, 13);
+            this.Lbl_errSexe.Size = new System.Drawing.Size(177, 17);
             this.Lbl_errSexe.TabIndex = 12;
             this.Lbl_errSexe.Text = "Veuillez renseigner le sexe";
             this.Lbl_errSexe.Visible = false;
             // 
             // Btn_Ajout
             // 
-            this.Btn_Ajout.Location = new System.Drawing.Point(572, 320);
+            this.Btn_Ajout.Location = new System.Drawing.Point(763, 394);
+            this.Btn_Ajout.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_Ajout.Name = "Btn_Ajout";
-            this.Btn_Ajout.Size = new System.Drawing.Size(190, 40);
+            this.Btn_Ajout.Size = new System.Drawing.Size(253, 49);
             this.Btn_Ajout.TabIndex = 11;
             this.Btn_Ajout.Text = "Ajouter";
             this.Btn_Ajout.UseVisualStyleBackColor = true;
@@ -762,18 +827,20 @@ namespace GestionRefugies
             // Lbl_Nationalite
             // 
             this.Lbl_Nationalite.AutoSize = true;
-            this.Lbl_Nationalite.Location = new System.Drawing.Point(296, 118);
+            this.Lbl_Nationalite.Location = new System.Drawing.Point(395, 145);
+            this.Lbl_Nationalite.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_Nationalite.Name = "Lbl_Nationalite";
-            this.Lbl_Nationalite.Size = new System.Drawing.Size(57, 13);
+            this.Lbl_Nationalite.Size = new System.Drawing.Size(75, 17);
             this.Lbl_Nationalite.TabIndex = 10;
             this.Lbl_Nationalite.Text = "Nationalite";
             // 
             // Lbl_DateNaiss
             // 
             this.Lbl_DateNaiss.AutoSize = true;
-            this.Lbl_DateNaiss.Location = new System.Drawing.Point(296, 40);
+            this.Lbl_DateNaiss.Location = new System.Drawing.Point(395, 49);
+            this.Lbl_DateNaiss.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_DateNaiss.Name = "Lbl_DateNaiss";
-            this.Lbl_DateNaiss.Size = new System.Drawing.Size(98, 13);
+            this.Lbl_DateNaiss.Size = new System.Drawing.Size(128, 17);
             this.Lbl_DateNaiss.TabIndex = 9;
             this.Lbl_DateNaiss.Text = "Date de Naissance";
             // 
@@ -814,25 +881,28 @@ namespace GestionRefugies
             "Senegalais",
             "Sud-Africain",
             "Autre"});
-            this.List_Nationalite.Location = new System.Drawing.Point(288, 134);
+            this.List_Nationalite.Location = new System.Drawing.Point(384, 165);
+            this.List_Nationalite.Margin = new System.Windows.Forms.Padding(4);
             this.List_Nationalite.Name = "List_Nationalite";
-            this.List_Nationalite.Size = new System.Drawing.Size(190, 21);
+            this.List_Nationalite.Size = new System.Drawing.Size(252, 24);
             this.List_Nationalite.TabIndex = 8;
             // 
             // DatePicker_DatNaiss
             // 
-            this.DatePicker_DatNaiss.Location = new System.Drawing.Point(288, 56);
+            this.DatePicker_DatNaiss.Location = new System.Drawing.Point(384, 69);
+            this.DatePicker_DatNaiss.Margin = new System.Windows.Forms.Padding(4);
             this.DatePicker_DatNaiss.Name = "DatePicker_DatNaiss";
-            this.DatePicker_DatNaiss.Size = new System.Drawing.Size(190, 20);
+            this.DatePicker_DatNaiss.Size = new System.Drawing.Size(252, 22);
             this.DatePicker_DatNaiss.TabIndex = 6;
             this.DatePicker_DatNaiss.ValueChanged += new System.EventHandler(this.DatePicker_DatNaiss_ValueChanged);
             // 
             // RdBtn_Femme
             // 
             this.RdBtn_Femme.AutoSize = true;
-            this.RdBtn_Femme.Location = new System.Drawing.Point(133, 93);
+            this.RdBtn_Femme.Location = new System.Drawing.Point(177, 114);
+            this.RdBtn_Femme.Margin = new System.Windows.Forms.Padding(4);
             this.RdBtn_Femme.Name = "RdBtn_Femme";
-            this.RdBtn_Femme.Size = new System.Drawing.Size(59, 17);
+            this.RdBtn_Femme.Size = new System.Drawing.Size(75, 21);
             this.RdBtn_Femme.TabIndex = 5;
             this.RdBtn_Femme.Text = "Femme";
             this.RdBtn_Femme.UseVisualStyleBackColor = true;
@@ -840,10 +910,11 @@ namespace GestionRefugies
             // RdBtn_Homme
             // 
             this.RdBtn_Homme.AutoSize = true;
-            this.RdBtn_Homme.Location = new System.Drawing.Point(54, 93);
+            this.RdBtn_Homme.Location = new System.Drawing.Point(72, 114);
+            this.RdBtn_Homme.Margin = new System.Windows.Forms.Padding(4);
             this.RdBtn_Homme.Name = "RdBtn_Homme";
             this.RdBtn_Homme.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.RdBtn_Homme.Size = new System.Drawing.Size(61, 17);
+            this.RdBtn_Homme.Size = new System.Drawing.Size(77, 21);
             this.RdBtn_Homme.TabIndex = 4;
             this.RdBtn_Homme.Text = "Homme";
             this.RdBtn_Homme.UseVisualStyleBackColor = true;
@@ -857,12 +928,24 @@ namespace GestionRefugies
             this.tabPageAjoutGérant.Controls.Add(this.Txt_PrenomM);
             this.tabPageAjoutGérant.Controls.Add(this.Txt_MDPM);
             this.tabPageAjoutGérant.Controls.Add(this.Txt_NomM);
-            this.tabPageAjoutGérant.Location = new System.Drawing.Point(4, 22);
+            this.tabPageAjoutGérant.Location = new System.Drawing.Point(4, 25);
+            this.tabPageAjoutGérant.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageAjoutGérant.Name = "tabPageAjoutGérant";
-            this.tabPageAjoutGérant.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAjoutGérant.Size = new System.Drawing.Size(835, 444);
+            this.tabPageAjoutGérant.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPageAjoutGérant.Size = new System.Drawing.Size(1116, 549);
             this.tabPageAjoutGérant.TabIndex = 1;
             this.tabPageAjoutGérant.Text = "Ajouter un Gérant";
+            // 
+            // btn_reinit_ajoutgerant
+            // 
+            this.btn_reinit_ajoutgerant.Location = new System.Drawing.Point(597, 318);
+            this.btn_reinit_ajoutgerant.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_reinit_ajoutgerant.Name = "btn_reinit_ajoutgerant";
+            this.btn_reinit_ajoutgerant.Size = new System.Drawing.Size(220, 28);
+            this.btn_reinit_ajoutgerant.TabIndex = 31;
+            this.btn_reinit_ajoutgerant.Text = "Reinitialiser";
+            this.btn_reinit_ajoutgerant.UseVisualStyleBackColor = true;
+            this.btn_reinit_ajoutgerant.Click += new System.EventHandler(this.btn_reinit_ajoutgerant_Click);
             // 
             // groupBox1
             // 
@@ -870,9 +953,11 @@ namespace GestionRefugies
             this.groupBox1.Controls.Add(this.check_admin);
             this.groupBox1.Controls.Add(this.check_AgentAccueil);
             this.groupBox1.Controls.Add(this.lbl_errRole);
-            this.groupBox1.Location = new System.Drawing.Point(409, 97);
+            this.groupBox1.Location = new System.Drawing.Point(545, 119);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(242, 82);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(323, 101);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Role(s)";
@@ -880,10 +965,11 @@ namespace GestionRefugies
             // check_Magasinier
             // 
             this.check_Magasinier.AutoSize = true;
-            this.check_Magasinier.Location = new System.Drawing.Point(111, 30);
+            this.check_Magasinier.Location = new System.Drawing.Point(148, 37);
+            this.check_Magasinier.Margin = new System.Windows.Forms.Padding(4);
             this.check_Magasinier.Name = "check_Magasinier";
             this.check_Magasinier.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.check_Magasinier.Size = new System.Drawing.Size(75, 17);
+            this.check_Magasinier.Size = new System.Drawing.Size(96, 21);
             this.check_Magasinier.TabIndex = 27;
             this.check_Magasinier.Text = "Magasiner";
             this.check_Magasinier.UseVisualStyleBackColor = true;
@@ -892,10 +978,11 @@ namespace GestionRefugies
             // 
             this.check_admin.AutoSize = true;
             this.check_admin.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.check_admin.Location = new System.Drawing.Point(7, 57);
+            this.check_admin.Location = new System.Drawing.Point(9, 70);
+            this.check_admin.Margin = new System.Windows.Forms.Padding(4);
             this.check_admin.Name = "check_admin";
             this.check_admin.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.check_admin.Size = new System.Drawing.Size(92, 17);
+            this.check_admin.Size = new System.Drawing.Size(121, 21);
             this.check_admin.TabIndex = 29;
             this.check_admin.Text = "Administrateur";
             this.check_admin.UseVisualStyleBackColor = true;
@@ -903,10 +990,11 @@ namespace GestionRefugies
             // check_AgentAccueil
             // 
             this.check_AgentAccueil.AutoSize = true;
-            this.check_AgentAccueil.Location = new System.Drawing.Point(-1, 30);
+            this.check_AgentAccueil.Location = new System.Drawing.Point(-1, 37);
+            this.check_AgentAccueil.Margin = new System.Windows.Forms.Padding(4);
             this.check_AgentAccueil.Name = "check_AgentAccueil";
             this.check_AgentAccueil.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.check_AgentAccueil.Size = new System.Drawing.Size(100, 17);
+            this.check_AgentAccueil.Size = new System.Drawing.Size(127, 21);
             this.check_AgentAccueil.TabIndex = 26;
             this.check_AgentAccueil.Text = "Agent d\'Accueil";
             this.check_AgentAccueil.UseVisualStyleBackColor = true;
@@ -915,18 +1003,20 @@ namespace GestionRefugies
             // 
             this.lbl_errRole.AutoSize = true;
             this.lbl_errRole.ForeColor = System.Drawing.Color.Red;
-            this.lbl_errRole.Location = new System.Drawing.Point(108, 57);
+            this.lbl_errRole.Location = new System.Drawing.Point(144, 70);
+            this.lbl_errRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_errRole.Name = "lbl_errRole";
-            this.lbl_errRole.Size = new System.Drawing.Size(126, 13);
+            this.lbl_errRole.Size = new System.Drawing.Size(172, 17);
             this.lbl_errRole.TabIndex = 28;
             this.lbl_errRole.Text = "Veuillez renseigner le rôle";
             this.lbl_errRole.Visible = false;
             // 
             // btn_AjoutM
             // 
-            this.btn_AjoutM.Location = new System.Drawing.Point(448, 219);
+            this.btn_AjoutM.Location = new System.Drawing.Point(597, 270);
+            this.btn_AjoutM.Margin = new System.Windows.Forms.Padding(4);
             this.btn_AjoutM.Name = "btn_AjoutM";
-            this.btn_AjoutM.Size = new System.Drawing.Size(165, 33);
+            this.btn_AjoutM.Size = new System.Drawing.Size(220, 41);
             this.btn_AjoutM.TabIndex = 23;
             this.btn_AjoutM.Text = "Ajouter";
             this.btn_AjoutM.UseVisualStyleBackColor = true;
@@ -935,9 +1025,10 @@ namespace GestionRefugies
             // Txt_PrenomM
             // 
             this.Txt_PrenomM.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Txt_PrenomM.Location = new System.Drawing.Point(73, 111);
+            this.Txt_PrenomM.Location = new System.Drawing.Point(97, 137);
+            this.Txt_PrenomM.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_PrenomM.Name = "Txt_PrenomM";
-            this.Txt_PrenomM.Size = new System.Drawing.Size(252, 20);
+            this.Txt_PrenomM.Size = new System.Drawing.Size(335, 22);
             this.Txt_PrenomM.TabIndex = 16;
             this.Txt_PrenomM.Text = "Prenom";
             this.Txt_PrenomM.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_PrenomM_KeyDown_1);
@@ -946,10 +1037,11 @@ namespace GestionRefugies
             // Txt_MDPM
             // 
             this.Txt_MDPM.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Txt_MDPM.Location = new System.Drawing.Point(73, 170);
+            this.Txt_MDPM.Location = new System.Drawing.Point(97, 209);
+            this.Txt_MDPM.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_MDPM.Name = "Txt_MDPM";
             this.Txt_MDPM.PasswordChar = '○';
-            this.Txt_MDPM.Size = new System.Drawing.Size(252, 20);
+            this.Txt_MDPM.Size = new System.Drawing.Size(335, 22);
             this.Txt_MDPM.TabIndex = 15;
             this.Txt_MDPM.Text = "Mot de Passe";
             this.Txt_MDPM.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_MDPM_KeyDown);
@@ -958,9 +1050,10 @@ namespace GestionRefugies
             // Txt_NomM
             // 
             this.Txt_NomM.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Txt_NomM.Location = new System.Drawing.Point(73, 85);
+            this.Txt_NomM.Location = new System.Drawing.Point(97, 105);
+            this.Txt_NomM.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_NomM.Name = "Txt_NomM";
-            this.Txt_NomM.Size = new System.Drawing.Size(252, 20);
+            this.Txt_NomM.Size = new System.Drawing.Size(335, 22);
             this.Txt_NomM.TabIndex = 14;
             this.Txt_NomM.Text = "Nom";
             this.Txt_NomM.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_NomM_KeyDown_1);
@@ -1014,18 +1107,20 @@ namespace GestionRefugies
             this.tabPageModifRef.Controls.Add(this.DatePicker_Naiss_modif_ref);
             this.tabPageModifRef.Controls.Add(this.rdn_Femme_Modif_ref);
             this.tabPageModifRef.Controls.Add(this.rdn_Homme_Modif_ref);
-            this.tabPageModifRef.Location = new System.Drawing.Point(4, 22);
+            this.tabPageModifRef.Location = new System.Drawing.Point(4, 25);
+            this.tabPageModifRef.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageModifRef.Name = "tabPageModifRef";
-            this.tabPageModifRef.Size = new System.Drawing.Size(835, 444);
+            this.tabPageModifRef.Size = new System.Drawing.Size(1116, 549);
             this.tabPageModifRef.TabIndex = 3;
             this.tabPageModifRef.Text = "Modifier/Supprimer Refugié";
             this.tabPageModifRef.Click += new System.EventHandler(this.tabPageModifRef_Click);
             // 
             // btn_reinit_modifref
             // 
-            this.btn_reinit_modifref.Location = new System.Drawing.Point(331, 415);
+            this.btn_reinit_modifref.Location = new System.Drawing.Point(441, 511);
+            this.btn_reinit_modifref.Margin = new System.Windows.Forms.Padding(4);
             this.btn_reinit_modifref.Name = "btn_reinit_modifref";
-            this.btn_reinit_modifref.Size = new System.Drawing.Size(115, 23);
+            this.btn_reinit_modifref.Size = new System.Drawing.Size(153, 28);
             this.btn_reinit_modifref.TabIndex = 68;
             this.btn_reinit_modifref.Text = "Reinitialiser";
             this.btn_reinit_modifref.UseVisualStyleBackColor = true;
@@ -1035,9 +1130,10 @@ namespace GestionRefugies
             // 
             this.lbl_err_handi_modif_ref.AutoSize = true;
             this.lbl_err_handi_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_handi_modif_ref.Location = new System.Drawing.Point(306, 231);
+            this.lbl_err_handi_modif_ref.Location = new System.Drawing.Point(408, 284);
+            this.lbl_err_handi_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_err_handi_modif_ref.Name = "lbl_err_handi_modif_ref";
-            this.lbl_err_handi_modif_ref.Size = new System.Drawing.Size(11, 13);
+            this.lbl_err_handi_modif_ref.Size = new System.Drawing.Size(13, 17);
             this.lbl_err_handi_modif_ref.TabIndex = 67;
             this.lbl_err_handi_modif_ref.Text = "*";
             this.lbl_err_handi_modif_ref.Visible = false;
@@ -1046,9 +1142,10 @@ namespace GestionRefugies
             // 
             this.lbl_err_allerg_modifref.AutoSize = true;
             this.lbl_err_allerg_modifref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_allerg_modifref.Location = new System.Drawing.Point(308, 174);
+            this.lbl_err_allerg_modifref.Location = new System.Drawing.Point(411, 214);
+            this.lbl_err_allerg_modifref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_err_allerg_modifref.Name = "lbl_err_allerg_modifref";
-            this.lbl_err_allerg_modifref.Size = new System.Drawing.Size(11, 13);
+            this.lbl_err_allerg_modifref.Size = new System.Drawing.Size(13, 17);
             this.lbl_err_allerg_modifref.TabIndex = 66;
             this.lbl_err_allerg_modifref.Text = "*";
             this.lbl_err_allerg_modifref.Visible = false;
@@ -1057,9 +1154,10 @@ namespace GestionRefugies
             // 
             this.lbl_err_typchev_modif_ref.AutoSize = true;
             this.lbl_err_typchev_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_typchev_modif_ref.Location = new System.Drawing.Point(308, 119);
+            this.lbl_err_typchev_modif_ref.Location = new System.Drawing.Point(411, 146);
+            this.lbl_err_typchev_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_err_typchev_modif_ref.Name = "lbl_err_typchev_modif_ref";
-            this.lbl_err_typchev_modif_ref.Size = new System.Drawing.Size(11, 13);
+            this.lbl_err_typchev_modif_ref.Size = new System.Drawing.Size(13, 17);
             this.lbl_err_typchev_modif_ref.TabIndex = 65;
             this.lbl_err_typchev_modif_ref.Text = "*";
             this.lbl_err_typchev_modif_ref.Visible = false;
@@ -1068,9 +1166,10 @@ namespace GestionRefugies
             // 
             this.lbl_err_bless_modif_ref.AutoSize = true;
             this.lbl_err_bless_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_bless_modif_ref.Location = new System.Drawing.Point(308, 58);
+            this.lbl_err_bless_modif_ref.Location = new System.Drawing.Point(411, 71);
+            this.lbl_err_bless_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_err_bless_modif_ref.Name = "lbl_err_bless_modif_ref";
-            this.lbl_err_bless_modif_ref.Size = new System.Drawing.Size(11, 13);
+            this.lbl_err_bless_modif_ref.Size = new System.Drawing.Size(13, 17);
             this.lbl_err_bless_modif_ref.TabIndex = 64;
             this.lbl_err_bless_modif_ref.Text = "*";
             this.lbl_err_bless_modif_ref.Visible = false;
@@ -1079,9 +1178,10 @@ namespace GestionRefugies
             // 
             this.lbl_err_coulyeux_modif_ref.AutoSize = true;
             this.lbl_err_coulyeux_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_coulyeux_modif_ref.Location = new System.Drawing.Point(149, 312);
+            this.lbl_err_coulyeux_modif_ref.Location = new System.Drawing.Point(199, 384);
+            this.lbl_err_coulyeux_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_err_coulyeux_modif_ref.Name = "lbl_err_coulyeux_modif_ref";
-            this.lbl_err_coulyeux_modif_ref.Size = new System.Drawing.Size(11, 13);
+            this.lbl_err_coulyeux_modif_ref.Size = new System.Drawing.Size(13, 17);
             this.lbl_err_coulyeux_modif_ref.TabIndex = 63;
             this.lbl_err_coulyeux_modif_ref.Text = "*";
             this.lbl_err_coulyeux_modif_ref.Visible = false;
@@ -1090,9 +1190,10 @@ namespace GestionRefugies
             // 
             this.lbl_err_coulchev_modif_ref.AutoSize = true;
             this.lbl_err_coulchev_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_coulchev_modif_ref.Location = new System.Drawing.Point(149, 272);
+            this.lbl_err_coulchev_modif_ref.Location = new System.Drawing.Point(199, 335);
+            this.lbl_err_coulchev_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_err_coulchev_modif_ref.Name = "lbl_err_coulchev_modif_ref";
-            this.lbl_err_coulchev_modif_ref.Size = new System.Drawing.Size(11, 13);
+            this.lbl_err_coulchev_modif_ref.Size = new System.Drawing.Size(13, 17);
             this.lbl_err_coulchev_modif_ref.TabIndex = 62;
             this.lbl_err_coulchev_modif_ref.Text = "*";
             this.lbl_err_coulchev_modif_ref.Visible = false;
@@ -1101,9 +1202,10 @@ namespace GestionRefugies
             // 
             this.lbl_err_coulpeau_modif_ref.AutoSize = true;
             this.lbl_err_coulpeau_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_coulpeau_modif_ref.Location = new System.Drawing.Point(149, 230);
+            this.lbl_err_coulpeau_modif_ref.Location = new System.Drawing.Point(199, 283);
+            this.lbl_err_coulpeau_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_err_coulpeau_modif_ref.Name = "lbl_err_coulpeau_modif_ref";
-            this.lbl_err_coulpeau_modif_ref.Size = new System.Drawing.Size(11, 13);
+            this.lbl_err_coulpeau_modif_ref.Size = new System.Drawing.Size(13, 17);
             this.lbl_err_coulpeau_modif_ref.TabIndex = 61;
             this.lbl_err_coulpeau_modif_ref.Text = "*";
             this.lbl_err_coulpeau_modif_ref.Visible = false;
@@ -1111,9 +1213,10 @@ namespace GestionRefugies
             // Txt_Prenom_Modifref
             // 
             this.Txt_Prenom_Modifref.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Txt_Prenom_Modifref.Location = new System.Drawing.Point(14, 41);
+            this.Txt_Prenom_Modifref.Location = new System.Drawing.Point(19, 50);
+            this.Txt_Prenom_Modifref.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_Prenom_Modifref.Name = "Txt_Prenom_Modifref";
-            this.Txt_Prenom_Modifref.Size = new System.Drawing.Size(130, 20);
+            this.Txt_Prenom_Modifref.Size = new System.Drawing.Size(172, 22);
             this.Txt_Prenom_Modifref.TabIndex = 60;
             this.Txt_Prenom_Modifref.Text = "Prenom";
             this.Txt_Prenom_Modifref.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_Prenom_Modif_ref_KeyDown);
@@ -1122,9 +1225,10 @@ namespace GestionRefugies
             // Txt_Nom_Modifref
             // 
             this.Txt_Nom_Modifref.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Txt_Nom_Modifref.Location = new System.Drawing.Point(13, 15);
+            this.Txt_Nom_Modifref.Location = new System.Drawing.Point(17, 18);
+            this.Txt_Nom_Modifref.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_Nom_Modifref.Name = "Txt_Nom_Modifref";
-            this.Txt_Nom_Modifref.Size = new System.Drawing.Size(131, 20);
+            this.Txt_Nom_Modifref.Size = new System.Drawing.Size(173, 22);
             this.Txt_Nom_Modifref.TabIndex = 59;
             this.Txt_Nom_Modifref.Text = "Nom";
             this.Txt_Nom_Modifref.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_Nom_Modif_ref_KeyDown);
@@ -1134,9 +1238,10 @@ namespace GestionRefugies
             // 
             this.lbl_err_champs_modifref.AutoSize = true;
             this.lbl_err_champs_modifref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_champs_modifref.Location = new System.Drawing.Point(175, 356);
+            this.lbl_err_champs_modifref.Location = new System.Drawing.Point(233, 438);
+            this.lbl_err_champs_modifref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_err_champs_modifref.Name = "lbl_err_champs_modifref";
-            this.lbl_err_champs_modifref.Size = new System.Drawing.Size(143, 13);
+            this.lbl_err_champs_modifref.Size = new System.Drawing.Size(194, 17);
             this.lbl_err_champs_modifref.TabIndex = 58;
             this.lbl_err_champs_modifref.Text = " * Veuillez remplir les Champs";
             this.lbl_err_champs_modifref.Visible = false;
@@ -1144,9 +1249,10 @@ namespace GestionRefugies
             // lbl_typchev_modifref
             // 
             this.lbl_typchev_modifref.AutoSize = true;
-            this.lbl_typchev_modifref.Location = new System.Drawing.Point(179, 119);
+            this.lbl_typchev_modifref.Location = new System.Drawing.Point(239, 146);
+            this.lbl_typchev_modifref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_typchev_modifref.Name = "lbl_typchev_modifref";
-            this.lbl_typchev_modifref.Size = new System.Drawing.Size(91, 13);
+            this.lbl_typchev_modifref.Size = new System.Drawing.Size(118, 17);
             this.lbl_typchev_modifref.TabIndex = 57;
             this.lbl_typchev_modifref.Text = "Type de Cheveux";
             // 
@@ -1162,35 +1268,39 @@ namespace GestionRefugies
             "Gras",
             "Chauve",
             "Autre"});
-            this.txt_typchev_modifref.Location = new System.Drawing.Point(171, 135);
+            this.txt_typchev_modifref.Location = new System.Drawing.Point(228, 166);
+            this.txt_typchev_modifref.Margin = new System.Windows.Forms.Padding(4);
             this.txt_typchev_modifref.Name = "txt_typchev_modifref";
-            this.txt_typchev_modifref.Size = new System.Drawing.Size(147, 21);
+            this.txt_typchev_modifref.Size = new System.Drawing.Size(195, 24);
             this.txt_typchev_modifref.TabIndex = 56;
             this.txt_typchev_modifref.TextChanged += new System.EventHandler(this.txt_typchev_modifref_TextChanged);
             // 
             // lbl_autre_modifref
             // 
             this.lbl_autre_modifref.AutoSize = true;
-            this.lbl_autre_modifref.Location = new System.Drawing.Point(179, 293);
+            this.lbl_autre_modifref.Location = new System.Drawing.Point(239, 361);
+            this.lbl_autre_modifref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_autre_modifref.Name = "lbl_autre_modifref";
-            this.lbl_autre_modifref.Size = new System.Drawing.Size(87, 13);
+            this.lbl_autre_modifref.Size = new System.Drawing.Size(117, 17);
             this.lbl_autre_modifref.TabIndex = 55;
             this.lbl_autre_modifref.Text = "Autre ( facultatif )";
             // 
             // txt_autre_modifref
             // 
             this.txt_autre_modifref.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txt_autre_modifref.Location = new System.Drawing.Point(171, 310);
+            this.txt_autre_modifref.Location = new System.Drawing.Point(228, 382);
+            this.txt_autre_modifref.Margin = new System.Windows.Forms.Padding(4);
             this.txt_autre_modifref.Name = "txt_autre_modifref";
-            this.txt_autre_modifref.Size = new System.Drawing.Size(147, 20);
+            this.txt_autre_modifref.Size = new System.Drawing.Size(195, 22);
             this.txt_autre_modifref.TabIndex = 54;
             // 
             // lbl_handi_modifref
             // 
             this.lbl_handi_modifref.AutoSize = true;
-            this.lbl_handi_modifref.Location = new System.Drawing.Point(179, 231);
+            this.lbl_handi_modifref.Location = new System.Drawing.Point(239, 284);
+            this.lbl_handi_modifref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_handi_modifref.Name = "lbl_handi_modifref";
-            this.lbl_handi_modifref.Size = new System.Drawing.Size(53, 13);
+            this.lbl_handi_modifref.Size = new System.Drawing.Size(68, 17);
             this.lbl_handi_modifref.TabIndex = 53;
             this.lbl_handi_modifref.Text = "Handicap";
             // 
@@ -1203,18 +1313,20 @@ namespace GestionRefugies
             "Pas de Handicap",
             "Moteur",
             "Mental"});
-            this.txt_handi_modifref.Location = new System.Drawing.Point(171, 247);
+            this.txt_handi_modifref.Location = new System.Drawing.Point(228, 304);
+            this.txt_handi_modifref.Margin = new System.Windows.Forms.Padding(4);
             this.txt_handi_modifref.Name = "txt_handi_modifref";
-            this.txt_handi_modifref.Size = new System.Drawing.Size(147, 21);
+            this.txt_handi_modifref.Size = new System.Drawing.Size(195, 24);
             this.txt_handi_modifref.TabIndex = 52;
             this.txt_handi_modifref.TextChanged += new System.EventHandler(this.txt_handi_modifref_TextChanged);
             // 
             // lbl_allerg_modifref
             // 
             this.lbl_allerg_modifref.AutoSize = true;
-            this.lbl_allerg_modifref.Location = new System.Drawing.Point(179, 174);
+            this.lbl_allerg_modifref.Location = new System.Drawing.Point(239, 214);
+            this.lbl_allerg_modifref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_allerg_modifref.Name = "lbl_allerg_modifref";
-            this.lbl_allerg_modifref.Size = new System.Drawing.Size(41, 13);
+            this.lbl_allerg_modifref.Size = new System.Drawing.Size(55, 17);
             this.lbl_allerg_modifref.TabIndex = 51;
             this.lbl_allerg_modifref.Text = "Allergie";
             // 
@@ -1235,18 +1347,20 @@ namespace GestionRefugies
             "Lait",
             "Ble",
             "Autre"});
-            this.txt_allerg_modifref.Location = new System.Drawing.Point(171, 190);
+            this.txt_allerg_modifref.Location = new System.Drawing.Point(228, 234);
+            this.txt_allerg_modifref.Margin = new System.Windows.Forms.Padding(4);
             this.txt_allerg_modifref.Name = "txt_allerg_modifref";
-            this.txt_allerg_modifref.Size = new System.Drawing.Size(147, 21);
+            this.txt_allerg_modifref.Size = new System.Drawing.Size(195, 24);
             this.txt_allerg_modifref.TabIndex = 50;
             this.txt_allerg_modifref.TextChanged += new System.EventHandler(this.txt_allerg_modifref_TextChanged);
             // 
             // lbl_bless_modifref
             // 
             this.lbl_bless_modifref.AutoSize = true;
-            this.lbl_bless_modifref.Location = new System.Drawing.Point(179, 56);
+            this.lbl_bless_modifref.Location = new System.Drawing.Point(239, 69);
+            this.lbl_bless_modifref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_bless_modifref.Name = "lbl_bless_modifref";
-            this.lbl_bless_modifref.Size = new System.Drawing.Size(47, 13);
+            this.lbl_bless_modifref.Size = new System.Drawing.Size(63, 17);
             this.lbl_bless_modifref.TabIndex = 49;
             this.lbl_bless_modifref.Text = "Blessure";
             // 
@@ -1261,18 +1375,20 @@ namespace GestionRefugies
             "Blessure Urgente",
             "Blessure Moyenne",
             "Blessure Benigne"});
-            this.txt_bless_modifref.Location = new System.Drawing.Point(171, 72);
+            this.txt_bless_modifref.Location = new System.Drawing.Point(228, 89);
+            this.txt_bless_modifref.Margin = new System.Windows.Forms.Padding(4);
             this.txt_bless_modifref.Name = "txt_bless_modifref";
-            this.txt_bless_modifref.Size = new System.Drawing.Size(147, 21);
+            this.txt_bless_modifref.Size = new System.Drawing.Size(195, 24);
             this.txt_bless_modifref.TabIndex = 48;
             this.txt_bless_modifref.TextChanged += new System.EventHandler(this.txt_bless_modifref_TextChanged);
             // 
             // lbl_coulyeux_modifref
             // 
             this.lbl_coulyeux_modifref.AutoSize = true;
-            this.lbl_coulyeux_modifref.Location = new System.Drawing.Point(23, 313);
+            this.lbl_coulyeux_modifref.Location = new System.Drawing.Point(31, 385);
+            this.lbl_coulyeux_modifref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_coulyeux_modifref.Name = "lbl_coulyeux_modifref";
-            this.lbl_coulyeux_modifref.Size = new System.Drawing.Size(90, 13);
+            this.lbl_coulyeux_modifref.Size = new System.Drawing.Size(119, 17);
             this.lbl_coulyeux_modifref.TabIndex = 47;
             this.lbl_coulyeux_modifref.Text = "Couleur des Yeux";
             // 
@@ -1286,18 +1402,20 @@ namespace GestionRefugies
             "Vert",
             "Marron",
             "Autre"});
-            this.txt_coulyeux_modifref.Location = new System.Drawing.Point(15, 329);
+            this.txt_coulyeux_modifref.Location = new System.Drawing.Point(20, 405);
+            this.txt_coulyeux_modifref.Margin = new System.Windows.Forms.Padding(4);
             this.txt_coulyeux_modifref.Name = "txt_coulyeux_modifref";
-            this.txt_coulyeux_modifref.Size = new System.Drawing.Size(147, 21);
+            this.txt_coulyeux_modifref.Size = new System.Drawing.Size(195, 24);
             this.txt_coulyeux_modifref.TabIndex = 46;
             this.txt_coulyeux_modifref.TextChanged += new System.EventHandler(this.txt_coulyeux_modifref_TextChanged);
             // 
             // lbl_coulchev_modifref
             // 
             this.lbl_coulchev_modifref.AutoSize = true;
-            this.lbl_coulchev_modifref.Location = new System.Drawing.Point(23, 272);
+            this.lbl_coulchev_modifref.Location = new System.Drawing.Point(31, 335);
+            this.lbl_coulchev_modifref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_coulchev_modifref.Name = "lbl_coulchev_modifref";
-            this.lbl_coulchev_modifref.Size = new System.Drawing.Size(103, 13);
+            this.lbl_coulchev_modifref.Size = new System.Drawing.Size(135, 17);
             this.lbl_coulchev_modifref.TabIndex = 45;
             this.lbl_coulchev_modifref.Text = "Couleur de Cheveux";
             // 
@@ -1317,18 +1435,20 @@ namespace GestionRefugies
             "Vert",
             "Rose",
             "Autre"});
-            this.txt_coulchev_modifref.Location = new System.Drawing.Point(15, 288);
+            this.txt_coulchev_modifref.Location = new System.Drawing.Point(20, 354);
+            this.txt_coulchev_modifref.Margin = new System.Windows.Forms.Padding(4);
             this.txt_coulchev_modifref.Name = "txt_coulchev_modifref";
-            this.txt_coulchev_modifref.Size = new System.Drawing.Size(147, 21);
+            this.txt_coulchev_modifref.Size = new System.Drawing.Size(195, 24);
             this.txt_coulchev_modifref.TabIndex = 44;
             this.txt_coulchev_modifref.TextChanged += new System.EventHandler(this.txt_coulchev_modifref_TextChanged);
             // 
             // lbl_coulpeau_modifref
             // 
             this.lbl_coulpeau_modifref.AutoSize = true;
-            this.lbl_coulpeau_modifref.Location = new System.Drawing.Point(27, 231);
+            this.lbl_coulpeau_modifref.Location = new System.Drawing.Point(36, 284);
+            this.lbl_coulpeau_modifref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_coulpeau_modifref.Name = "lbl_coulpeau_modifref";
-            this.lbl_coulpeau_modifref.Size = new System.Drawing.Size(86, 13);
+            this.lbl_coulpeau_modifref.Size = new System.Drawing.Size(114, 17);
             this.lbl_coulpeau_modifref.TabIndex = 43;
             this.lbl_coulpeau_modifref.Text = "Couleur de Peau";
             // 
@@ -1341,32 +1461,35 @@ namespace GestionRefugies
             "Blanc",
             "Noir",
             "Metissé"});
-            this.txt_coulpeau_modifref.Location = new System.Drawing.Point(15, 247);
+            this.txt_coulpeau_modifref.Location = new System.Drawing.Point(20, 304);
+            this.txt_coulpeau_modifref.Margin = new System.Windows.Forms.Padding(4);
             this.txt_coulpeau_modifref.Name = "txt_coulpeau_modifref";
-            this.txt_coulpeau_modifref.Size = new System.Drawing.Size(147, 21);
+            this.txt_coulpeau_modifref.Size = new System.Drawing.Size(195, 24);
             this.txt_coulpeau_modifref.TabIndex = 42;
             this.txt_coulpeau_modifref.TextChanged += new System.EventHandler(this.txt_coulpeau_modifref_TextChanged);
             // 
             // lbl_taille_modifref
             // 
             this.lbl_taille_modifref.AutoSize = true;
-            this.lbl_taille_modifref.Location = new System.Drawing.Point(17, 186);
+            this.lbl_taille_modifref.Location = new System.Drawing.Point(23, 229);
+            this.lbl_taille_modifref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_taille_modifref.Name = "lbl_taille_modifref";
-            this.lbl_taille_modifref.Size = new System.Drawing.Size(55, 13);
+            this.lbl_taille_modifref.Size = new System.Drawing.Size(74, 17);
             this.lbl_taille_modifref.TabIndex = 41;
             this.lbl_taille_modifref.Text = "Taille (cm)";
             this.lbl_taille_modifref.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // num_taille_modifref
             // 
-            this.num_taille_modifref.Location = new System.Drawing.Point(75, 184);
+            this.num_taille_modifref.Location = new System.Drawing.Point(100, 226);
+            this.num_taille_modifref.Margin = new System.Windows.Forms.Padding(4);
             this.num_taille_modifref.Maximum = new decimal(new int[] {
             300,
             0,
             0,
             0});
             this.num_taille_modifref.Name = "num_taille_modifref";
-            this.num_taille_modifref.Size = new System.Drawing.Size(87, 20);
+            this.num_taille_modifref.Size = new System.Drawing.Size(116, 22);
             this.num_taille_modifref.TabIndex = 40;
             this.num_taille_modifref.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1374,9 +1497,10 @@ namespace GestionRefugies
             // 
             this.lbl_err_btn_modif_ref.AutoSize = true;
             this.lbl_err_btn_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_btn_modif_ref.Location = new System.Drawing.Point(448, 420);
+            this.lbl_err_btn_modif_ref.Location = new System.Drawing.Point(597, 517);
+            this.lbl_err_btn_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_err_btn_modif_ref.Name = "lbl_err_btn_modif_ref";
-            this.lbl_err_btn_modif_ref.Size = new System.Drawing.Size(384, 13);
+            this.lbl_err_btn_modif_ref.Size = new System.Drawing.Size(518, 17);
             this.lbl_err_btn_modif_ref.TabIndex = 31;
             this.lbl_err_btn_modif_ref.Text = "Pour la modification, Veuillez cliquer sur UN SEUL refugier dans la liste si dess" +
     "us";
@@ -1386,18 +1510,20 @@ namespace GestionRefugies
             // 
             this.lbl_errsupp_modif_ref.AutoSize = true;
             this.lbl_errsupp_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_errsupp_modif_ref.Location = new System.Drawing.Point(483, 420);
+            this.lbl_errsupp_modif_ref.Location = new System.Drawing.Point(644, 517);
+            this.lbl_errsupp_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_errsupp_modif_ref.Name = "lbl_errsupp_modif_ref";
-            this.lbl_errsupp_modif_ref.Size = new System.Drawing.Size(349, 13);
+            this.lbl_errsupp_modif_ref.Size = new System.Drawing.Size(476, 17);
             this.lbl_errsupp_modif_ref.TabIndex = 30;
             this.lbl_errsupp_modif_ref.Text = "Pour la suppression, Veuillez cliquer sur un refugier dans la liste si dessus";
             this.lbl_errsupp_modif_ref.Visible = false;
             // 
             // btn_rechercher_modifref
             // 
-            this.btn_rechercher_modifref.Location = new System.Drawing.Point(15, 386);
+            this.btn_rechercher_modifref.Location = new System.Drawing.Point(20, 475);
+            this.btn_rechercher_modifref.Margin = new System.Windows.Forms.Padding(4);
             this.btn_rechercher_modifref.Name = "btn_rechercher_modifref";
-            this.btn_rechercher_modifref.Size = new System.Drawing.Size(147, 23);
+            this.btn_rechercher_modifref.Size = new System.Drawing.Size(196, 28);
             this.btn_rechercher_modifref.TabIndex = 29;
             this.btn_rechercher_modifref.Text = "Recherche";
             this.btn_rechercher_modifref.UseVisualStyleBackColor = true;
@@ -1406,31 +1532,34 @@ namespace GestionRefugies
             // lbl_refugeref_modif_ref
             // 
             this.lbl_refugeref_modif_ref.AutoSize = true;
-            this.lbl_refugeref_modif_ref.Location = new System.Drawing.Point(14, 164);
+            this.lbl_refugeref_modif_ref.Location = new System.Drawing.Point(19, 202);
+            this.lbl_refugeref_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_refugeref_modif_ref.Name = "lbl_refugeref_modif_ref";
-            this.lbl_refugeref_modif_ref.Size = new System.Drawing.Size(55, 13);
+            this.lbl_refugeref_modif_ref.Size = new System.Drawing.Size(72, 17);
             this.lbl_refugeref_modif_ref.TabIndex = 28;
             this.lbl_refugeref_modif_ref.Text = "Refuge n°";
             this.lbl_refugeref_modif_ref.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // num_refugeref_modif_ref
             // 
-            this.num_refugeref_modif_ref.Location = new System.Drawing.Point(75, 162);
+            this.num_refugeref_modif_ref.Location = new System.Drawing.Point(100, 199);
+            this.num_refugeref_modif_ref.Margin = new System.Windows.Forms.Padding(4);
             this.num_refugeref_modif_ref.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
             this.num_refugeref_modif_ref.Name = "num_refugeref_modif_ref";
-            this.num_refugeref_modif_ref.Size = new System.Drawing.Size(87, 20);
+            this.num_refugeref_modif_ref.Size = new System.Drawing.Size(116, 22);
             this.num_refugeref_modif_ref.TabIndex = 27;
             this.num_refugeref_modif_ref.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btn_Suppr_ref
             // 
-            this.btn_Suppr_ref.Location = new System.Drawing.Point(171, 386);
+            this.btn_Suppr_ref.Location = new System.Drawing.Point(228, 475);
+            this.btn_Suppr_ref.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Suppr_ref.Name = "btn_Suppr_ref";
-            this.btn_Suppr_ref.Size = new System.Drawing.Size(147, 23);
+            this.btn_Suppr_ref.Size = new System.Drawing.Size(196, 28);
             this.btn_Suppr_ref.TabIndex = 26;
             this.btn_Suppr_ref.Text = "Supprimer";
             this.btn_Suppr_ref.UseVisualStyleBackColor = true;
@@ -1459,10 +1588,11 @@ namespace GestionRefugies
             this.allergie,
             this.handicap,
             this.Autre});
-            this.DataGrid_modif_ref.Location = new System.Drawing.Point(331, 4);
+            this.DataGrid_modif_ref.Location = new System.Drawing.Point(441, 5);
+            this.DataGrid_modif_ref.Margin = new System.Windows.Forms.Padding(4);
             this.DataGrid_modif_ref.Name = "DataGrid_modif_ref";
             this.DataGrid_modif_ref.ReadOnly = true;
-            this.DataGrid_modif_ref.Size = new System.Drawing.Size(501, 405);
+            this.DataGrid_modif_ref.Size = new System.Drawing.Size(668, 498);
             this.DataGrid_modif_ref.TabIndex = 25;
             // 
             // ID
@@ -1568,9 +1698,10 @@ namespace GestionRefugies
             // 
             this.lbl_err_nation_modif_ref.AutoSize = true;
             this.lbl_err_nation_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_nation_modif_ref.Location = new System.Drawing.Point(149, 106);
+            this.lbl_err_nation_modif_ref.Location = new System.Drawing.Point(199, 130);
+            this.lbl_err_nation_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_err_nation_modif_ref.Name = "lbl_err_nation_modif_ref";
-            this.lbl_err_nation_modif_ref.Size = new System.Drawing.Size(11, 13);
+            this.lbl_err_nation_modif_ref.Size = new System.Drawing.Size(13, 17);
             this.lbl_err_nation_modif_ref.TabIndex = 24;
             this.lbl_err_nation_modif_ref.Text = "*";
             this.lbl_err_nation_modif_ref.Visible = false;
@@ -1579,18 +1710,20 @@ namespace GestionRefugies
             // 
             this.lbl_err_sex_modif_ref.AutoSize = true;
             this.lbl_err_sex_modif_ref.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_sex_modif_ref.Location = new System.Drawing.Point(149, 67);
+            this.lbl_err_sex_modif_ref.Location = new System.Drawing.Point(199, 82);
+            this.lbl_err_sex_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_err_sex_modif_ref.Name = "lbl_err_sex_modif_ref";
-            this.lbl_err_sex_modif_ref.Size = new System.Drawing.Size(11, 13);
+            this.lbl_err_sex_modif_ref.Size = new System.Drawing.Size(13, 17);
             this.lbl_err_sex_modif_ref.TabIndex = 23;
             this.lbl_err_sex_modif_ref.Text = "*";
             this.lbl_err_sex_modif_ref.Visible = false;
             // 
             // btn_Modif_ref
             // 
-            this.btn_Modif_ref.Location = new System.Drawing.Point(15, 415);
+            this.btn_Modif_ref.Location = new System.Drawing.Point(20, 511);
+            this.btn_Modif_ref.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Modif_ref.Name = "btn_Modif_ref";
-            this.btn_Modif_ref.Size = new System.Drawing.Size(303, 23);
+            this.btn_Modif_ref.Size = new System.Drawing.Size(404, 28);
             this.btn_Modif_ref.TabIndex = 22;
             this.btn_Modif_ref.Text = "Modifier";
             this.btn_Modif_ref.UseVisualStyleBackColor = true;
@@ -1599,18 +1732,20 @@ namespace GestionRefugies
             // lbl_Nation_modif_ref
             // 
             this.lbl_Nation_modif_ref.AutoSize = true;
-            this.lbl_Nation_modif_ref.Location = new System.Drawing.Point(12, 106);
+            this.lbl_Nation_modif_ref.Location = new System.Drawing.Point(16, 130);
+            this.lbl_Nation_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Nation_modif_ref.Name = "lbl_Nation_modif_ref";
-            this.lbl_Nation_modif_ref.Size = new System.Drawing.Size(57, 13);
+            this.lbl_Nation_modif_ref.Size = new System.Drawing.Size(75, 17);
             this.lbl_Nation_modif_ref.TabIndex = 21;
             this.lbl_Nation_modif_ref.Text = "Nationalite";
             // 
             // lbl_dateNaiss_modif_ref
             // 
             this.lbl_dateNaiss_modif_ref.AutoSize = true;
-            this.lbl_dateNaiss_modif_ref.Location = new System.Drawing.Point(147, 4);
+            this.lbl_dateNaiss_modif_ref.Location = new System.Drawing.Point(196, 5);
+            this.lbl_dateNaiss_modif_ref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_dateNaiss_modif_ref.Name = "lbl_dateNaiss_modif_ref";
-            this.lbl_dateNaiss_modif_ref.Size = new System.Drawing.Size(98, 13);
+            this.lbl_dateNaiss_modif_ref.Size = new System.Drawing.Size(128, 17);
             this.lbl_dateNaiss_modif_ref.TabIndex = 20;
             this.lbl_dateNaiss_modif_ref.Text = "Date de Naissance";
             // 
@@ -1651,17 +1786,19 @@ namespace GestionRefugies
             "Senegalais",
             "Sud-Africain",
             "Autre"});
-            this.list_nation_modif_ref.Location = new System.Drawing.Point(15, 122);
+            this.list_nation_modif_ref.Location = new System.Drawing.Point(20, 150);
+            this.list_nation_modif_ref.Margin = new System.Windows.Forms.Padding(4);
             this.list_nation_modif_ref.Name = "list_nation_modif_ref";
-            this.list_nation_modif_ref.Size = new System.Drawing.Size(147, 21);
+            this.list_nation_modif_ref.Size = new System.Drawing.Size(195, 24);
             this.list_nation_modif_ref.TabIndex = 19;
             this.list_nation_modif_ref.TextChanged += new System.EventHandler(this.list_nation_modif_ref_TextChanged);
             // 
             // DatePicker_Naiss_modif_ref
             // 
-            this.DatePicker_Naiss_modif_ref.Location = new System.Drawing.Point(150, 20);
+            this.DatePicker_Naiss_modif_ref.Location = new System.Drawing.Point(200, 25);
+            this.DatePicker_Naiss_modif_ref.Margin = new System.Windows.Forms.Padding(4);
             this.DatePicker_Naiss_modif_ref.Name = "DatePicker_Naiss_modif_ref";
-            this.DatePicker_Naiss_modif_ref.Size = new System.Drawing.Size(168, 20);
+            this.DatePicker_Naiss_modif_ref.Size = new System.Drawing.Size(223, 22);
             this.DatePicker_Naiss_modif_ref.TabIndex = 18;
             this.DatePicker_Naiss_modif_ref.Value = new System.DateTime(1900, 1, 1, 15, 18, 0, 0);
             this.DatePicker_Naiss_modif_ref.ValueChanged += new System.EventHandler(this.DatePicker_Naiss_modif_ref_ValueChanged);
@@ -1669,9 +1806,10 @@ namespace GestionRefugies
             // rdn_Femme_Modif_ref
             // 
             this.rdn_Femme_Modif_ref.AutoSize = true;
-            this.rdn_Femme_Modif_ref.Location = new System.Drawing.Point(84, 72);
+            this.rdn_Femme_Modif_ref.Location = new System.Drawing.Point(112, 89);
+            this.rdn_Femme_Modif_ref.Margin = new System.Windows.Forms.Padding(4);
             this.rdn_Femme_Modif_ref.Name = "rdn_Femme_Modif_ref";
-            this.rdn_Femme_Modif_ref.Size = new System.Drawing.Size(59, 17);
+            this.rdn_Femme_Modif_ref.Size = new System.Drawing.Size(75, 21);
             this.rdn_Femme_Modif_ref.TabIndex = 17;
             this.rdn_Femme_Modif_ref.TabStop = true;
             this.rdn_Femme_Modif_ref.Text = "Femme";
@@ -1681,10 +1819,11 @@ namespace GestionRefugies
             // rdn_Homme_Modif_ref
             // 
             this.rdn_Homme_Modif_ref.AutoSize = true;
-            this.rdn_Homme_Modif_ref.Location = new System.Drawing.Point(17, 72);
+            this.rdn_Homme_Modif_ref.Location = new System.Drawing.Point(23, 89);
+            this.rdn_Homme_Modif_ref.Margin = new System.Windows.Forms.Padding(4);
             this.rdn_Homme_Modif_ref.Name = "rdn_Homme_Modif_ref";
             this.rdn_Homme_Modif_ref.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.rdn_Homme_Modif_ref.Size = new System.Drawing.Size(61, 17);
+            this.rdn_Homme_Modif_ref.Size = new System.Drawing.Size(77, 21);
             this.rdn_Homme_Modif_ref.TabIndex = 16;
             this.rdn_Homme_Modif_ref.TabStop = true;
             this.rdn_Homme_Modif_ref.Text = "Homme";
@@ -1703,17 +1842,19 @@ namespace GestionRefugies
             this.tabPagemodifGerant.Controls.Add(this.btn_modif_gerant);
             this.tabPagemodifGerant.Controls.Add(this.Txt_prenom_modif_gerant);
             this.tabPagemodifGerant.Controls.Add(this.Txt_nom_modif_gerant);
-            this.tabPagemodifGerant.Location = new System.Drawing.Point(4, 22);
+            this.tabPagemodifGerant.Location = new System.Drawing.Point(4, 25);
+            this.tabPagemodifGerant.Margin = new System.Windows.Forms.Padding(4);
             this.tabPagemodifGerant.Name = "tabPagemodifGerant";
-            this.tabPagemodifGerant.Size = new System.Drawing.Size(835, 444);
+            this.tabPagemodifGerant.Size = new System.Drawing.Size(1116, 549);
             this.tabPagemodifGerant.TabIndex = 4;
             this.tabPagemodifGerant.Text = "Modifier/Supprimer Gerant";
             // 
             // btn_reinit_modifGerant
             // 
-            this.btn_reinit_modifGerant.Location = new System.Drawing.Point(193, 412);
+            this.btn_reinit_modifGerant.Location = new System.Drawing.Point(257, 507);
+            this.btn_reinit_modifGerant.Margin = new System.Windows.Forms.Padding(4);
             this.btn_reinit_modifGerant.Name = "btn_reinit_modifGerant";
-            this.btn_reinit_modifGerant.Size = new System.Drawing.Size(89, 23);
+            this.btn_reinit_modifGerant.Size = new System.Drawing.Size(119, 28);
             this.btn_reinit_modifGerant.TabIndex = 44;
             this.btn_reinit_modifGerant.Text = "Reinitialiser";
             this.btn_reinit_modifGerant.UseVisualStyleBackColor = true;
@@ -1722,18 +1863,20 @@ namespace GestionRefugies
             // txt_mdp_modif_ger
             // 
             this.txt_mdp_modif_ger.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txt_mdp_modif_ger.Location = new System.Drawing.Point(16, 141);
+            this.txt_mdp_modif_ger.Location = new System.Drawing.Point(21, 174);
+            this.txt_mdp_modif_ger.Margin = new System.Windows.Forms.Padding(4);
             this.txt_mdp_modif_ger.Name = "txt_mdp_modif_ger";
-            this.txt_mdp_modif_ger.PasswordChar = '○';
-            this.txt_mdp_modif_ger.Size = new System.Drawing.Size(234, 20);
+            this.txt_mdp_modif_ger.Size = new System.Drawing.Size(311, 22);
             this.txt_mdp_modif_ger.TabIndex = 43;
             this.txt_mdp_modif_ger.Text = "Mot de Passe";
+            this.txt_mdp_modif_ger.UseSystemPasswordChar = true;
             // 
             // btn_recherche_modif_user
             // 
-            this.btn_recherche_modif_user.Location = new System.Drawing.Point(16, 314);
+            this.btn_recherche_modif_user.Location = new System.Drawing.Point(21, 386);
+            this.btn_recherche_modif_user.Margin = new System.Windows.Forms.Padding(4);
             this.btn_recherche_modif_user.Name = "btn_recherche_modif_user";
-            this.btn_recherche_modif_user.Size = new System.Drawing.Size(234, 23);
+            this.btn_recherche_modif_user.Size = new System.Drawing.Size(312, 28);
             this.btn_recherche_modif_user.TabIndex = 42;
             this.btn_recherche_modif_user.Text = "Rechercher";
             this.btn_recherche_modif_user.UseVisualStyleBackColor = true;
@@ -1745,9 +1888,11 @@ namespace GestionRefugies
             this.Group_role_modif_gerant.Controls.Add(this.check_Admin_modif_gerant);
             this.Group_role_modif_gerant.Controls.Add(this.check_AA_modif_gerant);
             this.Group_role_modif_gerant.Controls.Add(this.lbl_err_role_modif_gerant);
-            this.Group_role_modif_gerant.Location = new System.Drawing.Point(16, 176);
+            this.Group_role_modif_gerant.Location = new System.Drawing.Point(21, 217);
+            this.Group_role_modif_gerant.Margin = new System.Windows.Forms.Padding(4);
             this.Group_role_modif_gerant.Name = "Group_role_modif_gerant";
-            this.Group_role_modif_gerant.Size = new System.Drawing.Size(234, 75);
+            this.Group_role_modif_gerant.Padding = new System.Windows.Forms.Padding(4);
+            this.Group_role_modif_gerant.Size = new System.Drawing.Size(312, 92);
             this.Group_role_modif_gerant.TabIndex = 40;
             this.Group_role_modif_gerant.TabStop = false;
             this.Group_role_modif_gerant.Text = "Role(s)";
@@ -1755,10 +1900,11 @@ namespace GestionRefugies
             // check_maga_modif_gerant
             // 
             this.check_maga_modif_gerant.AutoSize = true;
-            this.check_maga_modif_gerant.Location = new System.Drawing.Point(111, 19);
+            this.check_maga_modif_gerant.Location = new System.Drawing.Point(148, 23);
+            this.check_maga_modif_gerant.Margin = new System.Windows.Forms.Padding(4);
             this.check_maga_modif_gerant.Name = "check_maga_modif_gerant";
             this.check_maga_modif_gerant.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.check_maga_modif_gerant.Size = new System.Drawing.Size(75, 17);
+            this.check_maga_modif_gerant.Size = new System.Drawing.Size(96, 21);
             this.check_maga_modif_gerant.TabIndex = 27;
             this.check_maga_modif_gerant.Text = "Magasiner";
             this.check_maga_modif_gerant.UseVisualStyleBackColor = true;
@@ -1767,10 +1913,11 @@ namespace GestionRefugies
             // 
             this.check_Admin_modif_gerant.AutoSize = true;
             this.check_Admin_modif_gerant.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.check_Admin_modif_gerant.Location = new System.Drawing.Point(8, 42);
+            this.check_Admin_modif_gerant.Location = new System.Drawing.Point(11, 52);
+            this.check_Admin_modif_gerant.Margin = new System.Windows.Forms.Padding(4);
             this.check_Admin_modif_gerant.Name = "check_Admin_modif_gerant";
             this.check_Admin_modif_gerant.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.check_Admin_modif_gerant.Size = new System.Drawing.Size(92, 17);
+            this.check_Admin_modif_gerant.Size = new System.Drawing.Size(121, 21);
             this.check_Admin_modif_gerant.TabIndex = 29;
             this.check_Admin_modif_gerant.Text = "Administrateur";
             this.check_Admin_modif_gerant.UseVisualStyleBackColor = true;
@@ -1778,10 +1925,11 @@ namespace GestionRefugies
             // check_AA_modif_gerant
             // 
             this.check_AA_modif_gerant.AutoSize = true;
-            this.check_AA_modif_gerant.Location = new System.Drawing.Point(0, 19);
+            this.check_AA_modif_gerant.Location = new System.Drawing.Point(0, 23);
+            this.check_AA_modif_gerant.Margin = new System.Windows.Forms.Padding(4);
             this.check_AA_modif_gerant.Name = "check_AA_modif_gerant";
             this.check_AA_modif_gerant.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.check_AA_modif_gerant.Size = new System.Drawing.Size(100, 17);
+            this.check_AA_modif_gerant.Size = new System.Drawing.Size(127, 21);
             this.check_AA_modif_gerant.TabIndex = 26;
             this.check_AA_modif_gerant.Text = "Agent d\'Accueil";
             this.check_AA_modif_gerant.UseVisualStyleBackColor = true;
@@ -1790,18 +1938,20 @@ namespace GestionRefugies
             // 
             this.lbl_err_role_modif_gerant.AutoSize = true;
             this.lbl_err_role_modif_gerant.ForeColor = System.Drawing.Color.Red;
-            this.lbl_err_role_modif_gerant.Location = new System.Drawing.Point(106, 46);
+            this.lbl_err_role_modif_gerant.Location = new System.Drawing.Point(141, 57);
+            this.lbl_err_role_modif_gerant.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_err_role_modif_gerant.Name = "lbl_err_role_modif_gerant";
-            this.lbl_err_role_modif_gerant.Size = new System.Drawing.Size(126, 13);
+            this.lbl_err_role_modif_gerant.Size = new System.Drawing.Size(172, 17);
             this.lbl_err_role_modif_gerant.TabIndex = 28;
             this.lbl_err_role_modif_gerant.Text = "Veuillez renseigner le rôle";
             this.lbl_err_role_modif_gerant.Visible = false;
             // 
             // btn_suppr_gerant
             // 
-            this.btn_suppr_gerant.Location = new System.Drawing.Point(16, 372);
+            this.btn_suppr_gerant.Location = new System.Drawing.Point(21, 458);
+            this.btn_suppr_gerant.Margin = new System.Windows.Forms.Padding(4);
             this.btn_suppr_gerant.Name = "btn_suppr_gerant";
-            this.btn_suppr_gerant.Size = new System.Drawing.Size(234, 23);
+            this.btn_suppr_gerant.Size = new System.Drawing.Size(312, 28);
             this.btn_suppr_gerant.TabIndex = 39;
             this.btn_suppr_gerant.Text = "Supprimer";
             this.btn_suppr_gerant.UseVisualStyleBackColor = true;
@@ -1820,10 +1970,11 @@ namespace GestionRefugies
             this.RoleAdmin,
             this.RoleAgentA,
             this.RoleMagasinier});
-            this.dataGrid_modifgerant.Location = new System.Drawing.Point(288, 8);
+            this.dataGrid_modifgerant.Location = new System.Drawing.Point(384, 10);
+            this.dataGrid_modifgerant.Margin = new System.Windows.Forms.Padding(4);
             this.dataGrid_modifgerant.Name = "dataGrid_modifgerant";
             this.dataGrid_modifgerant.ReadOnly = true;
-            this.dataGrid_modifgerant.Size = new System.Drawing.Size(544, 427);
+            this.dataGrid_modifgerant.Size = new System.Drawing.Size(725, 526);
             this.dataGrid_modifgerant.TabIndex = 38;
             // 
             // Id_modifgerant
@@ -1864,9 +2015,10 @@ namespace GestionRefugies
             // 
             // btn_modif_gerant
             // 
-            this.btn_modif_gerant.Location = new System.Drawing.Point(16, 343);
+            this.btn_modif_gerant.Location = new System.Drawing.Point(21, 422);
+            this.btn_modif_gerant.Margin = new System.Windows.Forms.Padding(4);
             this.btn_modif_gerant.Name = "btn_modif_gerant";
-            this.btn_modif_gerant.Size = new System.Drawing.Size(234, 23);
+            this.btn_modif_gerant.Size = new System.Drawing.Size(312, 28);
             this.btn_modif_gerant.TabIndex = 35;
             this.btn_modif_gerant.Text = "Modifier";
             this.btn_modif_gerant.UseVisualStyleBackColor = true;
@@ -1875,9 +2027,10 @@ namespace GestionRefugies
             // Txt_prenom_modif_gerant
             // 
             this.Txt_prenom_modif_gerant.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Txt_prenom_modif_gerant.Location = new System.Drawing.Point(16, 104);
+            this.Txt_prenom_modif_gerant.Location = new System.Drawing.Point(21, 128);
+            this.Txt_prenom_modif_gerant.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_prenom_modif_gerant.Name = "Txt_prenom_modif_gerant";
-            this.Txt_prenom_modif_gerant.Size = new System.Drawing.Size(234, 20);
+            this.Txt_prenom_modif_gerant.Size = new System.Drawing.Size(311, 22);
             this.Txt_prenom_modif_gerant.TabIndex = 28;
             this.Txt_prenom_modif_gerant.Text = "Prenom";
             this.Txt_prenom_modif_gerant.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_prenom_modif_gerant_KeyDown);
@@ -1886,9 +2039,10 @@ namespace GestionRefugies
             // Txt_nom_modif_gerant
             // 
             this.Txt_nom_modif_gerant.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Txt_nom_modif_gerant.Location = new System.Drawing.Point(16, 78);
+            this.Txt_nom_modif_gerant.Location = new System.Drawing.Point(21, 96);
+            this.Txt_nom_modif_gerant.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_nom_modif_gerant.Name = "Txt_nom_modif_gerant";
-            this.Txt_nom_modif_gerant.Size = new System.Drawing.Size(234, 20);
+            this.Txt_nom_modif_gerant.Size = new System.Drawing.Size(311, 22);
             this.Txt_nom_modif_gerant.TabIndex = 27;
             this.Txt_nom_modif_gerant.Text = "Nom";
             this.Txt_nom_modif_gerant.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_nom_modif_gerant_KeyDown);
@@ -1896,32 +2050,24 @@ namespace GestionRefugies
             // 
             // tabPageStock
             // 
-            this.tabPageStock.Location = new System.Drawing.Point(4, 22);
+            this.tabPageStock.Location = new System.Drawing.Point(4, 25);
+            this.tabPageStock.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageStock.Name = "tabPageStock";
-            this.tabPageStock.Size = new System.Drawing.Size(835, 444);
+            this.tabPageStock.Size = new System.Drawing.Size(1116, 549);
             this.tabPageStock.TabIndex = 2;
             this.tabPageStock.Text = "Gestion Des Stocks";
             this.tabPageStock.UseVisualStyleBackColor = true;
             // 
-            // btn_reinit_ajoutgerant
-            // 
-            this.btn_reinit_ajoutgerant.Location = new System.Drawing.Point(448, 258);
-            this.btn_reinit_ajoutgerant.Name = "btn_reinit_ajoutgerant";
-            this.btn_reinit_ajoutgerant.Size = new System.Drawing.Size(165, 23);
-            this.btn_reinit_ajoutgerant.TabIndex = 31;
-            this.btn_reinit_ajoutgerant.Text = "Reinitialiser";
-            this.btn_reinit_ajoutgerant.UseVisualStyleBackColor = true;
-            this.btn_reinit_ajoutgerant.Click += new System.EventHandler(this.btn_reinit_ajoutgerant_Click);
-            // 
             // Ajout
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(866, 492);
+            this.ClientSize = new System.Drawing.Size(1152, 596);
             this.Controls.Add(this.tabControl1);
             this.ForeColor = System.Drawing.Color.Black;
-            this.MaximumSize = new System.Drawing.Size(882, 531);
-            this.MinimumSize = new System.Drawing.Size(882, 531);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(1170, 643);
+            this.MinimumSize = new System.Drawing.Size(1170, 643);
             this.Name = "Ajout";
             this.Text = "Ajout";
             this.Load += new System.EventHandler(this.AjoutRefugies_Load);
@@ -2101,5 +2247,7 @@ namespace GestionRefugies
         private System.Windows.Forms.DataGridViewTextBoxColumn RoleAgentA;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoleMagasinier;
         private System.Windows.Forms.Button btn_reinit_ajoutgerant;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button deconnect;
     }
 }
