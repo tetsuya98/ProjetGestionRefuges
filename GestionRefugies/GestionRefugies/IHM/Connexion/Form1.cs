@@ -27,7 +27,7 @@ namespace GestionRefugies
         /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
-            StringBuilder adresse = new StringBuilder("https://www.google.com/maps/");
+            StringBuilder adresse = new StringBuilder("https://www.google.com/maps?q=");
             webBrowser1.Navigate(adresse.ToString());
             this.Txt_Adress.Text = /*appel de BD*/ "Adresse du Camps";
         } 
