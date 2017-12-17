@@ -1111,8 +1111,21 @@ namespace GestionRefugies
 
         private void btn_recherche_modif_user_Click(object sender, EventArgs e)
         {
-            //insert code here
-            //appel fonction recherche user de josselin
+            listeUser = User.Rechercher(User.select(), Txt_nom_modif_gerant.Text, Txt_prenom_modif_gerant.Text, check_Admin_modif_gerant.Checked, check_maga_modif_gerant.Checked, check_AA_modif_gerant.Checked);
+
+            foreach (var user in listeUser)
+            {
+                DataGrid_modif_ref.Rows.Add(
+                    
+                    user.Nom,
+                    user.Prenom,
+                    user.Roles.Adminnistrateur,
+                    user.Roles.Agent,
+                    user.Roles.Magasinier
+                    
+
+                    );
+            }
         }
 
         private void btn_modif_gerant_Click(object sender, EventArgs e)

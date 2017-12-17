@@ -1112,7 +1112,7 @@ namespace GestionRefugies
             this.tabPageModifRef.Name = "tabPageModifRef";
             this.tabPageModifRef.Size = new System.Drawing.Size(1116, 549);
             this.tabPageModifRef.TabIndex = 3;
-            this.tabPageModifRef.Text = "Modifier/Supprimer Refugié";
+            this.tabPageModifRef.Text = "Rechercher/Modifier/Supprimer Refugié";
             this.tabPageModifRef.Click += new System.EventHandler(this.tabPageModifRef_Click);
             // 
             // btn_reinit_modifref
@@ -1847,7 +1847,7 @@ namespace GestionRefugies
             this.tabPagemodifGerant.Name = "tabPagemodifGerant";
             this.tabPagemodifGerant.Size = new System.Drawing.Size(1116, 549);
             this.tabPagemodifGerant.TabIndex = 4;
-            this.tabPagemodifGerant.Text = "Modifier/Supprimer Gerant";
+            this.tabPagemodifGerant.Text = "Rechercher/Modifier/Supprimer Gerant";
             // 
             // btn_reinit_modifGerant
             // 

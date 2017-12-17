@@ -12,7 +12,7 @@ namespace GestionRefugies
 {
     public partial class Form_Connexion : Form
     {
-        
+
 
         
 
@@ -27,6 +27,8 @@ namespace GestionRefugies
         /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
+            StringBuilder adresse = new StringBuilder("https://www.google.com/maps/");
+            webBrowser1.Navigate(adresse.ToString());
             this.Txt_Adress.Text = /*appel de BD*/ "Adresse du Camps";
         } 
         /// <summary>

@@ -378,7 +378,7 @@ namespace GestionRefugies
         public static List<User> Rechercher(List<User> users,
             string optName = "",
             string optPrenom = "",
-            string optid = "",
+            
             bool optadmin = false,
             bool optmaga = false,
             bool optagent = false)
@@ -389,7 +389,7 @@ namespace GestionRefugies
             {
                 int nom = 2;
                 int prenom = 2;
-                int id = 2;
+                
                 int role = 2;
                 Roles roles = new Roles(optadmin, optagent, optmaga);
 
@@ -426,23 +426,8 @@ namespace GestionRefugies
                     }
                 }
                 else { prenom = 1; }
-
-                if (optid.Length <= user.Id.Length)
-                {
-                    if (optid.ToLower() == user.Id.ToLower().Substring(0, optid.Length) & optid.Length >= 0)
-                    {
-                        id = 0;
-                        if (optid.Length == 0)
-                        {
-                            id = 2;
-                        }
-                    }
-                    else
-                    {
-                        id = 1;
-                    }
-                }
-                else { id = 1; }
+                
+                
 
                 if (user.Roles == roles)
                 {
@@ -463,7 +448,7 @@ namespace GestionRefugies
                 //2 = rien mis
                 //0 = mis et ok
 
-                if (nom != 1 & prenom != 1 & id != 1 & role != 1)
+                if (nom != 1 & prenom != 1 & role != 1)
                 {
                     liste.Add(user);
                     System.Diagnostics.Debug.WriteLine("User ADDED");
