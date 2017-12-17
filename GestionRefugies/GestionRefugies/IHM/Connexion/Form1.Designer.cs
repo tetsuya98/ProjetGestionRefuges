@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.Btn_Valider = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Txt_Adress = new System.Windows.Forms.TextBox();
             this.Lbl_Alert = new System.Windows.Forms.Label();
             this.Txt_MDP = new System.Windows.Forms.MaskedTextBox();
@@ -39,7 +38,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
             // 
             // label1
@@ -67,20 +66,10 @@
             this.Btn_Valider.UseVisualStyleBackColor = true;
             this.Btn_Valider.Click += new System.EventHandler(this.Btn_Valider_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(419, 49);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(443, 255);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
             // Txt_Adress
             // 
             this.Txt_Adress.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Txt_Adress.Location = new System.Drawing.Point(419, 342);
+            this.Txt_Adress.Location = new System.Drawing.Point(430, 393);
             this.Txt_Adress.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_Adress.Name = "Txt_Adress";
             this.Txt_Adress.ReadOnly = true;
@@ -167,12 +156,21 @@
             this.button1.Text = "Rechercher";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(453, 49);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(447, 323);
+            this.webBrowser1.TabIndex = 16;
+            // 
             // Form_Connexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(912, 444);
+            this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox2);
@@ -181,7 +179,6 @@
             this.Controls.Add(this.Txt_MDP);
             this.Controls.Add(this.Lbl_Alert);
             this.Controls.Add(this.Txt_Adress);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Btn_Valider);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -189,7 +186,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Connexion";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,7 +195,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Btn_Valider;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox Txt_Adress;
         private System.Windows.Forms.Label Lbl_Alert;
         private System.Windows.Forms.MaskedTextBox Txt_MDP;
@@ -208,6 +203,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }
 

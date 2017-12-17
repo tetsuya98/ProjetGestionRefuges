@@ -101,6 +101,22 @@ namespace GestionRefugies
             }
         }
 
-        
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            //recherche
+            string ville = textBox1.Text;
+            string pays = textBox2.Text;
+
+            
+            StringBuilder adresse = new StringBuilder("https://www.google.com/maps?q=");
+
+            adresse.Append(ville);
+            adresse.Append(pays);
+
+            webBrowser1.Navigate(adresse.ToString());
+
+
+
+        }
     }
 }
