@@ -28,7 +28,7 @@ namespace GestionRefugies
         private void Form1_Load(object sender, EventArgs e)
         {
             this.Txt_Adress.Text = /*appel de BD*/ "Adresse du Camps";
-        }
+        } 
         /// <summary>
         /// Btn_Valider_Click appelle la BD pour verifier les mots de passe/id
         /// </summary>
@@ -101,12 +101,12 @@ namespace GestionRefugies
             }
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             //recherche
             string ville = textBox1.Text;
             string pays = textBox2.Text;
-
+             
             
             StringBuilder adresse = new StringBuilder("https://www.google.com/maps?q=");
 

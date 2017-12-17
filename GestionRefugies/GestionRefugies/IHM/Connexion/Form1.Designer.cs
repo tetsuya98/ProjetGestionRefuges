@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.Btn_Valider = new System.Windows.Forms.Button();
-            this.Txt_Adress = new System.Windows.Forms.TextBox();
             this.Lbl_Alert = new System.Windows.Forms.Label();
             this.Txt_MDP = new System.Windows.Forms.MaskedTextBox();
             this.Txt_ID = new System.Windows.Forms.MaskedTextBox();
@@ -39,6 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.Txt_Adress = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -65,17 +65,6 @@
             this.Btn_Valider.Text = "Valider";
             this.Btn_Valider.UseVisualStyleBackColor = true;
             this.Btn_Valider.Click += new System.EventHandler(this.Btn_Valider_Click);
-            // 
-            // Txt_Adress
-            // 
-            this.Txt_Adress.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Txt_Adress.Location = new System.Drawing.Point(430, 393);
-            this.Txt_Adress.Margin = new System.Windows.Forms.Padding(4);
-            this.Txt_Adress.Name = "Txt_Adress";
-            this.Txt_Adress.ReadOnly = true;
-            this.Txt_Adress.Size = new System.Drawing.Size(444, 15);
-            this.Txt_Adress.TabIndex = 7;
-            this.Txt_Adress.Text = "Adresse du Camp";
             // 
             // Lbl_Alert
             // 
@@ -158,18 +147,29 @@
             // 
             // webBrowser1
             // 
-            this.webBrowser1.Location = new System.Drawing.Point(453, 49);
+            this.webBrowser1.Location = new System.Drawing.Point(407, 12);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(447, 323);
+            this.webBrowser1.Size = new System.Drawing.Size(680, 504);
             this.webBrowser1.TabIndex = 16;
+            // 
+            // Txt_Adress
+            // 
+            this.Txt_Adress.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Txt_Adress.Location = new System.Drawing.Point(13, 500);
+            this.Txt_Adress.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt_Adress.Name = "Txt_Adress";
+            this.Txt_Adress.ReadOnly = true;
+            this.Txt_Adress.Size = new System.Drawing.Size(444, 15);
+            this.Txt_Adress.TabIndex = 7;
+            this.Txt_Adress.Text = "Adresse du Camp";
             // 
             // Form_Connexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(912, 444);
+            this.ClientSize = new System.Drawing.Size(1099, 528);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
@@ -195,7 +195,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Btn_Valider;
-        private System.Windows.Forms.TextBox Txt_Adress;
         private System.Windows.Forms.Label Lbl_Alert;
         private System.Windows.Forms.MaskedTextBox Txt_MDP;
         private System.Windows.Forms.MaskedTextBox Txt_ID;
@@ -204,6 +203,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.TextBox Txt_Adress;
     }
 }
 
