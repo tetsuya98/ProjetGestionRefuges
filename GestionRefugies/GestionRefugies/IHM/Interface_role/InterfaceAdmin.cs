@@ -16,6 +16,7 @@ namespace GestionRefugies
 
         private User connected_user;
         private List<Refugier> listeRefu = null;
+        private List<User> listeUser = null;
 
         public Ajout(User connect_u)
         {
@@ -38,6 +39,51 @@ namespace GestionRefugies
 
         #region Maj des Champs et label_erreur
 
+
+        private void Maj_champs_ajoutGerant()
+        {
+            Txt_MDPM.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            Txt_MDPM.Text = "Mot de Passe";
+            Txt_NomM.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            Txt_NomM.Text = "Nom";
+            Txt_PrenomM.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            Txt_PrenomM.Text = "Prenom";
+            check_admin.Checked = false;
+            check_AgentAccueil.Checked = false;
+            check_Magasinier.Checked = false;
+        }
+        private void Maj_data_modifGerant()
+        {
+            dataGrid_modifgerant.Rows.Clear();
+            listeUser = User.select();
+
+            foreach (var user in listeUser)
+            {
+                dataGrid_modifgerant.Rows.Add(
+                    user.Id,
+                    user.Nom,
+                    user.Prenom,
+                    user.Roles.Adminnistrateur,
+                    user.Roles.Agent,
+                    user.Roles.Magasinier
+
+                    );
+            }
+        }
+        
+        private void Maj_champs_modifGerant()
+        {
+            Txt_nom_modif_gerant.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            Txt_nom_modif_gerant.Text = "Nom";
+            Txt_prenom_modif_gerant.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            Txt_prenom_modif_gerant.Text = "Prenom";
+            txt_mdp_modif_ger.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            txt_mdp_modif_ger.Text = "Mot de Passe";
+            check_AA_modif_gerant.Checked = false;
+            check_Admin_modif_gerant.Checked = false;
+            check_maga_modif_gerant.Checked = false;
+
+        }
         private void Maj_labelerr_ajoutref()
         {
             Lbl_errSexe.Visible = false;
@@ -141,8 +187,7 @@ namespace GestionRefugies
             }
         }
         #endregion
-
-
+        
 
         #region tabPageAjoutRefugié
 
@@ -150,11 +195,6 @@ namespace GestionRefugies
         private void Txt_Nom_KeyUp(object sender, KeyEventArgs e)
         {
 
-            if (Txt_Nom.Text == "")
-            {
-                this.Txt_Nom.ForeColor = System.Drawing.SystemColors.WindowFrame;
-                Txt_Nom.Text = "Nom";
-            }
         }
 
         private void Txt_Nom_KeyDown(object sender, KeyEventArgs e)
@@ -202,9 +242,7 @@ namespace GestionRefugies
         #region Btn_Ajout
         private void Btn_Ajout_Click(object sender, EventArgs e)
         {
-
-            // ce if est degueulasse ... désolé
-
+            
 
             if (txt_typchev_ajoutref.Text != "" &&
                 txt_coulpeau_ajoutref.Text != "" &&
@@ -233,6 +271,8 @@ namespace GestionRefugies
                 if (Refugier.add(new Refugier(Txt_Nom.Text, Txt_Prenom.Text, sex, DatePicker_DatNaiss.Value, List_Nationalite.Text, (int)num_RefugeRef.Value, (int)num_taille_ajoutref.Value, txt_coulpeau_ajoutref.Text, txt_coulchev_ajoutref.Text, txt_typchev_ajoutref.Text, txt_coulyeux_ajoutref.Text, txt_bless_ajoutref.Text, txt_allerg_ajoutref.Text, txt_handi_ajoutref.Text, txt_autre_ajoutref.Text)) == true)
                 {
                     MessageBox.Show("Succes de l'ajout du refugié : " + Txt_Nom.Text + " " + Txt_Prenom.Text);
+                    Maj_labelerr_ajoutref();
+                    Maj_Champs_ajoutref();
                 }
                 else
                 {
@@ -578,7 +618,8 @@ namespace GestionRefugies
                             if ((Refugier.update(new Refugier(Txt_Nom_Modifref.Text, Txt_Prenom_Modifref.Text, sex, DatePicker_Naiss_modif_ref.Value, list_nation_modif_ref.Text, (int)num_refugeref_modif_ref.Value, (int)num_taille_modifref.Value, txt_coulpeau_modifref.Text, txt_coulchev_modifref.Text, txt_typchev_modifref.Text, txt_coulyeux_modifref.Text, txt_bless_modifref.Text, txt_allerg_modifref.Text, txt_handi_modifref.Text, txt_autre_modifref.Text, int.Parse(refugier.Cells[0].Value.ToString()))) == true))
                             {
                                 MessageBox.Show("Modification Effectuée");
-                                btn_rechercher_modifref_Click(sender, e);
+                                Maj_labelerr_modifref();
+                                Maj_data_modifRef();
                                 Maj_Champs_modifref();
                             }
                             else
@@ -703,7 +744,7 @@ namespace GestionRefugies
 
                 if (DataGrid_modif_ref.SelectedRows.Count > 1)
                 {
-                    var result = MessageBox.Show("Voulez vous vraiment supprimer les " + DataGrid_modif_ref.SelectedRows.Count + "utilisateurs ", " ", MessageBoxButtons.YesNo);
+                    var result = MessageBox.Show("Voulez vous vraiment supprimer les " + DataGrid_modif_ref.SelectedRows.Count + " refugiés ? ", " ", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
                     {
                         foreach (System.Windows.Forms.DataGridViewRow refugier in DataGrid_modif_ref.SelectedRows)
@@ -738,17 +779,7 @@ namespace GestionRefugies
         #endregion
 
         #endregion
-
-
-
-
-
-        private void label_nameU_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
+        
 
         #region Se qui se passe au load des pages
 
@@ -775,10 +806,19 @@ namespace GestionRefugies
                 Maj_labelerr_ajoutref();
                 Maj_Champs_ajoutref();
             }
+
+            if (tabControl1.SelectedTab == tabPagemodifGerant)
+            {
+                Maj_champs_modifGerant();
+                Maj_data_modifGerant();
+            }
         }
         #endregion
 
         #endregion
+
+
+
 
 
         #region tabPageAjoutGerant
@@ -858,12 +898,18 @@ namespace GestionRefugies
 
         private void btn_AjoutM_Click_1(object sender, EventArgs e)
         {
-            // ce if est degueulasse ... désolé
-            if ((check_AgentAccueil.Checked || check_Magasinier.Checked || checkBox1.Checked) && Txt_NomM.Text != "Nom" && Txt_NomM.Text != "Nom Incorrect" && Txt_PrenomM.Text != "Prenom" && Txt_PrenomM.Text != "Prenom Incorrect" && Txt_MDPM.Text != "Mot de passe" && Txt_MDPM.Text != "Mot de passe Incorrect")
+            
+            if ((check_AgentAccueil.Checked || check_Magasinier.Checked || check_admin.Checked) && 
+                Txt_NomM.Text != "Nom" && 
+                Txt_NomM.Text != "Nom Incorrect" && 
+                Txt_PrenomM.Text != "Prenom" && 
+                Txt_PrenomM.Text != "Prenom Incorrect" && 
+                Txt_MDPM.Text != "Mot de passe" && 
+                Txt_MDPM.Text != "Mot de passe Incorrect")
             {
 
 
-                if (checkBox1.Checked)
+                if (check_admin.Checked)
                 {
                     if (check_AgentAccueil.Checked && check_Magasinier.Checked)
                     {
@@ -958,21 +1004,8 @@ namespace GestionRefugies
                         }
                     }
                 }
-
-
-
-
-
-                //Magasinier maga = new Magasinier(Txt_NomM.Text, Txt_PrenomM.Text, Txt_MDPM.Text, sex, DatePicker_NaissM.Value, list_NationM.Text, 1);
-                //bool res = RefugierManage.ajouterRefugier(refu);
-                //if (res)
-                //{
-                //    MessageBox.Show("Ajout validé et enregistré dans la BDD");
-                //}
-                //else
-                //{
-                //    MessageBox.Show("erreur creation refugier");
-                //}
+                
+               
 
             }
             else
@@ -992,7 +1025,7 @@ namespace GestionRefugies
                     this.Txt_MDPM.ForeColor = System.Drawing.Color.Red;
                     Txt_MDPM.Text = "Mot de Passe Incorrect";
                 }
-                if (!check_AgentAccueil.Checked && !check_Magasinier.Checked)
+                if (!check_AgentAccueil.Checked && !check_Magasinier.Checked && !check_admin.Checked)
                 {
                     lbl_errRole.Visible = true;
                 }
@@ -1004,6 +1037,12 @@ namespace GestionRefugies
         }
         #endregion
 
+        #region btn_reinit
+        private void btn_reinit_ajoutgerant_Click(object sender, EventArgs e)
+        {
+            Maj_champs_ajoutGerant();
+        } 
+        #endregion
 
         #endregion
 
@@ -1062,16 +1101,29 @@ namespace GestionRefugies
 
 
 
-        #region Boutons Modifier et Supprimer gerant
+        #region Boutons reinitialiser/ rechercher,Modifier et Supprimer gerant
+
+        private void btn_reinit_modifGerant_Click(object sender, EventArgs e)
+        {
+            Maj_data_modifGerant();
+            Maj_champs_modifGerant();
+        }
+
+        private void btn_recherche_modif_user_Click(object sender, EventArgs e)
+        {
+            //insert code here
+            //appel fonction recherche user de josselin
+        }
+
         private void btn_modif_gerant_Click(object sender, EventArgs e)
         {
-            lbl_err_btn_modif_ref.Visible = false;
+            
             if ((Txt_nom_modif_gerant.Text != "Nom" && Txt_nom_modif_gerant.Text != "Nom Incorrect" && Txt_prenom_modif_gerant.Text != "Prenom" && Txt_prenom_modif_gerant.Text != "Prenom Incorrect"))
             {
-                if (dataGridView1.SelectedRows.Count == 1)
+                if (dataGrid_modifgerant.SelectedRows.Count == 1)
                 {
 
-                    foreach (System.Windows.Forms.DataGridViewRow user in dataGridView1.SelectedRows)
+                    foreach (System.Windows.Forms.DataGridViewRow user in dataGrid_modifgerant.SelectedRows)
                     {
                         var result = MessageBox.Show("Voulez vous vraiment modifier l'utilisateur " + user.Cells[1].Value + " " + user.Cells[2].Value, " ", MessageBoxButtons.YesNo);
                         if (result == DialogResult.Yes)
@@ -1080,34 +1132,34 @@ namespace GestionRefugies
                             {
                                 if (check_AA_modif_gerant.Checked && check_maga_modif_gerant.Checked)
                                 {
-                                    if ((User.update(new User(Txt_Nom_Modifref.Text, Txt_Prenom_Modifref.Text, maskedTextBoxmodif_ger.Text, true, true, true))))
+                                    if ((User.update(new User(Txt_Nom_Modifref.Text, Txt_Prenom_Modifref.Text, txt_mdp_modif_ger.Text, true, true, true))))
                                     {
                                         MessageBox.Show("Modification Effectuée");
-                                        btn_rechercher_modifref_Click(sender, e);
+                                        Maj_data_modifGerant();
                                     }
                                 }
                                 else if (!(check_AA_modif_gerant.Checked) && check_maga_modif_gerant.Checked)
                                 {
-                                    if ((User.update(new User(Txt_Nom_Modifref.Text, Txt_Prenom_Modifref.Text, maskedTextBoxmodif_ger.Text, true, false, true))))
+                                    if ((User.update(new User(Txt_Nom_Modifref.Text, Txt_Prenom_Modifref.Text, txt_mdp_modif_ger.Text, true, false, true))))
                                     {
                                         MessageBox.Show("Modification Effectuée");
-                                        btn_rechercher_modifref_Click(sender, e);
+                                        Maj_data_modifGerant();
                                     }
                                 }
                                 else if (check_AA_modif_gerant.Checked && !(check_maga_modif_gerant.Checked))
                                 {
-                                    if ((User.update(new User(Txt_Nom_Modifref.Text, Txt_Prenom_Modifref.Text, maskedTextBoxmodif_ger.Text, true, true, false))))
+                                    if ((User.update(new User(Txt_Nom_Modifref.Text, Txt_Prenom_Modifref.Text, txt_mdp_modif_ger.Text, true, true, false))))
                                     {
                                         MessageBox.Show("Modification Effectuée");
-                                        btn_rechercher_modifref_Click(sender, e);
+                                        Maj_data_modifGerant();
                                     }
                                 }
                                 else if (!(check_AA_modif_gerant.Checked) && !(check_maga_modif_gerant.Checked))
                                 {
-                                    if ((User.update(new User(Txt_Nom_Modifref.Text, Txt_Prenom_Modifref.Text, maskedTextBoxmodif_ger.Text, true, false, false))))
+                                    if ((User.update(new User(Txt_Nom_Modifref.Text, Txt_Prenom_Modifref.Text, txt_mdp_modif_ger.Text, true, false, false))))
                                     {
                                         MessageBox.Show("Modification Effectuée");
-                                        btn_rechercher_modifref_Click(sender, e);
+                                        Maj_data_modifGerant();
                                     }
                                 }
 
@@ -1116,34 +1168,34 @@ namespace GestionRefugies
                             {
                                 if (check_AA_modif_gerant.Checked && check_maga_modif_gerant.Checked)
                                 {
-                                    if ((User.update(new User(Txt_Nom_Modifref.Text, Txt_Prenom_Modifref.Text, maskedTextBoxmodif_ger.Text, false, true, true))))
+                                    if ((User.update(new User(Txt_Nom_Modifref.Text, Txt_Prenom_Modifref.Text, txt_mdp_modif_ger.Text, false, true, true))))
                                     {
                                         MessageBox.Show("Modification Effectuée");
-                                        btn_rechercher_modifref_Click(sender, e);
+                                        Maj_data_modifGerant();
                                     }
                                 }
                                 else if (!(check_AA_modif_gerant.Checked) && check_maga_modif_gerant.Checked)
                                 {
-                                    if ((User.update(new User(Txt_Nom_Modifref.Text, Txt_Prenom_Modifref.Text, maskedTextBoxmodif_ger.Text, false, false, true))))
+                                    if ((User.update(new User(Txt_Nom_Modifref.Text, Txt_Prenom_Modifref.Text, txt_mdp_modif_ger.Text, false, false, true))))
                                     {
                                         MessageBox.Show("Modification Effectuée");
-                                        btn_rechercher_modifref_Click(sender, e);
+                                        Maj_data_modifGerant();
                                     }
                                 }
                                 else if (check_AA_modif_gerant.Checked && !(check_maga_modif_gerant.Checked))
                                 {
-                                    if ((User.update(new User(Txt_Nom_Modifref.Text, Txt_Prenom_Modifref.Text, maskedTextBoxmodif_ger.Text, false, true, false))))
+                                    if ((User.update(new User(Txt_Nom_Modifref.Text, Txt_Prenom_Modifref.Text, txt_mdp_modif_ger.Text, false, true, false))))
                                     {
                                         MessageBox.Show("Modification Effectuée");
-                                        btn_rechercher_modifref_Click(sender, e);
+                                        Maj_data_modifGerant();
                                     }
                                 }
                                 else if (!(check_AA_modif_gerant.Checked) && !(check_maga_modif_gerant.Checked))
                                 {
-                                    if ((User.update(new User(Txt_Nom_Modifref.Text, Txt_Prenom_Modifref.Text, maskedTextBoxmodif_ger.Text, false, false, false))))
+                                    if ((User.update(new User(Txt_Nom_Modifref.Text, Txt_Prenom_Modifref.Text, txt_mdp_modif_ger.Text, false, false, false))))
                                     {
                                         MessageBox.Show("Modification Effectuée");
-                                        btn_rechercher_modifref_Click(sender, e);
+                                        Maj_data_modifGerant();
                                     }
                                 }
                             }
@@ -1172,7 +1224,7 @@ namespace GestionRefugies
 
         private void btn_suppr_gerant_Click(object sender, EventArgs e)
         {
-            foreach (System.Windows.Forms.DataGridViewRow user in dataGridView1.SelectedRows)
+            foreach (System.Windows.Forms.DataGridViewRow user in dataGrid_modifgerant.SelectedRows)
             {
                 var result = MessageBox.Show("Voulez vous vraiment supprimer l'utilisateur " + user.Cells[1].Value + " " + user.Cells[2].Value, " ", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
@@ -1180,7 +1232,8 @@ namespace GestionRefugies
                     if (User.delete((user.Cells[0].Value.ToString())) == true)
                     {
                         MessageBox.Show("Suppression Effectuée");
-                        btn_rechercher_modifref_Click(sender, e);
+                        Maj_data_modifGerant();
+
                     }
 
                 }
@@ -1237,19 +1290,19 @@ namespace GestionRefugies
 
 
         }
+
+
+
+
+
+
+
+
+
+
         #endregion
 
-        private void Label_nameU_Click(object sender, EventArgs e)
-        {
-
-        }
-
         
-        private void Txt_MDPM_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
     }
 
 }
